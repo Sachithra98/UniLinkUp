@@ -33,7 +33,7 @@
       <a href="about.php">About Us</a>
       <a href="question.php">FAQs?</a>
       <a href='admin.php'>Admin</a>
-      <a href='log_in.php'>Log In</a>
+      <a href="<?=url('login')?>">Log In</a>
 
       
       <!-- <?php
@@ -59,7 +59,7 @@ if (isset($_SESSION['User_name'])){
 ?> -->
    </nav>
    <div class="logo">
-                <a href="#"><img src="images/uor.png" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
+                <a href="#"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
       </div>
       
 
