@@ -78,7 +78,7 @@ if (isset($_SESSION['User_name'])){
 
       <div class="swiper-wrapper">
 
-         <div class="swiper-slide slide" style="background:url(images/home17.jpg)no-repeat">
+         <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home17.jpg')}}')no-repeat">
             <div class="content">
                 <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
@@ -87,7 +87,7 @@ if (isset($_SESSION['User_name'])){
             </div>
          </div>
 
-         <div class="swiper-slide slide" style="background:url(images/home19.jpg) no-repeat">
+         <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home19.jpg')}}') no-repeat">
          <div class="content">
                <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
@@ -96,7 +96,7 @@ if (isset($_SESSION['User_name'])){
             </div>
          </div>
 
-         <div class="swiper-slide slide" style="background:url(images/home16.jpg) no-repeat">
+         <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home16.jpg')}}') no-repeat">
          <div class="content">
                <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
