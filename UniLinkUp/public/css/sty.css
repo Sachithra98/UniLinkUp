@@ -225,7 +225,6 @@ section{
  }
 
 .services .box-container{
-s
    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
    gap: 1.5rem;
    display: flex;
