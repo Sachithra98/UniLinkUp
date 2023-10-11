@@ -1,108 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Animated Login Form</title>
-	<link rel="stylesheet" href="style.css">
-	<!--bootsrap links-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<!--bootstrap links-->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+	<title>Login Form</title>
 
-	<!--font links-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Roboto:wght@100&display=swap" rel="stylesheet">
-	<!--font links-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+	<!-- custom CSS file link -->
+	<link rel="stylesheet" href="{{ asset('css/sty.css') }}">
+
+	<!-- swiper CSS link -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+	<!-- Font Awesome CDN link -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+	<!-- Bootstrap links -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<!-- Your custom font links (if any) -->
+	<!-- <link rel="stylesheet" href="your-font-link-here"> -->
 
 <style>
-    *{
-	margin: 0;
-	padding: 0;
-	box-sizing: boder-box;
-	font-family: 'Merriweather', serif;
-
-}
-
-.all-content{
-	background: #f7f5f2;
-}
-
-html ::-webkit-scrollbar-track{
-	background:transparent;
-}
-
-html ::-webkit-scrollbar-thumb{
-	background: #b2744c;
-	border-radius:10px;
-}
-
-html ::-webkit-scrollbar{
-	width: 10px;
-}
-
-/* navbar start */
-#navbar{
-	background-color: #000040;
-}
-#logo img{
-	border-radius: 10px;
-	width: 80px;
-	margin-left: 40px;
-}
-
-.navbar-nav{
-	margin-left: 50px;
-}
-
-.nav-item .nav-link{
-	color: white;
-	margin-left: 10px;
-	font-weight: bold;
-	transition: 0.5s;
-}
-
-.nav-item .nav-link:hover{
-	background: #f7f5f2;
-	border-radius: 5px;
-	color:blue;
-}
-
-/* navbar end */ 
-
- body{
- 	background-image: url("images/n.jpg");
- 	background-repeat: no-repeat;
- 	background-size: cover;
-
- }
+   
 
 
-section{
+
+.login{
 	position:relative;
 	width: 100%;
 	height: 100vh;
 	display: flex;
 }
 
-section .imgBx{
+.login .imgBx{
 	position:relative;
 	width: 200px;
 	height: flex;
 }
 
-section .imgBx img{
-	position: absolute;
-	top: 100px;
-	margin-left: 430px;
-	width:370px;
-	height: 450px;
-	
-
+.login .imgBx img {
+    position: absolute;
+    top: 100px;
+    margin-left: 430px;
+    width: 370px;
+    height: 450px;
 }
 
-section .text h4{
+.login .text h4{
 
 	position: absolute;
 	top: 25%;
@@ -111,7 +57,7 @@ section .text h4{
 	
 
 }
-.box{
+.login.box{
 	justify-content: center;
 	position: relative;
 	width: 370px;
@@ -125,7 +71,7 @@ section .text h4{
 
 
 
-.box::before{
+.login.box::before{
 
 	content:'';
 	position: absolute;
@@ -140,9 +86,7 @@ section .text h4{
 }
 
 
-
-
-.box::after{
+.login.box::after{
 
 	content:'';
 	position: absolute;
@@ -171,7 +115,7 @@ section .text h4{
 
 }
 
-form{
+.login form{
 
 	position:absolute;
 	inset: 2px;
@@ -184,49 +128,19 @@ form{
 
 }
 
-#role {
-  width: 200px; /* Set the width of the select box */
-  padding: 10px; /* Add some padding for better appearance */
-  font-size: 16px; /* Set the font size */
-  border: 1px solid #f7f5f2; /* Add a border */
-  border-radius: 5px; /* Add border radius for rounded corners */
-  background-color: #f7f5f2; /* Set the background color */
-  color: #23242a; /* Set the text color */
-  margin-top: 15px;
+.login #role {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f7f5f2;
+    border-radius: 5px;
+    background-color: #f7f5f2;
+    color: #23242a;
+    margin-top: 15px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-h2{ 
+.login h2{ 
 	color: #23242a;
 	font-size: 35px;
 	font-weight: 500;
@@ -234,13 +148,13 @@ h2{
 
 }
 
-.inputBox{
+.login.inputBox{
 	position: relative;
 	width: 300px;
 	margin-top: 35px;
 }
 
-.inputBox input{
+.login.inputBox input{
 	position: relative;
 	width: 100%; 
 	padding: 20px 10px 10px;
@@ -253,7 +167,7 @@ h2{
 	z-index: 10;
 }
 
-input[type="submit"]{
+.login input[type="submit"]{
 
 	font-size: 20px;
 	border: none;
@@ -269,12 +183,12 @@ input[type="submit"]{
 
 }
 
-input[type="submit"]:active{
+.login input[type="submit"]:active{
 	background: linear-gradient(90deg,#453fff,#453fff);
 	opacity: 0.8;
 }
 
-.inputBox span{
+.login .inputBox span{
 	position: absolute;
 	left: 0;
 	padding: 20px 10px 10px;
@@ -285,8 +199,8 @@ input[type="submit"]:active{
 	transition: 0.5s;
 }
 
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span
+.login .inputBox input:valid ~ span,
+.login .inputBox input:focus ~ span
 
 {
 	color:#23242a;
@@ -294,7 +208,7 @@ input[type="submit"]:active{
 	font-size: 0.75em;
 }
 
-.inputBox i{
+.login .inputBox i{
 	position: absolute;
 	left: 0;
 	bottom: 0;
@@ -307,30 +221,30 @@ input[type="submit"]:active{
 	z-index: 9;
 }
 
-.inputBox input:valid ~ i,
-.inputBox input:focus ~ i
+.login .inputBox input:valid ~ i,
+.login .inputBox input:focus ~ i
 {
 	height: 44px;
 } 
 
-.links{
+.login .links{
 	display: flex;
 	justify-content: space-between;
 
 }
-.links a{
+.login .links a{
 	margin: 25px 0;
 	font-size: 1em;
 	color: #23242a;
 	text-decoration: none;
 
 }
-.links a:hover,
-.links a:nth-child(2){
+.login .links a:hover,
+.login .links a:nth-child(2){
 	color: #23242a;
 }
 
-.links a:nth-child(2):hover{
+.login .links a:nth-child(2):hover{
 	text-decoration:underline 2px;
 	text-underline-offset: 5px;
 }
@@ -344,103 +258,56 @@ input[type="submit"]:active{
 
 
 </head>
+
+	
+
+
 <body>
-		<div class="all-content">
-	<!--navbar start-->	
+	<!-- header section starts -->
+	@include('header')
+	<!-- header section ends -->
 
-	<nav class="navbar navbar-expand-lg" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#" id="logo"><img src="./images/logo.jpg"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span><i class="fa-solid fa-bars" style="color: white; font-size: 23px;"></i></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contactus">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#faq's">FAQ'S</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#privacy&policy">Privacy & Policy</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#signup">Sign Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#login">Log In</a>
-        </li>
-        
-          
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-  </div>
-
-
-
-  
-
-
-	<section>
-
-		<section>
+	<!-- Your content section starts here -->
+	<section class="login">
 		<div class="imgBx">
-			<img src="images/pp.jpg">
+		<img src="{{ asset('storage/images/site images/home8.jpg') }}">
+
 		</div>
 		<div class="text">
 			<h4>Welcome to LinkUp</h4>
 		</div>
-		
-
-	<div class="box">
-		
-
-
-		<form action="">
-			<h2>Sign In</h2>
-			<div class="inputBox">
-				<input type="text" required>
-				<span>Username</span>
-				<i></i>
-			</div>
-			<div class="inputBox">
-				<input type="password" required>
-				<span>Enter Password</span>
-				<i></i>
-			</div>
-
-			
-			<select id="role">
-				<option vlaue="country">Select Role</option>
-				<option vlaue="Editor">Editor</option>
-				<option vlaue="Moderator">Moderator</option>
-				<option vlaue="Admin">Admin</option>
-				<option vlaue="Student">Student</option>
-
-
-			</select>
-
-
-
-
-			<input type="submit" value="Login">
-			<div class="links">
-				<a href="forgotpassword.html">Fogot Password?</a>
-				<a href="#">SignUp</a>
-
-			</div>
-		</form>
-
-	
-
+		<div class="box">
+			<form action="">
+				<h2>Sign In</h2>
+				<div class="inputBox">
+					<input type="text" required>
+					<span>Username</span>
+					<i></i>
+				</div>
+				<div class="inputBox">
+					<input type="password" required>
+					<span>Enter Password</span>
+					<i></i>
+				</div>
+				<select id="role">
+					<option value="country">Select Role</option>
+					<option value="Editor">Editor</option>
+					<option value="Moderator">Moderator</option>
+					<option value="Admin">Admin</option>
+					<option value="Student">Student</option>
+				</select>
+				<input type="submit" class="btn" value="Login">
+				<div class="links">
+					<a href="{{ url('forget') }}">Forgot Password?</a>
+					<a href="#">SignUp</a>
+				</div>
+			</form>
 		</div>
-</section>
+	</section>
+	<!-- Your content section ends here -->
+
+	<!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
 </body>
 </html>

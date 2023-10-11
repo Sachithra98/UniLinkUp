@@ -578,9 +578,8 @@ s
 
 
 
-
-.footer{
-   background: url(../images/footer-bg.jpg) no-repeat;
+.footer {
+   background: url("{{ asset('storage/images/site images/footer-bg.jpg') }}");
    background-size: cover;
    background-position: center;
 }
