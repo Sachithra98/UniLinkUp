@@ -35,9 +35,9 @@
 <body>
     <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" style="background:url('{{asset('storage/images/site images/footer-bg.jpg')}}')no-repeat">
 
-   <div class="box-container">
+   <div class="box-container" >
 
       <div class="box">
          <h3>quick links</h3>

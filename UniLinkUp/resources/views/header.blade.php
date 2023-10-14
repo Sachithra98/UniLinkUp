@@ -62,9 +62,9 @@ echo'
 ?> -->
 </nav>
 
-    <div class="logo">
-                <a href="#"><img src="images/uor.png" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
-      </div>
+<div class="logo">
+                <a href="<?=url('')?>"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
+   </div>
 
 
 <div id="menu-btn" class="fas fa-bars"></div>

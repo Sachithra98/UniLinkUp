@@ -225,7 +225,6 @@ section{
  }
 
 .services .box-container{
-s
    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
    gap: 1.5rem;
    display: flex;
@@ -578,9 +577,8 @@ s
 
 
 
-
-.footer{
-   background: url(../images/footer-bg.jpg) no-repeat;
+.footer {
+   background: url("{{ asset('storage/images/site images/footer-bg.jpg') }}");
    background-size: cover;
    background-position: center;
 }

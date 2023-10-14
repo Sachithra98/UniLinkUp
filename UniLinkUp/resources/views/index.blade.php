@@ -29,38 +29,18 @@
    <a href="home.php" class="logo">UniLinkUp</a>
 
    <nav class="navbar">
-      <a href="index.php">Home</a>
-      <a href="about.php">About Us</a>
-      <a href="question.php">FAQs?</a>
-      <a href='admin.php'>Admin</a>
+      <a href="<?=url('index')?>">Home</a>
+      <a href="<?=url('')?>">About Us</a>
+      <a href="<?=url('')?>">FAQs?</a>
+      <a href='<?=url('admin')?>'>Admin</a>
       <a href="<?=url('login')?>">Log In</a>
 
-      
-      <!-- <?php
-if (isset($_SESSION['User_name'])){
-  echo "
-      
-      <li class='nav-item'>
-      <a id='sign_out' class='nav-link' href='sign_out.php'>Sign out</a>
-      </li>
-";
-}else{
-  echo'
-      <li class="nav-item">
-      <a class="nav-link" href="sign_in.php">Sign In</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="sign_up.php">Sign Up</a>
-      </li>
-   
-  ';
-}
-
-?> -->
+     
    </nav>
+
    <div class="logo">
-                <a href="#"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
-      </div>
+                <a href="<?=url('')?>"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
+   </div>
       
 
 
@@ -83,7 +63,7 @@ if (isset($_SESSION['User_name'])){
                 <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000040;"> Make it easy to stay in touch...</h3>
-               <a href="log_in.php" class="btn">Log In</a>
+               <a href="<?=url('login')?>" class="btn">Log In</a>
             </div>
          </div>
 
@@ -92,7 +72,7 @@ if (isset($_SESSION['User_name'])){
                <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000080;"> Make it easy to stay in touch...</h3>
-               <a href="log_in.php" class="btn">Log In</a>
+               <a href="<?=url('login')?>" class="btn">Log In</a>
             </div>
          </div>
 
@@ -101,7 +81,7 @@ if (isset($_SESSION['User_name'])){
                <h1 style="color: #000080;">UniLinkUp</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000040;"> Make it easy to stay in touch... </h3>
-               <a href="log_in.php" class="btn">Log In</a>
+               <a href="<?=url('login')?>" class="btn">Log In</a>
             </div>
          </div>
          
@@ -125,47 +105,47 @@ if (isset($_SESSION['User_name'])){
    <div class="box-container">
 
       <div class="box">
-         <img src="images/icona.png" alt="">
+         <img src="{{asset('storage/images/site images/icona.png')}}" alt="">
          <h3>Faculty of Technology </h3>
       </div>
 
       <div class="box">
-         <img src="images/iconb.png" alt="">
+         <img src="{{asset('storage/images/site images/iconb.png')}}" alt="">
          <h3>Faculty of Humanitieas and Social Sciences</h3>
       </div>
 
       <div class="box">
-         <img src="images/iconc.png" alt="">
+         <img src="{{asset('storage/images/site images/iconc.png')}}" alt="">
          <h3>Faculty of Engineering</h3>
       </div>
 
       <div class="box">
-         <img src="images/icond.png" alt="">
+         <img src="{{asset('storage/images/site images/icond.png')}}" alt="">
          <h3>Faculty of Science</h3>
       </div>
 
       <div class="box">
-         <img src="images/icone.png" alt="">
+         <img src="{{asset('storage/images/site images/icone.png')}}" alt="">
          <h3>Faculty of Medicine</h3>
       </div>
 
       <div class="box">
-         <img src="images/iconf.png" alt="">
+         <img src="{{asset('storage/images/site images/iconf.png')}}" alt="">
          <h3>Faculty of Agriculture</h3>
       </div>
 
       <div class="box">
-         <img src="images/icong.png" alt="">
+         <img src="{{asset('storage/images/site images/icong.png')}}" alt="">
          <h3>Faculty of Management</h3>
       </div>
 
       <div class="box">
-         <img src="images/iconh.png" alt="">
+         <img src="{{asset('storage/images/site images/iconh.png')}}" alt="">
          <h3>Faculty of Allied Health Science</h3>
       </div>
 
       <div class="box">
-         <img src="images/iconi.png" alt="">
+         <img src="{{asset('storage/images/site images/iconi.png')}}" alt="">
          <h3>Faculty of Fisheries and Marine Science</h3>
       </div>
 
@@ -186,40 +166,40 @@ if (isset($_SESSION['User_name'])){
 
       <div class="box">
          <div class="image">
-            <img src="images/im1.jpg" alt="">
+            <img src="{{asset('storage/images/site images/im1.jpg')}}" alt="">
          </div>
          <div class="content">
             <h3>Normal cap and Bucket hat</h3>
             <h2>Rs.900/=</h2>
-            <a href="product.php" class="btn">View More</a>
+            <a href="<?=url('')?>" class="btn">View More</a>
          </div>
       </div>
 
       <div class="box">
          <div class="image">
-            <img src="images/im5.jpg" alt="">
+            <img src="{{asset('storage/images/site images/im5.jpg')}}" alt="">
          </div>
          <div class="content">
          <h3>Ruhuna White Round Neck T-shirt</h3>
             <h2>Rs.1500/=</h2>
-            <a href="product.php" class="btn">View More</a>
+            <a href="<?=url('')?>" class="btn">View More</a>
          </div>
       </div>
       
       <div class="box">
          <div class="image">
-            <img src="images/im4.jpg" alt="">
+            <img src="{{asset('storage/images/site images/im4.jpg')}}" alt="">
          </div>
          <div class="content">
          <h3>Ruhuna Drawstring Backpack</h3>
             <h2>Rs.1200/=</h2>
-            <a href="product.php" class="btn">View More</a>
+            <a href="<?=url('')?>" class="btn">View More</a>
          </div>
       </div>
 
    </div>
 
-   <div class="load-more"> <a href="product.php" class="btn">Load More</a> </div>
+   <div class="load-more"> <a href="<?=url('login')?>" class="btn">Load More</a> </div>
 
 </section>
 
@@ -231,13 +211,13 @@ if (isset($_SESSION['User_name'])){
 <section class="home-about">
 
    <div class="image">
-      <img src="images/aboutus.jpg" alt="">
+      <img src="{{asset('storage/images/site images/aboutus.jpg')}}" alt="">
    </div>
 
    <div class="content">
       <h3>About Us</h3>
       <p>Empowering university communities to share knowledge, experiences, and achievements. Join us in shaping a brighter academic future together.</p>
-      <a href="about.php" class="btn">Read More</a>
+      <a href="<?=url('')?>" class="btn">Read More</a>
    </div>
 
 </section>
@@ -265,7 +245,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable."</p>
             <h3>john deo</h3>
             <span>Student</span>
-            <img src="images/pic-1.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-1.png')}}" alt="">
          </div>
 
          <div class="swiper-slide slide">
@@ -278,7 +258,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable."</p>
             <h3>john deo</h3>
             <span>Student</span>
-            <img src="images/pic-2.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-2.png')}}" alt="">
          </div>
 
          <div class="swiper-slide slide">
@@ -292,7 +272,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable."</p>
             <h3>Sebastian F</h3>
             <span>Student</span>
-            <img src="images/pic-3.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-3.png')}}" alt="">
          </div>
 
          <div class="swiper-slide slide">
@@ -306,7 +286,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable."</p>
             <h3>Leonie</h3>
             <span>Student</span>
-            <img src="images/pic-4.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-4.png')}}" alt="">
          </div>
 
          <div class="swiper-slide slide">
@@ -318,7 +298,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable."</p>
             <h3>Jing</h3>
             <span>Student</span>
-            <img src="images/pic-5.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-5.png')}}" alt="">
          </div>
 
          <div class="swiper-slide slide">
@@ -331,7 +311,7 @@ if (isset($_SESSION['User_name'])){
             <p>"This university post sharing platform is a game-changer! It fosters collaboration and knowledge sharing among students, making learning enjoyable." </p>
             <h3>Iana</h3>
             <span>Student</span>
-            <img src="images/pic-6.png" alt="">
+            <img src="{{asset('storage/images/site images/pic-6.png')}}" alt="">
          </div>
 
       </div>
@@ -346,40 +326,40 @@ if (isset($_SESSION['User_name'])){
 
 <!-- footer section starts  -->
 
-<section class="footer">
+<section class="footer" style="background:url('{{asset('storage/images/site images/footer-bg.jpg')}}')no-repeat">
 
    <div class="box-container">
 
    <div class="box">
          <h3>quick links</h3>
-         <a href="index.php"> <i class="fas fa-angle-right"></i> Home</a>
-         <a href="product.php"> <i class="fas fa-angle-right"></i>About Us</a>
-         <a href="sign_in.php"> <i class="fas fa-angle-right"></i> Albums</a>
-         <a href="sign_up.php"> <i class="fas fa-angle-right"></i> News Feed</a>
+         <a href="<?=url('index')?>"> <i class="fas fa-angle-right"></i> Home</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i>About Us</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Albums</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> News Feed</a>
       </div>
 
       <div class="box">
          <h3>extra links</h3>
-         <a href="question.php"> <i class="fas fa-angle-right"></i> FAQs?</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="policy.php"> <i class="fas fa-angle-right"></i> privacy policy</a>
-         <a href="terms.php"> <i class="fas fa-angle-right"></i> terms & conditions</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> FAQs?</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Reviews</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> terms & conditions</a>
       </div>
 
       <div class="box">
          <h3>contact info</h3>
-         <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-         <a href="#"> <i class="fas fa-phone"></i> +94-779917404 </a>
-         <a href="#"> <i class="fas fa-envelope"></i> Unilinkup@gmail.com</a>
-         <a href="#"> <i class="fas fa-map"></i> University of Ruhuna, Wellamadama, Matara.</a>
+         <a href="<?=url('')?>"> <i class="fas fa-phone"></i> +123-456-7890 </a>
+         <a href="<?=url('')?>"> <i class="fas fa-phone"></i> +94-779917404 </a>
+         <a href="<?=url('')?>"> <i class="fas fa-envelope"></i> Unilinkup@gmail.com</a>
+         <a href="<?=url('')?>"> <i class="fas fa-map"></i> University of Ruhuna, Wellamadama, Matara.</a>
       </div>
 
       <div class="box">
          <h3>follow us</h3>
-         <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-         <a href="#"> <i class="fab fa-whatsapp"></i> WhatsApp </a>
-         <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-         <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+         <a href="<?=url('')?>"> <i class="fab fa-facebook-f"></i> facebook </a>
+         <a href="<?=url('')?>"> <i class="fab fa-whatsapp"></i> WhatsApp </a>
+         <a href="<?=url('')?>"> <i class="fab fa-twitter"></i> twitter </a>
+         <a href="<?=url('')?>"> <i class="fab fa-instagram"></i> instagram </a>
       </div>
 
    </div>

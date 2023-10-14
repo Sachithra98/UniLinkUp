@@ -125,13 +125,13 @@ require_once"taskbar.php";
 <div class="main-content">
     
     <div class="back" >
-        <a href="admin_societies.php" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_societies')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
         <h1>Add New society</h1>
 
-            <form action="process_form.php" method="post">
+            <form action="<?=url('')?>" method="post">
                 <div class="form-group">
                     <label for="society_id">Society ID:</label>
                     <input type="text" id="society_id" name="society_id" required>

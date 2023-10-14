@@ -74,7 +74,7 @@ require_once"taskbar.php";
 
 <div class="main-content">
     <div class="back" >
-        <a href="admin_societies.php" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 <div class="container">
     <h1>User Management of Admin</h1>

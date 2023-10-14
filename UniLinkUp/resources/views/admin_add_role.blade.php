@@ -125,7 +125,7 @@ require_once"taskbar.php";
 <div class="main-content">
     
     <div class="back" >
-        <a href="admin_societies.php" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_Role_UMR')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
