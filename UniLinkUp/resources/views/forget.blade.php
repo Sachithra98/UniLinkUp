@@ -77,12 +77,20 @@ button:hover {
 
 
 
-    </style>
-
-
+ </style>
 
 </head>
+
+
 <body>
+
+
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
+
+
+
     <div class="container">
         <div class="forgot-password-form">
             <h2>Forgot Password</h2>
@@ -96,5 +104,10 @@ button:hover {
             </form>
         </div>
     </div>
+
+    <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
+    
 </body>
 </html>

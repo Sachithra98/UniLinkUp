@@ -62,9 +62,9 @@
     @include('header')
 	<!-- header section ends -->
 
-    <!-- header section starts -->
+    <!-- taskbar section starts -->
     @include('taskbar')
-	<!-- header section ends -->
+	<!-- taskbar section ends -->
 
 
 
@@ -123,11 +123,9 @@
 </div>
 </div>
 
-<!-- footer section starts  -->
-
-<?php include 'footer.php'; ?>
-
-<!-- footer section ends -->
+    <!-- footer section starts -->
+    @include('footer')
+	<!-- footer section ends -->
 
 </body>
 </html>

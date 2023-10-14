@@ -59,17 +59,14 @@
 </head>
 <body>
    
-<!-- header section starts  -->
 
-<?php
-require_once"header.php";
-?>
-<?php
-require_once"taskbar.php";
-?>
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
 
-
-<!-- header section ends -->
+    <!-- taskbar section starts -->
+    @include('taskbar')
+	<!-- taskbar section ends -->
 
 
 <div class="main-content">
@@ -126,11 +123,9 @@ require_once"taskbar.php";
 </div>
 </div>
 
-<!-- footer section starts  -->
-
-<?php include 'footer.php'; ?>
-
-<!-- footer section ends -->
+    <!-- footer section starts -->
+    @include('footer')
+	<!-- footer section ends -->
 
 </body>
 </html>

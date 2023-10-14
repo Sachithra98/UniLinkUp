@@ -359,11 +359,10 @@
 
 
 
-    <!-- footer section starts  -->
-
-    <?php include 'footer.php'; ?>
-
-    <!-- footer section ends -->
+   <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
+    
 </div>
 </body>
 </html>
