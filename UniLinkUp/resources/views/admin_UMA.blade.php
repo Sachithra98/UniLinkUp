@@ -14,7 +14,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
 
    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
    <link rel="stylesheet" href="css/index.css"> -->
 

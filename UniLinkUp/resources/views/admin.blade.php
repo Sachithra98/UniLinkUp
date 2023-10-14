@@ -24,7 +24,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
    <link rel="stylesheet" href="css/index.css"> -->
 
@@ -86,14 +86,9 @@
 </head>
 <body>
    
-<!-- header section starts  -->
-
-<?php
-require_once"header.php";
-?>
-
-
-<!-- header section ends -->
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
 
 <div class="con">
 
@@ -368,7 +363,7 @@ require_once"header.php";
 
     <?php include 'footer.php'; ?>
 
-<!-- footer section ends -->
+    <!-- footer section ends -->
 </div>
 </body>
 </html>

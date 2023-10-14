@@ -6,7 +6,7 @@
     <title>Forgot Password</title>
     <style type="text/css">
         
-        body {
+body {
     margin: 0;
     padding: 0;
     background-image: url('background3.jpg'); /* Replace with your background image URL */
@@ -62,7 +62,7 @@ input[type="email"] {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #222;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -92,7 +92,7 @@ button:hover {
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <button type="submit">Reset Password</button>
+                <button class="btn" type="submit">Reset Password</button>
             </form>
         </div>
     </div>

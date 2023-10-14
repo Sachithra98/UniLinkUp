@@ -16,7 +16,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
 
 
 </head>
@@ -26,7 +26,7 @@
 
 <section class="header">
 
-   <a href="home.php" class="logo">UniLinkUp</a>
+   <a href="<?=url('index')?>" class="logo">UniLinkUp</a>
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
@@ -199,7 +199,7 @@
 
    </div>
 
-   <div class="load-more"> <a href="<?=url('login')?>" class="btn">Load More</a> </div>
+   <div class="load-more"> <a href="<?=url('')?>" class="btn">Load More</a> </div>
 
 </section>
 
@@ -382,7 +382,7 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- custom js file link  -->
-<script src="js/script.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 
 </body>
 </html>
