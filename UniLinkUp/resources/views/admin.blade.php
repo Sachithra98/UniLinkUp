@@ -92,9 +92,9 @@
 
 <div class="con">
 
-    <?php
-    require_once"taskbar.php";
-    ?>
+   <!-- taskbar section starts -->
+   @include('taskbar')
+	<!-- taskbar section ends -->
 
     <div class="container">
         <div class="greeting-box">
@@ -106,43 +106,11 @@
         </div>
 
         <div class="image-container">
-            <img class="image" src="images/wel.jpg" alt="Welcome Image">
+            <img class="image" src="{{asset('storage/images/site images/wel.jpg')}}" alt="Welcome Image">
         </div>
     </div>
 
-    <?php
-    // Replace with your database connection details
-    $servername ="localhost";
-    $username="root";
-    $password="";
-    $dbname = "uni_db";
-
-    // Create a database connection
-    $conn=mysqli_connect('localhost','root','','uni_db');
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Assuming you have a user ID or some way to identify the user
-    //$NO = 1; // Replace with the actual user ID
-
-    // Query to retrieve the user's name from the database
-    $sql = "SELECT Name FROM tbl_user";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $name = $row["Name"];
-    } else {
-        $name = "User"; // Default name if user not found
-    }
-
-    $conn->close();
-
-    ?>
+   
 
 
 
@@ -320,8 +288,7 @@
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
 
-            // Fetch the user's name from the PHP script
-            var name = <?php echo json_encode($name); ?>;
+            
 
             // Greeting message with the user's name
             var greeting;
@@ -351,6 +318,13 @@
             }
         }
 
+
+         // Retrieve the user's name and display the greeting message
+        var name = @json($name);
+        var greeting = "Good Morning " + name + "!";
+        document.getElementById("greeting").innerHTML = greeting;
+
+        
         // Call the clock function after defining it
         clock();
     </script>

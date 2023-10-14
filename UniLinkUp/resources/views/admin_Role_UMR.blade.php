@@ -92,7 +92,7 @@
                 <!-----------connect with database------------>
             <?php
             $c=1;
-            $con=mysqli_connect("localhost","root","","uni_db"); 
+            $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
             if ($con) {
                 // echo "Connection Done";
             }else{

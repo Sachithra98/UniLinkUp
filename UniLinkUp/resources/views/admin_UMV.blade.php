@@ -89,34 +89,30 @@
         </thead>
         <tbody>
             <!-----------connect with database------------>
-        <?php
-        $c=1;
-        $con=mysqli_connect("localhost","root","","uni_db"); 
-        if ($con) {
-            // echo "Connection Done";
-        }else{
-            echo "connection Failed";
-        }      
-        
-        ////select query start here////
-        $sel="SELECT * FROM tbl_user ";
-        $query=$con->query($sel);
-        while($row=$query->fetch_assoc()){
+            @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
 
-         
-        ?>
-            <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['Name'];?> </td>
-                <td><?php echo $row['Email'];?> </td>
-                <td><?php echo $row['Reg_Date'];?> </td>
-                <td>
-                <a href="" class="btn btn-success">View</a>
-                <a href="" class="btn btn-danger">Remove</a>
-            </td>
-            </tr>
-            <?php
-            }
-            ?>
+                    $sel = "SELECT * FROM tbl_user";
+                    $query = $con->query($sel);
+                    @endphp
+                    @while($row = $query->fetch_assoc())
+                        <tr>
+                            <td>{{ $c++ }}</td>
+                            <td>{{ $row['Name'] }}</td>
+                            <td>{{ $row['Email'] }}</td>
+                            <td>{{ $row['Reg_Date'] }}</td>
+                            <td>
+                                <a href="" class="btn btn-success">View</a>
+                                <a href="" class="btn btn-danger">Remove</a>
+                            </td>
+                        </tr>
+                    @endwhile
         </tbody>
     </table>
 

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,34 @@ Route::get('forget', function () {
     return view('forget');
 });
 
+Route::get('/search', 'PostController@search')->name('search');
+
+Route::get('/posts/{post}', 'PostController@show')->name('post.show');
+
+Route::get('admin_UMV', function () {
+    return view('admin_UMV');
+});
+
+Route::get('admin_UME', function () {
+    return view('admin_UME');
+});
+
+Route::get('admin_UMM', function () {
+    return view('admin_UMM');
+});
+
+Route::get('admin_UMA', function () {
+    return view('admin_UMA');
+});
+
+Route::get('admin_Role_UMR', function () {
+    return view('admin_Role_UMR');
+});
+
+Route::get('admin_societies', function () {
+    return view('admin_societies');
+});
+
+use App\Http\Controllers\HomeController;
+
+Route::get('/', [HomeController::class, 'index']);
