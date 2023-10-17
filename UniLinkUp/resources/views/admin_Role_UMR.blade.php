@@ -123,7 +123,7 @@
     </div>
     
     <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
-    <a href="admin_add_role.php" class="btn" style="align:center" >Add New Role</a>
+    <a href="<?=url('admin_add_role')?>" class="btn" style="align:center" >Add New Role</a>
     </div>
 
 </div>

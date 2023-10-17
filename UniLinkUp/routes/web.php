@@ -61,3 +61,16 @@ Route::get('admin_societies', function () {
 Route::get('/index', function () {
     return view('index'); // You can change 'index' to the actual view name you want to load.
 })->name('index');
+
+Route::get('/admin_societies', function () {
+    return view('admin_societies');
+});
+
+
+Route::get('admin_add_role', function () {
+    return view('admin_add_role');
+});
+
+Route::get('admin_add_societies', function () {
+    return view('admin_add_societies');
+});
