@@ -3,28 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password</title>
-    <style type="text/css">
-        
-body {
-    margin: 0;
-    padding: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
 
-.container_forget {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
+    <!-- custom css file link  -->
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
+
+    <title>Forgot Password</title>
+
+
+    <style type="text/css">
+
+        
+
 
 .forgot-password-form {
     width: 600px;
@@ -60,6 +49,7 @@ input[type="email"] {
     font-size: 16px;
 }
 
+/*
 button {
     background-color: #222;
     color: #fff;
@@ -73,7 +63,7 @@ button {
 button:hover {
     background-color: #0056b3;
 }
-
+ */
 
 
  </style>
