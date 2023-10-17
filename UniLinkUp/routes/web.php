@@ -58,6 +58,3 @@ Route::get('admin_societies', function () {
     return view('admin_societies');
 });
 
-use App\Http\Controllers\HomeController;
-
-Route::get('/', [HomeController::class, 'index']);
