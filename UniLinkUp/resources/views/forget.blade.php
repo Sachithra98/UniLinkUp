@@ -19,7 +19,7 @@ body {
     height: 100vh;
 }
 
-.container {
+.container_forget {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
     padding: 20px;
     border-radius: 5px;
@@ -91,7 +91,7 @@ button:hover {
 
 
 
-    <div class="container">
+    <div class="container_forget">
         <div class="forgot-password-form">
             <h2>Forgot Password</h2>
             <p>Please enter your email address to reset your password.</p>
