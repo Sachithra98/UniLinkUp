@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-use App\User; // Import the User model
+use App\Models\User; // Import the User model
 
 class HomeController extends Controller
 {
