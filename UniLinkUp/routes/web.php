@@ -71,6 +71,6 @@ Route::get('admin_add_role', function () {
     return view('admin_add_role');
 });
 
-Route::get('admin_add_societies', function () {
-    return view('admin_add_societies');
+Route::get('admin_add_society', function () {
+    return view('admin_add_society');
 });
