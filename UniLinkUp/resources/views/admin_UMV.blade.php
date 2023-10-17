@@ -98,7 +98,7 @@
                         echo "Connection Failed";
                     }
 
-                    $sel = "SELECT * FROM tbl_user";
+                    $sel = "SELECT * FROM users";
                     $query = $con->query($sel);
                     @endphp
                     @while($row = $query->fetch_assoc())

@@ -98,17 +98,17 @@
         }      
         
         ////select query start here////
-        $sel="SELECT * FROM tbl_user ";
+        $sel="SELECT * FROM users ";
         $query=$con->query($sel);
         while($row=$query->fetch_assoc()){
 
          
         ?>
             <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['Name'];?> </td>
-                <td><?php echo $row['Email'];?> </td>
-                <td><?php echo $row['Post'];?> </td>
-                <td><?php echo $row['Reg_Date'];?> </td>
+                <td><?php echo $row['name'];?> </td>
+                <td><?php echo $row['email'];?> </td>
+                <td><?php echo $row['post'];?> </td>
+                <td><?php echo $row['reg_Date'];?> </td>
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>

@@ -319,10 +319,6 @@
         }
 
 
-         // Retrieve the user's name and display the greeting message
-        var name = @json($name);
-        var greeting = "Good Morning " + name + "!";
-        document.getElementById("greeting").innerHTML = greeting;
 
         
         // Call the clock function after defining it

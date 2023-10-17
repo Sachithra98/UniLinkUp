@@ -100,7 +100,7 @@
             }      
             
             ////select query start here////
-            $sel="SELECT * FROM tbl_user ";
+            $sel="SELECT * FROM users ";
             $query=$con->query($sel);
             while($row=$query->fetch_assoc()){
 
