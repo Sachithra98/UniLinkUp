@@ -7,6 +7,11 @@
     <title>Upload Photos</title>
 </head>
 <body>
+    
+    <!-- header section starts -->
+	@include('header')
+	<!-- header section ends -->
+
         <div class="container">
           <div class="left-container">
             <button class="back-button">Back</button>
@@ -27,6 +32,10 @@
             </form>
         </div>
     </div>
+    <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
+
 </body>
 </html>
 

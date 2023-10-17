@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    
+    <!-- header section starts -->
+	@include('header')
+	<!-- header section ends -->
 
      <div class="container">
         
@@ -163,8 +165,12 @@
                 </div>
             </div>
         </div>
-    </div>           
-               
+    </div>
+
+    <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends --> 
+           
  </body>
 </html>               
                
