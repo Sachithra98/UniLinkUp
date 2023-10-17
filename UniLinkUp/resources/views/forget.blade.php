@@ -9,7 +9,6 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('background3.jpg'); /* Replace with your background image URL */
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, sans-serif;
