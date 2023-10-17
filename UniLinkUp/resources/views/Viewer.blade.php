@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Viewer Page</title>
-    <link rel="stylesheet" href="Viewer.css">
+    <link rel="stylesheet" href="{{ asset('css/Viewer.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
@@ -18,10 +18,10 @@
             <!-- Right Container Section 1 -->
             <div class="section">
                 <div class="welcome">
-                    <p><h2>Good Morning Jack!</h2></p>
+                    <p><h2>Good Morning  {{ $userName }}!</h2></p>
                     <p>Hi, you have reached UniLinkUP.
                     <br>Glad to see you here.<br> Have a nice day.</p>
-                    <img src="welcome-image.jpg" alt="Welcome Image">
+                    <img src="{{ asset('storage/images/site images/welcome-image.jpg') }}" alt="Welcome Image">
                 </div>
             </div>
       
@@ -30,7 +30,7 @@
                <div class="write-post-container">
                   <div class="post-row">   
                   <div class="user-profile">
-                     <img src="profile-pic1.JFIF">
+                  <img src="{{ asset('storage/images/site images/viewer profile-pic1.JFIF') }}">
                      <div>
                         <p>K.K.Vish <br>Leo Club</p><br>
                         <small>20.10.2</small>
@@ -38,11 +38,11 @@
                   </div>
 
                   <div class="dropdown">
-                  <a href="#"><i class="fa fa-ellipsis-v"></i></a>
+                  <a href="<?=url('')?>"> <i class="fa fa-ellipsis-v"></i></a>
                        <div class="dropdown-content">
-                       <a href="#"><i class="fa fa-download"></i>Download</a>
-                       <a href="#">View less</a>
-                       <a href="#">View more</a>
+                       <a href="<?=url('')?>"><i class="fa fa-download"></i>Download</a>
+                       <a href="<?=url('')?>">View less</a>
+                       <a href="<?=url('')?>">View more</a>
                        </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                      <p class="post-text2"><b>*Advance payment* (Rs.1000)</b> for ordering this tshirt can be given to us at your faculty premises from <b>20.11.2023</b> to <b>25.11.2023</b>
                       and for cash deposit deposit the money to the following account number and submit the receipt to us.<br> Ac.No:865734,BOC,S.T.Gunarathna </p>
                       
-                     <img src="notice.jpg" class="post-img">
+                      <img src="{{ asset('storage/images/site images/viewer_notice.jpg') }}" class="post-img">
 
                      <div class="post-row">
                          <div class="activity-icons">
@@ -70,19 +70,19 @@
          <div class="write-post-container">
                   <div class="post-row">   
                   <div class="user-profile">
-                     <img src="profile-pic2.JFIF">
+                  <img src="{{ asset('storage/images/site images/viewer profile-pic2.JFIF') }}">
                      <div>
                         <p>P.G.Rishi<br>Leo Club</p><br>
                         <small>21.10.2023</small>
                      </div>
                   
                   </div>
-                   <div class="dropdown">
-                  <a href="#"><i class="fa fa-ellipsis-v"></i></a>
+                  <div class="dropdown">
+                  <a href="<?=url('')?>"> <i class="fa fa-ellipsis-v"></i></a>
                        <div class="dropdown-content">
-                        <a href="#"><i class="fa fa-download"></i>Download</a>
-                       <a href="#">View less</a>
-                       <a href="#">View more</a>
+                       <a href="<?=url('')?>"><i class="fa fa-download"></i>Download</a>
+                       <a href="<?=url('')?>">View less</a>
+                       <a href="<?=url('')?>">View more</a>
                        </div>
                   </div>
                   </div>
@@ -92,7 +92,7 @@
                      <p class="post-text2"> Get ready for a night of pure musical magic at Sarasavi Uyana!<br>
                       Join us under the stars for an unforgettable evening filled with beautiful melodies and heartwarming moments.
                       Save the date and let the music sweep you off your feet!</p>
-                     <img src="event.jpg" class="post-img">
+                      <img src="{{ asset('storage/images/site images/viewer_event.jpg') }}" class="post-img">
 
                      <div class="post-row">
                          <div class="activity-icons">
@@ -110,19 +110,19 @@
          <div class="write-post-container">
                   <div class="post-row">   
                   <div class="user-profile">
-                     <img src="profile-pic2.JFIF">
+                  <img src="{{ asset('storage/images/site images/viewer profile-pic2.JFIF') }}">
                      <div>
                         <p>P.G.Rishi <br>Leo Club</p><br>
                         <small>21.10.2023</small>
                      </div>
                   
                   </div>
-                   <div class="dropdown">
-                  <a href="#"><i class="fa fa-ellipsis-v"></i></a>
+                  <div class="dropdown">
+                  <a href="<?=url('')?>"> <i class="fa fa-ellipsis-v"></i></a>
                        <div class="dropdown-content">
-                       <a href="#"><i class="fa fa-download"></i>Download</a>
-                       <a href="#">View less</a>
-                       <a href="#">View more</a>
+                       <a href="<?=url('')?>"><i class="fa fa-download"></i>Download</a>
+                       <a href="<?=url('')?>">View less</a>
+                       <a href="<?=url('')?>">View more</a>
                        </div>
                   </div>
                   </div>
