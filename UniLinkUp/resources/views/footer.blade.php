@@ -25,7 +25,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
    <link rel="stylesheet" href="css/index.css"> -->
 

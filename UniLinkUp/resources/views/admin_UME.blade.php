@@ -14,18 +14,18 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
 
    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
    <link rel="stylesheet" href="css/index.css"> -->
 
@@ -58,17 +58,14 @@
 </head>
 <body>
    
-<!-- header section starts  -->
 
-<?php
-require_once"header.php";
-?>
-<?php
-require_once"taskbar.php";
-?>
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
 
-
-<!-- header section ends -->
+    <!-- taskbar section starts -->
+    @include('taskbar')
+	<!-- taskbar section ends -->
 
 
 <div class="main-content">
@@ -92,7 +89,7 @@ require_once"taskbar.php";
             <!-----------connect with database------------>
         <?php
         $c=1;
-        $con=mysqli_connect("localhost","root","","uni_db"); 
+        $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
         if ($con) {
             // echo "Connection Done";
         }else{
@@ -125,11 +122,8 @@ require_once"taskbar.php";
 </div>
 </div>
 
-<!-- footer section starts  -->
-
-<?php include 'footer.php'; ?>
-
-<!-- footer section ends -->
-
+    <!-- footer section starts -->
+    @include('footer')
+	<!-- footer section ends -->
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style_tb.css" />
+    <link rel="stylesheet" href="{{ asset('css/style_tb.css') }} "/>
   </head>
   <body>
   
@@ -25,7 +25,7 @@
           <!-- start -->
 
           <li class="item">
-            <a href="admin.php" class="nav_link">
+            <a href="<?=url('admin')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>
@@ -60,17 +60,17 @@
             </div>
 
             <ul class="menu_items submenu">
-              <a href="admin_UMV.php" class="nav_link sublink">Viewer</a>
-              <a href="admin_UME.php" class="nav_link sublink">Editor</a>
-              <a href="admin_UMM.php" class="nav_link sublink">Moderator</a>
-              <a href="admin_UMA.php" class="nav_link sublink">Admin</a>
+              <a href="<?=url('admin_UMV')?>" class="nav_link sublink">Viewer</a>
+              <a href="<?=url('admin_UME')?>" class="nav_link sublink">Editor</a>
+              <a href="<?=url('admin_UMM')?>" class="nav_link sublink">Moderator</a>
+              <a href="<?=url('admin_UMA')?>" class="nav_link sublink">Admin</a>
             </ul>
           </li>
                    
         
 
           <li class="item">
-            <a href="admin_Role_UMR.php" class="nav_link">
+            <a href="<?=url('admin_Role_UMR')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-face"></i>
               </span>
@@ -78,7 +78,7 @@
             </a>
           </li>
           <li class="item">
-            <a href="admin_societies.php" class="nav_link">
+            <a href="<?=url('admin_societies')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-news"></i>
               </span>
@@ -101,6 +101,6 @@
       </div>
     </nav>
     <!-- JavaScript -->
-    <script src="js/script_tb.js"></script>
+    <script src="{{ asset('js/script_tb.js') }}"></script>
   </body>
 </html>

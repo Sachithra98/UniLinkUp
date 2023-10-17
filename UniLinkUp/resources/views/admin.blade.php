@@ -24,7 +24,7 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/sty.css">
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
    <link rel="stylesheet" href="css/index.css"> -->
 
@@ -86,20 +86,15 @@
 </head>
 <body>
    
-<!-- header section starts  -->
-
-<?php
-require_once"header.php";
-?>
-
-
-<!-- header section ends -->
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
 
 <div class="con">
 
-    <?php
-    require_once"taskbar.php";
-    ?>
+   <!-- taskbar section starts -->
+   @include('taskbar')
+	<!-- taskbar section ends -->
 
     <div class="container">
         <div class="greeting-box">
@@ -111,43 +106,11 @@ require_once"header.php";
         </div>
 
         <div class="image-container">
-            <img class="image" src="images/wel.jpg" alt="Welcome Image">
+            <img class="image" src="{{asset('storage/images/site images/wel.jpg')}}" alt="Welcome Image">
         </div>
     </div>
 
-    <?php
-    // Replace with your database connection details
-    $servername ="localhost";
-    $username="root";
-    $password="";
-    $dbname = "uni_db";
-
-    // Create a database connection
-    $conn=mysqli_connect('localhost','root','','uni_db');
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    // Assuming you have a user ID or some way to identify the user
-    //$NO = 1; // Replace with the actual user ID
-
-    // Query to retrieve the user's name from the database
-    $sql = "SELECT Name FROM tbl_user";
-
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $name = $row["Name"];
-    } else {
-        $name = "User"; // Default name if user not found
-    }
-
-    $conn->close();
-
-    ?>
+   
 
 
 
@@ -325,8 +288,7 @@ require_once"header.php";
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
 
-            // Fetch the user's name from the PHP script
-            var name = <?php echo json_encode($name); ?>;
+            
 
             // Greeting message with the user's name
             var greeting;
@@ -356,6 +318,13 @@ require_once"header.php";
             }
         }
 
+
+         // Retrieve the user's name and display the greeting message
+        var name = @json($name);
+        var greeting = "Good Morning " + name + "!";
+        document.getElementById("greeting").innerHTML = greeting;
+
+        
         // Call the clock function after defining it
         clock();
     </script>
@@ -364,11 +333,10 @@ require_once"header.php";
 
 
 
-    <!-- footer section starts  -->
-
-    <?php include 'footer.php'; ?>
-
-<!-- footer section ends -->
+   <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
+    
 </div>
 </body>
 </html>

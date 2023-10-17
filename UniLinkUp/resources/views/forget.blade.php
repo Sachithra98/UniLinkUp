@@ -6,7 +6,7 @@
     <title>Forgot Password</title>
     <style type="text/css">
         
-        body {
+body {
     margin: 0;
     padding: 0;
     background-image: url('background3.jpg'); /* Replace with your background image URL */
@@ -62,7 +62,7 @@ input[type="email"] {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #222;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -77,12 +77,20 @@ button:hover {
 
 
 
-    </style>
-
-
+ </style>
 
 </head>
+
+
 <body>
+
+
+    <!-- header section starts -->
+    @include('header')
+	<!-- header section ends -->
+
+
+
     <div class="container">
         <div class="forgot-password-form">
             <h2>Forgot Password</h2>
@@ -92,9 +100,14 @@ button:hover {
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <button type="submit">Reset Password</button>
+                <button class="btn" type="submit">Reset Password</button>
             </form>
         </div>
     </div>
+
+    <!-- footer section starts -->
+	@include('footer')
+	<!-- footer section ends -->
+    
 </body>
 </html>
