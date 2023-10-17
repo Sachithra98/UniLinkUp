@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="viewer_upload.css">
+    <link rel="stylesheet" href="{{ asset('css/viewer_upload.css') }}">
     <title>Upload Photos</title>
 </head>
 <body>
@@ -11,7 +11,8 @@
           <div class="left-container">
             <button class="back-button">Back</button>
             <h1>Upload Photos</h1>
-            <form action="#" method="post" enctype="multipart/form-data">
+            <form action="<?=url('')?>"> method="post">
+                @csrf
                 <label for="postId">Post ID:</label>
                 <input type="text" id="postId" name="postId" required>
                 <label for="eventTitle">Event Title:</label>
