@@ -20,7 +20,7 @@
             <!-- Right Container Section 1 -->
             <div class="section">
                 <div class="welcome">
-                    <p><h2>Good Morning  {{ $userName }}!</h2></p>
+                    <p><h2>Good Morning  !</h2></p>
                     <p>Hi, you have reached UniLinkUP.
                     <br>Glad to see you here.<br> Have a nice day.</p>
                     <img src="{{ asset('storage/images/site images/welcome-image.jpg') }}" alt="Welcome Image">
