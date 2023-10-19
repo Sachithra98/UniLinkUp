@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('Description');
             $table->timestamp('Expire_Date');
             $table->string('Title');
+            $table->string('media_path')->nullable();
+
 
             // Use the binary data type for storing the PDF file
             $table->binary('Approval_Letter');

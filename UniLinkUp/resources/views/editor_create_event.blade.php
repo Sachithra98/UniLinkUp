@@ -188,7 +188,7 @@
                     <label for="society">Society:</label>
                     <select>
                         <option>Leo club</option>
-                        <option>Aisec</option>
+                        <option>AIESEC</option>
                         <option>Buddhist Society</option>
                         <option>Rotaract Club</option>
                         <option>Catheolic Society</option>
