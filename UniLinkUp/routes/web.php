@@ -94,3 +94,7 @@ Route::get('admin_createaccS', function () {
 Route::get('admin_createaccA', function () {
     return view('admin_createaccA');
 });
+
+Route::get('admin_add_faculty', function () {
+    return view('admin_add_faculty');
+});
