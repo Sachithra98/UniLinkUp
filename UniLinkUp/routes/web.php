@@ -98,3 +98,7 @@ Route::get('admin_createaccA', function () {
 Route::get('admin_add_faculty', function () {
     return view('admin_add_faculty');
 });
+
+Route::get('editor_create_event', function () {
+    return view('editor_create_event');
+});
