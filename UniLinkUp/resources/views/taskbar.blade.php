@@ -44,10 +44,11 @@
           
 
             <ul class="menu_items submenu">
-              <a href="#" class="nav_link sublink">Viewer</a>
-              <a href="#" class="nav_link sublink">Editor</a>
-              <a href="#" class="nav_link sublink">Moderator</a>
-              <a href="#" class="nav_link sublink">Staff</a>
+              <a href=<?=url('admin_createaccV')?> class="nav_link sublink">Student</a>
+              <a href=<?=url('admin_createaccE')?> class="nav_link sublink">Editor</a>
+              <a href=<?=url('admin_createaccM')?> class="nav_link sublink">Moderator</a>
+              <a href=<?=url('admin_createaccS')?> class="nav_link sublink">Staff</a>
+              <a href=<?=url('admin_createaccA')?> class="nav_link sublink">Admin</a>
             </ul>
             </li>
 
