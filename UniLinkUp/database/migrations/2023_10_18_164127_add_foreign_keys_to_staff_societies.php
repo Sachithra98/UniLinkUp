@@ -8,7 +8,7 @@ class AddForeignKeysToStaffSocieties extends Migration
 {
     public function up()
     {
-        Schema::table('staff_societies', function (Blueprint $table) {
+        Schema::table('staff__societies', function (Blueprint $table) {
             // Add a foreign key constraint to the `Staff_Id` column
             $table->foreign('Staff_Id')
                 ->references('Staff_Id')
@@ -25,7 +25,7 @@ class AddForeignKeysToStaffSocieties extends Migration
 
     public function down()
     {
-        Schema::table('staff_societies', function (Blueprint $table) {
+        Schema::table('staff__societies', function (Blueprint $table) {
             $table->dropForeign(['Staff_Id']);
             $table->dropForeign(['Society_Id']);
         });
