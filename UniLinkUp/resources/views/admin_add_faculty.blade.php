@@ -128,8 +128,8 @@
     <div class="container">
         <h1>Add New Faculty</h1>
 
-            <form action="<?=url('')?>" method="post">
-                
+            <form action="{{ url('/facultyInput') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="faculty_ID">Faculty ID:</label>
                     <input type="text" id="faculty_ID" name="faculty_ID" required>
