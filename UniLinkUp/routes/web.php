@@ -74,3 +74,23 @@ Route::get('admin_add_role', function () {
 Route::get('admin_add_society', function () {
     return view('admin_add_society');
 });
+
+Route::get('admin_createaccV', function () {
+    return view('admin_createaccV');
+});
+
+Route::get('admin_createaccE', function () {
+    return view('admin_createaccE');
+});
+
+Route::get('admin_createaccM', function () {
+    return view('admin_createaccM');
+});
+
+Route::get('admin_createaccS', function () {
+    return view('admin_createaccS');
+});
+
+Route::get('admin_createaccA', function () {
+    return view('admin_createaccA');
+});
