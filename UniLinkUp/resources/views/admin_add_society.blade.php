@@ -148,6 +148,11 @@
                     <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
+
+                <div class="form-group">
+                    <label for="faculty">Faculty:</label>
+                    <input type="text" id="faculty" name="faculty" required>
+                </div>
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
