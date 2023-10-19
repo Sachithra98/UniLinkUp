@@ -169,7 +169,7 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group faculty-options">
                     <label for="faculty">Faculty:</label>
                     <select>
                         <option>Faculty of Science</option>
@@ -184,7 +184,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group university-society-options">
                     <label for="society">Society:</label>
                     <select>
                         <option>Leo club</option>
@@ -196,9 +196,35 @@
                         <option>Mathematical & Statistics Society</option>
                     </select>
                 </div>
+                <script>
+                
+    $(document).ready(function() {
+        const universitySocietyRadio = $('#university_society');
+        const facultySocietyRadio = $('#faculty_society');
+        const universitySocietyOptions = $('.university-society-options');
+        const facultyOptions = $('.faculty-options');
+        const universitySocietySelect = $('#universitySocietySelect');
+        const facultySelect = $('#facultySelect');
 
+        universitySocietyRadio.change(function() {
+            if (universitySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.hide();
+                facultySelect.prop('disabled', true);
+                universitySocietySelect.prop('disabled', false);
+            }
+        });
 
-
+        facultySocietyRadio.change(function() {
+            if (facultySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.show();
+                facultySelect.prop('disabled', false);
+                universitySocietySelect.prop('disabled', false);
+            }
+        });
+    });
+</script>
                 
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
@@ -216,6 +242,8 @@
     <!-- footer section starts -->
     @include('footer')
 	<!-- footer section ends -->
-
+    @section('scripts')
+    <script src="{{ asset('js/your-js-file.js') }}"></script>
+@endsection
 </body>
 </html>
