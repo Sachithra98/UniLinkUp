@@ -97,16 +97,17 @@
         }      
         
         ////select query start here////
-        $sel="SELECT * FROM users ";
+        $sel="SELECT * FROM admins ";
         $query=$con->query($sel);
         while($row=$query->fetch_assoc()){
 
          
         ?>
             <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['name'];?> </td>
-                <td><?php echo $row['email'];?> </td>
-                <td><?php echo $row['reg_Date'];?> </td>
+                <td><?php echo $row['Admin_Id'];?> </td>
+                <td><?php echo $row['Admin_Name'];?> </td>
+                <td><?php echo $row['Admin_Email'];?> </td>
+             
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>
