@@ -1,28 +1,24 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
-return new class extends Migration
+class AddForeignKeyToRoles extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::table('roles', function (Blueprint $table) {
-            //
+            // Add a foreign key constraint to the `Admin_Id` column
+            $table->foreign('Admin_Id')->references('Admin_Id')->on('admins')->onDelete('cascade');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::table('roles', function (Blueprint $table) {
-            //
+            $table->dropForeign(['Admin_Id']);
         });
     }
-};
+}
+
