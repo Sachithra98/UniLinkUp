@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add New Society</title>
+   <title>Add New Faculty</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -122,36 +122,24 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin_societies')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Add New society</h1>
+        <h1>Add New Faculty</h1>
 
             <form action="<?=url('')?>" method="post">
+                
                 <div class="form-group">
-                    <label for="society_id">Society ID:</label>
-                    <input type="text" id="society_id" name="society_id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="society_name">Society Name:</label>
-                    <input type="text" id="society_name" name="society_name" required>
+                    <label for="faculty_ID">Faculty ID:</label>
+                    <input type="text" id="faculty_ID" name="faculty_ID" required>
                 </div>
 
 
-                <div class="radio-group">
-                    <label>Choose Society Type:</label><br>
-                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
-                    <label for="university_society">University Society</label>
-                    
-                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
-                    <label for="faculty_society">Faculty Society</label><br><br>
-                </div>
 
                 <div class="form-group">
-                    <label for="faculty">Faculty:</label>
-                    <input type="text" id="faculty" name="faculty" required>
+                    <label for="faculty_name">Faculty Name:</label>
+                    <input type="text" id="faculty_name" name="faculty_name" required>
                 </div>
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
