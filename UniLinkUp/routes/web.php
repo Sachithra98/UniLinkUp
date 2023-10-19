@@ -106,3 +106,8 @@ Route::get('admin_add_faculty', function () {
 
 Route::post('/admin_add_faculty', [FacultyController::class, 'faculty'])->name('admin_add_faculty');
 Route::post('/facultyInput', [FacultyController::class, 'facultyInput'])->name('facultyInput');
+
+Route::get('editor_create_event', function () {
+    return view('editor_create_event');
+});
+
