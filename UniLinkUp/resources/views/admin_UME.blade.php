@@ -87,35 +87,35 @@
         </thead>
         <tbody>
             <!-----------connect with database------------>
-        <?php
-        $c=1;
-        $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
-        if ($con) {
-            // echo "Connection Done";
-        }else{
-            echo "connection Failed";
-        }      
+            @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
+  
         
-        ////select query start here////
-        $sel="SELECT * FROM editors ";
-        $query=$con->query($sel);
-        while($row=$query->fetch_assoc()){
+                    ////select query start here////
+                    $sel="SELECT * FROM editors ";
+                    $query=$con->query($sel);
+            @endphp
+                    @while($row = $query->fetch_assoc())
 
          
-        ?>
+     
             <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['E_Name'];?> </td>
-                <td><?php echo $row['E_Email'];?> </td>
-                <td><?php echo $row['Society_Name'];?> </td>
-                <td><?php echo $row['Dep_Name'];?> </td>
+                <td>{{ $row['E_Name'] }} </td>
+                <td>{{ $row['E_Email'] }} </td>
+                <td>{{ 'Society_Name' }} </td>
+                <td>{{ 'Dep_Name' }} </td>
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>
             </td>
             </tr>
-            <?php
-            }
-            ?>
+            @endwhile
         </tbody>
     </table>
 

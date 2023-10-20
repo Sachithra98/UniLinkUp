@@ -101,8 +101,6 @@ Route::get('admin_add_faculty', function () {
     return view('admin_add_faculty');
 });
 
-//Route::post('/admin_add_faculty',[FacultyController::class, 'Faculty'])->name('Faculty');
-//Route::post('/facultyInput',[FacultyController::class, 'facultyInput'])->name('facultyInput');
 
 Route::post('/admin_add_faculty', [FacultyController::class, 'faculty'])->name('admin_add_faculty');
 Route::post('/facultyInput', [FacultyController::class, 'facultyInput'])->name('facultyInput');
@@ -121,4 +119,8 @@ Route::get('editor_create_poll', function () {
 
 Route::get('editor', function () {
     return view('editor');
+});
+
+Route::get('admin_faculties', function () {
+    return view('admin_faculties');
 });

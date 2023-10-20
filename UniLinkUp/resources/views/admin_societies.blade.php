@@ -80,39 +80,35 @@
                     <th> No  </th>
                     <th> Society_ID </th>
                     <th> Society_Name </th>
-                    <th> Faculty/University society </th>
                     <th> Action  </th>
                 </tr>
             </thead>
             <tbody>
                 <!-----------connect with database------------>
-            <?php
-            $c=1;
-            $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
-            if ($con) {
-                // echo "Connection Done";
-            }else{
-                echo "connection Failed";
-            }      
+                @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
             
-            ////select query start here////
-            $sel="SELECT * FROM societies ";
-            $query=$con->query($sel);
-            while($row=$query->fetch_assoc()){
+                    ////select query start here////
+                    $sel="SELECT * FROM societies ";
+                    $query=$con->query($sel);
+                @endphp
+                @while($row = $query->fetch_assoc())
 
-            
-            ?>
-                <tr><td><?php echo $c++;?> </td>
-                    <td><?php echo $row['Society_Id'];?> </td>
-                    <td><?php echo $row['Society_Name'];?> </td>
-                    <td>
+                <tr><td> {{$c++}} </td>
+                    <td>{{ $row['Society_Id'] }}</td>
+                    <td>{{ $row['Society_Name'] }} </td>
+                <td>
                    
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>
-                <?php
-                }
-                ?>
+                @endwhile 
             </tbody>
         </table>
 
