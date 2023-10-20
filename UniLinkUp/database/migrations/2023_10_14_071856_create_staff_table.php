@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Staff_Password');
             $table->string('Staff_Name');
             $table->string('Admin_Id');
+            $table->timestamps();
 
         });
     }
