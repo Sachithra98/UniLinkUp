@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Event</title>
+   <title>Create New Event</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -140,7 +140,7 @@
     </div>
 
     <div class="container">
-        <h1>Create Event</h1>
+        <h1>Create New Event</h1>
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
@@ -210,7 +210,9 @@
                         <option>Mathematical & Statistics Society</option>
                     </select>
                 </div>
-                <script>
+            
+            
+    <script>
                 
     $(document).ready(function() {
         const universitySocietyRadio = $('#university_society');
@@ -258,6 +260,6 @@
 	<!-- footer section ends -->
     @section('scripts')
     <script src="{{ asset('js/your-js-file.js') }}"></script>
-@endsection
+    @endsection
 </body>
 </html>

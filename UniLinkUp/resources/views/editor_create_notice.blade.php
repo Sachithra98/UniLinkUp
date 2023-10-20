@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Event</title>
+   <title>Create New Notice</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -140,7 +140,7 @@
     </div>
 
     <div class="container">
-        <h1>Create Event</h1>
+        <h1>Create New Notice</h1>
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
@@ -226,6 +226,36 @@
     </div>
     
 </div>
+
+<script>
+                
+    $(document).ready(function() {
+        const universitySocietyRadio = $('#university_society');
+        const facultySocietyRadio = $('#faculty_society');
+        const universitySocietyOptions = $('.university-society-options');
+        const facultyOptions = $('.faculty-options');
+        const universitySocietySelect = $('#universitySocietySelect');
+        const facultySelect = $('#facultySelect');
+
+        universitySocietyRadio.change(function() {
+            if (universitySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.hide();
+                facultySelect.prop('disabled', true);
+                universitySocietySelect.prop('disabled', false);
+            }
+        });
+
+        facultySocietyRadio.change(function() {
+            if (facultySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.show();
+                facultySelect.prop('disabled', false);
+                universitySocietySelect.prop('disabled', false);
+            }
+        });
+    });
+</script>
 
     <!-- footer section starts -->
     @include('footer')
