@@ -82,41 +82,40 @@
                 <th> Name  </th>
                 <th> Email  </th>
                 <th> Position  </th>
-                <!-- <th> Registered Date  </th> -->
                 <th> Action  </th>
             </tr>
         </thead>
         <tbody>
             <!-----------connect with database------------>
-        <?php
-        $c=1;
-        $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
-        if ($con) {
-            // echo "Connection Done";
-        }else{
-            echo "connection Failed";
-        }      
+            @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
+  
         
-        ////select query start here////
-        $sel="SELECT * FROM moderators ";
-        $query=$con->query($sel);
-        while($row=$query->fetch_assoc()){
+                    ////select query start here////
+                    $sel="SELECT * FROM moderators ";
+                    $query=$con->query($sel);
+            @endphp
+                    @while($row = $query->fetch_assoc())
+        
 
          
-        ?>
             <tr><td><?php echo $c++;?> </td>
                 <td><?php echo $row['M_Name'];?> </td>
                 <td><?php echo $row['M_Email'];?> </td>
                 <td><?php echo $row['Position'];?> </td>
-                <!-- <td><?php echo $row['reg_Date'];?> </td> -->
+                
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>
             </td>
             </tr>
-            <?php
-            }
-            ?>
+            @endwhile
         </tbody>
     </table>
 

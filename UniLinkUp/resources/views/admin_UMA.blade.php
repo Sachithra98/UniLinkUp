@@ -86,22 +86,25 @@
         </thead>
         <tbody>
             <!-----------connect with database------------>
-        <?php
-        $c=1;
-        $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
-        if ($con) {
-            // echo "Connection Done";
-        }else{
-            echo "connection Failed";
-        }      
+       @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
+  
         
-        ////select query start here////
-        $sel="SELECT * FROM admins ";
-        $query=$con->query($sel);
-        while($row=$query->fetch_assoc()){
+                    ////select query start here////
+                    $sel="SELECT * FROM admins ";
+                    $query=$con->query($sel);
+        @endphp
+                    @while($row = $query->fetch_assoc())
+        
 
          
-        ?>
+        
             <tr>
                 <td><?php echo $row['Admin_Id'];?> </td>
                 <td><?php echo $row['Admin_Name'];?> </td>
@@ -112,9 +115,7 @@
                 <a href="" class="btn btn-danger">Remove</a>
             </td>
             </tr>
-            <?php
-            }
-            ?>
+            @endwhile
         </tbody>
     </table>
 
