@@ -31,9 +31,9 @@ html::-webkit-scrollbar{
    width: 1rem;
 }
 
-html::-webkit-scrollbar-track{
+/* html::-webkit-scrollbar-track{
    background-color: var(--white);
-}
+} */
 
 html::-webkit-scrollbar-thumb{
    background-color: var(--main-color);

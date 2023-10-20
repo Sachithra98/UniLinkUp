@@ -1,0 +1,10 @@
+:root {
+    --background: #fff;
+    --text: #333;
+  }
+  body {
+    background-color: var(--background);
+    color: var(--text);
+  }
+  /* Additional light mode styles */
+  
