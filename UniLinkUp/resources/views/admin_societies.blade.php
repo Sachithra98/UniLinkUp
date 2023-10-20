@@ -96,16 +96,15 @@
             }      
             
             ////select query start here////
-            $sel="SELECT * FROM users ";
+            $sel="SELECT * FROM societies ";
             $query=$con->query($sel);
             while($row=$query->fetch_assoc()){
 
             
             ?>
                 <tr><td><?php echo $c++;?> </td>
-                    <td><?php echo $row['Society_ID'];?> </td>
-                    <td><?php echo $row[' Society_Name'];?> </td>
-                    <td><?php echo $row[' Faculty/University society '];?> </td>
+                    <td><?php echo $row['Society_Id'];?> </td>
+                    <td><?php echo $row['Society_Name'];?> </td>
                     <td>
                    
                     <a href="" class="btn btn-danger">Remove</a>

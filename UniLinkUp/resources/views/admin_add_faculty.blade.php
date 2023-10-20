@@ -128,6 +128,12 @@
     <div class="container">
         <h1>Add New Faculty</h1>
 
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+
             <form action="{{ url('/facultyInput') }}" method="post">
                 @csrf
                 <div class="form-group">

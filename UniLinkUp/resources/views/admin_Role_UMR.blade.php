@@ -84,7 +84,9 @@
             <thead>
                 <tr>
                     <th> No  </th>
-                    <th> Role  </th>
+                    <th> Role Name  </th>
+                    <th> Responsibilities  </th>
+                    <th> Who_Are_Responsible  </th>
                     <th> Action  </th>
                 </tr>
             </thead>
@@ -100,14 +102,18 @@
             }      
             
             ////select query start here////
-            $sel="SELECT * FROM users ";
+            $sel="SELECT * FROM roles ";
             $query=$con->query($sel);
             while($row=$query->fetch_assoc()){
 
             
             ?>
                 <tr><td><?php echo $c++;?> </td>
-                    <td><?php echo $row['Role'];?> </td>
+                    <td><?php echo $row['Role_Id'];?> </td>
+                    <td><?php echo $row['Role_Name'];?> </td>
+                    <td><?php echo $row['Responsibilities'];?> </td>
+                    <td><?php echo $row['Who_Are_Responsible'];?> </td>
+
                     <td>
                     <a href="" class="btn btn-success">View</a>
                     <a href="" class="btn btn-success">Edit</a>
