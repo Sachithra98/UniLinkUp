@@ -144,17 +144,17 @@
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
-                    <label for="post_id">Post ID:</label>
+                    <label for="post_id">Notice ID:</label>
                     <input type="text" id="society_id" name="society_id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post Title">Post Title:</label>
+                    <label for="post Title">Notice Title:</label>
                     <input type="text" id="ost Title" name="ost Title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post disc">Post Discription:</label>
+                    <label for="post disc">Notice Discription:</label>
                     <input type="text" id="post disc" name="post disc" required>
                 </div>
 
@@ -183,7 +183,7 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group faculty-options">
+                <div class="form-group">
                     <label for="faculty">Faculty:</label>
                     <select>
                         <option>Faculty of Science</option>
@@ -198,7 +198,7 @@
                     </select>
                 </div>
 
-                <div class="form-group university-society-options">
+                <div class="form-group">
                     <label for="society">Society:</label>
                     <select>
                         <option>Leo club</option>
@@ -210,35 +210,9 @@
                         <option>Mathematical & Statistics Society</option>
                     </select>
                 </div>
-                <script>
-                
-    $(document).ready(function() {
-        const universitySocietyRadio = $('#university_society');
-        const facultySocietyRadio = $('#faculty_society');
-        const universitySocietyOptions = $('.university-society-options');
-        const facultyOptions = $('.faculty-options');
-        const universitySocietySelect = $('#universitySocietySelect');
-        const facultySelect = $('#facultySelect');
 
-        universitySocietyRadio.change(function() {
-            if (universitySocietyRadio.is(':checked')) {
-                universitySocietyOptions.show();
-                facultyOptions.hide();
-                facultySelect.prop('disabled', true);
-                universitySocietySelect.prop('disabled', false);
-            }
-        });
 
-        facultySocietyRadio.change(function() {
-            if (facultySocietyRadio.is(':checked')) {
-                universitySocietyOptions.show();
-                facultyOptions.show();
-                facultySelect.prop('disabled', false);
-                universitySocietySelect.prop('disabled', false);
-            }
-        });
-    });
-</script>
+
                 
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
@@ -256,8 +230,6 @@
     <!-- footer section starts -->
     @include('footer')
 	<!-- footer section ends -->
-    @section('scripts')
-    <script src="{{ asset('js/your-js-file.js') }}"></script>
-@endsection
+
 </body>
 </html>
