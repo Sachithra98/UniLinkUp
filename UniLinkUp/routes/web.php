@@ -65,3 +65,7 @@ Route::get('/index', function () {
 Route::get('editor_notification', function () {
     return view('editor_notification');
 });
+
+Route::get('edit', function () {
+    return view('edit');
+});
