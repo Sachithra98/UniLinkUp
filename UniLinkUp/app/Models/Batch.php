@@ -9,4 +9,5 @@ class Batch extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    
 }

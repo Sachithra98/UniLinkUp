@@ -10,8 +10,8 @@ class AddForeignKeysToModerators extends Migration
     {
         Schema::table('moderators', function (Blueprint $table) {
             // Add a foreign key constraint to the `Editor_Id` column
-            
-            $table->foreign('Editor_Id')->references('Editor_Id')->on('editors')->onDelete('cascade');
+
+            // $table->foreign('Editor_Id')->references('Editor_Id')->on('editors')->onDelete('cascade');
 
             // Add a foreign key constraint to the `Admin_Id` column
             $table->foreign('Admin_Id')->references('Admin_Id')->on('admins')->onDelete('cascade');
@@ -27,7 +27,7 @@ class AddForeignKeysToModerators extends Migration
     public function down()
     {
         Schema::table('moderators', function (Blueprint $table) {
-            $table->dropForeign(['Editor_Id']);
+            // $table->dropForeign(['Editor_Id']);
             $table->dropForeign(['Admin_Id']);
             $table->dropForeign(['Dep_Id']);
             $table->dropForeign(['Society_Id']);

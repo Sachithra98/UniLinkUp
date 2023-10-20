@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('S_Name');
             $table->string('Admin_Id');
             $table->string('Dep_Id');
+            $table->timestamps();
         });
     }
 

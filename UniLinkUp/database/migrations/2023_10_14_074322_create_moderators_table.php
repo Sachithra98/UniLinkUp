@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('M_Name');
             $table->string('Society_Id');
             $table->string('Admin_Id');
-            $table->string('Editor_Id');
+            $table->timestamps();
 
         });
     }

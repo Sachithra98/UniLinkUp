@@ -15,12 +15,13 @@ return new class extends Migration
             $table->string('Editor_Id')->primary();
             $table->string('Faculty_Id');
             $table->string('Batch_Id');
-            $table->string('S_Email');
-            $table->string('S_Password');
-            $table->string('S_Name');
+            $table->string('E_Email');
+            $table->string('E_Password');
+            $table->string('E_Name');
             $table->string('Society_Id');
             $table->string('Admin_Id');
             $table->string('Dep_Id');
+            $table->timestamps();
         });
     }
 
