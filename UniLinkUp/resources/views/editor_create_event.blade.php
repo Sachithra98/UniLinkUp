@@ -72,6 +72,23 @@
             border-radius: 4px;
         }
 
+        /* Style file input fields */
+        .main-content .container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .main-content .container  .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
         /* Style radio buttons and labels */
         .main-content .container input[type="radio"] {
             margin-right: 5px;
@@ -148,12 +165,12 @@
 
                 <div class="form-group">
                     <label for="">Post Media:</label>
-                    <input type="text" id="" name="" required>
+                    <input type="file" id="post" name="post" multiple required>
                 </div>
 
                 <div class="form-group">
                     <label for="approval">Approval letter:</label>
-                    <input type="text" id="approval" name="approval" required>
+                    <input type="file" id="approval" name="approval" multiple required>
                 </div>
 
 
