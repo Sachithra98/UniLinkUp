@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-4 mx-auto">
                 <div class="profile-card text-center">
-                    <img src="second.jpg" alt="Profile Picture" class="profile-picture">
+                    <img src="{{asset('storage/images/site images/second.jpg')}}" alt="Profile Picture" class="profile-picture">
                     <h2>Name:</h2>
                     <p>
                         <i class="fas fa-envelope"></i> Email: 
