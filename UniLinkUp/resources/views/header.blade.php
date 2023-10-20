@@ -33,7 +33,7 @@
          <button type="submit"><i class="fa fa-search"></i></button>
       </form>
    </a>
-   <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
+   <a href="<?=url('editor_notification')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
    <a href="<?=url('')?>">Log Out</a>
    
 
@@ -52,7 +52,7 @@ echo'
    <li class="nav-item">
    <a class="nav-link" href="sign_in.php">Sign In</a>
    </li>
-   <li class="nav-item">
+   <li class="nav-item">s
    <a class="nav-link" href="sign_up.php">Sign Up</a>
    </li>
 

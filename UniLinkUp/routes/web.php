@@ -61,3 +61,7 @@ Route::get('admin_societies', function () {
 Route::get('/index', function () {
     return view('index'); // You can change 'index' to the actual view name you want to load.
 })->name('index');
+
+Route::get('editor_notification', function () {
+    return view('editor_notification');
+});
