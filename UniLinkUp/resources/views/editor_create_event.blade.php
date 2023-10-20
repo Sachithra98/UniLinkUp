@@ -145,17 +145,17 @@
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
                     <label for="post_id">Post ID:</label>
-                    <input type="text" id="society_id" name="society_id" required>
+                    <input type="text" id="post_id" name="post_id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post Title">Post Title:</label>
-                    <input type="text" id="ost Title" name="ost Title" required>
+                    <label for="post_title">Post Title:</label>
+                    <input type="text" id="post_title" name="post_title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post disc">Post Discription:</label>
-                    <input type="text" id="post disc" name="post disc" required>
+                    <label for="post_desc">Post Description:</label>
+                    <input type="text" id="post_desc" name="post_desc" required>
                 </div>
 
                 <div class="form-group">

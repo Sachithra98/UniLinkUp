@@ -144,17 +144,17 @@
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
-                    <label for="post_id">Notice ID:</label>
-                    <input type="text" id="society_id" name="society_id" required>
+                    <label for="notice_id">Notice ID:</label>
+                    <input type="text" id="notice_id" name="notice_id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post Title">Notice Title:</label>
-                    <input type="text" id="ost Title" name="ost Title" required>
+                    <label for="notice_title">Notice Title:</label>
+                    <input type="text" id="notice_title" name="notice_title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post disc">Notice Discription:</label>
+                    <label for="notice_desc">Notice Description:</label>
                     <input type="text" id="post disc" name="post disc" required>
                 </div>
 
@@ -164,7 +164,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Post Media:</label>
+                    <label for="">Notice Media:</label>
                     <input type="file" id="post" name="post" multiple required>
                 </div>
 
@@ -183,7 +183,7 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group faculty-options">
                     <label for="faculty">Faculty:</label>
                     <select>
                         <option>Faculty of Science</option>
@@ -198,7 +198,7 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group university-society-options">
                     <label for="society">Society:</label>
                     <select>
                         <option>Leo club</option>
@@ -210,24 +210,9 @@
                         <option>Mathematical & Statistics Society</option>
                     </select>
                 </div>
-
-
-
-                
-           
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
-                </div>
-
-     
-
-            </form>
-    </div>
-    
-</div>
-
-<script>
+            
+            
+    <script>
                 
     $(document).ready(function() {
         const universitySocietyRadio = $('#university_society');
@@ -256,10 +241,25 @@
         });
     });
 </script>
+                
+           
+                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
+                </div>
+
+     
+
+            </form>
+    </div>
+    
+</div>
 
     <!-- footer section starts -->
     @include('footer')
 	<!-- footer section ends -->
-
+    @section('scripts')
+    <script src="{{ asset('js/your-js-file.js') }}"></script>
+    @endsection
 </body>
 </html>
