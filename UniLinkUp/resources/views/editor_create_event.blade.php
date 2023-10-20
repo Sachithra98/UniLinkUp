@@ -114,10 +114,7 @@
     @include('header')
 	<!-- header section ends -->
 
-    <!-- taskbar section starts -->
-    @include('taskbar')
-	<!-- taskbar section ends -->
-
+   
 
 <div class="main-content">
     
