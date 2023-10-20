@@ -78,10 +78,9 @@
     <table class="table table-boarder">
         <thead>
             <tr>
-                <th> No  </th>
+                <th> ID  </th>
                 <th> Name  </th>
                 <th> Email  </th>
-                <th> Registered Date  </th>
                 <th> Action  </th>
             </tr>
         </thead>
@@ -103,7 +102,7 @@
 
          
         ?>
-            <tr><td><?php echo $c++;?> </td>
+            <tr>
                 <td><?php echo $row['Admin_Id'];?> </td>
                 <td><?php echo $row['Admin_Name'];?> </td>
                 <td><?php echo $row['Admin_Email'];?> </td>

@@ -83,13 +83,13 @@
                 <th> No  </th>
                 <th> Name  </th>
                 <th> Email  </th>
-                <th> Registered Date  </th>
+          
                 <th> Action  </th>
             </tr>
         </thead>
         <tbody>
             <!-----------connect with database------------>
-            @php
+                 @php
                     $c = 1;
                     $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
                     if ($con) {
@@ -98,15 +98,15 @@
                         echo "Connection Failed";
                     }
 
-                    $sel = "SELECT * FROM users";
+                    $sel = "SELECT * FROM students";
                     $query = $con->query($sel);
-                    @endphp
+                @endphp
                     @while($row = $query->fetch_assoc())
                         <tr>
                             <td>{{ $c++ }}</td>
-                            <td>{{ $row['Name'] }}</td>
-                            <td>{{ $row['Email'] }}</td>
-                            <td>{{ $row['Reg_Date'] }}</td>
+                            <td>{{ $row['S_Name'] }}</td>
+                            <td>{{ $row['S_Email'] }}</td>
+                           
                             <td>
                                 <a href="" class="btn btn-success">View</a>
                                 <a href="" class="btn btn-danger">Remove</a>

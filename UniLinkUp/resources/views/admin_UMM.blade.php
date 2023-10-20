@@ -81,8 +81,8 @@
                 <th> No  </th>
                 <th> Name  </th>
                 <th> Email  </th>
-                <th> Post  </th>
-                <th> Registered Date  </th>
+                <th> Position  </th>
+                <!-- <th> Registered Date  </th> -->
                 <th> Action  </th>
             </tr>
         </thead>
@@ -98,17 +98,17 @@
         }      
         
         ////select query start here////
-        $sel="SELECT * FROM users ";
+        $sel="SELECT * FROM moderators ";
         $query=$con->query($sel);
         while($row=$query->fetch_assoc()){
 
          
         ?>
             <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['name'];?> </td>
-                <td><?php echo $row['email'];?> </td>
-                <td><?php echo $row['post'];?> </td>
-                <td><?php echo $row['reg_Date'];?> </td>
+                <td><?php echo $row['M_Name'];?> </td>
+                <td><?php echo $row['M_Email'];?> </td>
+                <td><?php echo $row['Position'];?> </td>
+                <!-- <td><?php echo $row['reg_Date'];?> </td> -->
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>
