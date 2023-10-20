@@ -82,7 +82,7 @@
                 <th> Name  </th>
                 <th> Email  </th>
                 <th> Position  </th>
-                <th> Registered Date  </th>
+                <!-- <th> Registered Date  </th> -->
                 <th> Action  </th>
             </tr>
         </thead>
@@ -108,7 +108,7 @@
                 <td><?php echo $row['M_Name'];?> </td>
                 <td><?php echo $row['M_Email'];?> </td>
                 <td><?php echo $row['Position'];?> </td>
-                <td><?php echo $row['reg_Date'];?> </td>
+                <!-- <td><?php echo $row['reg_Date'];?> </td> -->
                 <td>
                 <a href="" class="btn btn-success">View</a>
                 <a href="" class="btn btn-danger">Remove</a>
