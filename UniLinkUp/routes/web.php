@@ -111,3 +111,14 @@ Route::get('editor_create_event', function () {
     return view('editor_create_event');
 });
 
+Route::get('editor_create_notice', function () {
+    return view('editor_create_notice');
+});
+
+Route::get('editor_create_poll', function () {
+    return view('editor_create_poll');
+});
+
+Route::get('editor', function () {
+    return view('editor');
+});
