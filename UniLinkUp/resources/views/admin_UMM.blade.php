@@ -105,10 +105,10 @@
         
 
          
-            <tr><td><?php echo $c++;?> </td>
-                <td><?php echo $row['M_Name'];?> </td>
-                <td><?php echo $row['M_Email'];?> </td>
-                <td><?php echo $row['Position'];?> </td>
+            <tr><td>{{ $c++}}</td>
+                <td>{{ $row['M_Name'] }} </td>
+                <td>{{ $row['M_Email'] }} </td>
+                <td>{{ $row['Position'] }} </td>
                 
                 <td>
                 <a href="" class="btn btn-success">View</a>

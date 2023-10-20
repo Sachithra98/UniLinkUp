@@ -88,7 +88,7 @@
           </li>
 
           <li class="item">
-            <a href="<?=url('admin_add_faculty')?>" class="nav_link">
+            <a href="<?=url('admin_faculties')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-news"></i>
               </span>

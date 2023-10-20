@@ -85,44 +85,43 @@
                 <tr>
                     <th> No  </th>
                     <th> Role Name  </th>
-                    <th> Responsibilities  </th>
+                    <th style="width: 300px;"> Responsibilities  </th>
                     <th> Who_Are_Responsible  </th>
                     <th> Action  </th>
                 </tr>
             </thead>
             <tbody>
                 <!-----------connect with database------------>
-            <?php
-            $c=1;
-            $con=mysqli_connect("127.0.0.1","root","","unilinkup"); 
-            if ($con) {
-                // echo "Connection Done";
-            }else{
-                echo "connection Failed";
-            }      
-            
-            ////select query start here////
-            $sel="SELECT * FROM roles ";
-            $query=$con->query($sel);
-            while($row=$query->fetch_assoc()){
+                @php
+                    $c = 1;
+                    $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
+                    if ($con) {
+                        // echo "Connection Done";
+                    } else {
+                        echo "Connection Failed";
+                    }
+  
+        
+                    ////select query start here////
+                    $sel="SELECT * FROM roles ";
+                    $query=$con->query($sel);
+                @endphp
+                    @while($row = $query->fetch_assoc())
 
             
-            ?>
-                <tr><td><?php echo $c++;?> </td>
-                    <td><?php echo $row['Role_Id'];?> </td>
-                    <td><?php echo $row['Role_Name'];?> </td>
-                    <td><?php echo $row['Responsibilities'];?> </td>
-                    <td><?php echo $row['Who_Are_Responsible'];?> </td>
+            
+                <tr><td>{{$c++}} </td>
+                    <td>{{ $row['Role_Id'] }} </td>
+                    <td>{{ $row['Role_Name'] }}</td>
+                    <td style="width: 300px;">{{ $row['Responsibilities'] }} </td>
+                    <td>{{ $row['Who_Are_Responsible'] }} </td>
 
                     <td>
-                    <a href="" class="btn btn-success">View</a>
                     <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>
-                <?php
-                }
-                ?>
+                @endwhile
             </tbody>
         </table>
 
