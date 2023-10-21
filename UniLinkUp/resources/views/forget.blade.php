@@ -80,7 +80,7 @@ button:hover {
 
 
 
-    <div class="container_forget">
+    <div class="container">
         <div class="forgot-password-form">
             <h2>Forgot Password</h2>
             <p>Please enter your email address to reset your password.</p>

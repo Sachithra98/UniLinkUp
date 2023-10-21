@@ -257,10 +257,11 @@
                     <i></i>
                 </div>
                 <select name="role" id="role">
+					<option value="Student">Viewer</option>
                     <option value="Editor">Editor</option>
                     <option value="Moderator">Moderator</option>
                     <option value="Admin">Admin</option>
-                    <option value="Student">Student</option>
+                    
                 </select>
                 <button class="btn" type="submit">Log In</button>
                 <div class="links">
