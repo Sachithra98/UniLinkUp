@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
-
-
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +24,9 @@ Route::get('login', function () {
     return view('login');
 });
 
-Route::get('admin', function () {
-    return view('admin');
-});
+// Route::get('admin', function () {
+//     return view('admin');
+// });
 
 Route::get('forget', function () {
     return view('forget');
@@ -132,9 +131,12 @@ Route::get('/admin_department', function () {
     return view('admin_department');
 });
 
+
 Route::get('/admin_add_department', function () {
     return view('admin_add_department');
 });
+
+
 
 Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
 Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
@@ -145,9 +147,7 @@ Route::get('/dashboard/student', [DashboardController::class,'student'])->name('
 Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
 
 
-Route::get('/admin', function () {
-    return view('admin');
-});
+
 
 
 
