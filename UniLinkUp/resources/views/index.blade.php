@@ -32,9 +32,8 @@
       <a href="<?=url('index')?>">Home</a>
       <a href="<?=url('')?>">About Us</a>
       <a href="<?=url('')?>">FAQs?</a>
-      <a href='<?=url('admin')?>'>Admin</a>
       <a href="<?=url('login')?>">Log In</a>
-      <a href="<?=url('editor')?>">Editor</a>
+   
 
      
    </nav>
