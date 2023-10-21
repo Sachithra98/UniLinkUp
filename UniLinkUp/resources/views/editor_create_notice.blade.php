@@ -210,6 +210,11 @@
                         <option>Mathematical & Statistics Society</option>
                     </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="dep id">Department ID:</label>
+                    <input type="text" id="dep id" name="dep id" required>
+                </div>
             
             
     <script>

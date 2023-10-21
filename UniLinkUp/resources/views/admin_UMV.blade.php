@@ -73,7 +73,7 @@
 
 <div class="main-content">
     <div class="back" >
-        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 <div class="container">
     <h1>User Management of Viewers</h1>
@@ -83,7 +83,6 @@
                 <th> No  </th>
                 <th> Name  </th>
                 <th> Email  </th>
-          
                 <th> Action  </th>
             </tr>
         </thead>
@@ -108,7 +107,7 @@
                             <td>{{ $row['S_Email'] }}</td>
                            
                             <td>
-                                <a href="" class="btn btn-success">View</a>
+                                <a href="" class="btn btn-success">Edit</a>
                                 <a href="" class="btn btn-danger">Remove</a>
                             </td>
                         </tr>

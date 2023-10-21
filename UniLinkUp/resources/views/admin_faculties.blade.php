@@ -69,7 +69,7 @@
 
 <div class="main-content">
     <div class="back" >
-        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
@@ -107,6 +107,7 @@
                     <td>{{ $row['Faculty_Name'] }} </td>
                     
                 <td>
+                    <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>

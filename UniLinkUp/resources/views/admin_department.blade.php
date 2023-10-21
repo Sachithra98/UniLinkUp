@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Management of Admin</title>
+   <title>Departments</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -17,13 +17,13 @@
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
 
    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
@@ -46,13 +46,11 @@
             text-align: center;
             text-decoration: underline;
         }
-
-
+        
         .main-content .back .btn{
             margin-left: 180px;
 
         }
-        
 
     </style>
 
@@ -73,20 +71,22 @@
     <div class="back" >
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
-<div class="container">
-    <h1>User Management of Admin</h1>
-    <table class="table table-boarder">
-        <thead>
-            <tr>
-                <th> ID  </th>
-                <th> Name  </th>
-                <th> Email  </th>
-                <th> Action  </th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-----------connect with database------------>
-       @php
+
+    <div class="container">
+        <h1> Faculties </h1>
+        <table class="table table-boarder">
+            <thead>
+                <tr>
+                    <th> No  </th>
+                    <th> Department ID </th>
+                    <th> Department Name </th>
+                    <th> Faculty ID </th>
+                    <th> Action  </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-----------connect with database------------>
+                @php
                     $c = 1;
                     $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
                     if ($con) {
@@ -97,26 +97,32 @@
   
         
                     ////select query start here////
-                    $sel="SELECT * FROM admins ";
+                    $sel="SELECT * FROM departments ";
                     $query=$con->query($sel);
-        @endphp
+                @endphp
                     @while($row = $query->fetch_assoc())
-        
-            <tr>
-                <td>{{ $row['Admin_Id'] }} </td>
-                <td>{{ $row['Admin_Name'] }} </td>
-                <td>{{ $row['Admin_Email'] }} </td>
-             
-                <td>
-                <a href="" class="btn btn-success">Edit</a>
-                <a href="" class="btn btn-danger">Remove</a>
-            </td>
-            </tr>
-            @endwhile
-        </tbody>
-    </table>
 
-</div>
+           
+                <tr><td> {{$c++}} </td>
+                    <td>{{ $row['Dep_Id'] }}</td>
+                    <td>{{ $row['Dep_Name'] }} </td>
+                    <td>{{ $row['Faculty_Id'] }} </td>
+                    
+                <td>
+                    <a href="" class="btn btn-success">Edit</a>
+                    <a href="" class="btn btn-danger">Remove</a>
+                </td>
+                </tr>
+                    @endwhile
+            </tbody>
+        </table>
+
+    </div>
+    
+    <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
+    <a href="<?=url('admin_add_department')?>" class="btn" style="align:center" >Add New Department</a>
+    </div>
+
 </div>
 
     <!-- footer section starts -->

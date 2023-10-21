@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add New Faculty</title>
+   <title>Add New Department</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -122,33 +122,34 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin_faculties')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Add New Faculty</h1>
+        <h1>Add New Department</h1>
 
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success')}}
-            </div>
-        @endif
+        
 
-            <form action="{{ url('/facultyInput') }}" method="post">
-                @csrf
+            <form action="{{  }}" method="post">
+             
                 <div class="form-group">
-                    <label for="faculty_ID">Faculty ID:</label>
-                    <input type="text" id="faculty_ID" name="faculty_ID" required>
+                    <label for="Department_ID"> Department ID:</label>
+                    <input type="text" id="Department_ID" name="Department_ID" required>
                 </div>
 
 
 
                 <div class="form-group">
-                    <label for="faculty_name">Faculty Name:</label>
-                    <input type="text" id="faculty_name" name="faculty_name" required>
+                    <label for="Department_name">Department Name:</label>
+                    <input type="text" id="Department_name" name="Department_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="fac_ID"> Faculty ID:</label>
+                    <input type="text" id="fac_ID" name="fac_ID" required>
                 </div>
            
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>

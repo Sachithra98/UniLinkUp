@@ -121,7 +121,7 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
@@ -144,7 +144,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Admin_Name">Department ID:</label>
+                    <label for="Admin_Name">Admin Name:</label>
                     <input type="text" id="Admin_Name" name="Admin_Name" required>
                 </div>
                                         
