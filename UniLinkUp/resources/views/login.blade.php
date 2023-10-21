@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<title>Login Form</title>
 
 	<link rel="stylesheet" href="{{ asset('css/sty.css') }}">
@@ -76,8 +76,8 @@
 			background: inherit;
 		}
 
-		
-				
+
+
 		@keyframes animate {
 			0% {
 				background-position: 100% 0;
@@ -152,7 +152,7 @@
 			z-index: 10;
 		}
 
-		
+
 
 		.lgin .inputBox1 span {
 			position: absolute;
@@ -226,14 +226,14 @@
 
 
 
-  
 
-	
+
+
 	<section class="lgin">
 
-	
+
 		<div class="imgBx" style="background:url('{{asset('storage/images/site images/6.jpg')}}')no-repeat">
-		
+
 			<div class="text1">
 				<h1>Welcome to UniLinkUp</h1>
 				<h3>"Welcome to our UniLinkUp ! Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
@@ -242,44 +242,33 @@
 
 
 		<div class="box1">
-			
-			<form action="">
-				<h1>Sign In</h1>
-				<div class="inputBox1">
-					<input type="text" required>
-					<span>Username</span>
-					<i></i>
-				</div>
-				<div class="inputBox1">
-					<input type="password" required>
-					<span>Enter Password</span>
-					<i></i>
-				</div>
 
-				
-				<select id="role">
-					<option vlaue="roles">Select Role</option>
-					<option vlaue="Editor">Editor</option>
-					<option vlaue="Moderator">Moderator</option>
-					<option vlaue="Admin">Admin</option>
-					<option vlaue="Student">Student</option>
+			<form action="{{ route('loginCheck') }}" method="POST">
+                @csrf
+                <h1>Sign In</h1>
+                <div class="inputBox1">
+                    <input type="text" name="id" required>
+                    <span>Username</span>
+                    <i></i>
+                </div>
+                <div class="inputBox1">
+                    <input type="password" name="password" required>
+                    <span>Enter Password</span>
+                    <i></i>
+                </div>
+                <select name="role" id="role">
+                    <option value="Editor">Editor</option>
+                    <option value="Moderator">Moderator</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Student">Student</option>
+                </select>
+                <button class="btn" type="submit">Log In</button>
+                <div class="links">
+                    <a href="<?=url('forget')?>">Forgot Password?</a>
+                </div>
+            </form>
 
 
-				</select>
-
-
-
-
-				<button class="btn" style="margin-left: 1rem;" type="submit">Log In</button>
-				<!-- <input type="submit" class="btn" value="Login"> -->
-				<div class="links">
-					<a href="<?=url('forget')?>">Fogot Password?</a>
-					
-
-				</div>
-			</form>
-
-		
 
 		</div>
 </section>
