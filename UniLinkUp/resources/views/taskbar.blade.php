@@ -90,9 +90,18 @@
           <li class="item">
             <a href="<?=url('admin_faculties')?>" class="nav_link">
               <span class="navlink_icon">
-                <i class="bx bx-news"></i>
+                <i class="bx bx-building-house"></i>
               </span>
               <span class="navlink">Faculties</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="<?=url('admin_department')?>" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-store"></i>
+              </span>
+              <span class="navlink">Departments</span>
             </a>
           </li>
 

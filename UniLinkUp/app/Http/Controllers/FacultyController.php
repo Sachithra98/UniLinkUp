@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Faculty;
-//use Illuminate\Support\Facades\Validator;
+
+use Illuminate\Support\Facades\Validator;
 
 class FacultyController extends Controller
 {
@@ -38,4 +39,7 @@ class FacultyController extends Controller
 
         return redirect('/admin_add_faculty')->with('success','Data successfully added!');
     }
+
+    
+
 }

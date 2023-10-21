@@ -127,6 +127,15 @@ Route::get('admin_faculties', function () {
     return view('admin_faculties');
 });
 
+
+Route::get('/admin_department', function () {
+    return view('admin_department');
+});
+
+Route::get('/admin_add_department', function () {
+    return view('admin_add_department');
+});
+
 Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
 Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
 Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
@@ -134,3 +143,11 @@ Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admi
 Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
 
 Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
+
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+
+

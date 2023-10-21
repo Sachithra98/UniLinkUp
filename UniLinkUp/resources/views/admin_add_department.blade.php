@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Admins</title>
+   <title>Add New Department</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -125,31 +126,30 @@
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Admins</h1>
+        <h1>Add New Department</h1>
 
-            <form action="<?=url('')?>" method="post">
-            <div class="form-group">
-                    <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+        
+
+            <form action="{{  }}" method="post">
+             
+                <div class="form-group">
+                    <label for="Department_ID"> Department ID:</label>
+                    <input type="text" id="Department_ID" name="Department_ID" required>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label for="Department_name">Department Name:</label>
+                    <input type="text" id="Department_name" name="Department_name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Admin_Email'">Admin Email:</label>
-                    <input type="text" id="Admin_Email'" name="Admin_Email" required>
+                    <label for="fac_ID"> Faculty ID:</label>
+                    <input type="text" id="fac_ID" name="fac_ID" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="Admin_Password">Admin password:</label>
-                    <input type="text" id="Admin_Password" name="Admin_Password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Admin_Name">Admin Name:</label>
-                    <input type="text" id="Admin_Name" name="Admin_Name" required>
-                </div>
-                                        
            
-                <div class="new_accountsA" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
