@@ -25,7 +25,7 @@
           <!-- start -->
 
           <li class="item">
-            <a href="<?=url('admin')?>" class="nav_link">
+            <a href="{{route('admin.dashboard')}}" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>
