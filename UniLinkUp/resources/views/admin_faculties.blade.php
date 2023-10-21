@@ -107,6 +107,7 @@
                     <td>{{ $row['Faculty_Name'] }} </td>
                     
                 <td>
+                    <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>

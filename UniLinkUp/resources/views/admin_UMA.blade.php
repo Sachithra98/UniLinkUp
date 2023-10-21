@@ -108,7 +108,7 @@
                 <td>{{ $row['Admin_Email'] }} </td>
              
                 <td>
-                <a href="" class="btn btn-success">View</a>
+                <a href="" class="btn btn-success">Edit</a>
                 <a href="" class="btn btn-danger">Remove</a>
             </td>
             </tr>

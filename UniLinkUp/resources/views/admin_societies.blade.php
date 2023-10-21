@@ -104,7 +104,7 @@
                     <td>{{ $row['Society_Id'] }}</td>
                     <td>{{ $row['Society_Name'] }} </td>
                 <td>
-                   
+                    <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>
