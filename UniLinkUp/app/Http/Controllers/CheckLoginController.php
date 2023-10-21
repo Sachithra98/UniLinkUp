@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Admin;
@@ -24,6 +26,6 @@ class CheckLoginController extends Controller
 
         // If the user doesn't belong to any role or authentication fails, you can handle it here.
         // For example, you can redirect them to a generic dashboard or an error page.
-        return redirect()->route('generic.dashboard');
+        return redirect()->route('error.dashboard');
     }
 }

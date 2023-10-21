@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\CheckLoginController;
+use App\Http\Controllers\DashboardController;
 
 
 /*
@@ -124,3 +126,11 @@ Route::get('editor', function () {
 Route::get('admin_faculties', function () {
     return view('admin_faculties');
 });
+
+Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
+Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
+Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
+Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
+Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+
+Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
