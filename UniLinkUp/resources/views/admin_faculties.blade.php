@@ -118,7 +118,7 @@
     </div>
     
     <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
-    <a href="<?=url('admin_add_society')?>" class="btn" style="align:center" >Add New Faculty</a>
+    <a href="<?=url('admin_add_faculty')?>" class="btn" style="align:center" >Add New Faculty</a>
     </div>
 
 </div>
