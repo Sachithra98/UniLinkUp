@@ -61,3 +61,9 @@ Route::get('admin_societies', function () {
 Route::get('viewer', function () {
     return view('viewer');
 });
+
+Route::get('/like/{postId}', 'ViewerController@likePost');
+
+Route::get('/unlike/{postId}', 'ViewerController@unlikePost');
+
+Route::get('/share/{postId}', 'ViewerController@sharePost');

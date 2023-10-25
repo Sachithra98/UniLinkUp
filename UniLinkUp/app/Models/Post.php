@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'Post_Id';
+    
+    public function post_Operations()
+    {
+        return $this->hasMany(Post_Operation::class, 'Post_Id', 'Post_Id');
+    }
 }
