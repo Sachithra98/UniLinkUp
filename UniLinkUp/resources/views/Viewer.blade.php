@@ -57,11 +57,18 @@
                       <img src="{{ asset('storage/images/site images/viewer_notice.jpg') }}" class="post-img">
 
                      <div class="post-row">
-                         <div class="activity-icons">
-                             <div><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>110</div>
-                             <div><i class="fa fa-thumbs-down"></i>20</div> 
-                             <div><i class="fa fa-share"></i>50</div>
-                        </div>
+                     <div class="activity-icons">
+                       <div>
+                          <a href="{{ url('/like/' . $post->Post_Id) }}"><i class="fa fa-thumbs-up"></i> Like ({{ $post->likes }})</a>
+                       </div>
+                       <div>
+                          <a href="{{ url('/unlike/' . $post->Post_Id) }}"><i class="fa fa-thumbs-down"></i> Unlike ({{ $post->likes }})</a>
+                       </div>
+                       <div>
+                          <a href="{{ url('/share/' . $post->Post_Id) }}"><i class="fa fa-share"></i> Share ({{ $post->shares }})</a>
+                       </div>
+                     </div>
+
                      </div>
                    </div>
                </div>
@@ -99,7 +106,9 @@
                      <div class="post-row">
                          <div class="activity-icons">
                              <div><button><i class="fa fa-star"></i>Interested</button></div>
-                             <div><i class="fa fa-share"></i>50</div>
+                             <div>
+                                 <a href="{{ url('/share/' . $post->Post_Id) }}"><i class="fa fa-share"></i> Share ({{ $post->shares }})</a>
+                             </div>
                              <div><i class="fa fa-upload"></i>Upload <br> Photos</div>  
                          </div>
                      </div>
@@ -154,12 +163,18 @@
 
                         <div class="post-container"> 
                         <div class="post-row">
-                         <div class="activity-icons">
-                             <div><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>110</div>
-                             <div><i class="fa fa-thumbs-down"></i>20</div> 
-                             <div><i class="fa fa-share"></i>50</div>
+                        <div class="activity-icons">
+                          <div>
+                             <a href="{{ url('/like/' . $post->Post_Id) }}"><i class="fa fa-thumbs-up"></i> Like ({{ $post->likes }})</a>
+                          </div>
+                          <div>
+                             <a href="{{ url('/unlike/' . $post->Post_Id) }}"><i class="fa fa-thumbs-down"></i> Unlike ({{ $post->likes }})</a>
+                          </div>
+                          <div>
+                             <a href="{{ url('/share/' . $post->Post_Id) }}"><i class="fa fa-share"></i> Share ({{ $post->shares }})</a>
+                          </div>
                          </div>
-                     </div>
+                       </div>
                     </div>
                   <div>
                 </div>
