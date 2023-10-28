@@ -73,7 +73,7 @@
     </div>
 
     <div class="container">
-        <h1> Societies</h1>
+        <h1> Societies Management</h1>
         <table class="table table-boarder">
             <thead>
                 <tr>

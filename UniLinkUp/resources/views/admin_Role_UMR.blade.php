@@ -79,7 +79,7 @@
     </div>
 
     <div class="container">
-        <h1>User Management of Roles</h1>
+        <h1>Roles Management</h1>
         <table class="table table-boarder">
             <thead>
                 <tr>

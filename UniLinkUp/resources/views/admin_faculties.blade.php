@@ -73,7 +73,7 @@
     </div>
 
     <div class="container">
-        <h1> Faculties </h1>
+        <h1> Faculties Management</h1>
         <table class="table table-boarder">
             <thead>
                 <tr>
