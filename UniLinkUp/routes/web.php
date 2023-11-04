@@ -96,6 +96,20 @@ Route::get('admin_createaccS', function () {
 Route::get('admin_createaccA', function () {
     return view('admin_createaccA');
 });
+Route::get('admin_faculties', function () {
+    return view('admin_faculties');
+});
+
+
+Route::get('admin_department', function () {
+    return view('admin_department');
+});
+
+
+Route::get('/admin_add_department', function () {
+    return view('admin_add_department');
+});
+
 
 //sachithra
 Route::get('admin_add_faculty', function () {
@@ -122,19 +136,6 @@ Route::get('editor', function () {
     return view('editor');
 });
 
-Route::get('admin_faculties', function () {
-    return view('admin_faculties');
-});
-
-
-Route::get('/admin_department', function () {
-    return view('admin_department');
-});
-
-
-Route::get('/admin_add_department', function () {
-    return view('admin_add_department');
-});
 
 
 
