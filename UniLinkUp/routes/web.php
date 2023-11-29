@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
@@ -148,7 +149,11 @@ Route::get('/dashboard/student', [DashboardController::class,'student'])->name('
 Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
 
 
+Route::get('admin_add_department', function () {
+    return view('admin_add_department');
+});
 
-
+Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
+Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
 

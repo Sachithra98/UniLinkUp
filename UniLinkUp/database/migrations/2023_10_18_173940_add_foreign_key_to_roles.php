@@ -14,11 +14,11 @@ class AddForeignKeyToRoles extends Migration
         });
     }
 
-    public function down()
+    /* public function down()
     {
         Schema::table('roles', function (Blueprint $table) {
             $table->dropForeign(['Admin_Id']);
         });
-    }
+    } */
 }
 

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('Dep_Id')->primary();
             $table->string('Dep_Name');
             $table->string('Faculty_Id');
+           
         });
     }
 
