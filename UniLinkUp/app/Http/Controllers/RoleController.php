@@ -2,32 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Department;
+use App\Models\Role;
 use Illuminate\Http\Request;
 
-class DepartmentController extends Controller
+class RoleController extends Controller
 {
-    public function department(){
-        return view('admin_add_department');
+    public function role(){
+        return view('admin_add_role');
     }
 
-   /*  public function admin_departement(){
-        return view('admin_department');
-    } */ 
-
-    public function departmentInput(Request $request)
+    public function roleInput(Request $request)
     {
-       $Department=new Department();
-        $Department->Dep_Id=$request->Dep_Id;
-        $Department->Dep_Name=$request->Dep_Name;
-        $Department->Faculty_Id=$request->Faculty_Id;
-        $Department->save();
+       $Role=new Role();
+        $Role->Dep_Id=$request->Dep_Id;
+        $Rolet->Dep_Name=$request->Dep_Name;
+        $Role->Faculty_Id=$request->Faculty_Id;
+        $Role->save();
 
 
-        /* $Department=Department::create($request->all()); */
+        
         return redirect('/admin_add_department')->with('success','Data successfully added!');
     }    
-
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +43,7 @@ class DepartmentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Department $department)
+    public function show(Role $role)
     {
         //
     }
@@ -56,7 +51,7 @@ class DepartmentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Department $department)
+    public function edit(Role $role)
     {
         //
     }
@@ -64,7 +59,7 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Department $department)
+    public function update(Request $request, Role $role)
     {
         //
     }
@@ -72,7 +67,7 @@ class DepartmentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Department $department)
+    public function destroy(Role $role)
     {
         //
     }
