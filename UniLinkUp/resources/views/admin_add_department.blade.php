@@ -122,31 +122,35 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_department')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
         <h1>Add New Department</h1>
 
-        
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif   
 
-            <form action="{{  }}" method="post">
-             
+            <form action="{{route('departmentInput') }}" method="post">
+             @csrf
                 <div class="form-group">
-                    <label for="Department_ID"> Department ID:</label>
-                    <input type="text" id="Department_ID" name="Department_ID" required>
+                    <label for="Dep_Id"> Department ID:</label>
+                    <input type="text" id="Dep_Id" name="Dep_Id" required>
                 </div>
 
 
 
                 <div class="form-group">
-                    <label for="Department_name">Department Name:</label>
-                    <input type="text" id="Department_name" name="Department_name" required>
+                    <label for="Dep_Name">Department Name:</label>
+                    <input type="text" id="Dep_Name" name="Dep_Name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="fac_ID"> Faculty ID:</label>
-                    <input type="text" id="fac_ID" name="fac_ID" required>
+                    <label for="Faculty_Id"> Faculty ID:</label>
+                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
                 </div>
            
                 <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
