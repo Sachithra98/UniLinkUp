@@ -128,7 +128,11 @@
     <div class="container">
         <h1>Add New Department</h1>
 
-        
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif   
 
             <form action="{{route('departmentInput') }}" method="post">
              @csrf
