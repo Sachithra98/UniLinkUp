@@ -149,7 +149,7 @@ Route::get('/dashboard/student', [DashboardController::class,'student'])->name('
 Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
 
 
-Route::get('admin_add_department', function () {
+Route::get('/admin_add_department', function () {
     return view('admin_add_department');
 });
 
