@@ -134,7 +134,7 @@
             </div>
         @endif   
 
-            <form action="{{route('departmentInput') }}" method="post">
+            <form action="{{route('departmentInput')}}" method="post">
              @csrf
                 <div class="form-group">
                     <label for="Dep_Id"> Department ID:</label>
