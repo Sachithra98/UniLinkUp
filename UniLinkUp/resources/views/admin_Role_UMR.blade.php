@@ -83,10 +83,10 @@
         <table class="table table-boarder">
             <thead>
                 <tr>
-                    <th> No  </th>
+                    <th> Role ID  </th>
                     <th> Role Name  </th>
                     <th style="width: 300px;"> Responsibilities  </th>
-                    <th> Who_Are_Responsible  </th>
+                    <th> Who Are Responsible  </th>
                     <th> Action  </th>
                 </tr>
             </thead>
@@ -110,7 +110,7 @@
 
             
             
-                <tr><td>{{$c++}} </td>
+                <tr>
                     <td>{{ $row['Role_Id'] }} </td>
                     <td>{{ $row['Role_Name'] }}</td>
                     <td style="width: 300px;">{{ $row['Responsibilities'] }} </td>
