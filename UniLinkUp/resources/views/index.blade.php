@@ -33,6 +33,7 @@
       <a href="<?=url('')?>">About Us</a>
       <a href="<?=url('')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
+      <a href="<?=url('viewer')?>">Viewer</a>
    
 
      

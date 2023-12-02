@@ -1,0 +1,220 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p {
+    margin:0;
+    padding: 0;
+}
+
+/* Apply a background color to the body */
+body {
+    background-color: #ECECEC;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    background-color: #ECECEC;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-container {
+    float: right;
+    flex-basis: 70%;
+    padding: 20px;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+ }
+  
+/* Style the right container sections */
+.right-container .section {
+    margin-bottom:20px;
+    background-color: #f2f2f2; 
+    border-radius: 10px;
+}    
+
+.right-container .welcome {
+    background-color:#D9D9D9;
+    padding: 20px;
+    border-radius: 10px;
+}  
+
+.right-container .welcome p {
+   
+    margin:20px 0;
+}
+
+.right-container .welcome img {
+    max-width: 50px;
+}        
+
+
+.write-post-container {
+    width:98%;
+    background:#D9D9D9;
+    border-radius: 10px;
+    padding: 10px;
+    columns:black;
+}   
+   
+
+
+.user-profile {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile img {
+     width:40px;
+     border-radius: 6px;
+     margin-right: 20px;
+}
+
+.user-profile p {
+    margin-bottom: -5px;
+    font-weight: 500;
+    color: black;
+    font-size:15px;
+}
+
+.user-profile small {
+    font-size: 14px;
+}
+
+
+.post-text1 {
+    color: black;
+    font-size: 18px;
+    margin: 15px 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.post-text2 {
+    color: black;
+    font-size: 15px;
+    margin: 15px 0; 
+}
+
+.post-container {
+    width:100%;
+    background: #D9D9D9;
+    border-radius: 10px;
+    color: white;
+}
+
+.post-container2 {
+    width:100%;
+    background: #D9D9D9;
+    border-radius: 10px;
+    color: black;
+}
+
+.post-img {
+    width:100%;
+    border-radius:4px;
+    margin-bottom: 5px;
+}
+    
+.post-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.activity-icons i {
+  font-size:20px;
+  cursor: pointer;
+  user-select: none;
+  width: 18px;
+  margin-right: 10px;
+  color: black;
+  
+}
+
+.activity-icons i:hover {
+  color: darkblue;
+}
+
+.activity-icons div {
+    display:inline-flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.activity-icons i {
+    display:inline-flex;
+    align-items: right;  
+    color: black;
+}
+
+.post-row i {
+    color:black ;
+}
+
+
+/* Style the polling section */
+.right-container .polling {
+    margin-top: 10px;
+}
+
+.right-container .poll-option {
+    margin-bottom: 10px;
+}
+
+.right-container .poll-option label {
+    display:block;
+    font-size: 14px;
+}
+
+.right-container .poll-option progress {
+    width: 100%;
+}
+
+.right-container .poll-option span {
+    display: block;
+    margin-top: 5px;
+}
+
+
+span {
+    display:block ;
+    text-align: right;
+    font-size: 0.8em;
+    margin-top: 4px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  box-shadow: 0px 8px 10px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 8px 12px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
