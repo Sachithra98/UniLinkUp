@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -156,4 +157,10 @@ Route::get('/admin_add_department', function () {
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
+Route::get('admin_add_role', function () {
+    return view('admin_add_role');
+});
+
+Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
+Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
 

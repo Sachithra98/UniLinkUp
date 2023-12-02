@@ -15,13 +15,15 @@ return new class extends Migration
             $table->string('Society_Id')->primary();
             $table->string('Society_Name');
              $table->string('Editor_Id');
+
+             $table->foreign('Editor_Id')->references('Editor_Id')->on('editors')->onDelete('cascade');
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+     public function down(): void
     {
         Schema::dropIfExists('societies');
     }

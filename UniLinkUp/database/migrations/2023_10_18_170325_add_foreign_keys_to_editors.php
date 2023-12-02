@@ -33,7 +33,7 @@ class AddForeignKeysToEditors extends Migration
         });
     }
 
-    public function down()
+  /*   public function down()
     {
         Schema::table('editors', function (Blueprint $table) {
             // Drop all foreign key constraints
@@ -43,5 +43,5 @@ class AddForeignKeysToEditors extends Migration
             $table->dropForeign(['Dep_Id']);
             $table->dropForeign(['Society_Id']);
         });
-    }
+    } */
 }

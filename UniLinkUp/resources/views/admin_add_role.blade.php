@@ -124,30 +124,44 @@
     <div class="back" >
         <a href="<?=url('admin_Role_UMR')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
+    
 
-    <div class="container">
+<div class="container">
         <h1>Add New Role</h1>
 
-            <form action="process_form.php" method="post">
-                <div class="form-group">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif 
+
+        <form action="{{route('roleInput') }}" method="post">
+             @csrf
+          <!--   <div class="form-group">
+                    <label for="Role_Id">Role ID:</label>
+                    <input type="text" id="Role_Id" name="Role_Id" required>
+                </div> -->
+
+            <div class="form-group">
                     <label for="roleName">Role Name:</label>
-                    <input type="text" id="roleName" name="roleName" required>
+                    <input type="text" id="Role_Name" name="Role_Name" required>
                 </div>
-
-                <div class="form-group">
+            
+            <div class="form-group">
                     <label for="responsibilities">Responsibilities:</label>
-                    <textarea id="responsibilities" name="responsibilities" rows="4" required></textarea>
-                </div>
+                    <textarea id="Responsibilities" name="Responsibilities" rows="4" required></textarea>
+            </div>
 
-                <div class="form-group">
+            <div class="form-group">
                     <label for="selectedForRole">Who are selected for this role:</label>
-                    <select id="selectedForRole" name="selectedForRole" required>
+                    <select id="Who_Are_Responsible" name="Who_Are_Responsible" required>
                         <option value="Student">Student</option>
                         <option value="Staff">Staff</option>
                         <option value="Moderator">Moderator</option>
                         <option value="Editor">Editor</option>
                     </select>
-                </div>
+            </div>
+    </div>
                 
 
                 <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">

@@ -24,7 +24,7 @@ class AddForeignKeysToModerators extends Migration
         });
     }
 
-    public function down()
+   /*  public function down()
     {
         Schema::table('moderators', function (Blueprint $table) {
             // $table->dropForeign(['Editor_Id']);
@@ -32,5 +32,5 @@ class AddForeignKeysToModerators extends Migration
             $table->dropForeign(['Dep_Id']);
             $table->dropForeign(['Society_Id']);
         });
-    }
+    } */
 }
