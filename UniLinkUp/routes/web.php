@@ -63,6 +63,10 @@ Route::get('admin_societies', function () {
 });
 
 //dhilmi
+Route::get('viewer', function () {
+    return view('viewer');
+});
+
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'show'])->name('privacy-policy');
 //dhilmi
 
