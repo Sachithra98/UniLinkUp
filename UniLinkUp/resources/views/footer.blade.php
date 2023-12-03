@@ -51,7 +51,8 @@
          <h3>extra links</h3>
          <a href="#"> <i class="fas fa-angle-right"></i> FAQs?</a>
          <a href="#"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
+
          <a href="#"> <i class="fas fa-angle-right"></i> Terms & Conditions</a>
       </div>
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PrivacyPolicyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -61,10 +62,9 @@ Route::get('admin_societies', function () {
     return view('admin_societies');
 });
 
-
-Route::get('privacy-policy', function () {
-    return view('privacy-policy');
-});
+//dhilmi
+Route::get('/privacy-policy', [PrivacyPolicyController::class, 'show'])->name('privacy-policy');
+//dhilmi
 
 Route::get('/index', function () {
     return view('index'); // You can change 'index' to the actual view name you want to load.
