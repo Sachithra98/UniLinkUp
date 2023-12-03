@@ -34,7 +34,7 @@
       <a href="<?=url('')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
       <a href="<?=url('viewer')?>">Viewer</a>
-   
+      <a href="<?=url('privacy-policy')?>">privacy policy</a>
 
      
    </nav>

@@ -61,8 +61,9 @@ Route::get('admin_societies', function () {
     return view('admin_societies');
 });
 
-Route::get('viewer', function () {
-    return view('viewer');
+
+Route::get('privacy-policy', function () {
+    return view('privacy-policy');
 });
 
 Route::get('/index', function () {
