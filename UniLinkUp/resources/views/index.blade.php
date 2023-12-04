@@ -212,7 +212,7 @@
    <div class="content">
       <h3>About Us</h3>
       <p>Empowering university communities to share knowledge, experiences, and achievements. Join us in shaping a brighter academic future together.</p>
-      <a href="<?=url('')?>" class="btn">Read More</a>
+      <a href="{{ route('about') }}" class="btn">Read More</a>
    </div>
 
 </section>
