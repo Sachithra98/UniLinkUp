@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -343,7 +340,7 @@
          <h3>extra links</h3>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> FAQs?</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="{{ route('privacy-policy') }}"> <i class="fas fa-angle-right"></i> privacy policy</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> terms & conditions</a>
       </div>
 

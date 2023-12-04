@@ -166,3 +166,7 @@ Route::post('/admin_add_department', [DepartmentController::class, 'department']
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
 
+Route::get('/privacy-policy', function () {
+    return view('privacy-policy');
+})->name('privacy-policy');
+
