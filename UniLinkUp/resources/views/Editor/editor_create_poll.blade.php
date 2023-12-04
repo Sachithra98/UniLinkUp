@@ -142,7 +142,7 @@
     <div class="container">
         <h1>Create New Notice</h1>
 
-            <form action="<?=url('')?>" method="post">
+            <form action="<?=url('polls.store')?>" method="post">
                 <div class="form-group">
                     <label for="poll_id">Poll ID:</label>
                     <input type="text" id="poll_id" name="poll_id" required>

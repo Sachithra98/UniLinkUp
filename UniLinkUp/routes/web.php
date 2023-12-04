@@ -171,3 +171,19 @@ Route::get('admin_add_role', function () {
 Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
 Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
 
+
+//sachithra-start
+Route::get('/search', [PostController::class, 'search']);
+
+
+//Route::get('editor_create_event', [PostController::class, 'create']);
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+
+//Route::get('editor_create_event', [PostController::class, 'create'])->name('create');
+Route::get('editor_create_event', [PostController::class, 'fac'])->name('fac');
+Route::get('editor_create_event', [PostController::class, 'dep'])->name('dep');
+Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
+
+//for poll
+Route::post('editor_create_poll/store', [PollController::class, 'store'])->name('polls.store');
+
