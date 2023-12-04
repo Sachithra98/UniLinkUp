@@ -185,7 +185,9 @@ Route::get('editor_create_event', [PostController::class, 'dep'])->name('dep');
 Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
 
 //for poll
-Route::post('/store', [PollController::class, 'store'])->name('polls.store');
-Route::post('/polls/store', [PollController::class, 'store'])->name('polls.store');
+//Route::post('/store', [PollController::class, 'store'])->name('polls.store');
+//Route::post('/polls/store', [PollController::class, 'store'])->name('polls.store');
 
+Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
+Route::post('/pollInput', [PollController::class, 'store'])->name('store');
 

@@ -182,7 +182,7 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group faculty-options">
+                 <!--<div class="form-group faculty-options">
                     <label for="faculty">Faculty:</label>
                     <select>
                         <option>Faculty of Science</option>
@@ -208,13 +208,15 @@
                         <option>Chemistry Society</option>
                         <option>Mathematical & Statistics Society</option>
                     </select>
-                </div>
+                </div>-->
 
                 <div class="form-group">
                     <label for="dep id">Department ID:</label>
                     <input type="text" id="dep id" name="dep id" required>
                 </div>
-            
+             
+
+             
             
     <script>
                 

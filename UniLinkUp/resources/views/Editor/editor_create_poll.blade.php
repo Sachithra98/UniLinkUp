@@ -148,7 +148,7 @@
             </div>
         @endif 
 
-        <form action="{{ route('polls.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/pollInput') }}" method="post" enctype="multipart/form-data">
 
             @csrf
               

@@ -7,10 +7,13 @@ use Illuminate\Http\Request;
 
 class PollController extends Controller
 {
+    public function poll(){
+        return view('editor_create_poll');
+    }
     public function store(Request $request)
     {
         
-        $validator = $this->validate($request, [
+        /*$validator = $this->validate($request, [
                 'poll_id' => 'required|string',
                 'poll_title' => 'required|string',
                 'poll_desc' => 'required|string',
@@ -25,8 +28,9 @@ class PollController extends Controller
             
             if ($validator->fails()) {
                 return redirect('/editor_create_poll')->withErrors($validator)->withInput();
-            }
+            }*/
 
+            
             Poll::create([
                 'poll_id' =>$request->poll_id,
                 'poll_title' => $request->poll_title,
@@ -39,6 +43,7 @@ class PollController extends Controller
                 'option5' => $request->option5,
             ]);
 
-            return redirect('/editor_create_poll')->with('success','Data successfully added!');
+            //return redirect('/editor_create_poll')->with('success','Data successfully added!');
+            return redirect() -> back();
     }
 }

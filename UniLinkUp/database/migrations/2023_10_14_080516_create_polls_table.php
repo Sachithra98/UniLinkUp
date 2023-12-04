@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('option4')->nullable();
             $table->string('option5')->nullable();
             
-            $table->timestamp('View_Date');
+            $table->timestamp();
 
         });
     }
