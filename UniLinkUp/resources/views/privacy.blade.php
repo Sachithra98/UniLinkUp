@@ -55,9 +55,26 @@
 </head>
 <body>
 
-  <!-- header section starts -->
-  @include('header')
-  <!-- header section ends -->
+ 
+<section class="header">
+
+<a href="<?=url('index')?>" class="logo">UniLinkUp</a>
+
+<nav class="navbar">
+   <a href="<?=url('index')?>">Home</a>
+   <a href="<?=url('about_us')?>">About Us</a>
+   <a href="<?=url('')?>">FAQs?</a>
+</nav>
+
+<div class="logo">
+             <a href="<?=url('')?>"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
+</div>
+   
+
+
+<div id="menu-btn" class="fas fa-bars"></div>
+
+</section>
 
  
   

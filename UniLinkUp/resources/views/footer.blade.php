@@ -42,17 +42,17 @@
       <div class="box">
          <h3>quick links</h3>
          <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
-         <a href="about.php"> <i class="fas fa-angle-right"></i> About Us</a>
+         <a href="{{ route('about') }}"> <i class="fas fa-angle-right"></i> About Us</a>
          <a href="package.php"> <i class="fas fa-angle-right"></i>Albums</a>
          <a href="book.php"> <i class="fas fa-angle-right"></i> News feed</a>
       </div>
 
       <div class="box">
          <h3>extra links</h3>
-         <a href="#"> <i class="fas fa-angle-right"></i> FAQs?</a>
+         <a href=""> <i class="fas fa-angle-right"></i> FAQs?</a>
          <a href="#"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> privacy policy</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> Terms & Conditions</a>
+         <a href="{{ route('privacy') }}"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href=""> <i class="fas fa-angle-right"></i> Terms & Conditions</a>
       </div>
 
       <div class="box">
