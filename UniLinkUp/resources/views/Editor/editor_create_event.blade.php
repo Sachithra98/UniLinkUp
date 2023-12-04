@@ -210,11 +210,22 @@
                     </select>
                 </div>-->
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="dep id">Department ID:</label>
                     <input type="text" id="dep id" name="dep id" required>
                 </div>
-             
+              -->
+
+                <div class="form-group">
+                    <label for="dep_id">Department:</label>
+                    <select name="dep_id" id="dep_id" required>
+                        <option value="">Select Department :</option>
+                        @foreach($departments as $row3)
+                            <option>{{ $row3->Dep_Name }}</option>
+                        @endforeach
+                    </select>
+
+                </div>
 
              
             

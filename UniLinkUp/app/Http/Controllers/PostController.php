@@ -38,26 +38,26 @@ class PostController extends Controller
     //     return view('/editor_create_event', compact('faculties'));
 
     // }
-    public function fac()
-    {
+    // public function fac()
+    // {
       
-        $faculties = Faculty::all();
+    //     $faculties = Faculty::all();
 
-        return view('Editor/editor_create_event', ['faculties' => $faculties]);
+    //     return view('Editor/editor_create_event', ['faculties' => $faculties]);
 
-    }
-
-
+    // }
 
 
-    public function soc()
-    {
+
+
+    // public function soc()
+    // {
       
-        $societies = Society::all();
+    //     $societies = Society::all();
 
-        return view('Editor/editor_create_event', ['societies' => $societies]);
+    //     return view('Editor/editor_create_event', ['societies' => $societies]);
 
-    }
+    // }
 
 
     
