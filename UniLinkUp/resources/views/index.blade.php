@@ -28,7 +28,7 @@
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
-      <a href="<?=url('')?>">About Us</a>
+      <a href="<?=url('about_us')?>">About Us</a>
       <a href="<?=url('')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
    
@@ -331,7 +331,7 @@
    <div class="box">
          <h3>quick links</h3>
          <a href="<?=url('index')?>"> <i class="fas fa-angle-right"></i> Home</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i>About Us</a>
+         <a href="<?=url('about_us')?>"> <i class="fas fa-angle-right"></i>About Us</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Albums</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> News Feed</a>
       </div>
@@ -340,7 +340,7 @@
          <h3>extra links</h3>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> FAQs?</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="<?=url('privacy')?>"> <i class="fas fa-angle-right"></i> privacy policy</a>
          <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> terms & conditions</a>
       </div>
 
