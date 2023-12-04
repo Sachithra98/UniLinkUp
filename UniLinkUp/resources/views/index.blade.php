@@ -28,8 +28,8 @@
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
-      <a href="<?=url('about_us')?>">About Us</a>
-      <a href="<?=url('')?>">FAQs?</a>
+      <a href="<?=url('about')?>">About Us</a>
+      <a href="<?=url('faq')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
    </nav>
 
