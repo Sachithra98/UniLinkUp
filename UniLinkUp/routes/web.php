@@ -7,6 +7,8 @@ use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PrivacyPolicyController;
+use App\Http\Controllers\PostOperationController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -62,12 +64,18 @@ Route::get('admin_societies', function () {
     return view('admin_societies');
 });
 
+
 //dhilmi
 Route::get('viewer', function () {
     return view('viewer');
 });
 
 Route::get('/privacy-policy', [PrivacyPolicyController::class, 'show'])->name('privacy-policy');
+
+Route::post('/like/{postId}', [PostOperationController::class, 'like'])->name('post.like');
+
+Route::post('/unlike/{postId}', [PostOperationController::class, 'unlike'])->name('post.unlike');
+
 //dhilmi
 
 Route::get('/index', function () {
