@@ -144,10 +144,8 @@
 
         <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
 
-                @call_user_func<div class="form-group">
-                    <label for="post_id">Post ID:</label>
-                    <input type="text" id="post_id" name="post_id" required>
-                </div>
+                @csrf
+                
 
                 <div class="form-group">
                     <label for="post_title">Post Title:</label>

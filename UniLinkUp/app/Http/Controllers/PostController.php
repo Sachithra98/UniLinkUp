@@ -43,7 +43,7 @@ class PostController extends Controller
       
         $faculties = Faculty::all();
 
-        return view('/editor_create_event', ['faculties' => $faculties]);
+        return view('Editor/editor_create_event', ['faculties' => $faculties]);
 
     }
 
@@ -55,7 +55,7 @@ class PostController extends Controller
       
         $societies = Society::all();
 
-        return view('/editor_create_event', ['societies' => $societies]);
+        return view('Editor/editor_create_event', ['societies' => $societies]);
 
     }
 
@@ -66,7 +66,7 @@ class PostController extends Controller
       
         $departments = Department::all();
 
-        return view('/editor_create_event', ['departments' => $departments]);
+        return view('Editor/editor_create_event', ['departments' => $departments]);
 
     }
 
