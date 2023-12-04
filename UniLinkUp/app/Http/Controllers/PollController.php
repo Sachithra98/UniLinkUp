@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Poll;
 use Illuminate\Http\Request;
 
 class PollController extends Controller
@@ -9,7 +10,7 @@ class PollController extends Controller
     public function store(Request $request)
     {
         
-            $validator = $this->validate($request, [
+        $validator = $this->validate($request, [
                 'poll_id' => 'required|string',
                 'poll_title' => 'required|string',
                 'poll_desc' => 'required|string',
@@ -21,9 +22,12 @@ class PollController extends Controller
                 'option5' => 'nullable|string'
                 
             ]);
+            
+            if ($validator->fails()) {
+                return redirect('/editor_create_poll')->withErrors($validator)->withInput();
+            }
 
-
-            Post::create([
+            Poll::create([
                 'poll_id' =>$request->poll_id,
                 'poll_title' => $request->poll_title,
                 'poll_desc' => $request->poll_desc,

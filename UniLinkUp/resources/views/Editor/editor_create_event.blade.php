@@ -142,8 +142,9 @@
     <div class="container">
         <h1>Create New Event</h1>
 
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
+        <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+
+                @call_user_func<div class="form-group">
                     <label for="post_id">Post ID:</label>
                     <input type="text" id="post_id" name="post_id" required>
                 </div>

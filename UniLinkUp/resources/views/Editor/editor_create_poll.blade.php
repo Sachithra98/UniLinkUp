@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create New Notice</title>
+   <title>Create New Poll</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -140,13 +140,18 @@
     </div>
 
     <div class="container">
-        <h1>Create New Notice</h1>
+        <h1>Create New Poll</h1>
 
-            <form action="<?=url('polls.store')?>" method="post">
-                <div class="form-group">
-                    <label for="poll_id">Poll ID:</label>
-                    <input type="text" id="poll_id" name="poll_id" required>
-                </div>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif 
+
+        <form action="{{ route('polls.store') }}" method="post" enctype="multipart/form-data">
+
+            @csrf
+              
 
                 <div class="form-group">
                     <label for="poll_title">Poll Title:</label>
@@ -155,7 +160,7 @@
 
                 <div class="form-group">
                     <label for="poll_desc">Poll Description:</label>
-                    <input type="text" id="poll_desc" name="poll_desc" required>
+                    <input type="text" id="poll_desc" name="poll_desc">
                 </div>
 
 
@@ -166,28 +171,28 @@
 
                 <div class="form-group">
                     <label for="option1">Option1</label>
-                    <input type="text" id="option1" name="option1" multiple required>
+                    <input type="text" id="option1" name="option1" multiple>
                 </div>
 
                 <div class="form-group">
                     <label for="option2">Option2</label>
-                    <input type="text" id="option2" name="option2" multiple required>
+                    <input type="text" id="option2" name="option2" multiple>
                 </div>
 
 
                 <div class="form-group">
                     <label for="option3">Option3</label>
-                    <input type="text" id="option3" name="option3" multiple required>
+                    <input type="text" id="option3" name="option3" multiple>
                 </div>
 
                 <div class="form-group">
                     <label for="option4">Option4</label>
-                    <input type="text" id="option4" name="option4" multiple required>
+                    <input type="text" id="option4" name="option4" multiple>
                 </div>
 
                 <div class="form-group">
                     <label for="option5">Option5</label>
-                    <input type="text" id="option5" name="option5" multiple required>
+                    <input type="text" id="option5" name="option5" multiple>
                 </div>
 
                 
