@@ -155,7 +155,7 @@
 
                 <div class="form-group">
                     <label for="poll_desc">Poll Description:</label>
-                    <input type="text" id="poll disc" name="poll disc" required>
+                    <input type="text" id="poll_desc" name="poll_desc" required>
                 </div>
 
 

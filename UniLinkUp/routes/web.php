@@ -8,6 +8,9 @@ use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PollController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
