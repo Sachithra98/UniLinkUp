@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+//<!-- sachithra-start -->
 use Illuminate\Http\Request;
 
 class PostController extends Controller

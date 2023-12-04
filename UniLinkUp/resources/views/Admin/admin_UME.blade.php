@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Societies</title>
+   <title>User Management of Editor</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -52,6 +52,7 @@
 
         }
 
+
     </style>
 
 </head>
@@ -71,21 +72,22 @@
     <div class="back" >
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
-
-    <div class="container">
-        <h1> Societies Management</h1>
-        <table class="table table-boarder">
-            <thead>
-                <tr>
-                    <th> No  </th>
-                    <th> Society_ID </th>
-                    <th> Society_Name </th>
-                    <th> Action  </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-----------connect with database------------>
-                @php
+<div class="container">
+    <h1>User Management of Editor</h1>
+    <table class="table table-boarder">
+        <thead>
+            <tr>
+                <th> No  </th>
+                <th> Name  </th>
+                <th> Email  </th>
+                <th> Society  </th>
+                <th> Departmenet  </th>
+                <th> Action  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-----------connect with database------------>
+            @php
                     $c = 1;
                     $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
                     if ($con) {
@@ -93,36 +95,36 @@
                     } else {
                         echo "Connection Failed";
                     }
-            
+  
+        
                     ////select query start here////
-                    $sel="SELECT * FROM societies ";
+                    $sel="SELECT * FROM editors ";
                     $query=$con->query($sel);
-                @endphp
-                @while($row = $query->fetch_assoc())
+            @endphp
+                    @while($row = $query->fetch_assoc())
 
-                <tr><td> {{$c++}} </td>
-                    <td>{{ $row['Society_Id'] }}</td>
-                    <td>{{ $row['Society_Name'] }} </td>
+         
+     
+            <tr><td><?php echo $c++;?> </td>
+                <td>{{ $row['E_Name'] }} </td>
+                <td>{{ $row['E_Email'] }} </td>
+                <td>{{ 'Society_Name' }} </td>
+                <td>{{ 'Dep_Name' }} </td>
                 <td>
-                    <a href="" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-danger">Remove</a>
-                </td>
-                </tr>
-                @endwhile 
-            </tbody>
-        </table>
+                <a href="" class="btn btn-success">Edit</a>
+                <a href="" class="btn btn-danger">Remove</a>
+            </td>
+            </tr>
+            @endwhile
+        </tbody>
+    </table>
 
-    </div>
-    
-    <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
-    <a href="<?=url('admin_add_society')?>" class="btn" style="align:center" >Add New Society</a>
-    </div>
-
+</div>
 </div>
 
     <!-- footer section starts -->
     @include('footer')
 	<!-- footer section ends -->
-
 </body>
 </html>
+<!-- sachithra-end -->

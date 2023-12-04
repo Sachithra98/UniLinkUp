@@ -1,10 +1,11 @@
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Moderators</title>
+   <title>Add New Department</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -121,63 +122,38 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_department')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Moderators</h1>
+        <h1>Add New Department</h1>
 
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
-                    <label for="Moderator_Id">Moderator ID:</label>
-                    <input type="text" id="Moderator_Id" name="Moderator_Id" required>
-                </div>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif   
 
+            <form action="{{route('departmentInput') }}" method="post" enctype="multipart/form-data">
+             @csrf
                 <div class="form-group">
-                    <label for="Dep_Id">Department ID:</label>
+                    <label for="Dep_Id"> Department ID:</label>
                     <input type="text" id="Dep_Id" name="Dep_Id" required>
                 </div>
 
+
+
                 <div class="form-group">
-                    <label for="Position">Position:</label>
-                    <input type="text" id="Position" name="Position" required>
+                    <label for="Dep_Name">Department Name:</label>
+                    <input type="text" id="Dep_Name" name="Dep_Name" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="M_Email">Moderator Email:</label>
-                    <input type="text" id="M_Email" name="M_Email" required>
+                    <label for="Faculty_Id"> Faculty ID:</label>
+                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="M_Password">Moderator Password:</label>
-                    <input type="text" id="M_Password" name="M_Password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="M_Name">Moderator Name:</label>
-                    <input type="text" id="M_Name" name="M_Name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Society_Id">Society ID:</label>
-                    <input type="text" id="Society_Id" name="Society_Id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Editor_Id">Editor ID:</label>
-                    <input type="text" id="Editor_Id" name="Editor_Id" required>
-                </div> 
-
-                
-
-               
            
-                <div class="new_accountsM" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -195,3 +171,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

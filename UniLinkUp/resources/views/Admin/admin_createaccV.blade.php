@@ -1,10 +1,11 @@
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Editors</title>
+   <title>Create Accounts For Students</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -125,12 +126,12 @@
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Editors</h1>
+        <h1>Create Accounts For Students</h1>
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
-                    <label for="Editor_Id">Editor ID:</label>
-                    <input type="text" id="Editor_Id" name="Editor_Id" required>
+                    <label for="Student_Id">Student ID:</label>
+                    <input type="text" id="Student_Id" name="Student_Id" required>
                 </div>
 
                 <div class="form-group">
@@ -168,13 +169,9 @@
                     <input type="text" id="Dep_Id" name="Dep_Id" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="Society_Id">Society ID:</label>
-                    <input type="text" id="Society_Id" name="Society_Id" required>
-                </div>
                
            
-                <div class="new_accountsE" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_accountsV" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -192,3 +189,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

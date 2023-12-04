@@ -1,10 +1,11 @@
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Admins</title>
+   <title>Create Accounts For Editors</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -125,31 +126,56 @@
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Admins</h1>
+        <h1>Create Accounts For Editors</h1>
 
             <form action="<?=url('')?>" method="post">
-            <div class="form-group">
+                <div class="form-group">
+                    <label for="Editor_Id">Editor ID:</label>
+                    <input type="text" id="Editor_Id" name="Editor_Id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Faculty_Id">Faculty ID:</label>
+                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Batch_Id">Batch ID:</label>
+                    <input type="text" id="Batch_Id" name="Batch_Id" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="S_Email">Student Email:</label>
+                    <input type="text" id="S_Email" name="S_Email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="S_Password">Student Password:</label>
+                    <input type="text" id="S_Password" name="S_Password" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="S_Name">Student Name:</label>
+                    <input type="text" id="S_Name" name="S_Name" required>
+                </div>
+
+                <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
                     <input type="text" id="Admin_Id" name="Admin_Id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Admin_Email'">Admin Email:</label>
-                    <input type="text" id="Admin_Email'" name="Admin_Email" required>
+                    <label for="Dep_Id">Department ID:</label>
+                    <input type="text" id="Dep_Id" name="Dep_Id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Admin_Password">Admin password:</label>
-                    <input type="text" id="Admin_Password" name="Admin_Password" required>
+                    <label for="Society_Id">Society ID:</label>
+                    <input type="text" id="Society_Id" name="Society_Id" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="Admin_Name">Admin Name:</label>
-                    <input type="text" id="Admin_Name" name="Admin_Name" required>
-                </div>
-                                        
+               
            
-                <div class="new_accountsA" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_accountsE" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -167,3 +193,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->
