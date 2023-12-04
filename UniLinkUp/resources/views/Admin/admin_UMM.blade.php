@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Faculties</title>
+   <title>User Management of Moderator</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -16,14 +16,15 @@
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
 
+
    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
    <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
@@ -46,11 +47,12 @@
             text-align: center;
             text-decoration: underline;
         }
-        
+
         .main-content .back .btn{
             margin-left: 180px;
 
         }
+        
 
     </style>
 
@@ -71,21 +73,21 @@
     <div class="back" >
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
-
-    <div class="container">
-        <h1> Faculties Management</h1>
-        <table class="table table-boarder">
-            <thead>
-                <tr>
-                    <th> No  </th>
-                    <th> Faculty_ID </th>
-                    <th> Faculty_Name </th>
-                    <th> Action  </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-----------connect with database------------>
-                @php
+<div class="container">
+    <h1>User Management of Moderator</h1>
+    <table class="table table-boarder">
+        <thead>
+            <tr>
+                <th> No  </th>
+                <th> Name  </th>
+                <th> Email  </th>
+                <th> Position  </th>
+                <th> Action  </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-----------connect with database------------>
+            @php
                     $c = 1;
                     $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
                     if ($con) {
@@ -96,31 +98,28 @@
   
         
                     ////select query start here////
-                    $sel="SELECT * FROM faculties ";
+                    $sel="SELECT * FROM moderators ";
                     $query=$con->query($sel);
-                @endphp
+            @endphp
                     @while($row = $query->fetch_assoc())
+        
 
-           
-                <tr><td> {{$c++}} </td>
-                    <td>{{ $row['Faculty_Id'] }}</td>
-                    <td>{{ $row['Faculty_Name'] }} </td>
-                    
+         
+            <tr><td>{{ $c++}}</td>
+                <td>{{ $row['M_Name'] }} </td>
+                <td>{{ $row['M_Email'] }} </td>
+                <td>{{ $row['Position'] }} </td>
+                
                 <td>
-                    <a href="" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-danger">Remove</a>
-                </td>
-                </tr>
-                    @endwhile
-            </tbody>
-        </table>
+                <a href="" class="btn btn-success">Edit</a>
+                <a href="" class="btn btn-danger">Remove</a>
+            </td>
+            </tr>
+            @endwhile
+        </tbody>
+    </table>
 
-    </div>
-    
-    <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
-    <a href="<?=url('admin_add_faculty')?>" class="btn" style="align:center" >Add New Faculty</a>
-    </div>
-
+</div>
 </div>
 
     <!-- footer section starts -->
@@ -129,3 +128,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

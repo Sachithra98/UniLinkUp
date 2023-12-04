@@ -1,12 +1,16 @@
 <?php
-
+//sachithra-start
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
+//sachithra - end
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PollController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +21,7 @@ use App\Http\Controllers\RoleController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+//sachithra-start
 Route::get('/', function () {
     return view('index');
 });
@@ -38,28 +42,28 @@ Route::get('/search', 'PostController@search')->name('search');
 
 Route::get('/posts/{post}', 'PostController@show')->name('post.show');
 
-Route::get('admin_UMV', function () {
-    return view('admin_UMV');
+Route::get('/admin_UMV', function () {
+    return view('/Admin/admin_UMV');
 });
 
-Route::get('admin_UME', function () {
-    return view('admin_UME');
+Route::get('/admin_UME', function () {
+    return view('/Admin/admin_UME');
 });
 
-Route::get('admin_UMM', function () {
-    return view('admin_UMM');
+Route::get('/admin_UMM', function () {
+    return view('/Admin/admin_UMM');
 });
 
-Route::get('admin_UMA', function () {
-    return view('admin_UMA');
+Route::get('/Admin/admin_UMA', function () {
+    return view('/Admin/admin_UMA');
 });
 
-Route::get('admin_Role_UMR', function () {
-    return view('admin_Role_UMR');
+Route::get('/admin_Role_UMR', function () {
+    return view('/Admin/admin_Role_UMR');
 });
 
-Route::get('admin_societies', function () {
-    return view('admin_societies');
+Route::get('/admin_societies', function () {
+    return view('/Admin/admin_societies');
 });
 
 Route::get('/index', function () {
@@ -67,44 +71,44 @@ Route::get('/index', function () {
 })->name('index');
 
 Route::get('/admin_societies', function () {
-    return view('admin_societies');
+    return view('/Admin/admin_societies');
 });
 
 
-Route::get('admin_add_role', function () {
-    return view('admin_add_role');
+Route::get('/admin_add_role', function () {
+    return view('/Admin/admin_add_role');
 });
 
-Route::get('admin_add_society', function () {
-    return view('admin_add_society');
+Route::get('/admin_add_society', function () {
+    return view('/Admin/admin_add_society');
 });
 
-Route::get('admin_createaccV', function () {
-    return view('admin_createaccV');
+Route::get('/admin_createaccV', function () {
+    return view('/Admin/admin_createaccV');
 });
 
-Route::get('admin_createaccE', function () {
-    return view('admin_createaccE');
+Route::get('/admin_createaccE', function () {
+    return view('/Admin/admin_createaccE');
 });
 
-Route::get('admin_createaccM', function () {
-    return view('admin_createaccM');
+Route::get('/admin_createaccM', function () {
+    return view('/Admin/admin_createaccM');
 });
 
-Route::get('admin_createaccS', function () {
-    return view('admin_createaccS');
+Route::get('/admin_createaccS', function () {
+    return view('/Admin/admin_createaccS');
 });
 
-Route::get('admin_createaccA', function () {
-    return view('admin_createaccA');
+Route::get('/admin_createaccA', function () {
+    return view('/Admin/admin_createaccA');
 });
-Route::get('admin_faculties', function () {
-    return view('admin_faculties');
+Route::get('/admin_faculties', function () {
+    return view('/Admin/admin_faculties');
 });
 
 
-Route::get('admin_department', function () {
-    return view('admin_department');
+Route::get('/admin_department', function () {
+    return view('/Admin/admin_department');
 });
 
 
@@ -113,31 +117,31 @@ Route::get('/admin_add_department', function () {
 });
 
 
-//sachithra
-Route::get('admin_add_faculty', function () {
-    return view('admin_add_faculty');
+
+Route::get('/admin_add_faculty', function () {
+    return view('/Admin/admin_add_faculty');
 });
 
 
 Route::post('/admin_add_faculty', [FacultyController::class, 'faculty'])->name('admin_add_faculty');
 Route::post('/facultyInput', [FacultyController::class, 'facultyInput'])->name('facultyInput');
 
-Route::get('editor_create_event', function () {
-    return view('editor_create_event');
+Route::get('/editor_create_event', function () {
+    return view('/Editor/editor_create_event');
 });
 
-Route::get('editor_create_notice', function () {
-    return view('editor_create_notice');
+Route::get('/editor_create_notice', function () {
+    return view('/Editor/editor_create_notice');
 });
 
-Route::get('editor_create_poll', function () {
-    return view('editor_create_poll');
+Route::get('/editor_create_poll', function () {
+    return view('/Editor/editor_create_poll');
 });
 
-Route::get('editor', function () {
-    return view('editor');
+Route::get('/editor', function () {
+    return view('/Editor/editor');
 });
-
+//sachithra-end
 
 
 
@@ -149,18 +153,56 @@ Route::get('/dashboard/student', [DashboardController::class,'student'])->name('
 
 Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
 
-
+//sachithra-start
 Route::get('/admin_add_department', function () {
-    return view('admin_add_department');
+    return view('/Admin/admin_add_department');
 });
+//sachithra-end
 
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
+//sachithra-start
 Route::get('admin_add_role', function () {
-    return view('admin_add_role');
+    return view('/Admin/admin_add_role');
 });
+//sachithra-end
 
 Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
 Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
 
+
+//sachithra-start
+Route::get('/search', [PostController::class, 'search']);
+
+//posts
+Route::post('/editor_create_event', [PollController::class, 'post'])->name('post');
+//Route::get('editor_create_event', [PostController::class, 'create']);
+Route::post('/postsInput', [PostController::class, 'store'])->name('posts.store');
+
+//Route::get('editor_create_event', [PostController::class, 'create'])->name('create');
+//Route::get('editor_create_event', [PostController::class, 'fac'])->name('fac');
+Route::get('editor_create_event', [PostController::class, 'dep'])->name('dep');
+//Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
+
+//for poll
+Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
+Route::post('/pollInput', [PollController::class, 'store'])->name('store');
+
+Route::get('about', function () {
+    return view('about');
+})->name('about');
+
+
+Route::get('/privacy', function () {
+    return view('privacy');
+})->name('privacy');
+
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq');
+
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');
+//sachithra-end

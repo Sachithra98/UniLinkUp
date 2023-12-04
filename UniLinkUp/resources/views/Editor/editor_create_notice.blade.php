@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create New Event</title>
+   <title>Create New Notice</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -140,22 +140,22 @@
     </div>
 
     <div class="container">
-        <h1>Create New Event</h1>
+        <h1>Create New Notice</h1>
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
-                    <label for="post_id">Post ID:</label>
-                    <input type="text" id="post_id" name="post_id" required>
+                    <label for="notice_id">Notice ID:</label>
+                    <input type="text" id="notice_id" name="notice_id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post_title">Post Title:</label>
-                    <input type="text" id="post_title" name="post_title" required>
+                    <label for="notice_title">Notice Title:</label>
+                    <input type="text" id="notice_title" name="notice_title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="post_desc">Post Description:</label>
-                    <input type="text" id="post_desc" name="post_desc" required>
+                    <label for="notice_desc">Notice Description:</label>
+                    <input type="text" id="post disc" name="post disc" required>
                 </div>
 
                 <div class="form-group">
@@ -164,7 +164,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Post Media:</label>
+                    <label for="">Notice Media:</label>
                     <input type="file" id="post" name="post" multiple required>
                 </div>
 
@@ -250,7 +250,7 @@
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Notice</button> 
                 </div>
 
      
@@ -268,3 +268,4 @@
     @endsection
 </body>
 </html>
+<!-- sachithra-end -->

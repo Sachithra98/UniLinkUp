@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Management of Roles</title>
+   <title>Societies</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -46,19 +46,17 @@
             text-align: center;
             text-decoration: underline;
         }
-
+        
         .main-content .back .btn{
             margin-left: 180px;
 
         }
-        
 
     </style>
 
 </head>
 <body>
    
-
 
     <!-- header section starts -->
     @include('header')
@@ -69,24 +67,19 @@
 	<!-- taskbar section ends -->
 
 
-
-
-
 <div class="main-content">
-
     <div class="back" >
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Roles Management</h1>
+        <h1> Societies Management</h1>
         <table class="table table-boarder">
             <thead>
                 <tr>
-                    <th> Role ID  </th>
-                    <th> Role Name  </th>
-                    <th style="width: 300px;"> Responsibilities  </th>
-                    <th> Who Are Responsible  </th>
+                    <th> No  </th>
+                    <th> Society_ID </th>
+                    <th> Society_Name </th>
                     <th> Action  </th>
                 </tr>
             </thead>
@@ -100,35 +93,29 @@
                     } else {
                         echo "Connection Failed";
                     }
-  
-        
+            
                     ////select query start here////
-                    $sel="SELECT * FROM roles ";
+                    $sel="SELECT * FROM societies ";
                     $query=$con->query($sel);
                 @endphp
-                    @while($row = $query->fetch_assoc())
+                @while($row = $query->fetch_assoc())
 
-            
-            
-                <tr>
-                    <td>{{ $row['Role_Id'] }} </td>
-                    <td>{{ $row['Role_Name'] }}</td>
-                    <td style="width: 300px;">{{ $row['Responsibilities'] }} </td>
-                    <td>{{ $row['Who_Are_Responsible'] }} </td>
-
-                    <td>
+                <tr><td> {{$c++}} </td>
+                    <td>{{ $row['Society_Id'] }}</td>
+                    <td>{{ $row['Society_Name'] }} </td>
+                <td>
                     <a href="" class="btn btn-success">Edit</a>
                     <a href="" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>
-                @endwhile
+                @endwhile 
             </tbody>
         </table>
 
     </div>
     
-    <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
-    <a href="<?=url('admin_add_role')?>" class="btn" style="align:center" >Add New Role</a>
+    <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top:5rem; padding-bottom:5rem;">
+    <a href="<?=url('admin_add_society')?>" class="btn" style="align:center" >Add New Society</a>
     </div>
 
 </div>
@@ -139,3 +126,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

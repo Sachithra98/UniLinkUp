@@ -9,28 +9,33 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    //sachithra
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->string('Post_Id')->primary();
-            $table->string('Description');
-            $table->timestamp('Expire_Date');
+            $table->id('Post_Id'); // This will make 'Post_Id' an auto-incrementing primary key
+            $table->string('Editor_Id');
             $table->string('Title');
-            $table->string('media_path')->nullable();
+            $table->text('Description');
+            $table->timestamp('Expire_Date');
+            
+            $table->binary('media_path')->nullable();
+            $table->binary('Approval_Letter')->nullable();
+            $table->string('Society_Id')->nullable();
+            $table->string('Dep_Id')->nullable();
+            $table->string('Faculty_Id')->nullable();
+    
+            $table->timestamp(); // or remove the default value
 
-
-            // Use the binary data type for storing the PDF file
-            $table->binary('Approval_Letter');
-
-            // Set a default value for the Published_Date column
-            $table->timestamp('Published_Date')->default(now());
-
-            $table->string('Society_Id');
-            $table->string('Dep_Id');
-            $table->string('Type_Id');
+    
+            // Fix the typo in the foreign key declaration
+            $table->foreign('Editor_Id')->references('Editor_Id')->on('editors');
+            // Assuming 'id' is the primary key of 'societies' and 'departments' tables
+            $table->foreign('Society_Id')->references('Society_Id')->on('societies');
+            $table->foreign('Dep_Id')->references('Dep_Id')->on('departments');
+            $table->foreign('Faculty_Id')->references('Faculty_Id')->on('faculties');
         });
     }
-
 
 
     /**

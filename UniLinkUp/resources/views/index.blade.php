@@ -1,6 +1,4 @@
-
-
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +28,9 @@
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
-      <a href="<?=url('')?>">About Us</a>
-      <a href="<?=url('')?>">FAQs?</a>
+      <a href="<?=url('about')?>">About Us</a>
+      <a href="<?=url('faq')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
-   
-
-     
    </nav>
 
    <div class="logo">
@@ -332,18 +327,18 @@
 
    <div class="box">
          <h3>quick links</h3>
-         <a href="<?=url('index')?>"> <i class="fas fa-angle-right"></i> Home</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i>About Us</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Albums</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> News Feed</a>
+         <a href="{{ route('index') }}"> <i class="fas fa-angle-right"></i> Home</a>
+         <a href="{{ route('about') }}"> <i class="fas fa-angle-right"></i>About Us</a>
+         <a href=""> <i class="fas fa-angle-right"></i> Albums</a>
+         <a href=""> <i class="fas fa-angle-right"></i> News Feed</a>
       </div>
 
       <div class="box">
          <h3>extra links</h3>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> FAQs?</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> Reviews</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> privacy policy</a>
-         <a href="<?=url('')?>"> <i class="fas fa-angle-right"></i> terms & conditions</a>
+         <a href="{{ route ('faq') }}"> <i class="fas fa-angle-right"></i> FAQs?</a>
+         <a href=""> <i class="fas fa-angle-right"></i> Reviews</a>
+         <a href="{{ route('privacy') }}"> <i class="fas fa-angle-right"></i> privacy policy</a>
+         <a href="{{ route('terms') }}"> <i class="fas fa-angle-right"></i> terms & conditions</a>
       </div>
 
       <div class="box">
@@ -386,3 +381,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

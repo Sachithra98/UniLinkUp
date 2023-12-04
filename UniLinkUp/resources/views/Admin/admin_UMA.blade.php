@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Management of Moderator</title>
+   <title>User Management of Admin</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -15,7 +15,6 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
-
 
    <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -48,6 +47,7 @@
             text-decoration: underline;
         }
 
+
         .main-content .back .btn{
             margin-left: 180px;
 
@@ -74,20 +74,19 @@
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 <div class="container">
-    <h1>User Management of Moderator</h1>
+    <h1>User Management of Admin</h1>
     <table class="table table-boarder">
         <thead>
             <tr>
-                <th> No  </th>
+                <th> ID  </th>
                 <th> Name  </th>
                 <th> Email  </th>
-                <th> Position  </th>
                 <th> Action  </th>
             </tr>
         </thead>
         <tbody>
             <!-----------connect with database------------>
-            @php
+       @php
                     $c = 1;
                     $con = mysqli_connect("127.0.0.1", "root", "", "unilinkup");
                     if ($con) {
@@ -98,18 +97,16 @@
   
         
                     ////select query start here////
-                    $sel="SELECT * FROM moderators ";
+                    $sel="SELECT * FROM admins ";
                     $query=$con->query($sel);
-            @endphp
+        @endphp
                     @while($row = $query->fetch_assoc())
         
-
-         
-            <tr><td>{{ $c++}}</td>
-                <td>{{ $row['M_Name'] }} </td>
-                <td>{{ $row['M_Email'] }} </td>
-                <td>{{ $row['Position'] }} </td>
-                
+            <tr>
+                <td>{{ $row['Admin_Id'] }} </td>
+                <td>{{ $row['Admin_Name'] }} </td>
+                <td>{{ $row['Admin_Email'] }} </td>
+             
                 <td>
                 <a href="" class="btn btn-success">Edit</a>
                 <a href="" class="btn btn-danger">Remove</a>
@@ -128,3 +125,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

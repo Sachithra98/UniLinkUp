@@ -1,3 +1,4 @@
+<!-- sachithra-start -->
 @extends('layouts.app')
 
 @section('content')
@@ -13,3 +14,5 @@
         <p>No results found.</p>
     @endif
 @endsection
+
+<!-- sachithra-end -->

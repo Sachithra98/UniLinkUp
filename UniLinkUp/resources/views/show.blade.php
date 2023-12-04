@@ -1,3 +1,4 @@
+<!-- sachithra-start -->
 @extends('layouts.app')
 
 @section('content')
@@ -5,3 +6,4 @@
     <p>{{ $post->content }}</p>
     <!-- Add more details here -->
 @endsection
+<!-- sachithra-end -->

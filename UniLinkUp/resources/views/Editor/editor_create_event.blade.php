@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create New Notice</title>
+   <title>Create New Event</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -140,22 +140,21 @@
     </div>
 
     <div class="container">
-        <h1>Create New Notice</h1>
+        <h1>Create New Event</h1>
 
-            <form action="<?=url('')?>" method="post">
+        <form action="{{ url('/postsInput') }}" method="post" enctype="multipart/form-data">
+
+                @csrf
+                
+
                 <div class="form-group">
-                    <label for="notice_id">Notice ID:</label>
-                    <input type="text" id="notice_id" name="notice_id" required>
+                    <label for="post_title">Post Title:</label>
+                    <input type="text" id="post_title" name="post_title" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="notice_title">Notice Title:</label>
-                    <input type="text" id="notice_title" name="notice_title" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="notice_desc">Notice Description:</label>
-                    <input type="text" id="post disc" name="post disc" required>
+                    <label for="post_desc">Post Description:</label>
+                    <input type="text" id="post_desc" name="post_desc" required>
                 </div>
 
                 <div class="form-group">
@@ -164,7 +163,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="">Notice Media:</label>
+                    <label for="">Post Media:</label>
                     <input type="file" id="post" name="post" multiple required>
                 </div>
 
@@ -183,7 +182,7 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group faculty-options">
+                 <!--<div class="form-group faculty-options">
                     <label for="faculty">Faculty:</label>
                     <select>
                         <option>Faculty of Science</option>
@@ -209,13 +208,26 @@
                         <option>Chemistry Society</option>
                         <option>Mathematical & Statistics Society</option>
                     </select>
-                </div>
+                </div>-->
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="dep id">Department ID:</label>
                     <input type="text" id="dep id" name="dep id" required>
                 </div>
-            
+              -->
+
+                <div class="form-group">
+                    <label for="dep_id">Department:</label>
+                    <select name="dep_id" id="dep_id" required>
+                        <option value="">Select Department :</option>
+                        @foreach($departments as $row3)
+                            <option>{{ $row3->Dep_Name }}</option>
+                        @endforeach
+                    </select>
+
+                </div>
+
+             
             
     <script>
                 
@@ -250,7 +262,7 @@
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Notice</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
                 </div>
 
      
@@ -268,3 +280,4 @@
     @endsection
 </body>
 </html>
+<!-- sachithra-end -->
