@@ -142,7 +142,7 @@
     <div class="container">
         <h1>Create New Event</h1>
 
-        <form action="{{ route('posts.store') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url('/postsInput') }}" method="post" enctype="multipart/form-data">
 
                 @csrf
                 

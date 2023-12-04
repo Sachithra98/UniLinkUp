@@ -29,6 +29,10 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
+    public function post(){
+        return view('editor_create_event');
+    }
+
     // public function create()
     // {
       
