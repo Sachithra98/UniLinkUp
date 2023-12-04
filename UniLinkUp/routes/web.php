@@ -188,3 +188,6 @@ Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
 Route::post('/pollInput', [PollController::class, 'store'])->name('store');
 
+Route::get('/about_us', function () {
+    return view('about_us');
+});
