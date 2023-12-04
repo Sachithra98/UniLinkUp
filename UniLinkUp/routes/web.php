@@ -200,3 +200,7 @@ Route::get('/privacy', function () {
 Route::get('/faq', function () {
     return view('faq');
 })->name('faq');
+
+Route::get('/terms', function () {
+    return view('terms');
+})->name('terms');

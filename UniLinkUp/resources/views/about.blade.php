@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>home</title>
+   <title>About Us</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -60,8 +60,8 @@
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
-      <a href="<?=url('about_us')?>">About Us</a>
-      <a href="<?=url('')?>">FAQs?</a>
+      <a href="<?=url('about')?>">About Us</a>
+      <a href="<?=url('faq')?>">FAQs?</a>
    </nav>
 
    <div class="logo">
@@ -75,23 +75,26 @@
 </section>
 
 
-    <div class="main">
+<div class="main">
 
     <div class="back" >
         <a href="<?=url('index')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
     
-        <br>
-        <h1 align='center'>About Us</h1>
-    
-        <br><br><p>Welcome to our lively university post-sharing platform, where campus life pulses digitally. Going beyond academia, our platform weaves a vibrant tapestry of special events, small businesses, and important notices resonating throughout our university premises.</<p>
-        <p>Our platform is the central hub for all campus events. Whether it's cultural festivals, academic conferences, charity drives, or club activities, we provide a one-stop place for students to share, explore, and connect with the various special events that make our university pulse with life. It's more than just sharing information; it's about building a sense of community and shared experiences that extend beyond the classroom, creating lasting memories well beyond graduation.</<p>
-        <p>In addition to being a marketplace for innovation and a calendar for events, we are also the go-to destination for crucial notices that keep the university community informed. From administrative updates to campus-wide announcements, we serve as the conduit for communication that ensures everyone is in the loop, fostering a sense of transparency and unity among our diverse student body.</<p>
-        <p>Join us in this digital journey where each post contributes to our university life canvas. Whether you're looking for entrepreneurial inspiration, staying updated on campus events, or ensuring you never miss a crucial notice, our platform is your all-in-one destination. Welcome to a space where the vibrancy of university life is captured, celebrated, and shared.</<p>           
-        <br><br>
 
+    <section>
+            <br>
+            <h1 align='center'>About Us</h1>
+        
+            <br><br><p>Welcome to our lively university post-sharing platform, where campus life pulses digitally. Going beyond academia, our platform weaves a vibrant tapestry of special events, small businesses, and important notices resonating throughout our university premises.</<p>
+            <p>Our platform is the central hub for all campus events. Whether it's cultural festivals, academic conferences, charity drives, or club activities, we provide a one-stop place for students to share, explore, and connect with the various special events that make our university pulse with life. It's more than just sharing information; it's about building a sense of community and shared experiences that extend beyond the classroom, creating lasting memories well beyond graduation.</<p>
+            <p>In addition to being a marketplace for innovation and a calendar for events, we are also the go-to destination for crucial notices that keep the university community informed. From administrative updates to campus-wide announcements, we serve as the conduit for communication that ensures everyone is in the loop, fostering a sense of transparency and unity among our diverse student body.</<p>
+            <p>Join us in this digital journey where each post contributes to our university life canvas. Whether you're looking for entrepreneurial inspiration, staying updated on campus events, or ensuring you never miss a crucial notice, our platform is your all-in-one destination. Welcome to a space where the vibrancy of university life is captured, celebrated, and shared.</<p>           
+            <br><br>
 
-    </div>
+    </section>
+</div>
+
     
 
 

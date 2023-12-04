@@ -62,8 +62,8 @@
 
 <nav class="navbar">
    <a href="<?=url('index')?>">Home</a>
-   <a href="<?=url('about_us')?>">About Us</a>
-   <a href="<?=url('')?>">FAQs?</a>
+   <a href="<?=url('about')?>">About Us</a>
+   <a href="<?=url('faq')?>">FAQs?</a>
 </nav>
 
 <div class="logo">
@@ -93,6 +93,7 @@
     <p>This Privacy Policy describes how our platform collects, uses, shares,
     and protects information obtained from users of our university post-sharing platform.
     By using our platform, you agree to the collection and use of information as described in this policy.</p>
+    <br>
 
    
       <h3>Information Collection and Use</h3>
@@ -100,7 +101,7 @@
       <li>Post Content: Any posts, comments, or information shared on the platform may be stored and displayed publicly, linked to your account.</li>
       <li>Usage Data: We may automatically collect information about your interaction with our platform, including IP address, browser type, pages visited, and timestamps.</li>
     
-      <br><br>
+      <br>
       <h3>Use of Collected Information</h3>
       <p>We may use the collected information for the following purposes:
         <ul>
@@ -108,28 +109,28 @@
       <li> Communication: To send periodic emails regarding platform updates, announcements, or related information.</li>
       <li> Personalization: To personalize user experience and display content tailored to your interests and university affiliation.</li>
       <li> Research and Analytics: To analyze user trends, preferences, and interactions for research and analytical purposes.</li>
-      <br><br>
+      <br>
 
       <h3>Information Sharing</h3>
       <p>We do not sell, trade, or rent users' personal identification information to others.
          However, we may share aggregated demographic information not linked to any personal identification information regarding visitors and users with our business partners and advertisers.</p>
-         <br><br>
+         <br>
 
     
         <h3>Data Security</h3>
         <p>We implement appropriate data collection, storage, and processing practices and security measures to protect against unauthorized access, alteration, disclosure, or destruction of your personal information, username, password, transaction information, and data stored on our platform.</p>
-        <br><br>
+        <br>
 
     
          <h3>Your Rights and Choices</h3>
          <li>Access and Correction: You may access, update, or correct your personal information through your account settings.</li>
          <li>Opt-out: You can opt-out of receiving certain emails or communications from us by following the instructions provided in the communication.</li>
-          <br><br>
+          <br>
 
     
           <h3>Changes to this Privacy Policy</h3>
           <p>We reserve the right to update or revise this privacy policy at any time. We will post the revised policy on this page, and it's your responsibility to review this policy periodically for any changes.</p>
-          <br><br>
+          <br>
 
           
           <br><br>
