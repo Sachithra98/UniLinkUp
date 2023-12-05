@@ -157,7 +157,7 @@
             </div>
         @endif
 
-            <form action="{{url('/posts/store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('/notices/store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 
 
@@ -297,7 +297,7 @@
            
                 <div class="new_event" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Notice</button> 
                 </div>
 
      

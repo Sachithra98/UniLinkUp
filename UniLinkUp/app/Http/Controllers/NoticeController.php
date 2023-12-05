@@ -28,16 +28,8 @@ class PostController extends Controller
         return view('notices.show', compact('notice'));
     }
 
-    // public function create()
-    // {
-      
-    //     // Fetch faculties
-    //     $faculties = Faculty::all();
-
-    //     return view('/editor_create_event', compact('faculties'));
-
-    // }
-    public function data()
+  
+    public function select()
     {
       
         $faculties = Faculty::all();
@@ -74,7 +66,7 @@ class PostController extends Controller
             // Access the authenticated user's ID
             //$editorId = $user->Editor_Id; // Assuming the primary key is named 'id'
 
-            Post::create([
+            Notice::create([
                 'Editor_Id' =>$request->Editor_Id,
                 'Title' => $request->post_title,
                 'Description' => $request->desc,
@@ -87,7 +79,7 @@ class PostController extends Controller
                 
             ]);
 
-            return redirect('Editor/editor_create_event')->with('success','Data successfully added!');
+            return redirect('Editor/editor_create_notice')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
