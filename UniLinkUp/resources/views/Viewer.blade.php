@@ -73,8 +73,19 @@
 
                      <div class="post-row">
                          <div class="activity-icons">
-                             <div><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>110</div>
-                             <div><i class="fa fa-thumbs-down"></i>20</div> 
+                             <!-- Inside the loop where you display posts -->
+
+    <form action="{{ route('post.unlike', ['postId' => $post->id]) }}" method="POST">
+        @csrf
+        <button type="submit">Unlike</button>
+    </form>
+
+    <form action="{{ route('post.like', ['postId' => $post->id]) }}" method="POST">
+        @csrf
+        <button type="submit">Like</button>
+    </form>
+
+
                              <div><i class="fa fa-share"></i>50</div>
                         </div>
                      </div>
