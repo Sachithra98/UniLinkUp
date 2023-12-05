@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
+use App\Http\Controllers\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -206,3 +207,6 @@ Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
 //sachithra-end
+
+Route::get('/editor_poll',[VoteController::class, 'index']);
+Route::post('/vote',[VoteController::class, 'vote']);
