@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -22,7 +22,7 @@
 
     <style>
 
- 
+
 
  *{
     font-family: 'Poppins', sans-serif;
@@ -32,7 +32,7 @@
     text-decoration: none;
     text-transform: capitalize;
  }
- 
+
 
 
  .main{
@@ -72,7 +72,7 @@
 <div class="logo">
              <a href="<?=url('')?>"><img src="{{asset('storage/images/site images/uor.png')}}" style="padding:0px" height="40px" width="30px" alt="Logo"></a>
 </div>
-   
+
 
 
 <div id="menu-btn" class="fas fa-bars"></div>
@@ -108,8 +108,31 @@
                         <br>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-header" id="faqHeading2">
+                        <h4 class="mb-0">
+                            <div class="" data-toggle="collapse" data-target="#faqCollapse2" aria-expanded="true" aria-controls="faqCollapse2">
+                                Is there a specific format or template for creating event or notice posts on the platform?
+                            </button>
+                        </h4>
+                    </div>
+
+                    <div id="faqCollapse2" class="collapse show" aria-labelledby="faqHeading2" data-parent="#faqAccordion">
+                        <div class="card-body">
+                            Yes, our platform encourages a standardized format for creating event or notice posts to ensure clarity and consistency. When submitting a post as an editor,<br> please include the following information:<br>
+
+                            Title: Provide a concise and descriptive title for your event or notice.<br>
+                            Date and Time: Clearly specify the date and time of the event or the duration of the notice.<br>
+                            Location: Include the venue or relevant location details for events.<br>
+                            Description: Write a detailed yet concise description of the event or notice, covering key information and any necessary context.<br>
+                            Attachments: If applicable, attach any supporting documents, images, or files related to the event or notice.<br>
+                            By following this format, you not only expedite the approval process but also enhance the overall user experience for viewers on our platform.<br><br> It helps ensure that the information is presented in a clear and organized manner.
+
+                        </div>
+                    </div>
+                </div>
             </div>
-        <br><br>  
+        <br><br>
     </section>
 </div>
 
