@@ -1,5 +1,6 @@
-<!-- sachithra-start -->
+
 <!DOCTYPE html>
+<!--jayani-start-->
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -128,7 +129,7 @@
     <div class="container">
         <h1>Create Accounts For Students</h1>
 
-            <form action="<?=url('')?>" method="post">
+            <!-- <form action="<?=url('')?>" method="post">
                 <div class="form-group">
                     <label for="Student_Id">Student ID:</label>
                     <input type="text" id="Student_Id" name="Student_Id" required>
@@ -178,8 +179,27 @@
 
      
 
-            </form>
+            </form> -->
+ 
+
+            <form action="{{route('upload') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <h4>Create Bulk Accounts For Students</h4>
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+            <div class="form-group">
+                <label for="file">Choose CSV File:</label>
+                <input type="file" name="file" id="file" class="form-control" accept=".csv">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
     </div>
+
+   
     
 </div>
 
@@ -188,5 +208,5 @@
 	<!-- footer section ends -->
 
 </body>
+<!--jayani-end-->
 </html>
-<!-- sachithra-end -->

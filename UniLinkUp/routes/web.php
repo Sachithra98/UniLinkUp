@@ -3,11 +3,16 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
 //sachithra - end
+
+//jayani-start
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StudentController;
+//jayani-end
+
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
 
@@ -83,9 +88,7 @@ Route::get('/admin_add_society', function () {
     return view('/Admin/admin_add_society');
 });
 
-Route::get('/admin_createaccV', function () {
-    return view('/Admin/admin_createaccV');
-});
+
 
 Route::get('/admin_createaccE', function () {
     return view('/Admin/admin_createaccE');
@@ -159,8 +162,10 @@ Route::get('/admin_add_department', function () {
 });
 //sachithra-end
 
+//jayani-start
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
+//jayani-end
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -168,9 +173,11 @@ Route::get('admin_add_role', function () {
 });
 //sachithra-end
 
+
+//jayani-start
 Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
 Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
-
+//jayani-end
 
 //sachithra-start
 Route::get('/search', [PostController::class, 'search']);
@@ -206,3 +213,11 @@ Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
 //sachithra-end
+
+
+//jayani-start
+Route::get('/admin_createaccV', function () {
+    return view('/Admin/admin_createaccV');
+});
+Route::post('/upload',[StudentController::class,'upload'])->name('upload');
+//jayani-end
