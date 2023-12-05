@@ -11,7 +11,8 @@ class Post extends Model
 
     protected $primaryKey = 'id'; // Change 'Post_Id' to 'id'
     public $incrementing = true; // This indicates that 'Post_Id' is an auto-incrementing field
-    public $timestamps = false;
+    protected $timestamps = true;
+
 
 
     protected $fillable = [

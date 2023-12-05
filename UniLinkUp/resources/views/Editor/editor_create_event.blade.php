@@ -214,7 +214,7 @@
                     <label>Choose Society Type:</label><br>
                     <input type="radio" id="university_society" name="society_type" value="University Society" required>
                     <label for="university_society">University Society</label>
-                    
+
                     <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>

@@ -178,7 +178,7 @@ Route::get('/search', [PostController::class, 'search']);
 
 //posts
 Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('/editor_create_event', [PostController::class, 'data'])->name('data');
+Route::get('Editor/editor_create_event', [PostController::class, 'data'])->name('data');
 
 
 //for poll
