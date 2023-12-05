@@ -44,7 +44,7 @@ class PostController extends Controller
         $societies = Society::all();
         $departments = Department::all();
 
-        return view('/editor_create_event', compact('faculties','societies','departments'));
+        return view('Editor/editor_create_event', compact('faculties','societies','departments'));
 
     }
 
@@ -87,7 +87,7 @@ class PostController extends Controller
                 
             ]);
 
-            return redirect('/editor_create_event')->with('success','Data successfully added!');
+            return redirect('Editor/editor_create_event')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';

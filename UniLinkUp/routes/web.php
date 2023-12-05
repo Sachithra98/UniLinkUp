@@ -177,14 +177,9 @@ Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput
 Route::get('/search', [PostController::class, 'search']);
 
 //posts
-Route::post('/editor_create_event', [PollController::class, 'post'])->name('post');
-//Route::get('editor_create_event', [PostController::class, 'create']);
-Route::post('/postsInput', [PostController::class, 'store'])->name('posts.store');
+Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+Route::get('Editor/editor_create_event', [PostController::class, 'data'])->name('data');
 
-//Route::get('editor_create_event', [PostController::class, 'create'])->name('create');
-//Route::get('editor_create_event', [PostController::class, 'fac'])->name('fac');
-Route::get('editor_create_event', [PostController::class, 'dep'])->name('dep');
-//Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
 
 //for poll
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
