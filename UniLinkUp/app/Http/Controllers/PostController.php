@@ -1,8 +1,7 @@
 <?php
-
+//sachithra
 namespace App\Http\Controllers;
 
-//sachithra
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -29,10 +28,6 @@ class PostController extends Controller
         return view('posts.show', compact('post'));
     }
 
-    public function post(){
-        return view('editor_create_event');
-    }
-
     // public function create()
     // {
       
@@ -42,37 +37,17 @@ class PostController extends Controller
     //     return view('/editor_create_event', compact('faculties'));
 
     // }
-    // public function fac()
-    // {
-      
-    //     $faculties = Faculty::all();
-
-    //     return view('Editor/editor_create_event', ['faculties' => $faculties]);
-
-    // }
-
-
-
-
-    // public function soc()
-    // {
-      
-    //     $societies = Society::all();
-
-    //     return view('Editor/editor_create_event', ['societies' => $societies]);
-
-    // }
-
-
-    
-    public function dep()
+    public function data()
     {
       
+        $faculties = Faculty::all();
+        $societies = Society::all();
         $departments = Department::all();
 
-        return view('Editor/editor_create_event', ['departments' => $departments]);
+        return view('/editor_create_event', compact('faculties','societies','departments'));
 
     }
+
 
     public function store(Request $request)
     {
@@ -106,9 +81,10 @@ class PostController extends Controller
                 'Expire_Date' => $request->exp_date,
                 'media_path' => $request->ppost,
                 'Approval_Letter' => $request->approval,
-                'Society_Id' => $request->soc_id,
-                'Dep_Id' => $request->dep_id,
                 'Faculty_Id' => $request->fac_id,
+                'Society_Id' => $request->soc_id,
+                'Dep_Id' => $request->dep_id
+                
             ]);
 
             return redirect('/editor_create_event')->with('success','Data successfully added!');
