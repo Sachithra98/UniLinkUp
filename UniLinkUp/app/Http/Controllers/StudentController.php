@@ -53,5 +53,33 @@ class StudentController extends Controller
 
 
           }
+          public function studentInput(Request $request)
+     {
+         // Validate the request data
+        /*  $request->validate([
+             'Admin_Id' => 'required',
+             'Admin_Email' => 'required|email',
+             'Admin_Name' => 'required',
+         ]);
+      */
+         // Generate a random password
+         $generatedPassword = Str::random(12); // You can adjust the password length as needed
+     
+         // Create a new Admin with the generated password
+         $admin = Student::create([
+            'Student_Id' => $request->input('Student_Id'),
+            'Faculty_Id' => $request->input('Faculty_Id'),
+            'Batch_Id' => $request->input('Batch_Id'),
+            'S_Email' => $request->input('S_Email'),
+            'S_Password' => bcrypt($generatedPassword),
+            'S_Name' => $request->input('S_Name'),
+            'Dep_Id' => $request->input('Dep_Id'),
+            'Admin_Id' => $request->input('Admin_Id'),
+         ]);
+     
+         // You may want to send the generated password to the user or handle it as needed
+     
+         return redirect('/admin_createaccV')->with('success','Data successfully added!');
+     }
           //jayani-end
 }

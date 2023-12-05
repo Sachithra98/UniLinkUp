@@ -128,8 +128,14 @@
 
     <div class="container">
         <h1>Create Accounts For Students</h1>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
 
-            <!-- <form action="<?=url('')?>" method="post">
+            <form action="{{ url('/studentInput') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="Student_Id">Student ID:</label>
                     <input type="text" id="Student_Id" name="Student_Id" required>
@@ -179,7 +185,7 @@
 
      
 
-            </form> -->
+            </form>
  
 
             <form action="{{route('upload') }}" method="post" enctype="multipart/form-data">

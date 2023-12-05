@@ -8,6 +8,7 @@ use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SocietyController;
 //jayani-end
 
 use App\Http\Controllers\CheckLoginController;
@@ -220,4 +221,6 @@ Route::get('/admin_createaccV', function () {
     return view('/Admin/admin_createaccV');
 });
 Route::post('/upload',[StudentController::class,'upload'])->name('upload');
+Route::post('/studentInput',[StudentController::class,'studentInput'])->name('studentInput');
+Route::get('/admin/add_society', [SocietyController::class, 'showAddSocietyForm']);
 //jayani-end
