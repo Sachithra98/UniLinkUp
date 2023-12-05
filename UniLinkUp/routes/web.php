@@ -8,8 +8,11 @@ use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
+//sachithra-start
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
+use App\Http\Controllers\NoticeController;
+//sachithra-end
 use App\Http\Controllers\VoteController;
 
 /*
@@ -205,3 +208,8 @@ Route::get('/terms', function () {
 
 Route::get('/editor_poll',[VoteController::class, 'index']);
 Route::post('/vote',[VoteController::class, 'vote']);
+
+
+//posts
+Route::post('/notices/store', [NoticeController::class, 'store'])->name('notices.store');
+Route::get('Editor/editor_create_notice', [NoticetController::class, 'data'])->name('data');

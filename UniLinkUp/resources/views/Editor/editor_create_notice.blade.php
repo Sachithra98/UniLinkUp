@@ -1,4 +1,4 @@
-<!-- sachithra-start -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,6 +72,14 @@
             border-radius: 4px;
         }
 
+        .main-content .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;   
+        }
+
         /* Style file input fields */
         .main-content .container input[type="file"] {
             width: 100%;
@@ -134,7 +142,8 @@
    
 
 <div class="main-content">
-    
+
+
     <div class="back" >
         <a href="<?=url('editor')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
@@ -142,35 +151,62 @@
     <div class="container">
         <h1>Create New Notice</h1>
 
-            <form action="<?=url('')?>" method="post">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+
+            <form action="{{url('/posts/store')}}" method="post" enctype="multipart/form-data">
+                @csrf
+                
+
                 <div class="form-group">
-                    <label for="notice_id">Notice ID:</label>
-                    <input type="text" id="notice_id" name="notice_id" required>
+                    <label for="post_title">Editor_Id:</label>
+                    <input type="text" id="Editor_Id" name="Editor_Id" value="{{ old('Editor_Id') }}" required>
+                    @error('Editor_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
+                
+                <div class="form-group">
+                    <label for="post_title">Post Title:</label>
+                    <input type="text" id="post_title" name="post_title" value="{{ old('post_title') }}" required>
+                    @error('post_title')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
-                    <label for="notice_title">Notice Title:</label>
-                    <input type="text" id="notice_title" name="notice_title" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="notice_desc">Notice Description:</label>
-                    <input type="text" id="post disc" name="post disc" required>
+                    <label for="post_desc">Description:</label>
+                    <textarea class="desc" id="desc" name="desc" rows="10" required>{{ old('desc') }}</textarea>
+                    @error('desc')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="exp date">Expire Date:</label>
-                    <input type="text" id="exp date" name="exp date" required>
+                    <input type="date" id="exp_date" name="exp_date" value="{{ old('exp_date') }}" required>
+                    @error('exp_date')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
-                    <label for="">Notice Media:</label>
-                    <input type="file" id="post" name="post" multiple required>
+                    <label for="">Post Media:</label>
+                    <input type="file" id="ppost" name="ppost" value="{{ old('ppost') }}" multiple required>
+                    @error('ppost')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="approval">Approval letter:</label>
-                    <input type="file" id="approval" name="approval" multiple required>
+                    <input type="file" id="approval" name="approval" value="{{ old('approval') }}" multiple required>
+                    @error('approval')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
 
@@ -178,16 +214,7 @@
                     <label>Choose Society Type:</label><br>
                     <input type="radio" id="university_society" name="society_type" value="University Society" required>
                     <label for="university_society">University Society</label>
-                    
-                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
-                    <label for="faculty_society">Faculty Society</label><br><br>
-                </div>
 
-                <div class="radio-group">
-                    <label>Choose Society Type:</label><br>
-                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
-                    <label for="university_society">University Society</label>
-                    
                     <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
@@ -264,11 +291,13 @@
     });
 </script>
 
+             
+
                 
            
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_event" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Notice</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
                 </div>
 
      
@@ -278,6 +307,7 @@
     
 </div>
 
+
     <!-- footer section starts -->
     @include('footer')
 	<!-- footer section ends -->
@@ -286,4 +316,3 @@
     @endsection
 </body>
 </html>
-<!-- sachithra-end -->
