@@ -183,56 +183,75 @@
                     <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
-                <div class="form-group faculty-options">
-                    <label for="faculty">Faculty:</label>
-                    <select>
-                        <option>Faculty of Science</option>
-                        <option>Faculty of Engineering</option>
-                        <option>Faculty of Medicine</option>
-                        <option>Faculty of Technology</option>
-                        <option>Faculty of Agriculture</option>
-                        <option>Faculty of Allied Health Science</option>
-                        <option>Faculty of Humanitieas and Social Sciences</option>
-                        <option>Faculty of Management</option>
-                        <option>Faculty of Fisheries and Marine Science</option>
-                    </select>
+                <div class="radio-group">
+                    <label>Choose Society Type:</label><br>
+                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
+                    <label for="university_society">University Society</label>
+                    
+                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
+                    <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
+
+
+                <div class="form-group faculty-options">
+                    <label for="fac_id">Faculty:</label>
+                    <select name="fac_id" id="fac_id" >
+                        <option value="">Select Faculty:</option>
+                        @foreach($faculties as $row1)
+                            <option value="{{ $row1->Faculty_Id }}" {{ old('fac_id') == $row1->Faculty_Id ? 'selected' : '' }}>
+                                {{ $row1->Faculty_Name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('fac_id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
+
+
 
                 <div class="form-group university-society-options">
-                    <label for="society">Society:</label>
-                    <select>
-                        <option>Leo club</option>
-                        <option>AIESEC</option>
-                        <option>Buddhist Society</option>
-                        <option>Rotaract Club</option>
-                        <option>Catheolic Society</option>
-                        <option>Chemistry Society</option>
-                        <option>Mathematical & Statistics Society</option>
+                    <label for="soc_id">Society:</label>
+                    <select name="soc_id" id="soc_id"  >
+                        <option value="">Select Society :</option>
+                        @foreach($societies as $row2)
+                            <option value="{{ $row2->Society_Id}}" {{ old('soc_id') == $row2->Society_Id ? 'selected' : '' }}>
+                                {{ $row2->Society_Name}}
+                            </option>
+                        @endforeach
                     </select>
+                    @error('soc_id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
-                <div class="form-group">
-                    <label for="dep id">Department ID:</label>
-                    <input type="text" id="dep id" name="dep id" required>
-                </div>
-            
-            
-    <script>
+                <div class="form-group faculty-options">
+                    <label for="dep_id">Department:</label>
+                    <select name="dep_id" id="dep_id" value="{{ old('dep_id') }}" >
+                        <option value="">Select Department :</option>
+                        @foreach($departments as $row3)
+                            <option value="{{ $row3->Dep_Id }}" {{ old('dep_id') == $row3->Dep_Id ? 'selected' : '' }}>
+                                {{ $row3->Dep_Name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('dep_id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div> 
                 
+            
+                <script>
     $(document).ready(function() {
         const universitySocietyRadio = $('#university_society');
         const facultySocietyRadio = $('#faculty_society');
         const universitySocietyOptions = $('.university-society-options');
         const facultyOptions = $('.faculty-options');
-        const universitySocietySelect = $('#universitySocietySelect');
-        const facultySelect = $('#facultySelect');
 
         universitySocietyRadio.change(function() {
             if (universitySocietyRadio.is(':checked')) {
                 universitySocietyOptions.show();
                 facultyOptions.hide();
-                facultySelect.prop('disabled', true);
-                universitySocietySelect.prop('disabled', false);
             }
         });
 
@@ -240,12 +259,11 @@
             if (facultySocietyRadio.is(':checked')) {
                 universitySocietyOptions.show();
                 facultyOptions.show();
-                facultySelect.prop('disabled', false);
-                universitySocietySelect.prop('disabled', false);
             }
         });
     });
 </script>
+
                 
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">

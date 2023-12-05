@@ -220,7 +220,7 @@
                 </div>
 
 
-                <div class="form-group">
+                <div class="form-group faculty-options">
                     <label for="fac_id">Faculty:</label>
                     <select name="fac_id" id="fac_id" >
                         <option value="">Select Faculty:</option>
@@ -237,8 +237,7 @@
 
 
 
-
-                <div class="form-group">
+                <div class="form-group university-society-options">
                     <label for="soc_id">Society:</label>
                     <select name="soc_id" id="soc_id"  >
                         <option value="">Select Society :</option>
@@ -253,7 +252,7 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
+                <div class="form-group faculty-options">
                     <label for="dep_id">Department:</label>
                     <select name="dep_id" id="dep_id" value="{{ old('dep_id') }}" >
                         <option value="">Select Department :</option>
@@ -269,7 +268,28 @@
                 </div> 
                 
             
-            
+                <script>
+    $(document).ready(function() {
+        const universitySocietyRadio = $('#university_society');
+        const facultySocietyRadio = $('#faculty_society');
+        const universitySocietyOptions = $('.university-society-options');
+        const facultyOptions = $('.faculty-options');
+
+        universitySocietyRadio.change(function() {
+            if (universitySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.hide();
+            }
+        });
+
+        facultySocietyRadio.change(function() {
+            if (facultySocietyRadio.is(':checked')) {
+                universitySocietyOptions.show();
+                facultyOptions.show();
+            }
+        });
+    });
+</script>
 
              
 
@@ -286,36 +306,7 @@
     </div>
     
 </div>
-   
-<script>
-                
-                $(document).ready(function() {
-                    const universitySocietyRadio = $('#university_society');
-                    const facultySocietyRadio = $('#faculty_society');
-                    const universitySocietyOptions = $('.university-society-options');
-                    const facultyOptions = $('.faculty-options');
-                    const universitySocietySelect = $('#universitySocietySelect');
-                    const facultySelect = $('#facultySelect');
-            
-                    universitySocietyRadio.change(function() {
-                        if (universitySocietyRadio.is(':checked')) {
-                            universitySocietyOptions.show();
-                            facultyOptions.hide();
-                            facultySelect.prop('disabled', true);
-                            universitySocietySelect.prop('disabled', false);
-                        }
-                    });
-            
-                    facultySocietyRadio.change(function() {
-                        if (facultySocietyRadio.is(':checked')) {
-                            universitySocietyOptions.show();
-                            facultyOptions.show();
-                            facultySelect.prop('disabled', false);
-                            universitySocietySelect.prop('disabled', false);
-                        }
-                    });
-                });
-            </script>
+
 
     <!-- footer section starts -->
     @include('footer')
