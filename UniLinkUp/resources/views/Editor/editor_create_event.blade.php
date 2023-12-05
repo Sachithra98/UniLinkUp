@@ -271,8 +271,23 @@
             
             
 
+             
+
                 
-                <script>
+           
+                <div class="new_event" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
+                </div>
+
+     
+
+            </form>
+    </div>
+    
+</div>
+   
+<script>
                 
                 $(document).ready(function() {
                     const universitySocietyRadio = $('#university_society');
@@ -301,20 +316,6 @@
                     });
                 });
             </script>
-
-                
-           
-                <div class="new_event" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for Create Event</button> 
-                </div>
-
-     
-
-            </form>
-    </div>
-    
-</div>
 
     <!-- footer section starts -->
     @include('footer')
