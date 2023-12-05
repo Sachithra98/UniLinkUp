@@ -135,7 +135,7 @@
           
           <br><br>
           <p>If you have any questions about this Privacy Policy, the practices of this platform, or your dealings with this platform, please contact us. 
-          <br><br>This Privacy Policy was last updated on 10/12/2023</p>
+          <br><br>This Privacy Policy was last updated on 15 /12/2023</p>
     </section>
 
       </div>
