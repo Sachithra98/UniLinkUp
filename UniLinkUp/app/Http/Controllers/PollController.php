@@ -44,6 +44,6 @@ class PollController extends Controller
             ]);
 
             //return redirect('/editor_create_poll')->with('success','Data successfully added!');
-            return redirect('Editor/editor_create_poll')->with('success','Data successfully added!');
+            return redirect('/editor_create_poll')->with('success','Data successfully added!');
     }
 }

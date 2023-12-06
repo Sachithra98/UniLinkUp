@@ -92,7 +92,7 @@ class PostController extends Controller
                 
             ]);
 
-            return redirect('Editor/editor_create_event')->with('success','Data successfully added!');
+            return redirect('/editor_create_event')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
