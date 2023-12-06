@@ -1,11 +1,12 @@
 <?php
-
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\FacultyController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PollController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -153,7 +154,21 @@ Route::get('/admin_add_department', function () {
     return view('admin_add_department');
 });
 
-Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
+
+
+Route::get('/forget-password', [ForgetPasswordManager::class, 'forgetPassword'])->name('forget.password');
+     
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
+// Placeholder statement
 
+    
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    
+
+Route::get('/forget-password', [ForgetPasswordManager::class, 'forgetPassword'])->name('forget.password');
+Route::post('/forget-password', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name('forget.password.post');
+
+Route::get('/reset-password/{token}',[ForgetPasswordManager::class,'resetPassword'])->name(name:"reset.password");
