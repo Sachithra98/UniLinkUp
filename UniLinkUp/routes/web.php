@@ -184,6 +184,11 @@ Route::post('/postInput', [PostController::class, 'store'])->name('store');
 Route::get('/editor_create_event', [PostController::class, 'data'])->name('data');
 Route::post('/editor_create_event', [PostController::class, 'post'])->name('post');
 
+//notice
+Route::post('/noticeInput', [NoticeController::class, 'store'])->name('store');
+Route::get('/editor_create_notice', [NoticeController::class, 'data'])->name('data');
+Route::post('/editor_create_notice', [NoticeController::class, 'notice'])->name('notice');
+
 
 //for poll
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');

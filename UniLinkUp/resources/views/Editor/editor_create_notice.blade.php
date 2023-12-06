@@ -157,7 +157,7 @@
             </div>
         @endif
 
-            <form action="{{url('/notices/store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('/noticeInput')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 
 
@@ -170,7 +170,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="post_title">Post Title:</label>
+                    <label for="post_title">Notice Title:</label>
                     <input type="text" id="post_title" name="post_title" value="{{ old('post_title') }}" required>
                     @error('post_title')
                         <div class="alert alert-danger">{{$message}}</div>
@@ -184,17 +184,17 @@
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
                 </div>
-
+<!-- 
                 <div class="form-group">
                     <label for="exp date">Expire Date:</label>
                     <input type="date" id="exp_date" name="exp_date" value="{{ old('exp_date') }}" required>
                     @error('exp_date')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
-                </div>
+                </div> -->
 
                 <div class="form-group">
-                    <label for="">Post Media:</label>
+                    <label for="">Notice Media:</label>
                     <input type="file" id="ppost" name="ppost" value="{{ old('ppost') }}" multiple required>
                     @error('ppost')
                         <div class="alert alert-danger">{{$message}}</div>

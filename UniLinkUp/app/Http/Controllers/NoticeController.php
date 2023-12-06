@@ -10,7 +10,7 @@ use App\Models\Faculty;
 use App\Models\Department;
 use App\Models\Society;
 
-class PostController extends Controller
+class NoticeController extends Controller
 {
     public function search(Request $request)
     {
@@ -19,17 +19,30 @@ class PostController extends Controller
         // Perform the search on the posts table
         $posts = Post::where('title', 'like', '%' . $query . '%')->get();
         
-        return view('notices.search', compact('notices', 'query'));
+        return view('posts.search', compact('posts', 'query'));
     }
     
 
-    public function show(Notice $notice)
+    public function show(Post $post)
     {
-        return view('notices.show', compact('notice'));
+        return view('posts.show', compact('post'));
     }
 
-  
-    public function select()
+    
+    public function notice(){
+        return view('Editor/editor_create_notice');
+    }
+
+    // public function create()
+    // {
+      
+    //     // Fetch faculties
+    //     $faculties = Faculty::all();
+
+    //     return view('/editor_create_event', compact('faculties'));
+
+    // }
+    public function data()
     {
       
         $faculties = Faculty::all();
@@ -48,7 +61,7 @@ class PostController extends Controller
             $validator = $this->validate($request, [
                 'post_title' => 'required|string|max:255',
                 'desc' => 'required|string',
-                'exp_date' => 'required|date',
+                
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
                 'soc_id' => 'required|string',
@@ -70,7 +83,7 @@ class PostController extends Controller
                 'Editor_Id' =>$request->Editor_Id,
                 'Title' => $request->post_title,
                 'Description' => $request->desc,
-                'Expire_Date' => $request->exp_date,
+                
                 'media_path' => $request->ppost,
                 'Approval_Letter' => $request->approval,
                 'Faculty_Id' => $request->fac_id,
@@ -79,7 +92,7 @@ class PostController extends Controller
                 
             ]);
 
-            return redirect('Editor/editor_create_notice')->with('success','Data successfully added!');
+            return redirect('/editor_create_notice')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
