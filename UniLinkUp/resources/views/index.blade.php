@@ -31,6 +31,7 @@
       <a href="<?=url('about')?>">About Us</a>
       <a href="<?=url('faq')?>">FAQs?</a>
       <a href="<?=url('login')?>">Log In</a>
+      <a href="<?=url('Viewer')?>">Viewer</a>
    </nav>
 
    <div class="logo">

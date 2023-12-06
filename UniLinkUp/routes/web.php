@@ -206,3 +206,7 @@ Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
 //sachithra-end
+
+Route::get('Viewer', function () {
+    return view('Viewer');
+});
