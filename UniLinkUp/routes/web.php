@@ -180,8 +180,9 @@ Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput
 Route::get('/search', [PostController::class, 'search']);
 
 //posts
-Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
-Route::get('editor_create_event', [PostController::class, 'data'])->name('data');
+// Route::post('/posts/store', [PostController::class, 'store'])->name('posts.store');
+Route::post('/postInput', [PostController::class, 'data'])->name('data');
+Route::post('Editor/editor_create_event', [PostController::class, 'post'])->name('post');
 
 
 //for poll

@@ -157,7 +157,7 @@
             </div>
         @endif
 
-            <form action="{{url('/posts/store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{url('/postInput')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 
 
