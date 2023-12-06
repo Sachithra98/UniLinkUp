@@ -1,4 +1,4 @@
-<!-- sachithra-start -->
+<!-- jayani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,12 +127,17 @@
 
     <div class="container">
         <h1>Create Accounts For Editors</h1>
-
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+        <form action="{{ url('/editorInput') }}" method="post">
+                @csrf
+               <!--  <div class="form-group">
                     <label for="Editor_Id">Editor ID:</label>
                     <input type="text" id="Editor_Id" name="Editor_Id" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="Faculty_Id">Faculty ID:</label>
@@ -145,18 +150,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="S_Email">Student Email:</label>
-                    <input type="text" id="S_Email" name="S_Email" required>
+                    <label for="E_Email">Editor Email:</label>
+                    <input type="text" id="E_Email" name="E_Email" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="S_Password">Student Password:</label>
-                    <input type="text" id="S_Password" name="S_Password" required>
-                </div>
+                <!-- <div class="form-group">
+                    <label for="E_Password">Editor Password:</label>
+                    <input type="text" id="E_Password" name="E_Password" required>
+                </div> -->
 
                 <div class="form-group">
-                    <label for="S_Name">Student Name:</label>
-                    <input type="text" id="S_Name" name="S_Name" required>
+                    <label for="E_Name">Editor Name:</label>
+                    <input type="text" id="E_Name" name="E_Name" required>
                 </div>
 
                 <div class="form-group">

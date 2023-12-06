@@ -136,10 +136,10 @@
 
             <form action="{{ url('/facultyInput') }}" method="post">
                 @csrf
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="faculty_ID">Faculty ID:</label>
                     <input type="text" id="faculty_ID" name="faculty_ID" required>
-                </div>
+                </div> -->
 
 
 

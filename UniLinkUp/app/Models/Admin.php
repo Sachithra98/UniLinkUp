@@ -1,5 +1,5 @@
 <?php
-
+//jayani-starts
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,4 +9,18 @@ class Admin extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = [
+          /* 'Admin_Id', */
+          'Admin_Email',
+          'Admin_Name',
+          'Admin_Password'
+        
+];
+protected static function booted()
+{
+    static::creating(function ($admin) {
+        $admin->Admin_Id = 'A' . str_pad(Admin::count() + 1, 3, '0', STR_PAD_LEFT);
+    });
+}
+//jayani-ends
 }

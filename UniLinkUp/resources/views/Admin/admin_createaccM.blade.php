@@ -1,4 +1,4 @@
-<!-- sachithra-start -->
+<!-- jayani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -128,11 +128,17 @@
     <div class="container">
         <h1>Create Accounts For Moderators</h1>
 
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+        <form action="{{ url('/moderatorInput') }}" method="post">
+                @csrf
+               <!--  <div class="form-group">
                     <label for="Moderator_Id">Moderator ID:</label>
                     <input type="text" id="Moderator_Id" name="Moderator_Id" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="Dep_Id">Department ID:</label>
@@ -149,11 +155,11 @@
                     <input type="text" id="M_Email" name="M_Email" required>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="M_Password">Moderator Password:</label>
                     <input type="text" id="M_Password" name="M_Password" required>
                 </div>
-
+ -->
                 <div class="form-group">
                     <label for="M_Name">Moderator Name:</label>
                     <input type="text" id="M_Name" name="M_Name" required>
@@ -196,4 +202,4 @@
 
 </body>
 </html>
-<!-- sachithra-end -->
+<!-- jayani-end -->

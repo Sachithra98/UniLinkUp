@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
     
-            $table->timestamp(); // or remove the default value
+            $table->timestamps(); // or remove the default value
 
     
             // Fix the typo in the foreign key declaration
