@@ -100,6 +100,15 @@
             gap: 10px;
             margin-bottom: 15px;
         }
+        
+        .main-content .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;   
+        }
+
 
         .main-content .container  .form-group {
             display: flex;
@@ -155,44 +164,80 @@
 
                 <div class="form-group">
                     <label for="poll_title">Poll Title:</label>
-                    <input type="text" id="poll_title" name="poll_title" required>
+                    <input type="text" id="poll_title" name="poll_title" value="{{ old('poll_title') }}" required>
+                    @error('poll_title')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
+
+
                 <div class="form-group">
-                    <label for="poll_desc">Poll Description:</label>
-                    <input type="text" id="poll_desc" name="poll_desc">
+                    <label for="poll_desc">Description:</label>
+                    <textarea class="poll_desc" id="poll_desc" name="poll_desc" rows="10" required>{{ old('poll_desc') }}</textarea>
+                    @error('poll_desc')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
+
+
+                <!-- <div class="form-group">
+                    <label for="">Poll Media:</label>
+                    <input type="file" id="ppoll" name="ppoll" value="{{ old('ppoll') }}" multiple required>
+                    @error('ppoll')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div> -->
+
 
 
                 <div class="form-group">
                     <label for="question">Question:</label>
-                    <input type="text" id="question" name="question" multiple required>
+                    <input type="text" id="question" name="question" value="{{ old('question')}}" multiple required>
+                    @error('question')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="option1">Option1</label>
-                    <input type="text" id="option1" name="option1" multiple>
+                    <input type="text" id="option1" name="option1" value="{{ old('option1')}}" multiple>
+                    @error('option1')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="option2">Option2</label>
-                    <input type="text" id="option2" name="option2" multiple>
+                    <input type="text" id="option2" name="option2" value="{{ old('option2')}}" multiple>
+                    @error('option2')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
 
                 <div class="form-group">
                     <label for="option3">Option3</label>
-                    <input type="text" id="option3" name="option3" multiple>
+                    <input type="text" id="option3" name="option3" value="{{ old('option3')}}" multiple>
+                    @error('option3')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="option4">Option4</label>
-                    <input type="text" id="option4" name="option4" multiple>
+                    <input type="text" id="option4" name="option4" value="{{ old('option4')}}" multiple>
+                    @error('option4')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="option5">Option5</label>
-                    <input type="text" id="option5" name="option5" multiple>
+                    <input type="text" id="option5" name="option5" value="{{ old('option5')}}" multiple>
+                    @error('option5')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 
@@ -202,7 +247,7 @@
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Request for create poll</button> 
                 </div>
 
      
