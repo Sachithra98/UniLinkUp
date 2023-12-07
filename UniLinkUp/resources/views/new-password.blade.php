@@ -22,7 +22,7 @@
 </div>
 
     <p>we will send a link to your email,use that link to reset password</p>
-    <form action="{{route('forget.password.post')}}" method="post">
+    <form action="{{route('reset.password.post')}}" method="post">
         @csrf
         <input type="text" name="token"hidden value="{{$token}}">
         <div class= "nb-3">

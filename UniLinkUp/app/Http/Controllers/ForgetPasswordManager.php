@@ -37,14 +37,35 @@ Mail::send('emails.forget-password', ['token' => $token], function ($message) us
     }
 
     function resetPassword($token){
-        return view(view:"new-password",compact(var_name:'token'));
+        return view('new-password', compact('var_name'));
 
     }
 
     function resetPasswordPost(Request $request){
         $request->validate([
             "email"=>"required|email|exists:users",
-            "password"=>"required|string|min"
-        ])
+            "password"=>"required|string|min:6|confirmed",
+            "password_confirmation"=>"required"
+        ]);
+
+        $updatePassword=DB::table(table:'password_resets')
+            ->where([
+                "email"=>$request->email,
+                "token"=>$request->token
+
+            ])->first();
+
+        if(!$updatePassword){
+            return redirect()->to(route(name:"reset.password"))->with("error","Invalid");
+        }
+
+        User::where("email",$request->email)
+            ->update(["password"=>Hash::make($request->password)]);
+
+        DB::table(table:"password_reset")->where(["email"=>$request->email])->delete();
+
+        return redirect()->to(route(name:"login"))->with("success","password reset success" );
+
+
     }
 }
