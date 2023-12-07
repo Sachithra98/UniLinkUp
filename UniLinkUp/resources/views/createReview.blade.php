@@ -148,13 +148,23 @@
 
 
 
-        <div class=".main-content">
+    <div class="main-content">
+
+    
+    <div class="back" >
+                <a href="<?=url('reviews')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+            </div>
+
 
         <div class="container">
             <h1>Reviews Form</h1>
         
 
-        <div class="content">
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+            @endif
 
             <form action="{{ route('reviews.store') }}" method="post">
                 @csrf

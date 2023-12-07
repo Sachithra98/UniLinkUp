@@ -8,9 +8,10 @@ use App\Models\Review;
 
 class ReviewController extends Controller
 {
+   
     public function create()
     {
-        return view('reviews.create');
+        return view('/createReview');
     }
 
     public function store(Request $request)
@@ -29,7 +30,7 @@ class ReviewController extends Controller
     public function index()
     {
     $reviews = Review::all();
-    return view('reviews.index', compact('reviews'));
+    return view('/reviews', compact('reviews'));
     }
 }
 

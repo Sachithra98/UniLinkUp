@@ -230,6 +230,15 @@ Route::get('/faq', function () {
 Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
+
+Route::get('/createReview', function () {
+    return view('createReview');
+})->name('createReview');
+
+Route::get('/reviews', function () {
+    return view('reviews');
+})->name('reviews');
+
 //sachithra-end
 
 //jayani-start
@@ -268,3 +277,4 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 // end piyumi
+

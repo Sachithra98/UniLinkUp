@@ -50,7 +50,7 @@
       <div class="box">
          <h3>extra links</h3>
          <a href="{{ route('faq') }}"> <i class="fas fa-angle-right"></i> FAQs?</a>
-         <a href="#"> <i class="fas fa-angle-right"></i> Reviews</a>
+         <a href="<?=url('reviews')?>"> <i class="fas fa-angle-right"></i> Reviews</a>
          <a href="{{ route('privacy') }}"> <i class="fas fa-angle-right"></i> privacy policy</a>
          <a href="{{ route('terms') }}"> <i class="fas fa-angle-right"></i> Terms & Conditions</a>
       </div>
