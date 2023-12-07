@@ -17,10 +17,13 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 
-
+//sachithra-start
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
-use App\Models\Admin;
+use App\Http\Controllers\NoticeController;
+//sachithra - end
+
+
 
 /*
 |--------------------------------------------------------------------------
