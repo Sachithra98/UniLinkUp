@@ -5,8 +5,24 @@ use Illuminate\Support\Str;
 use App\Models\Editor;
 use Illuminate\Http\Request;
 
+use App\Models\Faculty;
+use App\Models\Department;
+use App\Models\Society;
+
 class EditorController extends Controller
 {
+
+    public function data()
+    {
+      
+        $faculties = Faculty::all();
+        $societies = Society::all();
+        $departments = Department::all();
+
+        return view('Admin/admin_createaccE', compact('faculties','societies','departments'));
+
+    }
+
     public function editorInput(Request $request)
     {
         // Generate a random password

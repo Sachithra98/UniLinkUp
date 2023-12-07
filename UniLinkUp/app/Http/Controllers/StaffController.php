@@ -5,8 +5,26 @@ use Illuminate\Support\Str;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 
+//sachi-start
+use App\Models\Faculty;
+use App\Models\Department;
+
+
 class StaffController extends Controller
 {
+
+    public function data()
+    {
+      
+        $faculties = Faculty::all();
+        $departments = Department::all();
+
+        return view('Admin/admin_createaccS', compact('faculties','departments'));
+
+    }
+    //sachi-end
+
+
     public function staffInput(Request $request)
      {
          // Generate a random password

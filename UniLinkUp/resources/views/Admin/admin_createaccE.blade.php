@@ -1,4 +1,4 @@
-<!-- jayani-start -->
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,17 +72,31 @@
             border-radius: 4px;
         }
 
-        /* Style radio buttons and labels */
-        .main-content .container input[type="radio"] {
-            margin-right: 5px;
+        .main-content .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;   
         }
 
-        .main-content .container .radio-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        /* Style file input fields */
+        .main-content .container input[type="file"] {
+            width: 100%;
+            padding: 10px;
             margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
         }
+
+        .main-content .container  .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
 
         .main-content .container  .form-group {
             display: flex;
@@ -149,7 +163,7 @@
                     <select name="Faculty_Id" id="Faculty_Id"  required>
                         <option value="">Select Faculty:</option>
                         @foreach($faculties as $row1)
-                            <option value="{{ $row1->Faculty_Id }}" {{ old('fac_id') == $row1->Faculty_Id ? 'selected' : '' }}>
+                            <option value="{{ $row1->Faculty_Id }}" {{ old('Faculty_Id') == $row1->Faculty_Id ? 'selected' : '' }}>
                                 {{ $row1->Faculty_Name }}
                             </option>
                         @endforeach
@@ -185,24 +199,35 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="dep_id">Department:</label>
-                    <select name="dep_id" id="dep_id" value="{{ old('dep_id') }}" >
+                    <label for="Dep_Id">Department:</label>
+                    <select name="Dep_Id" id="Dep_Id" required >
                         <option value="">Select Department :</option>
                         @foreach($departments as $row3)
-                            <option value="{{ $row3->Dep_Id }}" {{ old('dep_id') == $row3->Dep_Id ? 'selected' : '' }}>
+                            <option value="{{ $row3->Dep_Id }}" {{ old('Dep_Id') == $row3->Dep_Id ? 'selected' : '' }}>
                                 {{ $row3->Dep_Name }}
                             </option>
                         @endforeach
                     </select>
-                    @error('dep_id')
+                    @error('Dep_Id')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
                 </div> 
 
 
+
                 <div class="form-group">
-                    <label for="Society_Id">Society ID:</label>
-                    <input type="text" id="Society_Id" name="Society_Id" required>
+                    <label for="Society_Id">Society:</label>
+                    <select name="Society_Id" id="Society_Id" >
+                        <option value="">Select Society :</option>
+                        @foreach($societies as $row2)
+                            <option value="{{ $row2->Society_Id}}" {{ old('Society_Id') == $row2->Society_Id ? 'selected' : '' }}>
+                                {{ $row2->Society_Name}}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('Society_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
                
            
