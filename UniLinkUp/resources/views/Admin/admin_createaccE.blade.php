@@ -139,15 +139,30 @@
                     <input type="text" id="Editor_Id" name="Editor_Id" required>
                 </div> -->
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Faculty_Id">Faculty ID:</label>
                     <input type="text" id="Faculty_Id" name="Faculty_Id" required>
+                </div> -->
+
+                <div class="form-group faculty-options">
+                    <label for="Faculty_Id">Faculty:</label>
+                    <select name="Faculty_Id" id="Faculty_Id"  required>
+                        <option value="">Select Faculty:</option>
+                        @foreach($faculties as $row1)
+                            <option value="{{ $row1->Faculty_Id }}" {{ old('fac_id') == $row1->Faculty_Id ? 'selected' : '' }}>
+                                {{ $row1->Faculty_Name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('Faculty_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Batch_Id">Batch ID:</label>
                     <input type="text" id="Batch_Id" name="Batch_Id" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="E_Email">Editor Email:</label>
@@ -170,9 +185,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Dep_Id">Department ID:</label>
-                    <input type="text" id="Dep_Id" name="Dep_Id" required>
-                </div>
+                    <label for="dep_id">Department:</label>
+                    <select name="dep_id" id="dep_id" value="{{ old('dep_id') }}" >
+                        <option value="">Select Department :</option>
+                        @foreach($departments as $row3)
+                            <option value="{{ $row3->Dep_Id }}" {{ old('dep_id') == $row3->Dep_Id ? 'selected' : '' }}>
+                                {{ $row3->Dep_Name }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('dep_id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div> 
+
 
                 <div class="form-group">
                     <label for="Society_Id">Society ID:</label>
