@@ -6,8 +6,24 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+//sachi-start
+use App\Models\Faculty;
+use App\Models\Department;
+
+
 class StudentController extends Controller
 {
+
+    public function data()
+    {
+      
+        $faculties = Faculty::all();
+        $departments = Department::all();
+
+        return view('Admin/admin_createaccV', compact('faculties','departments'));
+
+    }
+//sachi-end
 
     
     public function upload(Request $request)

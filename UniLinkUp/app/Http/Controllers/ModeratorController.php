@@ -5,8 +5,25 @@ use Illuminate\Support\Str;
 use App\Models\Moderator;
 use Illuminate\Http\Request;
 
+use App\Models\Department;
+use App\Models\Society;
+
 class ModeratorController extends Controller
 {
+    //sachi start
+    public function data()
+    {
+      
+    
+        $societies = Society::all();
+        $departments = Department::all();
+
+        return view('Admin/admin_createaccM', compact('societies','departments'));
+
+    }
+    //sachi end
+
+
     public function moderatorInput(Request $request)
     {
         // Generate a random password
