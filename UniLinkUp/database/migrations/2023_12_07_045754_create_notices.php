@@ -12,7 +12,7 @@ return new class extends Migration
     //sachithra
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('notices', function (Blueprint $table) {
             $table->id('Post_Id'); // This will make 'Post_Id' an auto-incrementing primary key
             $table->string('Editor_Id');
             $table->string('Title');
@@ -43,6 +43,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('notices');
     }
 };

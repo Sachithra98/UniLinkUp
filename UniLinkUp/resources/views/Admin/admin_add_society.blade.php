@@ -1,10 +1,11 @@
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Students</title>
+   <title>Add New Society</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -121,56 +122,39 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_societies')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Students</h1>
+        <h1>Add New society</h1>
 
             <form action="<?=url('')?>" method="post">
                 <div class="form-group">
-                    <label for="Student_Id">Student ID:</label>
-                    <input type="text" id="Student_Id" name="Student_Id" required>
+                    <label for="society_id">Society ID:</label>
+                    <input type="text" id="society_id" name="society_id" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Faculty_Id">Faculty ID:</label>
-                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
+                    <label for="society_name">Society Name:</label>
+                    <input type="text" id="society_name" name="society_name" required>
+                </div>
+
+
+                <div class="radio-group">
+                    <label>Choose Society Type:</label><br>
+                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
+                    <label for="university_society">University Society</label>
+                    
+                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
+                    <label for="faculty_society">Faculty Society</label><br><br>
                 </div>
 
                 <div class="form-group">
-                    <label for="Batch_Id">Batch ID:</label>
-                    <input type="text" id="Batch_Id" name="Batch_Id" required>
+                    <label for="faculty">Faculty:</label>
+                    <input type="text" id="faculty" name="faculty" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="S_Email">Student Email:</label>
-                    <input type="text" id="S_Email" name="S_Email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="S_Password">Student Password:</label>
-                    <input type="text" id="S_Password" name="S_Password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="S_Name">Student Name:</label>
-                    <input type="text" id="S_Name" name="S_Name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Dep_Id">Department ID:</label>
-                    <input type="text" id="Dep_Id" name="Dep_Id" required>
-                </div>
-
-               
            
-                <div class="new_accountsV" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -188,3 +172,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

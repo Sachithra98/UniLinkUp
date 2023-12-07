@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add New Society</title>
+   <title>Add New Role</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -122,48 +122,59 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin_societies')?>" class="btn" style="margin-bottom: 20px;">Back</a>
-    </div>
-
-    <div class="container">
-        <h1>Add New society</h1>
-
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
-                    <label for="society_id">Society ID:</label>
-                    <input type="text" id="society_id" name="society_id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="society_name">Society Name:</label>
-                    <input type="text" id="society_name" name="society_name" required>
-                </div>
-
-
-                <div class="radio-group">
-                    <label>Choose Society Type:</label><br>
-                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
-                    <label for="university_society">University Society</label>
-                    
-                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
-                    <label for="faculty_society">Faculty Society</label><br><br>
-                </div>
-
-                <div class="form-group">
-                    <label for="faculty">Faculty:</label>
-                    <input type="text" id="faculty" name="faculty" required>
-                </div>
-           
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
-                </div>
-
-     
-
-            </form>
+        <a href="<?=url('admin_Role_UMR')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
     
+
+<div class="container">
+        <h1>Add New Role</h1>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif 
+
+        <form action="{{route('roleInput') }}" method="post">
+             @csrf
+          <!--   <div class="form-group">
+                    <label for="Role_Id">Role ID:</label>
+                    <input type="text" id="Role_Id" name="Role_Id" required>
+                </div> -->
+
+            <div class="form-group">
+                    <label for="roleName">Role Name:</label>
+                    <input type="text" id="Role_Name" name="Role_Name" required>
+                </div>
+            
+            <div class="form-group">
+                    <label for="responsibilities">Responsibilities:</label>
+                    <textarea id="Responsibilities" name="Responsibilities" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                    <label for="selectedForRole">Who are selected for this role:</label>
+                    <select id="Who_Are_Responsible" name="Who_Are_Responsible" required>
+                        <option value="Student">Student</option>
+                        <option value="Staff">Staff</option>
+                        <option value="Moderator">Moderator</option>
+                        <option value="Editor">Editor</option>
+                    </select>
+            </div>
+    </div>
+                
+
+                <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button>
+                </div>
+
+    
+             </form>
+     </div>
+    
+
+
 </div>
 
     <!-- footer section starts -->
@@ -172,3 +183,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

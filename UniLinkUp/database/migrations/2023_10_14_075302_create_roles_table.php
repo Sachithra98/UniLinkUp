@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('Role_Name');
             $table->string('Responsibilities');
             $table->string('Who_Are_Responsible');
+            $table->timestamps();
         });
     }
 

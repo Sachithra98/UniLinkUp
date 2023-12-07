@@ -13,15 +13,22 @@ class RoleController extends Controller
 
     public function roleInput(Request $request)
     {
-       $Role=new Role();
-        $Role->Dep_Id=$request->Dep_Id;
-        $Rolet->Dep_Name=$request->Dep_Name;
-        $Role->Faculty_Id=$request->Faculty_Id;
-        $Role->save();
+       /*  $Role=new Role();
+        $Role->Role_Id=$request->Role_Id;
+        $Rolet->Role_Name=$request->Role_Name;
+        $Role->Responsibilities=$request->Responsibilities;
+        $Role->Who_Are_Responsible=$request->Who_Are_Responsible;
+        $Role->save(); */
 
+        role::create([
+         /*    'Role_Id'=> $request -> Role_Id, */
+            'Role_Name' => $request -> Role_Name,
+            'Responsibilities'=> $request -> Responsibilities,
+            'Who_Are_Responsible' => $request ->Who_Are_Responsible,
+        ]);
 
-        
-        return redirect('/admin_add_department')->with('success','Data successfully added!');
+               
+        return redirect('/admin_add_role')->with('success','Data successfully added!');
     }    
 
     /**

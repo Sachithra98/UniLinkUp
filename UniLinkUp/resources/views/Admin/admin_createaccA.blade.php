@@ -1,10 +1,11 @@
+<!-- Jayani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Staff Members</title>
+   <title>Create Accounts For Admins</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -125,47 +126,36 @@
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Staff Members</h1>
-
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
-                    <label for="Staff_Id'">Staff ID:</label>
-                    <input type="text" id="Staff_Id'" name="Staff_Id'" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Faculty_Id">Faculty ID:</label>
-                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Dep_Id">Department ID:</label>
-                    <input type="text" id="Dep_Id" name="Dep_Id" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Staff_Email">Student Email:</label>
-                    <input type="text" id="Staff_Email" name="S_Email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Staff_Password">Staff Password:</label>
-                    <input type="text" id="Staff_Password" name="Staff_Password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Staff_Name">Student Name:</label>
-                    <input type="text" id="Staff_Name" name="Staff_Name" required>
-                </div>
-
-                <div class="form-group">
+        <h1>Create Accounts For Admins</h1>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+        <form action="{{ url('/adminInput') }}" method="post">
+                @csrf
+            <!-- <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
                     <input type="text" id="Admin_Id" name="Admin_Id" required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="Admin_Email'">Admin Email:</label>
+                    <input type="text" id="Admin_Email'" name="Admin_Email" required>
                 </div>
 
-                               
+               <!--  <div class="form-group">
+                    <label for="Admin_Password">Admin password:</label>
+                    <input type="text" id="Admin_Password" name="Admin_Password" required>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="Admin_Name">Admin Name:</label>
+                    <input type="text" id="Admin_Name" name="Admin_Name" required>
+                </div>
+                                        
            
-                <div class="new_accountsS" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_accountsA" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -183,3 +173,4 @@
 
 </body>
 </html>
+<!-- Jayani-end -->

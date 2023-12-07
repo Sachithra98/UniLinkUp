@@ -7,18 +7,18 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function editor(){
-        return view('editor');
+        return view('/Editor/editor');
     }
 
     public function moderator(){
-        return view('welcome');
+        return view('/Moerator/moderator');
     }
     public function admin(){
-        return view('admin');
+        return view('Admin/admin');
     }
 
     public function student(){
-        return view('welcome');
+        return view('Student/student');
     }
     public function error(){
         return view('login');

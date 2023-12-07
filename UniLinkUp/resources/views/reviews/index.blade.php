@@ -10,6 +10,7 @@
 <body style="margin-top: 50px;">
 
     <div class="container">
+        
         <div class="row">
             @foreach($reviews as $review)
             <div class="col-md-4">

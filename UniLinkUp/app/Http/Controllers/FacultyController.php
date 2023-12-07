@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+//<!-- sachithra-start -->
 use Illuminate\Http\Request;
 use App\Models\Faculty;
 
@@ -17,7 +18,7 @@ class FacultyController extends Controller
     public function facultyInput(Request $request)
     {
         faculty::create([
-            'Faculty_Id'=> $request -> faculty_ID,
+           /*  'Faculty_Id'=> $request -> faculty_ID, */
             'Faculty_Name' => $request -> faculty_name
         ]);
 

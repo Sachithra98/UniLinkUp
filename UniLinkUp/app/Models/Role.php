@@ -9,4 +9,11 @@ class Role extends Model
 {
     use HasFactory;
     public $timestamps = false;
+
+    protected $fillable = [
+        'Role_Id',
+        'Role_Name',
+        'Responsibilities',
+        'Who_Are_Responsible'
+    ];
 }

@@ -1,11 +1,11 @@
-
+<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add New Role</title>
+   <title>Add New Faculty</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -122,45 +122,42 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin_Role_UMR')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_faculties')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Add New Role</h1>
+        <h1>Add New Faculty</h1>
 
-            <form action="process_form.php" method="post">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+
+            <form action="{{ url('/facultyInput') }}" method="post">
+                @csrf
+                <!-- <div class="form-group">
+                    <label for="faculty_ID">Faculty ID:</label>
+                    <input type="text" id="faculty_ID" name="faculty_ID" required>
+                </div> -->
+
+
+
                 <div class="form-group">
-                    <label for="roleName">Role Name:</label>
-                    <input type="text" id="roleName" name="roleName" required>
+                    <label for="faculty_name">Faculty Name:</label>
+                    <input type="text" id="faculty_name" name="faculty_name" required>
                 </div>
-
-                <div class="form-group">
-                    <label for="responsibilities">Responsibilities:</label>
-                    <textarea id="responsibilities" name="responsibilities" rows="4" required></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="selectedForRole">Who are selected for this role:</label>
-                    <select id="selectedForRole" name="selectedForRole" required>
-                        <option value="Student">Student</option>
-                        <option value="Staff">Staff</option>
-                        <option value="Moderator">Moderator</option>
-                        <option value="Editor">Editor</option>
-                    </select>
-                </div>
-                
-
-                <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+           
+                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button>
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
 
-    
-             </form>
-     </div>
-    
+     
 
-
+            </form>
+    </div>
+    
 </div>
 
     <!-- footer section starts -->
@@ -169,3 +166,4 @@
 
 </body>
 </html>
+<!-- sachithra-end -->

@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('societies', function (Blueprint $table) {
             $table->string('Society_Id')->primary();
             $table->string('Society_Name');
-             $table->string('Editor_Id');
+
         });
     }
 
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+     public function down(): void
     {
         Schema::dropIfExists('societies');
     }
