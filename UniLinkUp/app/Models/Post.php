@@ -8,9 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+
+    protected $primaryKey = 'id'; // Change 'Post_Id' to 'id'
+    public $incrementing = true; // This indicates that 'Post_Id' is an auto-incrementing field
+    public $timestamps = true;
+
+
 
     protected $fillable = [
+        
         'Editor_Id',
         'Title',
         'Description',
@@ -19,6 +25,6 @@ class Post extends Model
         'Approval_Letter',
         'Society_Id',
         'Dep_Id',
-        'Faculty_Id',
+        'Faculty_Id'
     ];
 }
