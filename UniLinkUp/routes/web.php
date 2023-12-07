@@ -176,14 +176,15 @@ Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput
 Route::get('/search', [PostController::class, 'search']);
 
 //posts
-Route::post('/editor_create_event', [PollController::class, 'post'])->name('post');
-//Route::get('editor_create_event', [PostController::class, 'create']);
-Route::post('/postsInput', [PostController::class, 'store'])->name('posts.store');
+Route::post('/postInput', [PostController::class, 'store'])->name('store');
+Route::get('/editor_create_event', [PostController::class, 'data'])->name('data');
+Route::post('/editor_create_event', [PostController::class, 'post'])->name('post');
 
-//Route::get('editor_create_event', [PostController::class, 'create'])->name('create');
-//Route::get('editor_create_event', [PostController::class, 'fac'])->name('fac');
-Route::get('editor_create_event', [PostController::class, 'dep'])->name('dep');
-//Route::get('editor_create_event', [PostController::class, 'soc'])->name('soc');
+//notice
+Route::post('/noticeInput', [NoticeController::class, 'store'])->name('store');
+Route::get('/editor_create_notice', [NoticeController::class, 'data'])->name('data');
+Route::post('/editor_create_notice', [NoticeController::class, 'notice'])->name('notice');
+
 
 //for poll
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
