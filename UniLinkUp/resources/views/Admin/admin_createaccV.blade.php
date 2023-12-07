@@ -221,8 +221,9 @@
      
 
             </form>
+            <!--sachithra-end -->
  
-
+            <!-- jayani-start-->
             <form action="{{route('upload') }}" method="post" enctype="multipart/form-data">
             @csrf
             <h4>Create Bulk Accounts For Students</h4>
@@ -237,6 +238,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Upload</button>
     </form>
+    <!--jayani-end-->
 
     </div>
 
