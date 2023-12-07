@@ -1,4 +1,4 @@
-<!-- sachithra-start -->
+<!-- jayani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,12 +127,17 @@
 
     <div class="container">
         <h1>Create Accounts For Staff Members</h1>
-
-            <form action="<?=url('')?>" method="post">
-                <div class="form-group">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+        <form action="{{ url('/staffInput') }}" method="post">
+                @csrf
+                <!-- <div class="form-group">
                     <label for="Staff_Id'">Staff ID:</label>
                     <input type="text" id="Staff_Id'" name="Staff_Id'" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="Faculty_Id">Faculty ID:</label>
@@ -145,17 +150,17 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Staff_Email">Student Email:</label>
-                    <input type="text" id="Staff_Email" name="S_Email" required>
+                    <label for="Staff_Email">Staff Email:</label>
+                    <input type="text" id="Staff_Email" name="Staff_Email" required>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Staff_Password">Staff Password:</label>
                     <input type="text" id="Staff_Password" name="Staff_Password" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
-                    <label for="Staff_Name">Student Name:</label>
+                    <label for="Staff_Name">Staff Name:</label>
                     <input type="text" id="Staff_Name" name="Staff_Name" required>
                 </div>
 
@@ -184,4 +189,4 @@
 
 </body>
 </html>
-<!-- sachithra-end -->
+<!-- jayani-end -->
