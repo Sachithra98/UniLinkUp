@@ -136,10 +136,10 @@
 
             <form action="{{route('departmentInput') }}" method="post" enctype="multipart/form-data">
              @csrf
-                <div class="form-group">
+               <!--  <div class="form-group">
                     <label for="Dep_Id"> Department ID:</label>
                     <input type="text" id="Dep_Id" name="Dep_Id" required>
-                </div>
+                </div> -->
 
 
 
@@ -149,9 +149,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="Faculty_Id"> Faculty ID:</label>
-                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
-                </div>
+                    <label for="Faculty_Id"> Faculty:</label>
+                        <select id="Faculty_Id" name="Faculty_Id" required>
+                             @foreach($faculties as $faculty)
+                                <option value="{{ $faculty->Faculty_Id }}">{{ $faculty->Faculty_Name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
            
                 <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>

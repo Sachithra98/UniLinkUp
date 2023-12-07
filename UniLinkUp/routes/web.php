@@ -3,13 +3,24 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
 //sachithra - end
+
+//jayani-start
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StudentController;
+use App\Http\Controllers\StaffController;
+use App\Http\Controllers\ModeratorController;
+use App\Http\Controllers\EditorController;
+use App\Http\Controllers\AdminController;
+//jayani-end
+
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\RoleController;
+
+
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
+use App\Models\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -207,3 +218,20 @@ Route::get('/terms', function () {
     return view('terms');
 })->name('terms');
 //sachithra-end
+
+//jayani-start
+Route::get('/admin_createaccV', function () {
+    return view('/Admin/admin_createaccV');
+});
+Route::post('/upload',[StudentController::class,'upload'])->name('upload');
+Route::post('/studentInput',[StudentController::class,'studentInput'])->name('studentInput');
+Route::get('/admin/add_society', [SocietyController::class, 'showAddSocietyForm']);
+// routes/web.php
+Route::post('/staffInput',[StaffController::class,'staffInput'])->name('staffInput');
+Route::post('/moderatorInput',[ModeratorController::class,'moderatorInput'])->name('moderatorInput');
+Route::post('/editorInput',[EditorController::class,'editorInput'])->name('editorInput');
+Route::post('/adminInput',[AdminController::class,'adminInput'])->name('adminInput');
+
+Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
+Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
+//jayani-end

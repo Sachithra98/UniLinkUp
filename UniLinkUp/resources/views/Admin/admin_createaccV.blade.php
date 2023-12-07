@@ -1,5 +1,5 @@
-<!-- sachithra-start -->
 <!DOCTYPE html>
+<!--jayani-start-->
 <html lang="en">
 <head>
    <meta charset="UTF-8">
@@ -127,8 +127,14 @@
 
     <div class="container">
         <h1>Create Accounts For Students</h1>
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
 
-            <form action="<?=url('')?>" method="post">
+            <form action="{{ url('/studentInput') }}" method="post">
+                @csrf
                 <div class="form-group">
                     <label for="Student_Id">Student ID:</label>
                     <input type="text" id="Student_Id" name="Student_Id" required>
@@ -147,11 +153,6 @@
                 <div class="form-group">
                     <label for="S_Email">Student Email:</label>
                     <input type="text" id="S_Email" name="S_Email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="S_Password">Student Password:</label>
-                    <input type="text" id="S_Password" name="S_Password" required>
                 </div>
 
                 <div class="form-group">
@@ -179,7 +180,26 @@
      
 
             </form>
+ 
+
+            <form action="{{route('upload') }}" method="post" enctype="multipart/form-data">
+            @csrf
+            <h4>Create Bulk Accounts For Students</h4>
+           <!--  @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif -->
+            <div class="form-group">
+                <label for="file">Choose CSV File:</label>
+                <input type="file" name="file" id="file" class="form-control" accept=".csv">
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
     </div>
+
+   
     
 </div>
 
@@ -188,5 +208,5 @@
 	<!-- footer section ends -->
 
 </body>
+<!--jayani-end-->
 </html>
-<!-- sachithra-end -->

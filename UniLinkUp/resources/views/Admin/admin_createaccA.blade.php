@@ -1,4 +1,4 @@
-<!-- sachithra-start -->
+<!-- Jayani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -127,22 +127,27 @@
 
     <div class="container">
         <h1>Create Accounts For Admins</h1>
-
-            <form action="<?=url('')?>" method="post">
-            <div class="form-group">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif
+        <form action="{{ url('/adminInput') }}" method="post">
+                @csrf
+            <!-- <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
                     <input type="text" id="Admin_Id" name="Admin_Id" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="Admin_Email'">Admin Email:</label>
                     <input type="text" id="Admin_Email'" name="Admin_Email" required>
                 </div>
 
-                <div class="form-group">
+               <!--  <div class="form-group">
                     <label for="Admin_Password">Admin password:</label>
                     <input type="text" id="Admin_Password" name="Admin_Password" required>
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="Admin_Name">Admin Name:</label>
@@ -168,4 +173,4 @@
 
 </body>
 </html>
-<!-- sachithra-end -->
+<!-- Jayani-end -->
