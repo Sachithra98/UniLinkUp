@@ -216,6 +216,3 @@ Route::get('/editor_poll',[VoteController::class, 'index']);
 Route::post('/vote',[VoteController::class, 'vote']);
 
 
-//posts
-Route::post('/notices/store', [NoticeController::class, 'store'])->name('notices.store');
-Route::get('Editor/editor_create_notice', [NoticeController::class, 'select'])->name('select');
