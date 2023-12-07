@@ -153,10 +153,7 @@
                     <input type="text" id="Editor_Id" name="Editor_Id" required>
                 </div> -->
 
-                <!-- <div class="form-group">
-                    <label for="Faculty_Id">Faculty ID:</label>
-                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
-                </div> -->
+              >
 
                 <div class="form-group faculty-options">
                     <label for="Faculty_Id">Faculty:</label>
