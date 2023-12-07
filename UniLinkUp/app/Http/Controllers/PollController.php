@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class PollController extends Controller
 {
     public function poll(){
-        return view('editor_create_poll');
+        return view('Editor/editor_create_poll');
     }
     public function store(Request $request)
     {
@@ -44,6 +44,6 @@ class PollController extends Controller
             ]);
 
             //return redirect('/editor_create_poll')->with('success','Data successfully added!');
-            return redirect() -> back();
+            return redirect('/editor_create_poll')->with('success','Data successfully added!');
     }
 }

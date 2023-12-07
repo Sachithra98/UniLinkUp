@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Notice;
 
 use App\Models\Faculty;
 use App\Models\Department;
 use App\Models\Society;
 
-class PostController extends Controller
+class NoticeController extends Controller
 {
     public function search(Request $request)
     {
@@ -29,19 +29,11 @@ class PostController extends Controller
     }
 
     
-    public function post(){
-        return view('Editor/editor_create_event');
+    public function notice(){
+        return view('Editor/editor_create_notice');
     }
 
-    // public function create()
-    // {
-      
-    //     // Fetch faculties
-    //     $faculties = Faculty::all();
-
-    //     return view('/editor_create_event', compact('faculties'));
-
-    // }
+   
     public function data()
     {
       
@@ -49,7 +41,7 @@ class PostController extends Controller
         $societies = Society::all();
         $departments = Department::all();
 
-        return view('Editor/editor_create_event', compact('faculties','societies','departments'));
+        return view('Editor/editor_create_notice', compact('faculties','societies','departments'));
 
     }
 
@@ -61,7 +53,7 @@ class PostController extends Controller
             $validator = $this->validate($request, [
                 'post_title' => 'required|string|max:255',
                 'desc' => 'required|string',
-                'exp_date' => 'required|date',
+                
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
                 'soc_id' => 'required|string',
@@ -79,11 +71,11 @@ class PostController extends Controller
             // Access the authenticated user's ID
             //$editorId = $user->Editor_Id; // Assuming the primary key is named 'id'
 
-            Post::create([
+            Notice::create([
                 'Editor_Id' =>$request->Editor_Id,
                 'Title' => $request->post_title,
                 'Description' => $request->desc,
-                'Expire_Date' => $request->exp_date,
+                
                 'media_path' => $request->ppost,
                 'Approval_Letter' => $request->approval,
                 'Faculty_Id' => $request->fac_id,
@@ -92,9 +84,10 @@ class PostController extends Controller
                 
             ]);
 
-            return redirect('/editor_create_event')->with('success','Data successfully added!');
+            return redirect('/editor_create_notice')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
-    }
+   }
 }
+
