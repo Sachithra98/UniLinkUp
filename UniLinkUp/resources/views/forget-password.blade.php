@@ -5,7 +5,7 @@
     <div class ="mt-5">
         @if($errors->any())
         <div class="col-12">
-            @foreach($errors->all() as $ error)
+            @foreach($errors->all() as $error)
                 <div class="alert alert-danger">{{$error}}
 </div>
     @endforeach

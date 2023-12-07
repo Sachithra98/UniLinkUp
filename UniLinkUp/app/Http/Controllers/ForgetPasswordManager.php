@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Mail;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\support\facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Str;
 
 class ForgetPasswordManager extends Controller
 {
@@ -18,26 +23,25 @@ class ForgetPasswordManager extends Controller
 
         $token=Str::random(length:64);
 
-        DB::table(table:'password_resets')->insert([
+        DB::table(table:'password_reset_tokens')->insert([
             'email'=>$request->email,
             'token'=>$token,
             'created_at'=>Carbon::now()
         ]);
 
+        Mail::send('emails.forget-password', ['token' => $token], function ($message) use ($request) {
+            $message->to($request->email);
+            $message->subject("Reset Password");
+        });
         
 
-Mail::send('emails.forget-password', ['token' => $token], function ($message) use ($request) {
-    $message->to($request->email);
-    $message->subject("Reset Password");
-});
-
-
         return redirect()->to(route(name:"forgot.password"))
-        ->with("success","we havesend an email to reset password.");
+        ->with("success","we have send an email to reset password.");
     }
 
     function resetPassword($token){
-        return view('new-password', compact('var_name'));
+        return view('new-password', compact('token'));
+
 
     }
 

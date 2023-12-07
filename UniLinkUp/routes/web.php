@@ -171,5 +171,5 @@ Route::post('/departmentInput', [DepartmentController::class, 'departmentInput']
 Route::get('/forget-password', [ForgetPasswordManager::class, 'forgetPassword'])->name('forget.password');
 Route::post('/forget-password', [ForgetPasswordManager::class, 'forgetPasswordPost'])->name('forget.password.post');
 
-Route::get('/reset-password/{token}',[ForgetPasswordManager::class,'resetPassword'])->name(name:"reset.password");
-Route::post('/reset-password/{token}',[ForgetPasswordManager::class,'resetPasswordPost'])->name(name:"reset.password.post");
+Route::get('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPassword'])->name('reset.password');
+Route::post('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPasswordPost'])->name('reset.password.post');
