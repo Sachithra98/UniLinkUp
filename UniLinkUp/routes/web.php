@@ -6,6 +6,7 @@ use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -156,4 +157,11 @@ Route::get('/admin_add_department', function () {
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
+//piyumi-reviews rote
+Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
 
+// routes/web.php
+
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+// end piyumi
