@@ -16,20 +16,16 @@ use App\Http\Controllers\AdminController;
 
 use App\Http\Controllers\CheckLoginController;
 use App\Http\Controllers\DashboardController;
-<<<<<<< HEAD
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ReviewController;
-=======
 
 //sachithra-start
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\ReviewController;
 //sachithra - end
 
 
 
->>>>>>> main
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -181,7 +177,6 @@ Route::get('/admin_add_department', function () {
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 
-<<<<<<< HEAD
 //piyumi-reviews rote
 Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
 Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
@@ -190,67 +185,3 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 // end piyumi
-=======
-//sachithra-start
-Route::get('admin_add_role', function () {
-    return view('/Admin/admin_add_role');
-});
-//sachithra-end
-
-Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
-Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
-
-
-//sachithra-start
-Route::get('/search', [PostController::class, 'search']);
-
-//posts
-Route::post('/postInput', [PostController::class, 'store'])->name('store');
-Route::get('/editor_create_event', [PostController::class, 'data'])->name('data');
-Route::post('/editor_create_event', [PostController::class, 'post'])->name('post');
-
-//notice
-Route::post('/noticeInput', [NoticeController::class, 'store'])->name('store');
-Route::get('/editor_create_notice', [NoticeController::class, 'data'])->name('data');
-Route::post('/editor_create_notice', [NoticeController::class, 'notice'])->name('notice');
-
-
-//for poll
-Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
-Route::post('/pollInput', [PollController::class, 'store'])->name('store');
-
-Route::get('about', function () {
-    return view('about');
-})->name('about');
-
-
-Route::get('/privacy', function () {
-    return view('privacy');
-})->name('privacy');
-
-Route::get('/faq', function () {
-    return view('faq');
-})->name('faq');
-
-Route::get('/terms', function () {
-    return view('terms');
-})->name('terms');
-//sachithra-end
-
-//jayani-start
-Route::get('/admin_createaccV', function () {
-    return view('/Admin/admin_createaccV');
-});
-Route::post('/upload',[StudentController::class,'upload'])->name('upload');
-Route::post('/studentInput',[StudentController::class,'studentInput'])->name('studentInput');
-Route::get('/admin/add_society', [SocietyController::class, 'showAddSocietyForm']);
-// routes/web.php
-Route::post('/staffInput',[StaffController::class,'staffInput'])->name('staffInput');
-Route::post('/moderatorInput',[ModeratorController::class,'moderatorInput'])->name('moderatorInput');
-Route::post('/editorInput',[EditorController::class,'editorInput'])->name('editorInput');
-Route::post('/adminInput',[AdminController::class,'adminInput'])->name('adminInput');
-
-Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
-Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
-//jayani-end
->>>>>>> main

@@ -136,19 +136,13 @@
 
             <form action="{{ url('/facultyInput') }}" method="post">
                 @csrf
-                <!-- <div class="form-group">
-                    <label for="faculty_ID">Faculty ID:</label>
-                    <input type="text" id="faculty_ID" name="faculty_ID" required>
-                </div> -->
-
-
-
+                
                 <div class="form-group">
                     <label for="faculty_name">Faculty Name:</label>
                     <input type="text" id="faculty_name" name="faculty_name" required>
                 </div>
            
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_fac" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
