@@ -155,6 +155,10 @@ Route::get('/editor_create_poll', function () {
 Route::get('/editor', function () {
     return view('/Editor/editor');
 });
+
+Route::get('/moderator', function () {
+    return view('/Moderator/moderator');
+});
 //sachithra-end
 
 
