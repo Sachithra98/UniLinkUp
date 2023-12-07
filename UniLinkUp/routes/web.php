@@ -159,6 +159,10 @@ Route::get('/editor', function () {
 Route::get('/moderator', function () {
     return view('/Moderator/moderator');
 });
+
+Route::get('/viewer', function () {
+    return view('/Viewer/viewer');
+});
 //sachithra-end
 
 
