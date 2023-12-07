@@ -23,6 +23,8 @@ use App\Http\Controllers\PollController;
 use App\Http\Controllers\NoticeController;
 //sachithra - end
 
+use App\Http\Controllers\ReviewController;
+
 
 
 /*
@@ -255,3 +257,14 @@ Route::get('/admin_createaccS', [StaffController::class, 'data'])->name('data');
 Route::get('/admin_createaccV', [StudentController::class, 'data'])->name('data');
 
 //sachithra-end
+
+
+
+//piyumi-reviews rote
+Route::get('/reviews/create', [ReviewController::class, 'create'])->name('reviews.create');
+Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+
+// routes/web.php
+
+Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+// end piyumi
