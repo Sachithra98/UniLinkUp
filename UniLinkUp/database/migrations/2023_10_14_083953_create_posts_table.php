@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('Editor_Id');
             $table->string('Title');
             $table->text('Description');
-            $table->timestamp('Expire_Date');
+           /*  $table->timestamp('Expire_Date'); */
             
             $table->binary('media_path')->nullable();
             $table->binary('Approval_Letter')->nullable();
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
     
-            $table->timestamp(); // or remove the default value
+            $table->timestamps(); // or remove the default value
 
     
             // Fix the typo in the foreign key declaration
