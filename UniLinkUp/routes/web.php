@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\FacultyController;
 use Illuminate\Support\Facades\Route;
@@ -173,3 +174,7 @@ Route::post('/forget-password', [ForgetPasswordManager::class, 'forgetPasswordPo
 
 Route::get('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPassword'])->name('reset.password');
 Route::post('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPasswordPost'])->name('reset.password.post');
+
+Route::get('/change-password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('change-password.form');
+Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])->name('change-password');
+
