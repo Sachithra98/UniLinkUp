@@ -32,7 +32,7 @@ class PollController extends Controller
 
             
             Poll::create([
-                'poll_id' =>$request->poll_id,
+                // 'poll_id' =>$request->poll_id,
                 'poll_title' => $request->poll_title,
                 'poll_desc' => $request->poll_desc,
                 'question' => $request->question,

@@ -11,16 +11,17 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('votes', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('poll_id');
-            $table->foreign('poll_id')->references('id')->on('polls')->onDelete('cascade');
-            $table->string('choice');
-            $table->timestamps();
-        });
-    }
+    // In the "votes" migration file
+public function up()
+{
+    Schema::create('votes', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('poll_id')->constrained(); // This creates a foreign key relationship with the "polls" table
+        $table->string('choice');
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('polls', function (Blueprint $table) {
-            $table->id('poll_id');
+            $table->id();
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
             //$table->binary('media_path')->nullable();
