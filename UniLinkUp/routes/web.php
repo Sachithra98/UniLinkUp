@@ -284,6 +284,3 @@ Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index'
 Route::get('Editor/editor_poll', [VoteController::class, 'index']);
 Route::post('/api/vote', [VoteController::class, 'vote']);
 // end piyumi
-
-
-

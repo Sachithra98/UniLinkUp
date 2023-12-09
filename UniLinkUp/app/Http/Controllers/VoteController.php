@@ -9,7 +9,26 @@ class VoteController extends Controller
 {
     public function index()
     {
-        return view('Editor/editor_poll');
+        // Fetch polls and associated vote counts from the database
+        $polls = Poll::with('votes')->get();
+$polls = Poll::all();
+
+    $currentPercentages = [];
+    foreach ($polls as $poll) {
+        $totalVotes = $poll->votes->sum('count');
+        $percentages = [];
+
+        if ($totalVotes > 0) {
+            foreach ($poll->votes as $vote) {
+                $percentage = ($vote->count / $totalVotes) * 100;
+                $percentages[$vote->choice] = number_format($percentage, 2) . '%';
+            }
+        }
+
+        $currentPercentages[$poll->id] = $percentages;
+    }
+
+    return view('Editor/editor_poll', compact('polls', 'currentPercentages'));
     }
 
     public function vote(Request $request)
@@ -30,4 +49,5 @@ class VoteController extends Controller
 
         return response()->json(['choice' => $request->input('choice'), 'votes' => $voteCounts]);
     }
+
 }

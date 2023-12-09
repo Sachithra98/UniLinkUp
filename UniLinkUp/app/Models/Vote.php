@@ -11,4 +11,10 @@ class Vote extends Model
  
     protected $fillable = ['choice', 'poll_id'];
 
+
+    public function poll()
+    {
+        return $this->belongsTo(Poll::class);
+    }
+
 }
