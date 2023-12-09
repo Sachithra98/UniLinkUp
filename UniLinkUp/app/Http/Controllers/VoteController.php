@@ -14,6 +14,7 @@ class VoteController extends Controller
 
     public function vote(Request $request)
     {
+           \Log::info('Received vote request:', $request->all());
     //     // Get available options from the database
     //     $availableOptions = Vote::distinct('choice')->pluck('choice')->toArray();
 
