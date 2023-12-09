@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,7 +11,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('polls', function (Blueprint $table) {
-            $table->id();
+            $table->id('poll_id');
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
             //$table->binary('media_path')->nullable();
@@ -24,7 +23,6 @@ return new class extends Migration
             $table->string('option5')->nullable();
             
             $table->timestamps();
-
         });
     }
 
