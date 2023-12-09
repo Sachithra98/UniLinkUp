@@ -19,7 +19,44 @@
     
     <link rel="stylesheet" href="{{ asset('css/Viewer.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
+ 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.like-button').on('click', function() {
+        var postId = $(this).data('post-id');
+        var studentId = 'student_id_here'; // Replace with the current student's ID
+
+        $.ajax({
+            method: 'POST',
+            url: '/posts/' + postId + '/like',
+            data: {
+                student_id: studentId
+            },
+            success: function(response) {
+                getTotalLikes(postId);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    });
+
+    function getTotalLikes(postId) {
+        $.ajax({
+            method: 'GET',
+            url: '/posts/' + postId + '/likes',
+            success: function(response) {
+                $('.post[data-post-id="' + postId + '"] .total-likes').text(response.total_likes);
+            },
+            error: function(error) {
+                console.error(error);
+            }
+        });
+    }
+});
+</script>
+
 </head>
 
 <body>
@@ -73,7 +110,15 @@
 
                      <div class="post-row">
                      <div class="activity-icons">
-                             <div><i onclick="myFunction(this)" class="fa fa-thumbs-up"></i>110</div>
+                     @inject('post', 'App\Models\Post')   
+                     <div class="post" data-post-id="{{ $post->id }}">
+    <button class="like-button" data-post-id="{{ $post->id }}">Like</button>
+    <span class="total-likes">{{ $post->likes_count }}</span> Likes
+</div>
+
+
+
+
                              <div><i class="fa fa-thumbs-down"></i>20</div> 
                              <div><i class="fa fa-share"></i>50</div>
                       </div>

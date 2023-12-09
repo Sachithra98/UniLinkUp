@@ -10,7 +10,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
-
+use App\Http\Controllers\LikeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -210,3 +210,19 @@ Route::get('/terms', function () {
 Route::get('Viewer', function () {
     return view('Viewer');
 });
+
+//dhilmi
+
+Route::post('/posts/{post}/like', 'LikeController@like')->name('posts.like');
+Route::get('/posts/{post}/likes', 'LikeController@getLikes')->name('posts.likes');
+
+
+
+
+
+
+
+
+
+
+

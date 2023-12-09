@@ -13,19 +13,20 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id('Post_Id'); // This will make 'Post_Id' an auto-incrementing primary key
-            $table->string('Editor_Id');
+            $table->id('Post_Id'); // Change from 'id('Post_Id')' to just 'id()' for auto-incrementing primary key
+            $table->string ('Editor_Id');
             $table->string('Title');
             $table->text('Description');
             $table->timestamp('Expire_Date');
-            
+            $table->unsignedInteger('likes_count')->default(0);
+                
             $table->binary('media_path')->nullable();
             $table->binary('Approval_Letter')->nullable();
             $table->string('Society_Id')->nullable();
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
     
-            $table->timestamp(); // or remove the default value
+            $table->timestamps(); // or remove the default value
 
     
             // Fix the typo in the foreign key declaration
@@ -43,6 +44,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists ('posts');
     }
 };
