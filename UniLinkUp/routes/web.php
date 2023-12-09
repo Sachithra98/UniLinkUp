@@ -24,6 +24,7 @@ use App\Http\Controllers\NoticeController;
 //sachithra - end
 
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\VoteController;
 
 
 
@@ -276,5 +277,9 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 // routes/web.php
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+
+
+Route::get('/editor_poll', [VoteController::class, 'index']);
+Route::post('/api/vote', [VoteController::class, 'vote']);
 // end piyumi
 
