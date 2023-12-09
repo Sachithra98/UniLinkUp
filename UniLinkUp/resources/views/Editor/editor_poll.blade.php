@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Start-piyumi -->
+<!-- Start-piyumi -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,80 +40,78 @@
         }
     </style>
 </head>
-<body>
-<div id="poll-container">
-        <h2>Do you want to buy this Item?</h2>
-        <button class="btn" onclick="vote('buy')">I will buy</button>
-        <button class="btn" onclick="vote('not-buy')">I will not buy</button>
-        <button class="btn" onclick="vote('may-buy')">I may buy</button>
 
-        <div id="result"></div>
+<body>
+@foreach ($polls as $poll)
+    <div id="poll-container">
+        <h2>{{ $poll->question }}</h2>
+
+        @foreach (range(1, 5) as $index)
+            @php
+                $option = "option{$index}";
+            @endphp
+            @if (!empty($poll->$option))
+                <button class="btn" onclick="vote('{{ $poll->$option }}', '{{ $poll->id }}')">{{ $poll->$option }}</button>
+            @endif
+        @endforeach
+
+        <div id="result-{{ $poll->id }}"></div>
         <!-- Display vote results -->
-        <div id="vote-results"></div>
+        <div id="vote-results-{{ $poll->id }}"></div>
     </div>
+@endforeach
 
     <script>
-        function vote(choice) {
+        function vote(choice, pollId) {
             const url = '/api/vote';
 
             fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                },
-                body: JSON.stringify({ choice: choice }),
-            })
-            .then(response => response.json())
-            .then(result => {
-                document.getElementById('result').innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
-            })
-            .catch(error => console.error('Error:', error));
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    },
+                    body: JSON.stringify({
+                        choice: choice,
+                        pollId: pollId
+                    }),
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    const resultElement = document.getElementById(`result-${pollId}`);
+                    resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
+
+                    // Display vote results
+                    displayVoteResults(result.votes, pollId);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    const resultElement = document.getElementById(`result-${pollId}`);
+                    resultElement.innerHTML = '<p>An error occurred while processing your vote. Please try again.</p>';
+                });
+        }
+
+        // Function to display vote results
+        function displayVoteResults(votes, pollId) {
+            const voteResultsElement = document.getElementById(`vote-results-${pollId}`);
+            voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
+
+            // Calculate total votes
+            const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
+
+            // Display results as percentages
+            votes.forEach(vote => {
+                const percentage = (vote.count / totalVotes) * 100;
+                voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}%</p>`;
+            });
         }
     </script>
-
-
-            <!-- Add a new div to display vote results -->
-<div id="vote-results"></div>
-
-<script>
-    function vote(choice) {
-        const url = '/api/vote';
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-            },
-            body: JSON.stringify({ choice: choice }),
-        })
-        .then(response => response.json())
-        .then(result => {
-            document.getElementById('result').innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
-
-            // Display vote results
-            displayVoteResults(result.votes);
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    // Function to display vote results
-    function displayVoteResults(votes) {
-        const voteResultsElement = document.getElementById('vote-results');
-        voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
-
-        // Calculate total votes
-        const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
-
-        // Display results as percentages
-        votes.forEach(vote => {
-            const percentage = (vote.count / totalVotes) * 100;
-            voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}%</p>`;
-        });
-    }
-</script>
-
 </body>
 <!-- end-piyumi -->
+
 </html>

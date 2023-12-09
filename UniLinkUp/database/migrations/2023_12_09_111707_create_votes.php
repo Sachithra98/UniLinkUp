@@ -1,23 +1,20 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVotesTable extends Migration
-
+return new class extends Migration
 {
     /**
      * Run the migrations.
      */
-
-
-     //Start Piyumi
     public function up(): void
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->string('choice'); // Assuming the choice is a string
+            $table->unsignedBigInteger('poll_id');
+            $table->foreign('poll_id')->references('id')->on('polls');
+            $table->string('choice');
             $table->timestamps();
         });
     }
@@ -29,7 +26,4 @@ class CreateVotesTable extends Migration
     {
         Schema::dropIfExists('votes');
     }
-
-    //End Piyumi
 };
-

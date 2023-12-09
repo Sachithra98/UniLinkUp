@@ -214,6 +214,8 @@ Route::post('/editor_create_notice', [NoticeController::class, 'notice'])->name(
 //for poll
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
 Route::post('/pollInput', [PollController::class, 'store'])->name('store');
+Route::get('/editor_poll', [PollController::class, 'showAll'])->name('showAll');;
+
 
 Route::get('about', function () {
     return view('about');
@@ -279,7 +281,9 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 
 
-Route::get('/editor_poll', [VoteController::class, 'index']);
+Route::get('Editor/editor_poll', [VoteController::class, 'index']);
 Route::post('/api/vote', [VoteController::class, 'vote']);
 // end piyumi
+
+
 
