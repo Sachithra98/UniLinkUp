@@ -9,7 +9,7 @@ class VoteController extends Controller
 {
     public function index()
     {
-        return view('editor_poll');
+        return view('Editor/editor_poll');
     }
 
     public function vote(Request $request)
