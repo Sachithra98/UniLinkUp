@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Start-piyumi -->
 
 <head>
     <meta charset="UTF-8">
@@ -13,12 +12,13 @@
             margin: 20px;
         }
 
-        #poll-container {
+        .poll-container {
             max-width: 600px;
             margin: auto;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .btn {
@@ -42,10 +42,12 @@
 </head>
 
 <body>
-@foreach ($polls as $poll)
-    <div id="poll-container">
+    <!-- Loop through each poll -->
+    @foreach ($polls as $poll)
+    <div class="poll-container">
         <h2>{{ $poll->question }}</h2>
 
+        <!-- Loop through each choice of the poll -->
         @foreach (range(1, 5) as $index)
             @php
                 $option = "option{$index}";
@@ -56,44 +58,35 @@
         @endforeach
 
         <div id="result-{{ $poll->id }}"></div>
-        <!-- Display vote results -->
+        <!-- Display vote results for each poll separately -->
         <div id="vote-results-{{ $poll->id }}"></div>
     </div>
-@endforeach
+    @endforeach
 
     <script>
         function vote(choice, pollId) {
             const url = '/api/vote';
 
             fetch(url, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    },
-                    body: JSON.stringify({
-                        choice: choice,
-                        pollId: pollId
-                    }),
-                })
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(result => {
-                    const resultElement = document.getElementById(`result-${pollId}`);
-                    resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                },
+                body: JSON.stringify({
+                    choice: choice,
+                    pollId: pollId
+                }),
+            })
+            .then(response => response.json())
+            .then(result => {
+                const resultElement = document.getElementById(`result-${pollId}`);
+                resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
 
-                    // Display vote results
-                    displayVoteResults(result.votes, pollId);
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    const resultElement = document.getElementById(`result-${pollId}`);
-                    resultElement.innerHTML = '<p>An error occurred while processing your vote. Please try again.</p>';
-                });
+                // Display vote results for each poll separately
+                displayVoteResults(result.votes, pollId);
+            })
+            .catch(error => console.error('Error:', error));
         }
 
         // Function to display vote results
@@ -101,10 +94,10 @@
             const voteResultsElement = document.getElementById(`vote-results-${pollId}`);
             voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
 
-            // Calculate total votes
+            // Calculate total votes for the specific poll
             const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
 
-            // Display results as percentages
+            // Display results as percentages for the specific poll
             votes.forEach(vote => {
                 const percentage = (vote.count / totalVotes) * 100;
                 voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}%</p>`;
@@ -112,6 +105,5 @@
         }
     </script>
 </body>
-<!-- end-piyumi -->
 
 </html>

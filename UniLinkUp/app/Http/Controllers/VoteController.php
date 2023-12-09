@@ -14,38 +14,20 @@ class VoteController extends Controller
 
     public function vote(Request $request)
     {
-           \Log::info('Received vote request:', $request->all());
-    //     // Get available options from the database
-    //     $availableOptions = Vote::distinct('choice')->pluck('choice')->toArray();
+        \Log::info('Received vote request:', $request->all());
 
-    //     // Generate validation rules dynamically
-    //     //$validationRules = [
-    //     //     'choice' => 'required|in:' . implode(',', $availableOptions),
-    //     // ];
+        // Store the vote in the database with the associated poll ID
+        Vote::create([
+            'choice' => $request->input('choice'),
+            'poll_id' => $request->input('pollId')
+        ]);
 
-    //     // Validate the request
-    //     //$request->validate($validationRules);
+        // Get vote counts for the specific poll
+        $voteCounts = Vote::select('choice', \DB::raw('count(*) as count'))
+            ->where('poll_id', $request->input('pollId'))
+            ->groupBy('choice')
+            ->get();
 
-    //     // Store the vote in the database
-    //     Vote::create(['choice' => $request->input('choice')]);
-
-    //     // Get vote counts
-    //     $voteCounts = Vote::select('choice', \DB::raw('count(*) as count'))
-    //         ->groupBy('choice')
-    //         ->get();
-
-    //     return response()->json(['choice' => $request->input('choice'), 'votes' => $voteCounts]);
-    // }
-    
-    // Store the vote in the database with the associated poll ID
-    Vote::create(['choice' => $request->input('choice'), 'poll_id' => $request->input('pollId')]);
-
-    // Get vote counts for the specific poll
-    $voteCounts = Vote::select('choice', \DB::raw('count(*) as count'))
-        ->where('poll_id', $request->input('pollId'))
-        ->groupBy('choice')
-        ->get();
-
-    return response()->json(['choice' => $request->input('choice'), 'votes' => $voteCounts]);
-}
+        return response()->json(['choice' => $request->input('choice'), 'votes' => $voteCounts]);
+    }
 }
