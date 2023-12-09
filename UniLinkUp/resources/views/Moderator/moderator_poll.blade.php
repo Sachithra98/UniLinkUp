@@ -33,6 +33,15 @@
             color:var(--black);
         }
 
+        .main .con{
+            border: 1px solid black;
+            border-radius: 8px;
+            
+            margin-bottom: 20px;
+            margin-top: 20px;
+            background: var(--light-white);
+        }
+
 
         .poll-container {
             max-width: 800px;
@@ -41,6 +50,7 @@
             border: 1px solid black;
             border-radius: 8px;
             margin-bottom: 20px;
+            margin-top: 20px;
             background: var(--white);
         }
 
@@ -71,34 +81,46 @@
     @include('header')
 	<!-- header section ends -->
 
-    <div class="main">
+<div class="main">
+
+    
 
         <!-- Loop through each poll -->
         @foreach ($polls as $poll)
-        <div class="poll-container">
-            <h3 style="text-decoration: underline; font-weight: bold;">{{ $poll->poll_title }}</h3>
-            <p>{{ $poll->poll_desc }}
-            <h3>{{ $poll->question }}</h3>
+        <div class="con">
+            <h2 style="text-decoration: underline;">Poll Request for Publish</h2>
+            <div class="poll-container">
+                <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
+                <p>{{ $poll->poll_desc }}
+                <h3>{{ $poll->question }}</h3>
 
-            <!-- Loop through each choice of the poll -->
-            @foreach (range(1, 5) as $index)
-                @php
-                    $option = "option{$index}";
-                @endphp
-                @if (!empty($poll->$option))
-                    <button class="btn" onclick="vote('{{ $poll->$option }}', '{{ $poll->id }}')">{{ $poll->$option }}</button>
-                @endif
-            @endforeach
+                <!-- Loop through each choice of the poll -->
+                @foreach (range(1, 5) as $index)
+                    @php
+                        $option = "option{$index}";
+                    @endphp
+                    @if (!empty($poll->$option))
+                        <button class="btn" onclick="vote('{{ $poll->$option }}', '{{ $poll->id }}')">{{ $poll->$option }}</button>
+                    @endif
+                @endforeach
 
-            <div id="result-{{ $poll->id }}"></div>
-            <!-- Display vote results for each poll separately -->
-          
-            <div id="vote-results-{{ $poll->id }}"></div>
+                <div id="result-{{ $poll->id }}"></div>
+                <!-- Display vote results for each poll separately -->
+            
+                <div id="vote-results-{{ $poll->id }}"></div>
+            </div>
+
+        
+                <div class="moderator"  style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                            <button class="btn" style="margin-left: 1rem; background-color: red;" >Denied Request</button>
+                            <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
+                </div>
+
         </div>
         @endforeach
 
-
-    </div>
+    
+</div>
 
 <!-- footer section starts -->
 @include('footer')

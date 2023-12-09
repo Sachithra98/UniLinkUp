@@ -53,7 +53,18 @@ class PollController extends Controller
             $polls = Poll::all();
 
             // Pass the polls data to the view
-            return view('Editor/editor_poll', compact('polls'));
+            return view('Student/viewer_poll', compact('polls'));
+
+        
+        }
+
+        public function showM()
+        {
+            // Retrieve all polls from the database
+            $polls = Poll::all();
+
+            // Pass the polls data to the view
+            return view('Moderator/moderator_poll', compact('polls'));
 
         
         }

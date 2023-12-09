@@ -28,7 +28,7 @@ $polls = Poll::all();
         $currentPercentages[$poll->id] = $percentages;
     }
 
-    return view('Editor/editor_poll', compact('polls', 'currentPercentages'));
+    return view('Student/viewer_poll', compact('polls', 'currentPercentages'));
     }
 
     public function vote(Request $request)
