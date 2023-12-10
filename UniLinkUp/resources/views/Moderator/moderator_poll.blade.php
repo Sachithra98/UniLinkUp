@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Poll System</title>
+   <title>Poll Requests</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -54,23 +54,7 @@
             background: var(--white);
         }
 
-        /* .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-        } */
-
-        /* .btn:hover {
-            background-color: #0056b3;
-        } */
+        
     </style>
 </head>
 
@@ -83,13 +67,16 @@
 
 <div class="main">
 
-    
+    <div class="back" >
+        <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
+    </div>
 
         <!-- Loop through each poll -->
         @foreach ($polls as $poll)
         <div class="con">
             <h2 style="text-decoration: underline;">Poll Request for Publish</h2>
             <div class="poll-container">
+                <h5>Poll Id:{{$poll->id}}</h5>
                 <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
                 <p>{{ $poll->poll_desc }}
                 <h3>{{ $poll->question }}</h3>
@@ -111,16 +98,62 @@
             </div>
 
         
-                <div class="moderator"  style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                            <button class="btn" style="margin-left: 1rem; background-color: red;" >Denied Request</button>
-                            <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
+            <form action="{{ route('add-to-publish-poll', ['pollId' => $poll->id]) }}" method="POST">
+                @csrf
+
+                @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                @endif
+
+                <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                    <button class="btn denied-btn" onclick="window.location='{{ route("moderator_denied_poll") }}'" style="margin-left: 1rem; background-color: red;">Denied Request</button>
+                    <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
                 </div>
+            </form>
+
 
         </div>
         @endforeach
 
     
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deniedButtons = document.querySelectorAll('.denied-btn');
+
+        deniedButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const pollId = this.dataset.pollId;
+
+                // Send an AJAX request to the server to update the denieds table
+                // You need to adjust the URL and other parameters based on your actual routes and requirements
+                fetch(`/update-denied/${pollId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}', // Add CSRF token if needed
+                    },
+                    body: JSON.stringify({ poll_id: pollId }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the response from the server if needed
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
+        });
+    });
+
+    
+</script>
+
+
+
 
 <!-- footer section starts -->
 @include('footer')

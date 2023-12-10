@@ -25,6 +25,8 @@ use App\Http\Controllers\NoticeController;
 
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\DeniedController;
+use App\Http\Controllers\PublishController;
 
 
 
@@ -281,9 +283,41 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 
 
-Route::get('Student/viewer_poll', [VoteController::class, 'index']);
-Route::post('/api/vote', [VoteController::class, 'vote']);
+// Route::get('Student/viewer_poll', [VoteController::class, 'index']);
+// Route::post('/api/vote', [VoteController::class, 'vote']);
 // end piyumi
 
 
 Route::get('/moderator_poll', [PollController::class, 'showM'])->name('showM');;
+
+Route::get('/moderator_denied_poll', function () {
+    return view('/Moderator/moderator_denied_poll');
+})->name('moderator_denied_poll');
+
+Route::post('/deniedInput', [DeniedController::class, 'store'])->name('store');
+Route::post('/moderator_denied_poll', [PollController::class, 'deniedpl'])->name('deniedpl');
+
+Route::get('/editor_denied_poll', [DeniedController::class, 'showE'])->name('showE');;
+Route::post('/update-denied/{poll_id}', [DeniedController::class, 'updateDenied'])->name('update_denied');
+
+
+
+// Display the polls and vote results
+Route::get('/polls', [VoteController::class, 'index'])->name('polls.index');
+
+// // Handle the voting submission
+// Route::post('/vote', [VoteController::class, 'vote'])->name('vote.submit');
+
+
+// Add data to publish_polls table
+Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addDataToPublishPoll'])
+    ->name('addDataToPublishPoll');
+
+// Show viewer poll for publish_polls
+Route::get('/viewer_poll', [PublishController::class, 'showAll'])
+    ->name('showAll');
+
+Route::post('/api/vote', [VoteController::class, 'vote']);
+
+
+

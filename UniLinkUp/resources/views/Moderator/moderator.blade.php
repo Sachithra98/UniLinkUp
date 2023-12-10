@@ -119,7 +119,7 @@
         </div>
 
         <div class="create_polls">
-            <a href="<?=url('editor_create_poll')?>" class="btn" style="margin-left: 3rem;">View Publish requests of polls</a>
+            <a href="<?=url('moderator_poll')?>" class="btn" style="margin-left: 3rem;">View Publish requests of polls</a>
         </div>
     </div>
 

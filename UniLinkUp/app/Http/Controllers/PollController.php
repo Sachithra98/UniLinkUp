@@ -47,16 +47,16 @@ class PollController extends Controller
             return redirect('/editor_create_poll')->with('success','Data successfully added!');
     }
 
-    public function showAll()
-        {
-            // Retrieve all polls from the database
-            $polls = Poll::all();
+    // public function showAll()
+    //     {
+    //         // Retrieve all polls from the database
+    //         $polls = Poll::all();
 
-            // Pass the polls data to the view
-            return view('Student/viewer_poll', compact('polls'));
+    //         // Pass the polls data to the view
+    //         return view('Student/viewer_poll', compact('polls'));
 
         
-        }
+        // }
 
         public function showM()
         {
@@ -68,4 +68,6 @@ class PollController extends Controller
 
         
         }
+
+        
 }
