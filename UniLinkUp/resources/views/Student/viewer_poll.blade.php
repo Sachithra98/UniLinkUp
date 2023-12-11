@@ -104,25 +104,40 @@
 
        <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const publishPolls = @json($publishPolls);
+    const publishPolls = @json($publishPolls);
 
-            publishPolls.forEach(poll => {
-                const totalVotes = poll.votes.reduce((total, vote) => total + vote.count, 0);
-                const voteResultsElement = document.getElementById(`vote-results-${poll.id}`);
+    console.log('Publish Polls:', publishPolls);
 
-                voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
+    publishPolls.forEach(poll => {
+        console.log('Processing Poll:', poll);
 
-                poll.options.forEach(option => {
-                    const vote = poll.votes.find(vote => vote.choice === option) || { count: 0 };
-                    const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
+        const totalVotes = poll.votes.reduce((total, vote) => total + vote.count, 0);
+        const voteResultsContainer = document.getElementById(`vote-results-container-${poll.id}`); // Use poll ID
 
-                    voteResultsElement.innerHTML += `<p>${option}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
-                });
-            });
+        if (!voteResultsContainer) {
+            console.error(`Vote Results Container not found for Poll ID: ${poll.id}`);
+            return;
+        }
+
+        const voteResultsElement = document.createElement('div');
+        voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
+
+        poll.options.forEach(option => {
+            const vote = poll.votes.find(vote => vote.choice === option) || { count: 0 };
+            const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
+
+            console.log(`Option: ${option}, Percentage: ${percentage.toFixed(2)}%, Votes: ${vote.count}`);
+
+            voteResultsElement.innerHTML += `<p>${option}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
         });
 
+        voteResultsContainer.appendChild(voteResultsElement);
+    });
+});
+
+
         function vote(choice, pollId) {
-            const url = '/api/vote';
+            const url = '/vote';
 
             fetch(url, {
                 method: 'POST',

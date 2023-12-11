@@ -306,7 +306,7 @@ Route::post('/update-denied/{poll_id}', [DeniedController::class, 'updateDenied'
 Route::get('/polls', [VoteController::class, 'index'])->name('polls.index');
 
 // // Handle the voting submission
-Route::post('/vote/{pollId}', [VoteController::class, 'vote']);
+Route::post('/vote', [VoteController::class, 'vote'])->name('vote.submit');
 
 // Add data to publish_polls table
 Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addDataToPublishPoll'])

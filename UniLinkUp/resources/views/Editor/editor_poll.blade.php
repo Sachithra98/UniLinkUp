@@ -73,93 +73,99 @@
 
     <div class="main">
 
-        <!-- Loop through each poll -->
-        @foreach ($polls as $poll)
-        <div class="poll-container">
-            <h3 style="text-decoration: underline; font-weight: bold;">{{ $poll->poll_title }}</h3>
-            <p>{{ $poll->poll_desc }}
-            <h3>{{ $poll->question }}</h3>
+<div class="back" >
+    <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
+</div>
 
-            <!-- Loop through each choice of the poll -->
-            @foreach (range(1, 5) as $index)
-                @php
-                    $option = "option{$index}";
-                @endphp
-                @if (!empty($poll->$option))
-                    <button class="btn" onclick="vote('{{ $poll->$option }}', '{{ $poll->id }}')">{{ $poll->$option }}</button>
-                @endif
-            @endforeach
+    <!-- Loop through each publish poll -->
+    @foreach ($publishPolls as $poll)
+     <div class="poll-container" id="poll-container-{{ $poll->id }}">
+    <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>
+        <h3 style="text-decoration: underline; font-weight: bold;">{{ $poll->poll_title }}</h3>
+        <p>{{ $poll->poll_desc }}
+        <h3>{{ $poll->question }}</h3>
 
-            <div id="result-{{ $poll->id }}"></div>
-            <!-- Display vote results for each poll separately -->
-          
-            <div id="vote-results-{{ $poll->id }}"></div>
-        </div>
+        <!-- Loop through each choice of the poll -->
+        @foreach (range(1, 5) as $index)
+            @php
+                $option = "option{$index}";
+            @endphp
+            @if (!empty($poll->$option))
+            <button class="btn" onclick="vote('{{ $poll->$option }}', '{{ $poll->id }}')">{{ $poll->$option }}</button>
+            @endif
         @endforeach
 
-       <!-- Add this script at the end of the body section, after the HTML content -->
+        <div id="result-{{ $poll->id }}"></div>
+        <!-- Display vote results for each poll separately -->
+      
+        <div id="vote-results-{{ $poll->id }}"></div>
+    </div>
+    @endforeach
 
-<!-- Add this script at the end of the body section, after the HTML content -->
+        
 
-<!-- Add this script at the end of the body section, after the HTML content -->
+   <!-- Add this script at the end of the body section, after the HTML content -->
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const polls = @json($polls);
 
-        polls.forEach(poll => {
-            const totalVotes = poll.votes.reduce((total, vote) => total + vote.count, 0);
-            const voteResultsElement = document.getElementById(`vote-results-${poll.id}`);
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+const publishPolls = @json($publishPolls);
 
-            voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
+console.log('Publish Polls:', publishPolls); // Add this line
 
-            poll.options.forEach(option => {
-                const vote = poll.votes.find(vote => vote.choice === option) || { count: 0 };
-                const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
+publishPolls.forEach(poll => {
+    console.log('Processing Poll:', poll); // Add this line
+        const totalVotes = poll.votes.reduce((total, vote) => total + vote.count, 0);
+        const voteResultsElement = document.getElementById(`vote-results-${poll.id}`);
 
-                voteResultsElement.innerHTML += `<p>${option}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
-            });
-        });
-    });
-
-    function vote(choice, pollId) {
-        const url = '/api/vote';
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}',
-            },
-            body: JSON.stringify({
-                choice: choice,
-                pollId: pollId
-            }),
-        })
-        .then(response => response.json())
-        .then(result => {
-            const resultElement = document.getElementById(`result-${pollId}`);
-            resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
-
-            // Display updated vote results for the specific poll
-            displayVoteResults(result.votes, pollId);
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    function displayVoteResults(votes, pollId) {
-        const voteResultsElement = document.getElementById(`vote-results-${pollId}`);
         voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
 
-        const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
+        poll.options.forEach(option => {
+            const vote = poll.votes.find(vote => vote.choice === option) || { count: 0 };
+            const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
 
-        votes.forEach(vote => {
-            const percentage = (vote.count / totalVotes) * 100;
-            voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
+            voteResultsElement.innerHTML += `<p>${option}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
         });
-    }
-</script>
+    });
+});
 
+function vote(choice, pollId) {
+    const url = '/vote';
+
+    fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+        },
+        body: JSON.stringify({
+            choice: choice,
+            pollId: pollId
+        }),
+    })
+    .then(response => response.json())
+    .then(result => {
+        const resultElement = document.getElementById(`result-${pollId}`);
+        resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
+
+        // Display updated vote results for the specific poll
+        displayVoteResults(result.votes, pollId);
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+function displayVoteResults(votes, pollId) {
+    const voteResultsElement = document.getElementById(`vote-results-${pollId}`);
+    voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
+
+    const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
+
+    votes.forEach(vote => {
+        const percentage = (vote.count / totalVotes) * 100;
+        voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
+    });
+}
+</script>
 
 
 
