@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ForgetPasswordManager;
 use App\Http\Controllers\FacultyController;
@@ -178,3 +179,8 @@ Route::post('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPass
 Route::get('/change-password', [ChangePasswordController::class, 'showChangePasswordForm'])->name('change-password.form');
 Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])->name('change-password');
 
+// routes/web.php
+
+
+Route::get('/notifications', [NotificationController::class, 'index']);
+Route::patch('/notifications/{notification}/mark-as-read', [NotificationController::class, 'markAsRead']);
