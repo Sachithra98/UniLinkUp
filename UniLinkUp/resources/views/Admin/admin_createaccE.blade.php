@@ -170,20 +170,20 @@
                     @enderror
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="Batch_Id">Batch ID:</label>
                     <input type="text" id="Batch_Id" name="Batch_Id" required>
-                </div> -->
+                </div>
 
                 <div class="form-group">
                     <label for="E_Email">Editor Email:</label>
                     <input type="text" id="E_Email" name="E_Email" required>
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="E_Password">Editor Password:</label>
                     <input type="text" id="E_Password" name="E_Password" required>
-                </div> -->
+                </div>
 
                 <div class="form-group">
                     <label for="E_Name">Editor Name:</label>

@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="css/index.css"> -->
 
    <style>
-        <style>
+   
         * {
             margin: 0;
             padding: 0;
@@ -183,11 +183,11 @@
                     <input type="text" id="M_Email" name="M_Email" required>
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="M_Password">Moderator Password:</label>
                     <input type="text" id="M_Password" name="M_Password" required>
                 </div>
- -->
+
                 <div class="form-group">
                     <label for="M_Name">Moderator Name:</label>
                     <input type="text" id="M_Name" name="M_Name" required>
@@ -213,10 +213,10 @@
                     <input type="text" id="Admin_Id" name="Admin_Id" required>
                 </div>
 
-                <!-- <div class="form-group">
-                    <label for="Editor_Id">Editor ID:</label>
-                    <input type="text" id="Editor_Id" name="Editor_Id" required>
-                </div>  -->
+                <div class="form-group">
+                    <label for="Faculty_Id">Faculty ID:</label>
+                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
+                </div> 
 
                 
 

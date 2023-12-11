@@ -27,15 +27,20 @@ class StaffController extends Controller
 
     public function staffInput(Request $request)
      {
-         // Generate a random password
-         $generatedPassword = Str::random(12); 
+         // Validate the request data
+         $request->validate([
+            'Staff_Password' => 'required|min:5', // Add any other validation rules you need
+        ]);
+    
+        // Hash the password
+        $hashedPassword = bcrypt($request->input('Staff_Password'));
      
          // Create a new staff with the generated password
          $admin = Staff::create([
             'Staff_Id' => $request->input('Staff_Id'),
             'Faculty_Id' => $request->input('Faculty_Id'),
             'Staff_Email' => $request->input('Staff_Email'),
-            'Staff_Password' => bcrypt($generatedPassword),
+            'Staff_Password' => $hashedPassword, // Store the hashed password
             'Staff_Name' => $request->input('Staff_Name'),
             'Dep_Id' => $request->input('Dep_Id'),
             'Admin_Id' => $request->input('Admin_Id'),

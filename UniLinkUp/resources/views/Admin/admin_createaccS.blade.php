@@ -190,10 +190,10 @@
                     <input type="text" id="Staff_Email" name="Staff_Email" required>
                 </div>
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="Staff_Password">Staff Password:</label>
                     <input type="text" id="Staff_Password" name="Staff_Password" required>
-                </div> -->
+                </div>
 
                 <div class="form-group">
                     <label for="Staff_Name">Staff Name:</label>
