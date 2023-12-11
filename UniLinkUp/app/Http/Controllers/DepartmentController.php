@@ -1,5 +1,5 @@
 <?php
-//jayani-starts
+//sachithra-starts
 namespace App\Http\Controllers;
 
 use App\Models\Faculty;
@@ -22,7 +22,7 @@ class DepartmentController extends Controller
     /**
      * Store the department data.
      */
-    public function storeDepartment(Request $request)
+    public function departmentInput(Request $request)
     {
         // Validate the request data
         $request->validate([
@@ -37,7 +37,7 @@ class DepartmentController extends Controller
         ]);
 
         // Redirect with success message
-        return redirect()->route('admin.department.create')->with('success', 'Department added successfully');
+        return redirect()->route('admin_add_department')->with('success', 'Department added successfully');
     }
 
     /**
@@ -49,5 +49,5 @@ class DepartmentController extends Controller
     }
 
     // Other CRUD methods...
-//jayani_ends
+//sachithra_ends
 }

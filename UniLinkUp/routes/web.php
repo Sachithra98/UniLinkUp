@@ -2,6 +2,7 @@
 //sachithra-start
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
+
 //sachithra - end
 
 //jayani-start
@@ -189,6 +190,8 @@ Route::get('/admin_add_department', function () {
 
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
+Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm'); 
+
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -264,6 +267,11 @@ Route::post('/staffInput',[StaffController::class,'staffInput'])->name('staffInp
 Route::post('/moderatorInput',[ModeratorController::class,'moderatorInput'])->name('moderatorInput');
 Route::post('/editorInput',[EditorController::class,'editorInput'])->name('editorInput');
 Route::post('/adminInput',[AdminController::class,'adminInput'])->name('adminInput');
+
+
+
+
+
 
 Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
 Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
