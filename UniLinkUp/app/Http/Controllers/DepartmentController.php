@@ -16,7 +16,7 @@ class DepartmentController extends Controller
         // Fetch faculties to populate dropdown
         $faculties = Faculty::all();
 
-        return view('admin.admin_add_department', ['faculties' => $faculties]);
+        return view('admin.admin_add_department',  compact('faculties'));
     }
 
     /**

@@ -128,7 +128,14 @@
     <div class="container">
         <h1>Add New society</h1>
 
-            <form action="<?=url('')?>" method="post">
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+        @endif 
+
+            <form action="{{route('storeSociety') }}" method="post"  enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
                     <label for="society_id">Society ID:</label>
                     <input type="text" id="society_id" name="society_id" required>
@@ -140,19 +147,19 @@
                 </div>
 
 
-                <div class="radio-group">
+                <!-- <div class="radio-group">
                     <label>Choose Society Type:</label><br>
                     <input type="radio" id="university_society" name="society_type" value="University Society" required>
                     <label for="university_society">University Society</label>
                     
                     <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
                     <label for="faculty_society">Faculty Society</label><br><br>
-                </div>
+                </div> -->
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="faculty">Faculty:</label>
                     <input type="text" id="faculty" name="faculty" required>
-                </div>
+                </div> -->
            
                 <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>

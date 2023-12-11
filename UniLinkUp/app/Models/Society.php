@@ -8,5 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Society extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $timestamps = true;
+    protected $fillable = ['Society_Id', 'Society_Name'];
+
 }
