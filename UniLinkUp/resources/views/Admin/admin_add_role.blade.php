@@ -72,6 +72,14 @@
             border-radius: 4px;
         }
 
+        .main-content .container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;   
+        }
+
         /* Style radio buttons and labels */
         .main-content .container input[type="radio"] {
             margin-right: 5px;
@@ -137,7 +145,7 @@
 
         <form action="{{route('roleInput') }}" method="post">
              @csrf
-          <!--   <div class="form-group">
+            <!-- <div class="form-group">
                     <label for="Role_Id">Role ID:</label>
                     <input type="text" id="Role_Id" name="Role_Id" required>
                 </div> -->
@@ -154,12 +162,7 @@
 
             <div class="form-group">
                     <label for="selectedForRole">Who are selected for this role:</label>
-                    <select id="Who_Are_Responsible" name="Who_Are_Responsible" required>
-                        <option value="Student">Student</option>
-                        <option value="Staff">Staff</option>
-                        <option value="Moderator">Moderator</option>
-                        <option value="Editor">Editor</option>
-                    </select>
+                    <input type="text" id="Who_Are_Responsible" name="Who_Are_Responsible" required>
             </div>
     </div>
                 

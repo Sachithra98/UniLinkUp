@@ -11,7 +11,6 @@ class Role extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'Role_Id',
         'Role_Name',
         'Responsibilities',
         'Who_Are_Responsible'

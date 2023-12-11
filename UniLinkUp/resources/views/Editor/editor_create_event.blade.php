@@ -54,6 +54,7 @@
             text-decoration: underline;
             margin-bottom: 40px;
         }
+
         /* Style the labels */
         .main-content .container label {
             font-weight: bold;
@@ -185,13 +186,13 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="exp date">Expire Date:</label>
                     <input type="date" id="exp_date" name="exp_date" value="{{ old('exp_date') }}" required>
                     @error('exp_date')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
-                </div>
+                </div> -->
 
                 <div class="form-group">
                     <label for="">Post Media:</label>
