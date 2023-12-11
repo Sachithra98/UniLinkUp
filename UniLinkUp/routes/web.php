@@ -278,3 +278,8 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 // end piyumi
 
+//start piyumi
+Route::get('/post-list', [PostController::class, 'index']);
+
+//end piyumi
+
