@@ -21,13 +21,12 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
 use App\Http\Controllers\NoticeController;
-//sachithra - end
-
+use App\Http\Controllers\SocietyController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
-
+//sachithra - end
 
 
 /*
@@ -187,7 +186,8 @@ Route::get('/admin_add_department', function () {
 //sachithra-end
 
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
-Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
+Route::post('/storeDepartment', [DepartmentController::class, 'storeDepartment'])->name('storeDepartment');
+Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -201,6 +201,11 @@ Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput
 
 //sachithra-start
 Route::get('/search', [PostController::class, 'search']);
+
+//Socity
+Route::post('/storeSociety', [SocietyController::class, 'storeSociety'])->name('storeSociety');
+Route::get('/admin_add_society', [SocietyController::class, 'data'])->name('data');
+Route::post('/admin_add_society', [SocietyController::class, 'society'])->name('society');
 
 //posts
 Route::post('/postInput', [PostController::class, 'store'])->name('store');

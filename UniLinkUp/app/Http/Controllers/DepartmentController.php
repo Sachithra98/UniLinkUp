@@ -1,5 +1,5 @@
 <?php
-//jayani-starts
+//sachithra-starts
 namespace App\Http\Controllers;
 
 use App\Models\Faculty;
@@ -16,7 +16,7 @@ class DepartmentController extends Controller
         // Fetch faculties to populate dropdown
         $faculties = Faculty::all();
 
-        return view('admin.admin_add_department', ['faculties' => $faculties]);
+        return view('admin.admin_add_department',  compact('faculties'));
     }
 
     /**
@@ -37,7 +37,7 @@ class DepartmentController extends Controller
         ]);
 
         // Redirect with success message
-        return redirect()->route('admin.department.create')->with('success', 'Department added successfully');
+        return redirect()->route('admin_add_department')->with('success', 'Department added successfully');
     }
 
     /**
@@ -45,9 +45,9 @@ class DepartmentController extends Controller
      */
     public function department()
     {
-        return view('admin_add_department');
+        return view('/admin_add_department');
     }
 
     // Other CRUD methods...
-//jayani_ends
+//sachithra_ends
 }
