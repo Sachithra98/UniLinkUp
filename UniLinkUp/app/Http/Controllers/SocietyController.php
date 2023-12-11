@@ -2,7 +2,7 @@
 //sachithra-starts
 namespace App\Http\Controllers;
 
-use App\Models\Faculty;
+
 use App\Models\Society;
 use Illuminate\Http\Request;
 
@@ -45,7 +45,7 @@ class SocietyController extends Controller
      */
     public function society()
     {
-        return view('/admin_add_society');
+        return view('admin_add_society');
     }
 
     // Other CRUD methods...

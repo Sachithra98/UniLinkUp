@@ -188,6 +188,7 @@ Route::get('/admin_add_department', function () {
 });
 //sachithra-end
 
+//department 
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm'); 
@@ -211,10 +212,10 @@ Route::post('/postInput', [PostController::class, 'store'])->name('store');
 Route::get('/editor_create_event', [PostController::class, 'data'])->name('data');
 Route::post('/editor_create_event', [PostController::class, 'post'])->name('post');
 
-//Socity
+//Society
 Route::post('/storeSociety', [SocietyController::class, 'storeSociety'])->name('storeSociety');
 // Route::get('/admin_add_society', [SocietyController::class, 'data'])->name('data');
-Route::post('/admin_add_society', [SocietyController::class, 'society'])->name('society');
+Route::get('/admin_add_society', [SocietyController::class, 'society'])->name('society');
 
 //notice
 Route::post('/noticeInput', [NoticeController::class, 'store'])->name('store');
