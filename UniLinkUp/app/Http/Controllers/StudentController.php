@@ -5,7 +5,7 @@ use App\Models\Student;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-
+use Illuminate\Support\Facades\Response;
 //sachi-start
 use App\Models\Faculty;
 use App\Models\Department;
@@ -40,54 +40,81 @@ class StudentController extends Controller
           }
       
           private function processCSV($path)
-          {
-              $file = File::get(storage_path('app/' . $path));
-              $data = array_map('str_getcsv', explode("\n", $file));
-      
-              foreach ($data as $row) {
-                  // Skip empty rows
-                  if (empty($row[0])) {
-                      continue;
-                  }
-      
-                  // Auto-generate password 
-                  $password = bcrypt(\Illuminate\Support\Str::random(10));
+{
+    $file = File::get(storage_path('app/' . $path));
+    $data = array_map('str_getcsv', explode("\n", $file));
 
-                  // Insert data into the database
-                  Student::create([
-                    'Student_Id' => $row[0],
-                      'Faculty_Id' => $row[1],
-                      'Batch_Id' => $row[2],
-                      'S_Email' =>$row[3],
-                      'S_Password' =>  $password,
-                      'S_Name' => $row[4],
-                      'Dep_Id' => $row[5],
-                      'Admin_Id' => $row[6],
-                    
-                  ]);
-              }
+    array_shift($data);
 
+    foreach ($data as $row) {
+        // Skip empty rows
+        if (empty($row[0])) {
+            continue;
+        }
 
-          }
+        // Check if a password is provided, otherwise generate one
+        $hashedPassword = !empty($row[4]) ? bcrypt($row[4]) : bcrypt(\Illuminate\Support\Str::random(5));
+
+        // Insert data into the database
+        Student::create([
+            'Student_Id' => $row[0],
+            'Faculty_Id' => $row[1],
+            'Batch_Id' => $row[2],
+            'S_Email' => $row[3],
+            'S_Password' => $hashedPassword,
+            'S_Name' => $row[5],
+            'Dep_Id' => $row[6],
+            'Admin_Id' => $row[7],
+        ]);
+    }
+}
+
           public function studentInput(Request $request)
-     {
-         // Generate a random password
-         $generatedPassword = Str::random(12); 
-     
-         // Create a new student with the generated password
-         $admin = Student::create([
-            'Student_Id' => $request->input('Student_Id'),
-            'Faculty_Id' => $request->input('Faculty_Id'),
-            'Batch_Id' => $request->input('Batch_Id'),
-            'S_Email' => $request->input('S_Email'),
-            'S_Password' => bcrypt($generatedPassword),
-            'S_Name' => $request->input('S_Name'),
-            'Dep_Id' => $request->input('Dep_Id'),
-            'Admin_Id' => $request->input('Admin_Id'),
-         ]);
-     
-      
-         return redirect('/admin_createaccV')->with('success','Data successfully added!');
-     }
+          {
+              // Validate the request data
+              $request->validate([
+                  'S_Password' => 'required|min:5', // Add any other validation rules you need
+              ]);
+          
+              // Hash the password
+              $hashedPassword = bcrypt($request->input('S_Password'));
+          
+              // Create a new student with the hashed password
+              $student = Student::create([
+                  'Student_Id' => $request->input('Student_Id'),
+                  'Faculty_Id' => $request->input('Faculty_Id'),
+                  'Batch_Id' => $request->input('Batch_Id'),
+                  'S_Email' => $request->input('S_Email'),
+                  'S_Password' => $hashedPassword, // Store the hashed password
+                  'S_Name' => $request->input('S_Name'),
+                  'Dep_Id' => $request->input('Dep_Id'),
+                  'Admin_Id' => $request->input('Admin_Id'),
+              ]);
+          
+              // Redirect with success message
+              return redirect('/admin_createaccV')->with('success', 'Data successfully added!');
+          }
+          
+   /*   public function downloadPasswords()
+{
+    // Fetch student numbers and decrypted passwords
+    $students = Student::select('Student_Id', 'S_Password')->get();
+
+    // Create a CSV file
+    $csvFileName = 'passwords.csv';
+    $csvFile = storage_path('app/' . $csvFileName);
+
+    $file = fopen($csvFile, 'w');
+    fputcsv($file, ['Student Number', 'Password']);
+
+    foreach ($students as $student) {
+        fputcsv($file, [$student->Student_Id,$student->S_Password]);
+    }
+
+    fclose($file);
+
+    // Download the CSV file
+    return Response::download($csvFile, $csvFileName, ['Content-Type' => 'text/csv']);
+} */
           //jayani-end
 }

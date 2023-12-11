@@ -26,19 +26,25 @@ class ModeratorController extends Controller
 
     public function moderatorInput(Request $request)
     {
-        // Generate a random password
-        $generatedPassword = Str::random(12); 
+         // Validate the request data
+         $request->validate([
+            'M_Password' => 'required|min:5', // Add any other validation rules you need
+        ]);
+    
+        // Hash the password
+        $hashedPassword = bcrypt($request->input('M_Password'));
     
         // Create a new moderator with the generated password
         $moderator = Moderator::create([
            'Moderator_Id' => $request->input('Moderator_Id'),
            'M_Email' => $request->input('M_Email'),
-           'M_Password' => bcrypt($generatedPassword),
+           'M_Password' => $hashedPassword,
            'M_Name' => $request->input('M_Name'),
            'Position' => $request->input('Position'),
            'Dep_Id' => $request->input('Dep_Id'),
            'Admin_Id' => $request->input('Admin_Id'),
            'Society_Id'=> $request->input('Society_Id'),
+           'Faculty_Id' => $request->input('Faculty_Id'),
         ]); 
        
         

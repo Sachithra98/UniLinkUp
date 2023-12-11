@@ -16,7 +16,9 @@ class Moderator extends Model
         'M_Name',
         'Dep_Id',
         'Admin_Id',
-        'Society_Id'
+        'Society_Id',
+        'Faculty_Id'
+       
         
 ];
 

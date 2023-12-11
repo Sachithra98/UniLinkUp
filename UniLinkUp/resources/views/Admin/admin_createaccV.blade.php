@@ -167,6 +167,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="S_Password">Student Password:</label>
+                    <input type="text" id="S_Password" name="S_Password" required>
+                </div>
+
+                <div class="form-group">
                     <label for="S_Name">Student Name:</label>
                     <input type="text" id="S_Name" name="S_Name" required>
                 </div>
