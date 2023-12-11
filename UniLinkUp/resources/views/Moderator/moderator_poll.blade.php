@@ -76,6 +76,7 @@
         <div class="con">
             <h2 style="text-decoration: underline;">Poll Request for Publish</h2>
             <div class="poll-container">
+            <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>
                 <h5>Poll Id:{{$poll->id}}</h5>
                 <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
                 <p>{{ $poll->poll_desc }}
@@ -98,7 +99,7 @@
             </div>
 
         
-            <form action="{{ route('add-to-publish-poll', ['pollId' => $poll->id]) }}" method="POST">
+            <form action="{{ route('addDataToPublishPoll', ['pollId' => $poll->id]) }}" method="POST">
                 @csrf
 
                 @if (session('success'))
@@ -108,7 +109,7 @@
                 @endif
 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                    <button class="btn denied-btn" onclick="window.location='{{ route("moderator_denied_poll") }}'" style="margin-left: 1rem; background-color: red;">Denied Request</button>
+                <a href="{{ url('moderator_denied_poll') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
                     <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
                 </div>
             </form>

@@ -51,11 +51,11 @@ class DeniedController extends Controller
         return view('Editor/editor_denied_poll', compact('denieds'));
     }
     
-    public function updateDenied($poll_id)
-    {
-        // Perform the necessary logic to update the denieds table
-        // You can use Eloquent or the Query Builder to update the record
+    // public function updateDenied($poll_id)
+    // {
+    //     // Perform the necessary logic to update the denieds table
+    //     // You can use Eloquent or the Query Builder to update the record
 
-        return response()->json(['success' => true]);
-    }
+    //     return response()->json(['success' => true]);
+    // }
 }

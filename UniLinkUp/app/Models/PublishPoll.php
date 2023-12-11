@@ -23,10 +23,14 @@ class PublishPoll extends Model
         'option5',
         // Add other fields as needed
     ];
-    public function votes()
+    
+    // PublishPoll.php
+
+   public function votes()
     {
-        return $this->hasMany(Vote::class);
+        return $this->hasMany(Vote::class, 'poll_id');
     }
+
     // Add any relationships or additional methods as needed
 }
 

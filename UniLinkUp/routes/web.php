@@ -166,7 +166,7 @@ Route::get('/moderator', function () {
 });
 
 Route::get('/viewer', function () {
-    return view('/Viewer/viewer');
+    return view('/Student/viewer');
 });
 //sachithra-end
 
@@ -306,8 +306,7 @@ Route::post('/update-denied/{poll_id}', [DeniedController::class, 'updateDenied'
 Route::get('/polls', [VoteController::class, 'index'])->name('polls.index');
 
 // // Handle the voting submission
-// Route::post('/vote', [VoteController::class, 'vote'])->name('vote.submit');
-
+Route::post('/vote/{pollId}', [VoteController::class, 'vote']);
 
 // Add data to publish_polls table
 Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addDataToPublishPoll'])
@@ -317,7 +316,7 @@ Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addData
 Route::get('/viewer_poll', [PublishController::class, 'showAll'])
     ->name('showAll');
 
-Route::post('/api/vote', [VoteController::class, 'vote']);
+// Route::post('/api/vote', [VoteController::class, 'vote']);
 
 
 

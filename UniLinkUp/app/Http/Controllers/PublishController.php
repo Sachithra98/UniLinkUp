@@ -8,6 +8,16 @@ use App\Models\PublishPoll;
 
 class PublishController extends Controller
 {
+
+    public function deniedPoll(Request $request)
+    {
+        // Handle the denial logic here
+        // You can access the poll ID using $request->input('pollId')
+
+        // Redirect to the moderator_denied_poll blade or perform other actions
+        return redirect()->route('moderator_denied_poll');
+    }
+    
     public function addDataToPublishPoll(Request $request, $pollId)
 {
     try {

@@ -16,10 +16,10 @@ class Denied extends Model
     ];
 
     // Denied.php (model)
-public function PublishPoll()
-{
-    return $this->belongsTo(PublishPoll::class, 'poll_id');
-}
+    public function poll()
+    {
+        return $this->belongsTo(Poll::class, 'poll_id');
+    }
 
 
 }
