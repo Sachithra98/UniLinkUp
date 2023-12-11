@@ -61,7 +61,7 @@ class PostController extends Controller
             $validator = $this->validate($request, [
                 'post_title' => 'required|string|max:255',
                 'desc' => 'required|string',
-                'exp_date' => 'required|date',
+                
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
                 'soc_id' => 'required|string',
@@ -83,7 +83,7 @@ class PostController extends Controller
                 'Editor_Id' =>$request->Editor_Id,
                 'Title' => $request->post_title,
                 'Description' => $request->desc,
-                'Expire_Date' => $request->exp_date,
+                
                 'media_path' => $request->ppost,
                 'Approval_Letter' => $request->approval,
                 'Faculty_Id' => $request->fac_id,
