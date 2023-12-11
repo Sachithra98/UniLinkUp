@@ -97,4 +97,18 @@ class PostController extends Controller
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
     }
+
+    //strat piyumi
+
+    public function index()
+    {
+        $posts = Post::all();
+        return view('post-list', compact('posts'));
+    }
+
+    //end piyumi
+
+
+
+
 }
