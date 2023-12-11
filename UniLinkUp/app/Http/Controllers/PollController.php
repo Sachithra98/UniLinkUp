@@ -32,7 +32,7 @@ class PollController extends Controller
 
             
             Poll::create([
-                'poll_id' =>$request->poll_id,
+                // 'poll_id' =>$request->poll_id,
                 'poll_title' => $request->poll_title,
                 'poll_desc' => $request->poll_desc,
                 'question' => $request->question,
@@ -46,4 +46,28 @@ class PollController extends Controller
             //return redirect('/editor_create_poll')->with('success','Data successfully added!');
             return redirect('/editor_create_poll')->with('success','Data successfully added!');
     }
+
+    // public function showAll()
+    //     {
+    //         // Retrieve all polls from the database
+    //         $polls = Poll::all();
+
+    //         // Pass the polls data to the view
+    //         return view('Student/viewer_poll', compact('polls'));
+
+        
+        // }
+
+        public function showM()
+        {
+            // Retrieve all polls from the database
+            $polls = Poll::all();
+
+            // Pass the polls data to the view
+            return view('Moderator/moderator_poll', compact('polls'));
+
+        
+        }
+
+        
 }

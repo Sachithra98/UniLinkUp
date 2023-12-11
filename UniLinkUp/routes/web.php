@@ -24,6 +24,9 @@ use App\Http\Controllers\NoticeController;
 //sachithra - end
 
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\VoteController;
+use App\Http\Controllers\DeniedController;
+use App\Http\Controllers\PublishController;
 
 
 
@@ -163,7 +166,7 @@ Route::get('/moderator', function () {
 });
 
 Route::get('/viewer', function () {
-    return view('/Viewer/viewer');
+    return view('/Student/viewer');
 });
 //sachithra-end
 
@@ -213,6 +216,8 @@ Route::post('/editor_create_notice', [NoticeController::class, 'notice'])->name(
 //for poll
 Route::post('/editor_create_poll', [PollController::class, 'poll'])->name('poll');
 Route::post('/pollInput', [PollController::class, 'store'])->name('store');
+Route::get('/viewer_poll', [PollController::class, 'showAll'])->name('showAll');;
+
 
 Route::get('about', function () {
     return view('about');
@@ -276,5 +281,42 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 // routes/web.php
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
+
+
+// Route::get('Student/viewer_poll', [VoteController::class, 'index']);
+// Route::post('/api/vote', [VoteController::class, 'vote']);
 // end piyumi
+
+
+Route::get('/moderator_poll', [PollController::class, 'showM'])->name('showM');;
+
+Route::get('/moderator_denied_poll', function () {
+    return view('/Moderator/moderator_denied_poll');
+})->name('moderator_denied_poll');
+
+Route::post('/deniedInput', [DeniedController::class, 'store'])->name('store');
+Route::post('/moderator_denied_poll', [PollController::class, 'deniedpl'])->name('deniedpl');
+
+Route::get('/editor_denied_poll', [DeniedController::class, 'showE'])->name('showE');;
+Route::post('/update-denied/{poll_id}', [DeniedController::class, 'updateDenied'])->name('update_denied');
+
+
+
+// Display the polls and vote results
+Route::get('/polls', [VoteController::class, 'index'])->name('polls.index');
+
+// // Handle the voting submission
+Route::post('/vote', [VoteController::class, 'vote'])->name('vote.submit');
+
+// Add data to publish_polls table
+Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addDataToPublishPoll'])
+    ->name('addDataToPublishPoll');
+
+// Show viewer poll for publish_polls
+Route::get('/viewer_poll', [PublishController::class, 'showAll'])
+    ->name('showAll');
+
+// Route::post('/api/vote', [VoteController::class, 'vote']);
+
+
 

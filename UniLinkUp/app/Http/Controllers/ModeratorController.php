@@ -46,6 +46,9 @@ class ModeratorController extends Controller
      
         return redirect('/admin_createaccM')->with('success','Data successfully added!');
     }
+
+   
+
     public function index()
     {
         //

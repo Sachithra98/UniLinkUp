@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -10,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('polls', function (Blueprint $table) {
+        Schema::create('publish_polls', function (Blueprint $table) {
             $table->id();
+           // Inside the migration file for the votes table
+        $table->foreignId('publish_poll_id')->constrained(); // or any other method to create a foreign key
+        // This creates a foreign key relationship with the "polls" table
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
             //$table->binary('media_path')->nullable();
@@ -31,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('polls');
+        Schema::dropIfExists('publish_polls');
     }
 };

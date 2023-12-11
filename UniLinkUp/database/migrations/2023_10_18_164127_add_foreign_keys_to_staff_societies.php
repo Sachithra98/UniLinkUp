@@ -23,11 +23,4 @@ class AddForeignKeysToStaffSocieties extends Migration
         });
     }
 
-   /*  public function down()
-    {
-        Schema::table('staff__societies', function (Blueprint $table) {
-            $table->dropForeign(['Staff_Id']);
-            $table->dropForeign(['Society_Id']);
-        });
-    } */
 }
