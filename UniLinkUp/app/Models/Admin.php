@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     use HasFactory;
-    public $timestamps = false;
+    public $timestamps = true;
+    protected $primaryKey = 'Admin_Id';
     protected $fillable = [
-          /* 'Admin_Id', */
+          'Admin_Id',
           'Admin_Email',
           'Admin_Name',
           'Admin_Password'
