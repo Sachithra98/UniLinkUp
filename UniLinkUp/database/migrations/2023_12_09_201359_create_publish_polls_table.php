@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('publish_polls', function (Blueprint $table) {
             $table->id();
            // Inside the migration file for the votes table
-        $table->foreignId('publish_poll_id')->constrained(); // or any other method to create a foreign key
+        $table->foreignId('poll_id')->constrained(); // or any other method to create a foreign key
         // This creates a foreign key relationship with the "polls" table
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
