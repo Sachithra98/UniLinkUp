@@ -70,7 +70,7 @@ Route::get('/admin_UMM', function () {
     return view('/Admin/admin_UMM');
 });
 
-Route::get('/Admin/admin_UMA', function () {
+Route::get('/admin_UMA', function () {
     return view('/Admin/admin_UMA');
 });
 
@@ -129,7 +129,7 @@ Route::get('/admin_department', function () {
 
 
 Route::get('/admin_add_department', function () {
-    return view('admin_add_department');
+    return view('/Admin/admin_add_department');
 });
 
 
@@ -138,6 +138,10 @@ Route::get('/admin_add_faculty', function () {
     return view('/Admin/admin_add_faculty');
 });
 
+
+Route::get('/admin_edit_UMA', function () {
+    return view('/Admin/admin_edit_UMA');
+});
 
 Route::post('/admin_add_faculty', [FacultyController::class, 'faculty'])->name('admin_add_faculty');
 Route::post('/facultyInput', [FacultyController::class, 'facultyInput'])->name('facultyInput');
@@ -277,4 +281,10 @@ Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store
 
 Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index');
 // end piyumi
+
+//Route::post('update_data/{id}',[AdminController::class,'update_data']);
+// Route::post('/update_data/{Admin_Id}', [AdminController::class, 'update_data'])->name('update_data');
+Route::post('/update-admin/{admin}', [AdminController::class, 'update_data'])->name('admin.update');
+
+Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
 
