@@ -27,19 +27,19 @@ class EditorController extends Controller
     {
          // Validate the request data
          $request->validate([
-            'E_Password' => 'required|min:5', // Add any other validation rules you need
+            'password' => 'required|min:5', // Add any other validation rules you need
         ]);
     
         // Hash the password
-        $hashedPassword = bcrypt($request->input('E_Password')); 
+        $hashedPassword = bcrypt($request->input('password')); 
     
         // Create a new staff with the generated password
         $editor = Editor::create([
            'Editor_Id' => $request->input('Editor_Id'),
            'Faculty_Id' => $request->input('Faculty_Id'),
            'Batch_Id' => $request->input('Batch_Id'),
-           'E_Email' => $request->input('E_Email'),
-           'E_Password' => bcrypt($hashedPassword),
+           'email' => $request->input('email'),
+           'password' => bcrypt($hashedPassword),
            'E_Name' => $request->input('E_Name'),
            'Dep_Id' => $request->input('Dep_Id'),
            'Society_Id' => $request->input('Society_Id'),

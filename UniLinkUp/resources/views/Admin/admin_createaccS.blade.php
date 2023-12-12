@@ -186,13 +186,13 @@
                 </div> 
 
                 <div class="form-group">
-                    <label for="Staff_Email">Staff Email:</label>
-                    <input type="text" id="Staff_Email" name="Staff_Email" required>
+                    <label for="email">Staff Email:</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="Staff_Password">Staff Password:</label>
-                    <input type="text" id="Staff_Password" name="Staff_Password" required>
+                    <label for="password">Staff Password:</label>
+                    <input type="text" id="password" name="password" required>
                 </div>
 
                 <div class="form-group">

@@ -11,9 +11,9 @@ class Admin extends Model
     public $timestamps = false;
     protected $fillable = [
           /* 'Admin_Id', */
-          'Admin_Email',
+          'email',
           'Admin_Name',
-          'Admin_Password'
+          'password'
         
 ];
 protected static function booted()

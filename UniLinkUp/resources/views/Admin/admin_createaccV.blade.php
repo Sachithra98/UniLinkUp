@@ -162,13 +162,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="S_Email">Student Email:</label>
-                    <input type="text" id="S_Email" name="S_Email" required>
+                    <label for="email">Student Email:</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="S_Password">Student Password:</label>
-                    <input type="text" id="S_Password" name="S_Password" required>
+                    <label for="password">Student Password:</label>
+                    <input type="text" id="password" name="password" required>
                 </div>
 
                 <div class="form-group">

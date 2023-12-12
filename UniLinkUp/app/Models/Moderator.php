@@ -11,8 +11,8 @@ class Moderator extends Model
     protected $fillable = [
         /* 'Moderator_Id', */
         'Position',
-        'M_Email',
-        'M_Password',
+        'email',
+        'password',
         'M_Name',
         'Dep_Id',
         'Admin_Id',

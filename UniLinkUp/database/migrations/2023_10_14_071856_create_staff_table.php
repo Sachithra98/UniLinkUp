@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('Staff_Id')->primary();
             $table->string('Faculty_Id');
             $table->string('Dep_Id');
-            $table->string('Staff_Email');
-            $table->string('Staff_Password');
+            $table->string('email');
+            $table->string('password');
             $table->string('Staff_Name');
             $table->string('Admin_Id');
             $table->timestamps();

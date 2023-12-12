@@ -177,12 +177,12 @@
 
                 <div class="form-group">
                     <label for="E_Email">Editor Email:</label>
-                    <input type="text" id="E_Email" name="E_Email" required>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="E_Password">Editor Password:</label>
-                    <input type="text" id="E_Password" name="E_Password" required>
+                    <label for="password">Editor Password:</label>
+                    <input type="text" id="password" name="password" required>
                 </div>
 
                 <div class="form-group">

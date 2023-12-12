@@ -28,17 +28,17 @@ class ModeratorController extends Controller
     {
          // Validate the request data
          $request->validate([
-            'M_Password' => 'required|min:5', // Add any other validation rules you need
+            'password' => 'required|min:5', // Add any other validation rules you need
         ]);
     
         // Hash the password
-        $hashedPassword = bcrypt($request->input('M_Password'));
+        $hashedPassword = bcrypt($request->input('password'));
     
         // Create a new moderator with the generated password
         $moderator = Moderator::create([
            'Moderator_Id' => $request->input('Moderator_Id'),
-           'M_Email' => $request->input('M_Email'),
-           'M_Password' => $hashedPassword,
+           'email' => $request->input('email'),
+           'password' => $hashedPassword,
            'M_Name' => $request->input('M_Name'),
            'Position' => $request->input('Position'),
            'Dep_Id' => $request->input('Dep_Id'),

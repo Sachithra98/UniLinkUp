@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('Moderator_Id')->primary();
             $table->string('Dep_Id');
             $table->string('Position');
-            $table->string('M_Email');
-            $table->string('M_Password');
+            $table->string('email');
+            $table->string('password');
             $table->string('M_Name');
             $table->string('Society_Id');
             $table->string('Admin_Id');

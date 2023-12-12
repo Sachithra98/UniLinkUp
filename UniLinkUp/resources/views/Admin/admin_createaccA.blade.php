@@ -140,14 +140,14 @@
                 </div> -->
 
                 <div class="form-group">
-                    <label for="Admin_Email'">Admin Email:</label>
-                    <input type="text" id="Admin_Email'" name="Admin_Email" required>
+                    <label for="email'">Admin Email:</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
-               <!--  <div class="form-group">
-                    <label for="Admin_Password">Admin password:</label>
-                    <input type="text" id="Admin_Password" name="Admin_Password" required>
-                </div> -->
+                <div class="form-group">
+                    <label for="password">Admin password:</label>
+                    <input type="text" id="password" name="password" required>
+                </div>
 
                 <div class="form-group">
                     <label for="Admin_Name">Admin Name:</label>

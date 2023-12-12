@@ -9,14 +9,19 @@ class AdminController extends Controller
 {
     public function adminInput(Request $request)
     {
-        // Generate a random password
-        $generatedPassword = Str::random(12); 
+        // Validate the request data
+        $request->validate([
+            'password' => 'required|min:5', // Add any other validation rules you need
+        ]);
+    
+        // Hash the password
+        $hashedPassword = bcrypt($request->input('password'));
     
         // Create a new moderator with the generated password
         $admin = Admin::create([
            'Admin_Id' => $request->input('Admin_Id'),
-           'Admin_Email' => $request->input('Admin_Email'),
-           'Admin_Password' => bcrypt($generatedPassword),
+           'email' => $request->input('email'),
+           'password' => bcrypt($hashedPassword),
            'Admin_Name' => $request->input('Admin_Name'),
         ]);
         

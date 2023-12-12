@@ -107,7 +107,7 @@
          
             <tr><td>{{ $c++}}</td>
                 <td>{{ $row['M_Name'] }} </td>
-                <td>{{ $row['M_Email'] }} </td>
+                <td>{{ $row['email'] }} </td>
                 <td>{{ $row['Position'] }} </td>
                 
                 <td>

@@ -104,7 +104,7 @@
                         <tr>
                             <td>{{ $c++ }}</td>
                             <td>{{ $row['S_Name'] }}</td>
-                            <td>{{ $row['S_Email'] }}</td>
+                            <td>{{ $row['email'] }}</td>
                            
                             <td>
                                 <a href="" class="btn btn-success">Edit</a>

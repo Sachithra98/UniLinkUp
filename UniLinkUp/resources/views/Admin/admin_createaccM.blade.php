@@ -179,13 +179,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="M_Email">Moderator Email:</label>
-                    <input type="text" id="M_Email" name="M_Email" required>
+                    <label for="email">Moderator Email:</label>
+                    <input type="text" id="email" name="email" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="M_Password">Moderator Password:</label>
-                    <input type="text" id="M_Password" name="M_Password" required>
+                    <label for="password">Moderator Password:</label>
+                    <input type="text" id="password" name="password" required>
                 </div>
 
                 <div class="form-group">

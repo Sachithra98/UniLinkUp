@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('Student_Id')->primary();
             $table->string('Faculty_Id');
             $table->string('Batch_Id');
-            $table->string('S_Email');
-            $table->string('S_Password');
+            $table->string('email');
+            $table->string('password');
             $table->string('S_Name');
             $table->string('Admin_Id');
             $table->string('Dep_Id');

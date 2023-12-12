@@ -107,7 +107,7 @@
      
             <tr><td><?php echo $c++;?> </td>
                 <td>{{ $row['E_Name'] }} </td>
-                <td>{{ $row['E_Email'] }} </td>
+                <td>{{ $row['email'] }} </td>
                 <td>{{ 'Society_Name' }} </td>
                 <td>{{ 'Dep_Name' }} </td>
                 <td>

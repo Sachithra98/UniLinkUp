@@ -12,8 +12,8 @@ class Editor extends Model
      /*    'Editor_Id', */
         'Faculty_Id',
         'Batch_Id',
-        'E_Email',
-        'E_Password',
+        'email',
+        'password',
         'E_Name',
         'Society_Id',
         'Admin_Id',

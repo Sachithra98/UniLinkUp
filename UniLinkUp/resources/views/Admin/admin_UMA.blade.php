@@ -105,7 +105,7 @@
             <tr>
                 <td>{{ $row['Admin_Id'] }} </td>
                 <td>{{ $row['Admin_Name'] }} </td>
-                <td>{{ $row['Admin_Email'] }} </td>
+                <td>{{ $row['email'] }} </td>
              
                 <td>
                 <a href="" class="btn btn-success">Edit</a>

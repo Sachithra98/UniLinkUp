@@ -60,8 +60,8 @@ class StudentController extends Controller
             'Student_Id' => $row[0],
             'Faculty_Id' => $row[1],
             'Batch_Id' => $row[2],
-            'S_Email' => $row[3],
-            'S_Password' => $hashedPassword,
+            'email' => $row[3],
+            'password' => $hashedPassword,
             'S_Name' => $row[5],
             'Dep_Id' => $row[6],
             'Admin_Id' => $row[7],
@@ -73,19 +73,19 @@ class StudentController extends Controller
           {
               // Validate the request data
               $request->validate([
-                  'S_Password' => 'required|min:5', // Add any other validation rules you need
+                  'password' => 'required|min:5', // Add any other validation rules you need
               ]);
           
               // Hash the password
-              $hashedPassword = bcrypt($request->input('S_Password'));
+              $hashedPassword = bcrypt($request->input('password'));
           
               // Create a new student with the hashed password
               $student = Student::create([
                   'Student_Id' => $request->input('Student_Id'),
                   'Faculty_Id' => $request->input('Faculty_Id'),
                   'Batch_Id' => $request->input('Batch_Id'),
-                  'S_Email' => $request->input('S_Email'),
-                  'S_Password' => $hashedPassword, // Store the hashed password
+                  'email' => $request->input('email'),
+                  'password' => $hashedPassword, // Store the hashed password
                   'S_Name' => $request->input('S_Name'),
                   'Dep_Id' => $request->input('Dep_Id'),
                   'Admin_Id' => $request->input('Admin_Id'),

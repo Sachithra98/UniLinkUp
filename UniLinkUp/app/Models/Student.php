@@ -13,8 +13,8 @@ class Student extends Model
                     'Student_Id',
                       'Faculty_Id',
                       'Batch_Id',
-                      'S_Email',
-                      'S_Password',
+                      'email',
+                      'password',
                       'S_Name',
                       'Dep_Id',
                       'Admin_Id'
