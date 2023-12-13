@@ -71,7 +71,13 @@
     @include('header')
 	<!-- header section ends -->
 
+    <div class="back" >
+        <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
+    </div>
+
     <div class="main">
+
+    <h2 style="text-decoration: underline;">Published Polls</h2>
 
         <!-- Loop through each publish poll -->
         @foreach ($publishPolls as $poll)

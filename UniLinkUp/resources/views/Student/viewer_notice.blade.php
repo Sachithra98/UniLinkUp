@@ -66,25 +66,33 @@
 	<!-- header section ends -->
 
     
-<div class="main">
+
 
     <div class="back" >
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
+
+    <div class="main">
+
+    <h2 style="text-decoration: underline;">Published Notices</h2>
     
     @foreach ($publishNotices as $notice)
       
-      <div class="con">
+      
           <div class="notice-container">
           <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
-              <h5>Notice Id:{{$notice->Post_Id}}</h5>
+              <h5>Notice Id:{{$notice->Publish_notice_id}}</h5>
               <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
               <p>{{ $notice->Description }}
               <h3>{{ $notice->media_path }}</h3>
-        
+
+              <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
+              <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
+              <button class="btn">Share <i class="fa fa-share-alt"></i></button>
+              </div>
       @endforeach
 
-    </div>
+    
 </div>
 
       <!-- footer section starts -->

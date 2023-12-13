@@ -33,6 +33,9 @@ class PublishNoticeController extends Controller
                 'Editor_Id' => $notice->Editor_Id,
                 'Approval_Letter' => $notice->Approval_Letter,
             ]);
+
+            // Delete the original notice record
+            $notice->delete();
     
             // Handle any additional logic here
     

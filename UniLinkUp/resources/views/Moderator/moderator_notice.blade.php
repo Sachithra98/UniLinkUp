@@ -81,7 +81,7 @@
        
         <div class="con">
             <h2 style="text-decoration: underline;">Notice Request for Publish</h2>
-            <div class="notice-container">
+            <div class="poll-container">
             <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
                 <h5>Notice Id:{{$notice->Post_Id}}</h5>
                 <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
@@ -89,7 +89,7 @@
                 <h3>{{ $notice->media_path }}</h3>
                 <h3>{{ $notice->Approval_Letter }}</h3>
                 
-              
+            </div>
                 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                 <a href="{{ url('moderator_denied_notice') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
