@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="css/index.css"> -->
 
 
-    
+
     <style>
         * {
             margin: 0;
@@ -41,7 +41,7 @@
         body {
             font-family: Roboto, sans-serif;
             background-color: aliceblue;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
 
         .container {
@@ -86,7 +86,7 @@
 
 </head>
 <body>
-   
+
     <!-- header section starts -->
     @include('header')
 	<!-- header section ends -->
@@ -111,7 +111,7 @@
         </div>
     </div>
 
-   
+
 
 
 
@@ -119,156 +119,166 @@
         <h1 class="heading-title">Reports</h1>
 
         <div class="box-container">
-        
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fas fa-users" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>1200<h2>
-                    <h3>Total Users</h3>
+
+            <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-users" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon"> <br>
+
+                            <select>
+                            @foreach($studentCounts as $studentCount)
+                            <option value="{{ $studentCount->Dep_Id }}">
+                             {{ $studentCount->Dep_Id }}: {{ $studentCount->student_count }}</h6>
+                            </option>
+                        @endforeach
+
+                        </select> <br>
+                        <h3>Total Student Users - Dep</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-thumbs-up" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>621<h2>
-                    <h3>Total Likes</h3>
+
+            <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-users" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon"><br>
+                            <select>
+                            @foreach($staffCounts as $staffCount)
+                            <option value="{{ $staffCount->Dep_Id }}">
+                                 {{ $staffCount->Dep_Name }}: {{ $staffCount->staff_count }}</h6>
+                            </option>
+                            @endforeach
+                        </select> <br>
+                            <h3>Total Staff Users - Dep</h3>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
 
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-thumbs-down" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>4<h2>
-                    <h3>Total Dislikes</h3>
-                </div>
-            </div>
-        </div>
-        </div>
+            <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-users" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon"><br>
+                            <select>
+                            @foreach($stafffacCounts as $stafffacCount)
+                            <option value="{{ $stafffacCount->Faculty_Id }}">
+                                 {{ $stafffacCount->Faculty_Name }}: {{ $stafffacCount->stafffac_count }}</h6>
+                            </option>
+                            @endforeach
+                        </select> <br>
+                            <h3>Total Staff Users - fac</h3>
 
-
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-address-card" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>50<h2>
-                    <h3>Total Notice Posts</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
 
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-calendar" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>35<h2>
-                    <h3>Total Event Posts</h3>
-                </div>
-            </div>
-        </div>
-        </div>
+            <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-users" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon"><br>
+                            <select>
+                            @foreach($studentfacCounts as $studentfacCount)
+                            <option value="{{ $studentfacCount->Faculty_Id }}">
+                                 {{ $studentfacCount->Faculty_Id }}: {{ $studentfacCount->studentfac_count }}</h6>
+                            </option>
+                            @endforeach
+                        </select> <br>
+                            <h3>Total Student users - fac</h3>
 
-
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fas fa-poll-h" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>20<h2>
-                    <h3>Total Polls</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
 
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-camera" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>7<h2>
-                    <h3>Total Albums</h3>
-                </div>
-            </div>
-        </div>
-        </div>
 
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fas fa-user-cog" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>24<h2>
-                    <h3>Total Roles</h3>
-                </div>
-            </div>
-        </div>
-        </div>
-        
+                <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-poll-h" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon">
+                            <h2>{{$totalPolls}}<h2>
+                            <h3>Total Polls</h3>
+                            <a href="{{ url('admin/Poll')}}" class="text-white"></a>
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                    <i class="fa fa-graduation-cap" style="font-size:36px"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="card icon">
-                    <h2>9<h2>
-                    <h3>Total Faculties</h3>
                 </div>
-            </div>
-        </div>
-        </div>
 
 
-        <div class="box">
-        <div class="cards">
-            <div class="card">
-                <div class="card icon">
-                <i class="	fas fa-id-card-alt" style="font-size:36px"></i>
-                </div>
-                <div class="card icon">
-                    <h2>13<h2>
-                    <h3>Total Societies</h3>
-                </div>
-            </div>
-        </div>
-        </div>
 
-        </div>
+
+
+                <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon">
+                            <h2>{{$totalRoles}}<h2>
+                            <h3>Total Roles</h3>
+                            <a href="{{ url('admin/Role')}}" class="text-white"></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                            <i class="fa fa-graduation-cap" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon">
+                            <h2>{{$totalFaculties}}<h2>
+                            <h3>Total Faculties</h3>
+                            <a href="{{ url('admin/Faculty')}}" class="text-white"></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+                <div class="box">
+                <div class="cards">
+                    <div class="card">
+                        <div class="card icon">
+                        <i class="	fas fa-id-card-alt" style="font-size:36px"></i>
+                        </div>
+                        <div class="card icon">
+                            <h2>{{$totalSocieties}}<h2>
+                            <h3>Total Societies</h3>
+                            <a href="{{ url('admin/Society')}}" class="text-white"></a>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                </div>
 
     </section>
 
@@ -289,7 +299,7 @@
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
 
-            
+
 
             // Greeting message with the user's name
             var greeting;
@@ -321,7 +331,7 @@
 
 
 
-        
+
         // Call the clock function after defining it
         clock();
     </script>
@@ -333,7 +343,7 @@
    <!-- footer section starts -->
 	@include('footer')
 	<!-- footer section ends -->
-    
+
 </div>
 </body>
 </html>
