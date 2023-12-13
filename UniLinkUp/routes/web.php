@@ -352,6 +352,8 @@ Route::post('/add-to-publish-notice/{NoticeId}', [PublishNoticeController::class
 
 Route::get('/viewer_notice', [PublishNoticeController::class, 'showAllN'])->name('showAllN');
 
+
+
 // Example route in web.php
 Route::delete('/delete-record/{noticeId}', 'PublishNoticeController@deleteRecord');
 
