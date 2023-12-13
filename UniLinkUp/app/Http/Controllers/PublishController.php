@@ -26,11 +26,11 @@ class PublishController extends Controller
 
         // Create a new record in the publish_polls table
         PublishPoll::create([
-            'poll_id' => $poll->id,
+            'publish_poll_id' => $poll->id,
             'poll_title' => $poll->poll_title,
             'poll_desc' => $poll->poll_desc,
             'question' => $poll->question,
-            'question' => $poll->question,
+            
             'option1' => $poll->option1,
             'option2' => $poll->option2,
             'option3' => $poll->option3,
