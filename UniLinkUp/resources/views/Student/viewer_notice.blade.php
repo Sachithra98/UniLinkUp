@@ -66,15 +66,19 @@
 	<!-- header section ends -->
 
     
-<div class="main">
+
 
     <div class="back" >
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
+
+    <div class="main">
+
+    <h2 style="text-decoration: underline;">Published Notices</h2>
     
     @foreach ($publishNotices as $notice)
       
-      <div class="con">
+      
           <div class="notice-container">
           <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
               <h5>Notice Id:{{$notice->Publish_notice_id}}</h5>
