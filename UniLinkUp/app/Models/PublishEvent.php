@@ -15,7 +15,7 @@ class PublishEvent extends Model
         'Editor_Id',
         'Title',
         'Description',
-         'media_path',
+        'media_path',
         'Approval_Letter',
         'Society_Id',
         'Dep_Id',

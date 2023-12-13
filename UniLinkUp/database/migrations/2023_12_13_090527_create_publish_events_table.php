@@ -18,10 +18,8 @@ return new class extends Migration
             $table->string('Editor_Id');
             $table->string('Title');
             $table->text('Description');
-       
-            
-            $table->binary('media_path')->nullable();
-            $table->binary('Approval_Letter')->nullable();
+            $table->string('media_path')->nullable();
+            $table->string('Approval_Letter')->nullable();
             $table->string('Society_Id')->nullable();
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
