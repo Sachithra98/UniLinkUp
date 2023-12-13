@@ -30,7 +30,7 @@ class DeniedEventController extends Controller
     public function showE()
     {
         // Retrieve all denied records from the database with the associated post details
-        $denied_events = Denied_event::with('post')->get();
+        $denied_events = Denied_event::with('event')->get();
     
         // Pass the denied records data to the view
         return view('Editor/editor_denied_event', compact('denied_events'));
