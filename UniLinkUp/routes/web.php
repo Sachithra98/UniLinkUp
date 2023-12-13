@@ -32,6 +32,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
+use App\Http\Controllers\PublishEventController;
+use App\Http\Controllers\DeniedEventController;
 
 
 
@@ -351,12 +353,26 @@ Route::post('/add-to-publish-notice/{NoticeId}', [PublishNoticeController::class
 Route::get('/viewer_notice', [PublishNoticeController::class, 'showAllN'])->name('showAllN');
 
 // Example route in web.php
-Route::delete('/delete-record/{pollId}', 'PublishNoticeController@deleteRecord');
+Route::delete('/delete-record/{noticeId}', 'PublishNoticeController@deleteRecord');
 
 
 //Route::get('/moderator_event', [//Controller::class, 'showM'])->name('showM');
 
-
+//event
 Route::get('/moderator_denied_event', function () {
     return view('/Moderator/moderator_denied_event');
 })->name('moderator_denied_event');
+
+Route::post('/add-to-publish-event/{postId}', [PublishEventController::class, 'addDataToPublishEvent'])->name('addDataToPublishEvent');
+
+
+Route::get('/viewer_event', [PublishEventController::class, 'showAllE'])->name('showAllE');
+
+// Example route in web.php
+Route::delete('/delete-record/{postId}', 'PublishEventController@deleteRecord');
+
+
+Route::post('/deniedEventInput', [DeniedEventController::class, 'store'])->name('store');
+Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevnt'])->name('deniedevnt');
+Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
+Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
