@@ -51,7 +51,7 @@ class PublishEventController extends Controller
                 $publishEvent = PublishEvent::all();
         
                 // Pass the publish polls data to the view
-                return view('Student/viewer_event', compact('publishEvents'));
+                return view('Student/viewer_event', compact('publishEvent'));
             }
     
         /**

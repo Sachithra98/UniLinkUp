@@ -81,7 +81,7 @@
 
         <h2 style="text-decoration: underline;">Published Events</h2>
 
-    @foreach ($publishEvents as $post)
+    @foreach ($publishEvent as $post)
         <div class="con">
             <h2 style="text-decoration: underline;">Event Request for Publish</h2>
             <div class="poll-container">
