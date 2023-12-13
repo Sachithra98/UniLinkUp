@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('Description');
            /*  $table->timestamp('Expire_Date'); */
             
-            $table->binary('media_path')->nullable();
-            $table->binary('Approval_Letter')->nullable();
+            $table->string('media_path')->nullable();
+            $table->string('Approval_Letter')->nullable();
             $table->string('Society_Id')->nullable();
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
