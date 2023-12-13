@@ -89,10 +89,10 @@
               <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
               <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
               <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-        
+              </div>
       @endforeach
 
-    </div>
+    
 </div>
 
       <!-- footer section starts -->
