@@ -16,6 +16,8 @@ class PublishPoll extends Model
         'publish_poll_id',
         'poll_title',
         'poll_desc',
+        'media_path',
+        'Approval_Letter',
         'question',
         'option1',
         'option2',

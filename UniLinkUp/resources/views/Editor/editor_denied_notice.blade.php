@@ -42,7 +42,7 @@
         }
 
 
-        .poll-container {
+        .notice-container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -71,20 +71,22 @@
     </div>
 
     <h1 style="text-decoration: underline">Rejected Notices</h1>
+    <br><br>
 
             @foreach ($denied_notices as $denied_notice)
             <div class="con">
             <div>
-                <h2>Notice ID: {{ $denied_notice->notice_id }}</h2>
-                <p>Reason for denied: {{ $denied_notice->reason }}</p>
-                <p>Corrections Should be Done: {{ $denied_notice->corrections }}</p>
+                <p>Notice ID: {{ $denied_notice->notice_id }}</p>
+                <p style="color:blue">Reason for denied: {{ $denied_notice->reason }}</p>
+                <p style="color:blue">Corrections Should be Done: {{ $denied_notice->corrections }}</p>
                 
                 <!-- Display associated poll details -->
                 <div class="notice-container">
                     <h3>Associated Notice:</h3>
                     <p>Notice Title: {{ $denied_notice->notice->Title }}</p>
                     <p>Notice Description: {{ $denied_notice->notice->Description }}</p>
-                    <p>Post: {{ $denied_notice->notice->media_path }}</p>
+                    <img src="/uploads/{{ $denied_notice->notice->media_path }}" width='200' height='200' class="image"/>
+                    <img src="/uploads/{{ $denied_notice->notice->Approval_Letter }}" width='200' height='200' class="image"/>
                 </div>
                 
                 <!-- Other fields if needed -->

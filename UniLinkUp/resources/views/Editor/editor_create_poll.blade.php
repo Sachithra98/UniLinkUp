@@ -175,20 +175,28 @@
 
                 <div class="form-group">
                     <label for="poll_desc">Description:</label>
-                    <textarea class="poll_desc" id="poll_desc" name="poll_desc" rows="10" required>{{ old('poll_desc') }}</textarea>
+                    <textarea class="poll_desc" id="poll_desc" name="poll_desc"  required>{{ old('poll_desc') }}</textarea>
                     @error('poll_desc')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
                 </div>
 
 
-                <!-- <div class="form-group">
+                <div class="form-group">
                     <label for="">Poll Media:</label>
-                    <input type="file" id="ppoll" name="ppoll" value="{{ old('ppoll') }}" multiple required>
-                    @error('ppoll')
+                    <input type="file" id="ppost" name="ppost" value="{{ old('ppost') }}" multiple required>
+                    @error('ppost')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
-                </div> -->
+                </div>
+
+                <div class="form-group">
+                    <label for="approval">Approval letter:</label>
+                    <input type="file" id="approval" name="approval" value="{{ old('approval') }}" multiple required>
+                    @error('approval')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div>
 
 
 

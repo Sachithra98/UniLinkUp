@@ -42,7 +42,7 @@
         }
 
 
-        .poll-container {
+        .event-container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -71,6 +71,7 @@
     </div>
 
     <h1 style="text-decoration: underline">Rejected Events</h1>
+    <br><br>
 
             @foreach ($denied_events as $denied_event)
             <div class="con">
@@ -84,7 +85,8 @@
                     <h3>Associated Event:</h3>
                     <p>Event Title: {{ $denied_event->event->Title }}</p>
                     <p>Event Description: {{ $denied_event->event->Description }}</p>
-                    <p>Post: {{ $denied_event->event->media_path }}</p>
+                    <img src="/uploads/{{ $denied_event->event->media_path }}" width='200' height='200' class="image"/>
+                    <img src="/uploads/{{ $denied_event->event->Approval_Letter }}" width='200' height='200' class="image"/>
                 </div>
                 
                 <!-- Other fields if needed -->

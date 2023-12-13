@@ -121,6 +121,7 @@
 
     <div class="container">
         <h1>Denied Publish Request of Event</h1>
+        
 
         @if (session('success'))
             <div class="alert alert-success">

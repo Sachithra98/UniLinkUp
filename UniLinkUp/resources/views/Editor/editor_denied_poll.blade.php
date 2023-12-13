@@ -71,6 +71,7 @@
     </div>
 
     <h1 style="text-decoration: underline">Rejected Polls</h1>
+    <br><br>
 
             @foreach ($denieds as $denied)
             <div class="con">
@@ -84,6 +85,8 @@
                     <h3>Associated Poll:</h3>
                     <p>Poll Title: {{ $denied->poll->poll_title }}</p>
                     <p>Poll Description: {{ $denied->poll->poll_desc }}</p>
+                    <img src="/uploads/{{ $denied->poll->media_path }}" width='200' height='200' class="image"/>
+                    <img src="/uploads/{{ $denied->poll->Approval_Letter }}" width='200' height='200' class="image"/>
                     <p>Question: {{ $denied->poll->question }}</p>
                 </div>
                 

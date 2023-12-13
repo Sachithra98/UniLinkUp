@@ -79,18 +79,64 @@ class PostController extends Controller
             // Access the authenticated user's ID
             //$editorId = $user->Editor_Id; // Assuming the primary key is named 'id'
 
-            Post::create([
-                'Editor_Id' =>$request->Editor_Id,
-                'Title' => $request->post_title,
-                'Description' => $request->desc,
+            // Post::create([
+            //     'Editor_Id' =>$request->Editor_Id,
+            //     'Title' => $request->post_title,
+            //     'Description' => $request->desc,
+            //     'media_path' => $request->ppost,
+            //     'Approval_Letter' => $request->approval,
+            //     'Faculty_Id' => $request->fac_id,
+            //     'Society_Id' => $request->soc_id,
+            //     'Dep_Id' => $request->dep_id
                 
-                'media_path' => $request->ppost,
-                'Approval_Letter' => $request->approval,
-                'Faculty_Id' => $request->fac_id,
-                'Society_Id' => $request->soc_id,
-                'Dep_Id' => $request->dep_id
+            // ]);
+
+            $post=new Post();
+            $post->Editor_Id =$request->Editor_Id;
+            $post->Title = $request->post_title;
+            $post->Description = $request->desc;
+            $post->media_path = $request->ppost;
+            $post->Approval_Letter = $request->approval;
+            $post->Faculty_Id = $request->fac_id;
+            $post->Society_Id = $request->soc_id;
+            $post->Dep_Id = $request->dep_id;
+
+            $photo = $request->file('ppost'); // Change this line to get the file from the request
+
+            
+
+            if($photo)
+            {
+               
+                $originalName = $photo->getClientOriginalName();
+                $extension = $photo->getClientOriginalExtension();
+                $photoname = time() . '.' . $extension;
+
+                $request->ppost->move('uploads', $photoname);
+                $post->media_path = $photoname;
+                // dd($photoname);
+                //$notice->media_path=$photoname;
+
+            }
+
+            $photo1 = $request->file('approval'); // Change this line to get the file from the request
+
+        
+
+            if($photo1)
+            {
+               
+                $originalName = $photo1->getClientOriginalName();
+                $extension = $photo1->getClientOriginalExtension();
+                $photoname1 = time() . '.' . $extension;
+
+                $request->approval->move('uploads', $photoname1);
+                $post->Approval_Letter = $photoname1;
+                // dd($photoname);
                 
-            ]);
+
+            }
+            $post->save();
 
             return redirect('/editor_create_event')->with('success','Data successfully added!');
         //} else {

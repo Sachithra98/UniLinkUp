@@ -37,22 +37,64 @@
             border: 1px solid black;
             border-radius: 8px;
             
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-top: 30px;
             background: var(--light-white);
         }
 
 
-        .poll-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            background: var(--white);
-        }
+        .notice-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd; /* Border color */
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background: #fff; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    }
+
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
+
+    }
+
+    .notice-container span {
+        display: block;
+        color: #666; /* Date text color */
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container h5 {
+        color: #333; /* Notice Id text color */
+        margin-bottom: 10px;
+    }
+
+    .notice-container h3 {
+        color: #000; /* Title text color */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container p {
+        color: #333; /* Description text color */
+        margin-bottom: 10px;
+        
+    }
+
+    .notice-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Optional: Add border radius to the image */
+    }
+
+    
 
         
     </style>
@@ -70,6 +112,10 @@
     <div class="back" >
         <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
+
+    <h2 style="text-decoration: underline;">Poll Request for Publish</h2>
+            <br>
+
     @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success')}}
@@ -78,12 +124,15 @@
         <!-- Loop through each poll -->
         @foreach ($polls as $poll)
         <div class="con">
-            <h2 style="text-decoration: underline;">Poll Request for Publish</h2>
-            <div class="poll-container">
-            <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>
+            
+            <div class="notice-container">
+            <div class="Nheader">
+                <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>
                 <h5>Poll Id:{{$poll->id}}</h5>
+            </div>
                 <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
-                <p>{{ $poll->poll_desc }}
+                <p>{{ $poll->poll_desc }}</p>
+                <img src="/uploads/{{ $poll->media_path }}" width='400' height='400' class="image"/>
                 <h3>{{ $poll->question }}</h3>
 
                 <!-- Loop through each choice of the poll -->
@@ -108,12 +157,12 @@
               
 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                <a href="{{ url('moderator_denied_poll') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
-                <form action="{{ route('addDataToPublishPoll', ['pollId' => $poll->id]) }}" method="POST">
-                @csrf
-                    <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
+                    <a href="{{ url('moderator_denied_poll') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
+                    <form action="{{ route('addDataToPublishPoll', ['pollId' => $poll->id]) }}" method="POST">
+                    @csrf
+                        <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
+                    </form>
                 </div>
-            </form>
 
 
         </div>

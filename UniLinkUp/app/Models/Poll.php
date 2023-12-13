@@ -10,7 +10,17 @@ class Poll extends Model
     use HasFactory;
     public $timestamps = true;
 
-    protected $fillable = ['poll_title', 'poll_desc', 'question', 'option1', 'option2', 'option3', 'option4', 'option5'];
+    protected $fillable = [
+    'poll_title',
+    'poll_desc',
+    'media_path' ,
+    'Approval_Letter',
+    'question',
+    'option1',
+    'option2',
+    'option3',
+    'option4',
+    'option5'];
 
     public function votes()
     {

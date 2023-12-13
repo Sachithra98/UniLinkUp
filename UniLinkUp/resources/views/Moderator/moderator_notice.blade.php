@@ -37,22 +37,71 @@
             border: 1px solid black;
             border-radius: 8px;
             
-            margin-bottom: 20px;
-            margin-top: 20px;
+            margin-bottom: 30px;
+            margin-top: 30px;
             background: var(--light-white);
         }
 
 
-        .poll-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            background: var(--white);
-        }
+        .notice-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd; /* Border color */
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background: #fff; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    }
+
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
+
+    }
+
+    .notice-container span {
+        display: block;
+        color: #666; /* Date text color */
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container h5 {
+        color: #333; /* Notice Id text color */
+        margin-bottom: 10px;
+    }
+
+    .notice-container h3 {
+        color: #000; /* Title text color */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container p {
+        color: #333; /* Description text color */
+        margin-bottom: 10px;
+        
+    }
+
+    .notice-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Optional: Add border radius to the image */
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        background: #CFCFCF;
+    }
+
+    
 
         
     </style>
@@ -70,6 +119,11 @@
     <div class="back" >
         <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
+
+    <h2 style="text-decoration: underline;">Notice Request for Publish</h2>
+            <br>
+
+
     @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success')}}
@@ -80,24 +134,25 @@
         @foreach ($notices as $notice)
        
         <div class="con">
-            <h2 style="text-decoration: underline;">Notice Request for Publish</h2>
-            <div class="poll-container">
-            <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
-                <h5>Notice Id:{{$notice->Post_Id}}</h5>
-                <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
-                <p>{{ $notice->Description }}</p>
-                <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
-                <img src="/uploads/{{ $notice->Approval_Letter }}" width='200' height='200' class="image"/>
-                 <h3>{{ $notice->Approval_Letter }}</h3>
+            
+            <div class="notice-container">
+                <div class="Nheader">
+                    <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
+                    <h5>Notice Id:{{$notice->Post_Id}}</h5>
+                </div>
+                    <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
+                    <p>{{ $notice->Description }}</p>
+                    <img src="/uploads/{{ $notice->media_path }}" width='400' height='400' class="image"/>
+                    <img src="/uploads/{{ $notice->Approval_Letter }}" width='400' height='400' class="image"/>
+                    
                 
             </div>
                 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                <a href="{{ url('moderator_denied_notice') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
-                <form action="{{ route('addDataToPublishNotice', ['NoticeId' => $notice->Post_Id]) }}" method="POST">
-                @csrf
+                    <a href="{{ url('moderator_denied_notice') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
+                    <form action="{{ route('addDataToPublishNotice', ['NoticeId' => $notice->Post_Id]) }}" method="POST">
+                    @csrf
 
-                
                     <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Notice</button> 
                 </div>
             </form>

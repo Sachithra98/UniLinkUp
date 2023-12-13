@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id(); // Auto-incrementing primary key
             $table->foreignId('publish_poll_id')->constrained(); // Foreign key relationship
             $table->string('poll_title'); // String column for poll title
-            $table->string('poll_desc')->nullable(); // Nullable string column for poll description
-            // Uncomment if you want to store binary data
+            $table->text('poll_desc')->nullable(); // Nullable string column for poll description
+            $table->string('media_path')->nullable();
+            $table->string('Approval_Letter')->nullable();
             $table->string('question')->nullable(); // Nullable string column for poll question
             $table->string('option1')->nullable(); // Nullable string column for option 1
             $table->string('option2')->nullable(); // Nullable string column for option 2
