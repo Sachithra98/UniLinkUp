@@ -336,10 +336,12 @@ Route::get('/viewer_poll', [PublishController::class, 'showAll'])
 
 // Route::post('/api/vote', [VoteController::class, 'vote']);
 
-Route::get('/moderator_notice', [NoticeController::class, 'showM'])->name('showM');;
+Route::get('/moderator_notice', [NoticeController::class, 'showM'])->name('showM');
+
 Route::get('/moderator_denied_notice', function () {
     return view('/Moderator/moderator_denied_notice');
 })->name('moderator_denied_notice');
+
 Route::post('/deniedInputN', [DeniedNoticeController::class, 'store'])->name('store');
 Route::post('/moderator_denied_notice', [DeniedNoticeController::class, 'deniednts'])->name('deniednts');
 Route::get('/editor_denied_notice', [DeniedNoticeController::class, 'showE'])->name('showE');
@@ -350,3 +352,11 @@ Route::get('/viewer_notice', [PublishNoticeController::class, 'showAllN'])->name
 
 // Example route in web.php
 Route::delete('/delete-record/{pollId}', 'PublishNoticeController@deleteRecord');
+
+
+//Route::get('/moderator_event', [//Controller::class, 'showM'])->name('showM');
+
+
+Route::get('/moderator_denied_event', function () {
+    return view('/Moderator/moderator_denied_event');
+})->name('moderator_denied_event');
