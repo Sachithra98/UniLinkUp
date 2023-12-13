@@ -85,9 +85,9 @@
             <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
                 <h5>Notice Id:{{$notice->Post_Id}}</h5>
                 <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
-                <p>{{ $notice->Description }}
-                <h3>{{ $notice->media_path }}</h3>
-                <h3>{{ $notice->Approval_Letter }}</h3>
+                <p>{{ $notice->Description }}</p>
+                <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
+                 <h3>{{ $notice->Approval_Letter }}</h3>
                 
             </div>
                 

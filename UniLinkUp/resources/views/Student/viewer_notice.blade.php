@@ -79,17 +79,18 @@
     @foreach ($publishNotices as $notice)
       
       
-          <div class="notice-container">
-          <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
+            <div class="notice-container">
+              <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
               <h5>Notice Id:{{$notice->Publish_notice_id}}</h5>
               <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
-              <p>{{ $notice->Description }}
-              <h3>{{ $notice->media_path }}</h3>
-
-              <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
-              <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-              <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-              </div>
+              <p>{{ $notice->Description }}</p>
+              <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
+              <div class="buttons">
+                <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
+                <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
+                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
+                </div>
+            </div>
       @endforeach
 
     

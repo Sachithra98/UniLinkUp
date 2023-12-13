@@ -70,6 +70,8 @@
         <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
+    <h1 style="text-decoration: underline">Rejected Events</h1>
+
             @foreach ($denied_events as $denied_event)
             <div class="con">
             <div>

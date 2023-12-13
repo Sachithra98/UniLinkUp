@@ -70,6 +70,8 @@
         <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
+    <h1 style="text-decoration: underline">Rejected Notices</h1>
+
             @foreach ($denied_notices as $denied_notice)
             <div class="con">
             <div>

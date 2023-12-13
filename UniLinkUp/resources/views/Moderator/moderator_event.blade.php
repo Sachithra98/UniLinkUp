@@ -73,7 +73,7 @@
             <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
         </div>
 
-        <div class="main">
+       
 
                 @if (session('success'))
                     <div class="alert alert-success">

@@ -70,6 +70,8 @@
         <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
+    <h1 style="text-decoration: underline">Rejected Polls</h1>
+
             @foreach ($denieds as $denied)
             <div class="con">
             <div>

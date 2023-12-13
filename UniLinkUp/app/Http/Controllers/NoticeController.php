@@ -71,19 +71,49 @@ class NoticeController extends Controller
             // Access the authenticated user's ID
             //$editorId = $user->Editor_Id; // Assuming the primary key is named 'id'
 
-            Notice::create([
-                'Editor_Id' =>$request->Editor_Id,
-                'Title' => $request->post_title,
-                'Description' => $request->desc,
+            //Notice::create([
+            //     'Editor_Id' =>$request->Editor_Id,
+            //     'Title' => $request->post_title,
+            //     'Description' => $request->desc,
                 
-                'media_path' => $request->ppost,
-                'Approval_Letter' => $request->approval,
-                'Faculty_Id' => $request->fac_id,
-                'Society_Id' => $request->soc_id,
-                'Dep_Id' => $request->dep_id
-                
-            ]);
+            //     'media_path' => $request->ppost,
+            //     'Approval_Letter' => $request->approval,
+            //     'Faculty_Id' => $request->fac_id,
+            //     'Society_Id' => $request->soc_id,
+            //     'Dep_Id' => $request->dep_id
 
+                
+            // ]);
+
+            $notice=new Notice();
+            $notice->Editor_Id=$request->Editor_Id;
+            $notice->Title= $request->post_title;
+            $notice->Description = $request->desc;
+            $notice->media_path = $request->ppost;
+            $notice->Approval_Letter = $request->approval;
+            $notice->Faculty_Id = $request->fac_id;
+            $notice->Society_Id =$request->soc_id;
+            $notice->Dep_Id = $request->dep_id;
+
+
+            $photo = $request->file('ppost'); // Change this line to get the file from the request
+
+            
+
+                if($photo)
+                {
+                   
+                    $originalName = $photo->getClientOriginalName();
+                    $extension = $photo->getClientOriginalExtension();
+                    $photoname = time() . '.' . $extension;
+
+                    $request->ppost->move('uploads', $photoname);
+                    $notice->media_path = $photoname;
+                    // dd($photoname);
+                    //$notice->media_path=$photoname;
+
+                }
+                $notice->save();
             return redirect('/editor_create_notice')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
