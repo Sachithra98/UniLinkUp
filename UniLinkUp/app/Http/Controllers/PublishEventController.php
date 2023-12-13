@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Models\PublishEvent;
 use Illuminate\Http\Request;
+use PHPUnit\Event\Code\Test;
 
 class PublishEventController extends Controller
 {
@@ -17,25 +18,25 @@ class PublishEventController extends Controller
             return redirect()->route('moderator_denied_event');
         }
         public function addDataToPublishEvent(Request $request, $postId)
+    
         {
             try {
                 // Retrieve the poll data
                 $post = Post::findOrFail($postId);
-       
                 PublishEvent::create([
                     'Publish_event_id' => $post->Post_Id,
                     'Title' => $post->Title,
                     'Description' => $post->Description,
                     'media_path' => $post->media_path,
                     'Society_Id' => $post->Society_Id,
-                    'Dep_ID' => $post->Dep_ID,
+                    'Dep_Id' => $post->Dep_Id,
                     'Faculty_Id' => $post->Faculty_Id,
                     'Editor_Id' => $post->Editor_Id,
                     'Approval_Letter' => $post->Approval_Letter,
                 ]);
     
                 // Delete the original notice record
-                $post->delete();
+               /*  $post->delete(); */
         
                 // Handle any additional logic here
         

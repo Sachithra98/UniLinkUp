@@ -96,17 +96,13 @@
                 
 
 
-                <form action="{{ route('addDataToPublishEvent', ['postId' => $post->Post_Id]) }}" method="POST">
-                @csrf
+               
 
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success')}}
-                    </div>
-                @endif
 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                 <a href="{{ url('moderator_denied_event') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
+                <form action="{{ route('addDataToPublishEvent', ['postId' => $post->Post_Id]) }}" method="POST">
+                @csrf
                     <button class="btn accept-btn"  style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Event</button> 
                 </div>
             </form>
