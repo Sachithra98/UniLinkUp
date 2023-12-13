@@ -12,7 +12,8 @@ class PublishPoll extends Model
     protected $table = 'publish_polls';
 
     protected $fillable = [
-        'poll_id',
+       /*  'poll_id', */
+        'publish_poll_id',
         'poll_title',
         'poll_desc',
         'question',

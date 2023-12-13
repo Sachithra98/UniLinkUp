@@ -70,7 +70,11 @@
     <div class="back" >
         <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
-
+    @if (session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success')}}
+                    </div>
+                @endif
         <!-- Loop through each poll -->
         @foreach ($polls as $poll)
         <div class="con">
@@ -99,17 +103,14 @@
             </div>
 
         
-            <form action="{{ route('addDataToPublishPoll', ['pollId' => $poll->id]) }}" method="POST">
-                @csrf
+           
 
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success')}}
-                    </div>
-                @endif
+              
 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                 <a href="{{ url('moderator_denied_poll') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
+                <form action="{{ route('addDataToPublishPoll', ['pollId' => $poll->id]) }}" method="POST">
+                @csrf
                     <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Poll</button> 
                 </div>
             </form>
