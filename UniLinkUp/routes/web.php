@@ -340,6 +340,7 @@ Route::get('/moderator_notice', [NoticeController::class, 'showM'])->name('showM
 Route::get('/moderator_denied_notice', function () {
     return view('/Moderator/moderator_denied_notice');
 })->name('moderator_denied_notice');
+
 Route::post('/deniedInputN', [DeniedNoticeController::class, 'store'])->name('store');
 Route::post('/moderator_denied_notice', [DeniedNoticeController::class, 'deniednts'])->name('deniednts');
 Route::get('/editor_denied_notice', [DeniedNoticeController::class, 'showE'])->name('showE');
