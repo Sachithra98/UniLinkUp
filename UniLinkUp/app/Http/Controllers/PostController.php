@@ -97,4 +97,15 @@ class PostController extends Controller
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
     }
+
+    public function showM()
+    {
+        // Retrieve all polls from the database
+        $posts = Post::all();
+
+        // Pass the polls data to the view
+        return view('Moderator/moderator_event', compact('posts'));
+
+    
+    }
 }

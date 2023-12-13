@@ -34,33 +34,83 @@
         }
 
 
-        .poll-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            background: var(--white);
-        }
+        .notice-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd; /* Border color */
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background: #fff; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    }
 
-        /* .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-        } */
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
 
-        /* .btn:hover {
-            background-color: #0056b3;
-        } */
+    }
+
+    .notice-container span {
+        display: block;
+        color: #666; /* Date text color */
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container h5 {
+        color: #333; /* Notice Id text color */
+        margin-bottom: 10px;
+    }
+
+    .notice-container h3 {
+        color: #000; /* Title text color */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container p {
+        color: #333; /* Description text color */
+        margin-bottom: 10px;
+        
+    }
+
+    .notice-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Optional: Add border radius to the image */
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        background: #CFCFCF;
+    }
+
+    .btn {
+        background-color: #3490dc; /* Button background color */
+        color: #fff; /* Button text color */
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #2779bd; /* Button background color on hover */
+    }
+
+    /* Optional: Style font awesome icons */
+    .fa {
+        margin-right: 5px;
+    }
+
     </style>
 </head>
 
@@ -81,21 +131,22 @@
 
         <h2 style="text-decoration: underline;">Published Events</h2>
 
-    @foreach ($publishEvents as $post)
+    @foreach ($publishEvent as $post)
         <div class="con">
             <h2 style="text-decoration: underline;">Event Request for Publish</h2>
-            <div class="poll-container">
-            <span>Created on: {{ $post->created_at->format('Y-m-d') }}</span>
-                <h5>Post Id:{{ $post->Post_Id }}</h5>
+            <div class="notice-container">
+            <div class="Nheader">
+                <span>Created on: {{ $post->created_at->format('Y-m-d') }}</span>
+                <!-- <h5>Post Id:{{ $post->Post_Id }}</h5> -->
+            </div>
                 <h3 style=" font-weight: bold;">{{ $post->Title }}</h3>
                 <p>Post Description: {{ $post->Description }}</p>
-                <h4>Post Media: {{ $post->media_path }}</h4>
-                <h4>Approval Letter: {{ $post->Approval_Letter }}</h4>
+                <img src="/uploads/{{ $post->media_path }}" width='200' height='200' class="image"/>
 
-                <div class="card-footer text-body-secondary">
-                <a href="#" class="btn btn-primary">Like</a>
-                <a href="#" class="btn btn-primary">Dislike</a>
-                <a href="#" class="btn btn-primary">Share</a>
+                <div class="buttons">
+                <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
+                <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
+                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
                 </div>
         </div>
         @endforeach

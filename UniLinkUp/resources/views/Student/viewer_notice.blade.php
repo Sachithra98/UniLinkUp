@@ -43,7 +43,7 @@
         }
 
 
-        .notice-container {
+        /* .notice-container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -52,7 +52,86 @@
             margin-bottom: 20px;
             margin-top: 20px;
             background: var(--white);
-        }
+        } */
+
+    .notice-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd; /* Border color */
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background: #fff; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    }
+
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
+
+    }
+
+    .notice-container span {
+        display: block;
+        color: #666; /* Date text color */
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container h5 {
+        color: #333; /* Notice Id text color */
+        margin-bottom: 10px;
+    }
+
+    .notice-container h3 {
+        color: #000; /* Title text color */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container p {
+        color: #333; /* Description text color */
+        margin-bottom: 10px;
+        
+    }
+
+    .notice-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Optional: Add border radius to the image */
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        background: #CFCFCF;
+    }
+
+    .btn {
+        background-color: #3490dc; /* Button background color */
+        color: #fff; /* Button text color */
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #2779bd; /* Button background color on hover */
+    }
+
+    /* Optional: Style font awesome icons */
+    .fa {
+        margin-right: 5px;
+    }
+
+
 
         
     </style>
@@ -78,18 +157,23 @@
     
     @foreach ($publishNotices as $notice)
       
+    
       
-          <div class="notice-container">
-          <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
-              <h5>Notice Id:{{$notice->Publish_notice_id}}</h5>
-              <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
-              <p>{{ $notice->Description }}
-              <h3>{{ $notice->media_path }}</h3>
-
-              <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
-              <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-              <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-              </div>
+            <div class="notice-container">
+                <div class="Nheader">
+              <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
+              <!-- <h5>Notice Id:{{$notice->Publish_notice_id}}</h5> -->
+                </div>
+              <h2 style=" font-weight: bold;">{{ $notice->Title }}</h2>
+              <p>{{ $notice->Description }}</p>
+              <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
+              <div class="buttons">
+                <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
+                <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
+                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
+                
+                </div>
+            </div>
       @endforeach
 
     

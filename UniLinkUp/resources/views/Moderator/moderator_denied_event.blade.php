@@ -132,8 +132,8 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="Post_Id">Post Id:</label>
-                    <input type="text" id="Post_Id" name="Post_Id" value="{{ old('Post_Id') }}" required>
+                    <label for="post_id">Post Id:</label>
+                    <input type="text" id="post_id" name="post_id" value="{{ old('post_id') }}" required>
                     @error('Post_Id')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror

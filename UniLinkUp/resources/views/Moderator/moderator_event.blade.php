@@ -73,6 +73,8 @@
             <a href="<?=url('moderator')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
         </div>
 
+       
+
                 @if (session('success'))
                     <div class="alert alert-success">
                         {{ session('success')}}
@@ -94,17 +96,13 @@
                 
 
 
-                <form action="{{ route('addDataToPublishEvent', ['postId' => $post->Post_Id]) }}" method="POST">
-                @csrf
+               
 
-                @if (session('success'))
-                    <div class="alert alert-success">
-                        {{ session('success')}}
-                    </div>
-                @endif
 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                 <a href="{{ url('moderator_denied_event') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
+                <form action="{{ route('addDataToPublishEvent', ['postId' => $post->Post_Id]) }}" method="POST">
+                @csrf
                     <button class="btn accept-btn"  style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Event</button> 
                 </div>
             </form>
@@ -117,33 +115,33 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const deniedButtons = document.querySelectorAll('.denied-btn');
+        const deniedButtons = document.querySelectorAll('.denied-btn');
 
-            deniedButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    //const postID = this.getAttribute('data-post-id');
-                    const postID = this.dataset.postID;
+        deniedButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                const postId = this.dataset.postId;
 
-                    // Send an AJAX request to the server to move data from posts to publish_events table
-                    fetch(`/update-denied/${postID}`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                        },
-                        body: JSON.stringify({ Post_Id: postID }),
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Handle the response from the server if needed
-                        console.log(data);
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                    });
+                // Send an AJAX request to the server to update the denieds table
+                // You need to adjust the URL and other parameters based on your actual routes and requirements
+                fetch(`/update-denied_event/${postId}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}', // Add CSRF token if needed
+                    },
+                    body: JSON.stringify({ post_id: postId }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the response from the server if needed
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
                 });
             });
         });
+    });
     </script>
 
         

@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Notices</title>
+   <title>Events</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -70,21 +70,21 @@
         <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
-    <h1 style="text-decoration: underline">Rejected Notices</h1>
+    <h1 style="text-decoration: underline">Rejected Events</h1>
 
-            @foreach ($denied_notices as $denied_notice)
+            @foreach ($denied_events as $denied_event)
             <div class="con">
             <div>
-                <h2>Notice ID: {{ $denied_notice->notice_id }}</h2>
-                <p>Reason for denied: {{ $denied_notice->reason }}</p>
-                <p>Corrections Should be Done: {{ $denied_notice->corrections }}</p>
+                <h2>Event ID: {{ $denied_event->post_id }}</h2>
+                <p>Reason for denied: {{ $denied_event->reason }}</p>
+                <p>Corrections Should be Done: {{ $denied_event->corrections }}</p>
                 
                 <!-- Display associated poll details -->
-                <div class="notice-container">
-                    <h3>Associated Notice:</h3>
-                    <p>Notice Title: {{ $denied_notice->notice->Title }}</p>
-                    <p>Notice Description: {{ $denied_notice->notice->Description }}</p>
-                    <p>Post: {{ $denied_notice->notice->media_path }}</p>
+                <div class="event-container">
+                    <h3>Associated Event:</h3>
+                    <p>Event Title: {{ $denied_event->event->Title }}</p>
+                    <p>Event Description: {{ $denied_event->event->Description }}</p>
+                    <p>Post: {{ $denied_event->event->media_path }}</p>
                 </div>
                 
                 <!-- Other fields if needed -->
