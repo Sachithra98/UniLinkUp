@@ -115,7 +115,7 @@
         </div>
 
         <div class="create_event">
-            <a href="<?=url('editor_create_notice')?>" class="btn" style="margin-left: 3rem;">View Publish requests of notices</a>
+            <a href="<?=url('moderator_notice')?>" class="btn" style="margin-left: 3rem;">View Publish requests of notices</a>
         </div>
 
         <div class="create_polls">

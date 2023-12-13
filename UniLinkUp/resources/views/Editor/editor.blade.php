@@ -131,7 +131,17 @@
         <div class="create_event">
             <a href="<?=url('editor_create_notice')?>" class="btn" style="margin-left: 3rem;">Accept Requests</a>
         </div>
+    </div>
 
+        <div class="new" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+        <div class="denied requests" >
+            <a href="<?=url('editor_denied_notice')?>" class="btn" style="margin-left: 3rem;">Denied Notice Requests</a>
+        </div>
+
+        <div class="create_event">
+            <a href="<?=url('editor_accept_notice')?>" class="btn" style="margin-left: 3rem;">Accept Notice Requests</a>
+        </div>
+    </div>
         
     </div>
 

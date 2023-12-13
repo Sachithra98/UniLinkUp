@@ -1,3 +1,4 @@
+
 <!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,7 +6,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Create Accounts For Moderators</title>
+   <title>Denied Notice</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -30,7 +31,6 @@
    <link rel="stylesheet" href="css/index.css"> -->
 
    <style>
-   
         * {
             margin: 0;
             padding: 0;
@@ -80,24 +80,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;   
         }
-
-        /* Style file input fields */
-        .main-content .container input[type="file"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .main-content .container  .form-group select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
+        
 
         .main-content .container  .form-group {
             display: flex;
@@ -129,102 +112,54 @@
     @include('header')
 	<!-- header section ends -->
 
-    <!-- taskbar section starts -->
-    @include('taskbar')
-	<!-- taskbar section ends -->
-
+    
 
 <div class="main-content">
     
     <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('moderator_notice')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Create Accounts For Moderators</h1>
+        <h1>Denied Publish Request of Notice</h1>
 
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success')}}
             </div>
         @endif
-        <form action="{{ url('/moderatorInput') }}" method="post">
+
+            <form action="{{ url('/deniedInputN') }}" method="post">
                 @csrf
-               <!--  <div class="form-group">
-                    <label for="Moderator_Id">Moderator ID:</label>
-                    <input type="text" id="Moderator_Id" name="Moderator_Id" required>
-                </div> -->
-
-            
 
                 <div class="form-group">
-                    <label for="Dep_Id">Department:</label>
-                    <select name="Dep_Id" id="Dep_Id" required >
-                        <option value="">Select Department :</option>
-                        @foreach($departments as $row3)
-                            <option value="{{ $row3->Dep_Id }}" {{ old('Dep_Id') == $row3->Dep_Id ? 'selected' : '' }}>
-                                {{ $row3->Dep_Name }}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('Dep_Id')
+                    <label for="">Notice Id:</label>
+                    <input type="text" id="notice_id" name="notice_id" value="{{ old('notice_id') }}" required>
+                    @error('notice_Id')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
-                </div> 
-
-
-                <div class="form-group">
-                    <label for="Position">Position:</label>
-                    <input type="text" id="Position" name="Position" required>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Moderator Email:</label>
-                    <input type="text" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Moderator Password:</label>
-                    <input type="text" id="password" name="password" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="M_Name">Moderator Name:</label>
-                    <input type="text" id="M_Name" name="M_Name" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Society_Id">Society:</label>
-                    <select name="Society_Id" id="Society_Id" >
-                        <option value="">Select Society :</option>
-                        @foreach($societies as $row2)
-                            <option value="{{ $row2->Society_Id}}" {{ old('Society_Id') == $row2->Society_Id ? 'selected' : '' }}>
-                                {{ $row2->Society_Name}}
-                            </option>
-                        @endforeach
-                    </select>
-                    @error('Society_Id')
+                 <div class="form-group">
+                    <label for="reason">Reason for denied:</label>
+                    <input type="text" id="reason" name="reason" value="{{ old('reason') }}" required>
+                    @error('reason')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+                    <label for="corrections">Corrections Should be Done:</label>
+                    <textarea class="corrections" id="corrections" name="corrections" rows="10" required>{{ old('desc') }}</textarea>
+                    @error('corrections')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
-               <!--  <div class="form-group">
-                    <label for="Faculty_Id">Faculty ID:</label>
-                    <input type="text" id="Faculty_Id" name="Faculty_Id" required>
-                </div> 
 
-                 -->
-
-               
-           
-                <div class="new_accountsM" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Send To the Editor</button> 
                 </div>
 
      
@@ -233,6 +168,8 @@
     </div>
     
 </div>
+
+
 
     <!-- footer section starts -->
     @include('footer')
