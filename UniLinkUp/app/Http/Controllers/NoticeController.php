@@ -17,13 +17,13 @@ class NoticeController extends Controller
         $query = $request->input('q');
         
         // Perform the search on the posts table
-        $posts = Post::where('title', 'like', '%' . $query . '%')->get();
+        $posts = Notice::where('title', 'like', '%' . $query . '%')->get();
         
         return view('posts.search', compact('posts', 'query'));
     }
     
 
-    public function show(Post $post)
+    public function show(Notice $post)
     {
         return view('posts.show', compact('post'));
     }
@@ -89,5 +89,16 @@ class NoticeController extends Controller
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
    }
+
+   public function showM()
+        {
+            // Retrieve all polls from the database
+            $notices = Notice::all();
+
+            // Pass the polls data to the view
+            return view('Moderator/moderator_notice', compact('notices'));
+
+        
+        }
 }
 

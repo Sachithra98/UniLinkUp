@@ -13,6 +13,9 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\ModeratorController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DeniedNoticeController;
+use App\Http\Controllers\PublishNoticeController;
+
 //jayani-end
 
 use App\Http\Controllers\CheckLoginController;
@@ -333,5 +336,14 @@ Route::get('/viewer_poll', [PublishController::class, 'showAll'])
 
 // Route::post('/api/vote', [VoteController::class, 'vote']);
 
+Route::get('/moderator_notice', [NoticeController::class, 'showM'])->name('showM');;
+Route::get('/moderator_denied_notice', function () {
+    return view('/Moderator/moderator_denied_notice');
+})->name('moderator_denied_notice');
+Route::post('/deniedInputN', [DeniedNoticeController::class, 'store'])->name('store');
+Route::post('/moderator_denied_notice', [DeniedNoticeController::class, 'deniednts'])->name('deniednts');
+Route::get('/editor_denied_notice', [DeniedNoticeController::class, 'showE'])->name('showE');
+Route::post('/add-to-publish-notice/{NoticeId}', [PublishNoticeController::class, 'addDataToPublishNotice'])->name('addDataToPublishNotice');
 
 
+Route::get('/viewer_notice', [PublishNoticeController::class, 'showAllN'])->name('showAllN');
