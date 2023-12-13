@@ -166,7 +166,7 @@
                 </div>
               <h2 style=" font-weight: bold;">{{ $notice->Title }}</h2>
               <p>{{ $notice->Description }}</p>
-              <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
+              <img src="/uploads/{{ $notice->media_path }}" width='400' height='400' class="image"/>
               <div class="buttons">
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
                 <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>

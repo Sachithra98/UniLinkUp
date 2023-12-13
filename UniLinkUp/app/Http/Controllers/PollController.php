@@ -31,17 +31,71 @@ class PollController extends Controller
             }*/
 
             
-            Poll::create([
-                // 'poll_id' =>$request->poll_id,
-                'poll_title' => $request->poll_title,
-                'poll_desc' => $request->poll_desc,
-                'question' => $request->question,
-                'option1' => $request->option1,
-                'option2' => $request->option2,
-                'option3' => $request->option3,
-                'option4' => $request->option4,
-                'option5' => $request->option5,
-            ]);
+            // Poll::create([
+            //     // 'poll_id' =>$request->poll_id,
+            //     'poll_title' => $request->poll_title,
+            //     'poll_desc' => $request->poll_desc,
+            //     'question' => $request->question,
+            //     'media_path' => $request->ppost,
+            //     'Approval_Letter' => $request->approval,
+            //     'option1' => $request->option1,
+            //     'option2' => $request->option2,
+            //     'option3' => $request->option3,
+            //     'option4' => $request->option4,
+            //     'option5' => $request->option5,
+            // ]);
+
+            
+            $poll=new Poll();
+            $poll->poll_title=$request->poll_title;
+            $poll->poll_desc= $request->poll_desc;
+            $poll->question = $request->question;
+            $poll->media_path = $request->ppost;
+            $poll->Approval_Letter = $request->approval;
+            $poll->option1 = $request->option1;
+            $poll->option2 =$request->option2;
+            $poll->option3 = $request->option3;
+            $poll->option4 =$request->option4;
+            $poll->option5 = $request->option5;
+
+
+            $photo = $request->file('ppost'); // Change this line to get the file from the request
+
+            
+
+                if($photo)
+                {
+                   
+                    $originalName = $photo->getClientOriginalName();
+                    $extension = $photo->getClientOriginalExtension();
+                    $photoname = time() . '.' . $extension;
+
+                    $request->ppost->move('uploads', $photoname);
+                    $poll->media_path = $photoname;
+                    // dd($photoname);
+                    //$notice->media_path=$photoname;
+
+                }
+
+                $photo1 = $request->file('approval'); // Change this line to get the file from the request
+
+            
+
+                if($photo1)
+                {
+                   
+                    $originalName = $photo1->getClientOriginalName();
+                    $extension = $photo1->getClientOriginalExtension();
+                    $photoname1 = time() . '.' . $extension;
+
+                    $request->approval->move('uploads', $photoname1);
+                    $poll->Approval_Letter = $photoname1;
+                    // dd($photoname);
+                    //$notice->media_path=$photoname;
+
+                }
+                $poll->save();
+
 
             //return redirect('/editor_create_poll')->with('success','Data successfully added!');
             return redirect('/editor_create_poll')->with('success','Data successfully added!');

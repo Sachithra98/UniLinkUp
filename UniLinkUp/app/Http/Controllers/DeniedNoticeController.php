@@ -35,6 +35,12 @@ class DeniedNoticeController extends Controller
         // Pass the denied records data to the view
         return view('Editor/editor_denied_notice', compact('denied_notices'));
     }
+
+    // Define the relationship to get the associated Notice
+    // public function notice()
+    // {
+    //     return $this->belongsTo('App\Models\Notice', 'notice_id', 'Post_Id');
+    // }
     
     public function destroy(Denied_notice $denied_notice)
     {

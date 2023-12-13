@@ -13,7 +13,7 @@ return new class extends Migration
         Schema::create('polls', function (Blueprint $table) {
             $table->id();
             $table->string('poll_title');
-            $table->string('poll_desc')->nullable();
+            $table->text('poll_desc')->nullable();
             $table->string('media_path')->nullable();
             $table->string('Approval_Letter')->nullable();
             $table->string('question')->nullable();

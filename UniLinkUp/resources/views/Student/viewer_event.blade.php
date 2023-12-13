@@ -141,7 +141,7 @@
             </div>
                 <h3 style=" font-weight: bold;">{{ $post->Title }}</h3>
                 <p>Post Description: {{ $post->Description }}</p>
-                <img src="/uploads/{{ $post->media_path }}" width='200' height='200' class="image"/>
+                <img src="/uploads/{{ $post->media_path }}" width='400' height='400' class="image"/>
 
                 <div class="buttons">
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
