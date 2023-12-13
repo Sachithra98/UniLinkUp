@@ -66,6 +66,13 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
     }
 
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
+
+    }
+
     .notice-container span {
         display: block;
         color: #666; /* Date text color */
@@ -88,6 +95,7 @@
     .notice-container p {
         color: #333; /* Description text color */
         margin-bottom: 10px;
+        
     }
 
     .notice-container img {
@@ -152,7 +160,7 @@
     
       
             <div class="notice-container">
-                <div class="header">
+                <div class="Nheader">
               <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
               <!-- <h5>Notice Id:{{$notice->Publish_notice_id}}</h5> -->
                 </div>

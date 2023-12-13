@@ -113,6 +113,24 @@ class NoticeController extends Controller
                     //$notice->media_path=$photoname;
 
                 }
+
+                $photo1 = $request->file('approval'); // Change this line to get the file from the request
+
+            
+
+                if($photo1)
+                {
+                   
+                    $originalName = $photo1->getClientOriginalName();
+                    $extension = $photo1->getClientOriginalExtension();
+                    $photoname1 = time() . '.' . $extension;
+
+                    $request->approval->move('uploads', $photoname1);
+                    $notice->Approval_Letter = $photoname1;
+                    // dd($photoname);
+                    //$notice->media_path=$photoname;
+
+                }
                 $notice->save();
             return redirect('/editor_create_notice')->with('success','Data successfully added!');
         //} else {

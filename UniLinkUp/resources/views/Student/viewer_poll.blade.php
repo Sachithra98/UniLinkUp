@@ -34,33 +34,84 @@
         }
 
 
-        .poll-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            background: var(--white);
-        }
 
-        /* .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #007bff;
-            border: none;
-            border-radius: 4px;
-        } */
+        .notice-container {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ddd; /* Border color */
+        border-radius: 8px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        background: #fff; /* Background color */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle lift */
+    }
 
-        /* .btn:hover {
-            background-color: #0056b3;
-        } */
+    .notice-container .Nheader {
+        background: #fff; /* Background color */
+        border: 1px solid #ddd; /* Border color */
+        text-align: left;
+
+    }
+
+    .notice-container span {
+        display: block;
+        color: #666; /* Date text color */
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container h5 {
+        color: #333; /* Notice Id text color */
+        margin-bottom: 10px;
+    }
+
+    .notice-container h3 {
+        color: #000; /* Title text color */
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .notice-container p {
+        color: #333; /* Description text color */
+        margin-bottom: 10px;
+        
+    }
+
+    .notice-container img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 4px; /* Optional: Add border radius to the image */
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+        background: #CFCFCF;
+    }
+
+    .btn {
+        background-color: #3490dc; /* Button background color */
+        color: #fff; /* Button text color */
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #2779bd; /* Button background color on hover */
+    }
+
+    /* Optional: Style font awesome icons */
+    .fa {
+        margin-right: 5px;
+    }
+
     </style>
 </head>
 
@@ -81,7 +132,7 @@
 
         <!-- Loop through each publish poll -->
         @foreach ($publishPolls as $poll)
-        <div class="poll-container">
+        <div class="notice-container">
             <h3 style="text-decoration: underline; font-weight: bold;">{{ $poll->poll_title }}</h3>
             <p>{{ $poll->poll_desc }}
             <h3>{{ $poll->question }}</h3>

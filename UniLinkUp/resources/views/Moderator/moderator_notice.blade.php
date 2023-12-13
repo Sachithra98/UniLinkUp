@@ -87,6 +87,7 @@
                 <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
                 <p>{{ $notice->Description }}</p>
                 <img src="/uploads/{{ $notice->media_path }}" width='200' height='200' class="image"/>
+                <img src="/uploads/{{ $notice->Approval_Letter }}" width='200' height='200' class="image"/>
                  <h3>{{ $notice->Approval_Letter }}</h3>
                 
             </div>
