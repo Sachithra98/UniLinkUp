@@ -21,4 +21,10 @@ class PublishNotice extends Model
         'Dep_Id',
         'Faculty_Id',
      ];
+
+     public function likes()
+    {
+        return $this->hasMany(Like::class, 'Publish_notice_id', 'Publish_notice_id');
+    }
+
 }

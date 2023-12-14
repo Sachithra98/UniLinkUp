@@ -15,6 +15,10 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
+
+   <a href="{{route('showAllN')}}"></a>
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,7 +61,7 @@
         
     </style>
 </head>
-
+ @extends('layouts.app')
 <body>
 
 
@@ -75,10 +79,7 @@
     <div class="main">
 
     <h2 style="text-decoration: underline;">Published Notices</h2>
-    
-    @foreach ($publishNotices as $notice)
-      
-      
+                    
           <div class="notice-container">
           <span>Created on: {{ $selected_notice->created_at->format('Y-m-d') }}</span>
               <h5>Notice Id:{{$selected_notice->Publish_notice_id}}</h5>
@@ -115,10 +116,7 @@
            
             </div>
         </div>
-      @endforeach
-
-    
-</div>
+     </div>
 
       <!-- footer section starts -->
       @include('footer')
