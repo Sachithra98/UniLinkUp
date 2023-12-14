@@ -106,6 +106,15 @@
             </a>
           </li>
 
+          <li class="item">
+            <a href="<?=url('admin_batch')?>" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-store"></i>
+              </span>
+              <span class="navlink">Batches</span>
+            </a>
+          </li>
+
         <!-- Sidebar Open / Close -->
         <div class="bottom_content">
           <div class="bottom expand_sidebar">

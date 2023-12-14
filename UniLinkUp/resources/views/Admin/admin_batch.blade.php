@@ -102,7 +102,7 @@
 
            
                 <tr><td> {{$c++}} </td>
-                    <td>{{ $row['Dep_Id'] }}</td>
+                    <td>{{ $row['Batch_Id'] }}</td>
                     <td>{{ $row['Faculty_Id'] }} </td>
                     
                 <td>

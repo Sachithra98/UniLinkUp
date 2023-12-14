@@ -34,6 +34,8 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
+use App\Http\Controllers\BatchController;
+
 
 
 
@@ -177,6 +179,17 @@ Route::get('/viewer', function () {
 });
 //sachithra-end
 
+//lishani
+
+Route::get('/admin_batch', function () {
+    return view('/Admin/admin_batch');
+});
+
+
+Route::get('/admin_add_batch', function () {
+    return view('/admin_add_batch');
+});
+
 
 
 Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
@@ -198,6 +211,11 @@ Route::post('/admin_add_department', [DepartmentController::class, 'department']
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm'); 
 
+
+//department 
+Route::post('/admin_batch', [BatchController::class, 'batch'])->name('admin_add_batch');
+Route::post('/batchInput', [BatchController::class, 'batchInput'])->name('batchInput');
+Route::get('/admin_add_batch', [BatchController::class, 'showBatchForm'])->name('showBatchForm'); 
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -378,3 +396,4 @@ Route::post('/deniedEventInput', [DeniedEventController::class, 'store'])->name(
 Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevnt'])->name('deniedevnt');
 Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
+
