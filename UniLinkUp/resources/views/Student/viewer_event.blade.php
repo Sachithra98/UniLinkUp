@@ -133,7 +133,7 @@
 
     @foreach ($publishEvent as $post)
         <div class="con">
-            <h2 style="text-decoration: underline;">Event Request for Publish</h2>
+            
             <div class="notice-container">
             <div class="Nheader">
                 <span>Created on: {{ $post->created_at->format('Y-m-d') }}</span>
