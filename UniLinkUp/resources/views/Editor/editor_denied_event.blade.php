@@ -42,7 +42,7 @@
         }
 
 
-        .event-container {
+        .post-container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
@@ -81,12 +81,12 @@
                 <p>Corrections Should be Done: {{ $denied_event->corrections }}</p>
                 
                 <!-- Display associated poll details -->
-                <div class="event-container">
+                <div class="post-container">
                     <h3>Associated Event:</h3>
-                    <p>Event Title: {{ $denied_event->event->Title }}</p>
-                    <p>Event Description: {{ $denied_event->event->Description }}</p>
-                    <img src="/uploads/{{ $denied_event->event->media_path }}" width='200' height='200' class="image"/>
-                    <img src="/uploads/{{ $denied_event->event->Approval_Letter }}" width='200' height='200' class="image"/>
+                    <p>Event Title: {{ $denied_event->post->Title }}</p>
+                    <p>Event Description: {{ $denied_event->post->Description }}</p>
+                    <img src="/uploads/{{ $denied_event->post->media_path }}" width='200' height='200' class="image"/>
+                    <img src="/uploads/{{ $denied_event->post->Approval_Letter }}" width='200' height='200' class="image"/>
                 </div>
                 
                 <!-- Other fields if needed -->
