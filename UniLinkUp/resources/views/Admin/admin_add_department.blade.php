@@ -102,6 +102,14 @@
             background-color: #f9f9f9;
         }
 
+        .main-content .container  .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
         
 
     </style>

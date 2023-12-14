@@ -9,6 +9,6 @@ class Society extends Model
 {
     use HasFactory;
     public $timestamps = true;
-    protected $fillable = ['Society_Id', 'Society_Name'];
+    protected $fillable = [ 'Society_Name'];
 
 }
