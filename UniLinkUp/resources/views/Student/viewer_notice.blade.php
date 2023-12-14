@@ -151,6 +151,10 @@
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
+            <div class="col-md-2">
+                <a href="{{ route('product.search') }}" class="btn btn-primary">Search Products</a>
+            </div>
+
     <div class="main">
 
     <h2 style="text-decoration: underline;">Published Notices</h2>

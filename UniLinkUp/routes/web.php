@@ -34,6 +34,7 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
+use App\Http\Controllers\SearchController;
 
 
 
@@ -378,3 +379,6 @@ Route::post('/deniedEventInput', [DeniedEventController::class, 'store'])->name(
 Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevnt'])->name('deniedevnt');
 Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
+
+//searchbar
+Route::get('/search', [SearchController::class, 'search'])->name('product.search');
