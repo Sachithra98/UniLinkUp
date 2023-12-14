@@ -131,7 +131,7 @@
                             <select>
                             @foreach($studentCounts as $studentCount)
                             <option value="{{ $studentCount->Dep_Id }}">
-                             {{ $studentCount->Dep_Id }}: {{ $studentCount->student_count }}</h6>
+                             {{ $studentCount->Dep_Name }}: {{ $studentCount->student_count }}</h6>
                             </option>
                         @endforeach
 
@@ -197,7 +197,7 @@
                             <select>
                             @foreach($studentfacCounts as $studentfacCount)
                             <option value="{{ $studentfacCount->Faculty_Id }}">
-                                 {{ $studentfacCount->Faculty_Id }}: {{ $studentfacCount->studentfac_count }}</h6>
+                                 {{ $studentfacCount->Faculty_Name }}: {{ $studentfacCount->studentfac_count }}</h6>
                             </option>
                             @endforeach
                         </select> <br>
