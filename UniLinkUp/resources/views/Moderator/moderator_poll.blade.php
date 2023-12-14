@@ -133,6 +133,7 @@
                 <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
                 <p>{{ $poll->poll_desc }}</p>
                 <img src="/uploads/{{ $poll->media_path }}" width='400' height='400' class="image"/>
+                <img src="/uploads/{{ $poll->Approval_Letter }}" width='400' height='400' class="image"/>
                 <h3>{{ $poll->question }}</h3>
 
                 <!-- Loop through each choice of the poll -->
