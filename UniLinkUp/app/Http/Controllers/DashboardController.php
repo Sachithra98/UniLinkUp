@@ -39,7 +39,7 @@ class DashboardController extends Controller
             ->get();
 
 
-            $studentCounts = Student::join('departments', 'students.Dep_Id', '=', 'departments.Dep_Id')
+        $studentCounts = Student::join('departments', 'students.Dep_Id', '=', 'departments.Dep_Id')
             ->select('students.Dep_Id', 'departments.Dep_Name', \DB::raw('count(*) as student_count'))
             ->groupBy('students.Dep_Id', 'departments.Dep_Name') // Use 'departments.Dep_Name' here
             ->get();
