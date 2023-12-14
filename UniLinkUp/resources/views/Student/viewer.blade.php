@@ -111,7 +111,7 @@
 
     <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
         <div class="create_event" >
-            <a href="<?=url('editor_create_event')?>" class="btn" style="margin-left: 3rem;">View Events</a>
+            <a href="<?=url('viewer_event')?>" class="btn" style="margin-left: 3rem;">View Events</a>
         </div>
 
         <div class="create_event">
