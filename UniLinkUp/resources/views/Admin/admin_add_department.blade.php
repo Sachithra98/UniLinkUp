@@ -91,6 +91,15 @@
             margin-bottom: 15px;
         }
 
+        .main-content .container  .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
         /* Style the form container (optional) */
         .main-content .container form {
             max-width: 800px;
