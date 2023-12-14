@@ -38,9 +38,14 @@ class DashboardController extends Controller
             ->groupBy('staff.Dep_Id','departments.Dep_Name')
             ->get();
 
-        $studentCounts = Student::select('Dep_Id',\DB::raw('count(*) as student_count'))
-            ->groupBy('Dep_Id')
+
+            $studentCounts = Student::join('departments', 'students.Dep_Id', '=', 'departments.Dep_Id')
+            ->select('students.Dep_Id', 'departments.Dep_Name', \DB::raw('count(*) as student_count'))
+            ->groupBy('students.Dep_Id', 'departments.Dep_Name') // Use 'departments.Dep_Name' here
             ->get();
+          
+
+       
 
         $stafffacCounts = Staff::join('faculties','staff.Faculty_Id','=','faculties.Faculty_Id')
             ->select('staff.Faculty_Id','faculties.Faculty_Name',\DB::raw('count(*) as stafffac_count'))
@@ -51,7 +56,7 @@ class DashboardController extends Controller
             ->groupBy('Faculty_Id')
             ->get();
 
-        return view('admin', compact('totalFaculties','totalSocieties','totalRoles','totalUsers','totalPolls','staffCounts','studentCounts','stafffacCounts','studentfacCounts'));
+        return view('Admin/admin', compact('totalFaculties','totalSocieties','totalRoles','totalUsers','totalPolls','staffCounts','studentCounts','stafffacCounts','studentfacCounts'));
 
     }
 
