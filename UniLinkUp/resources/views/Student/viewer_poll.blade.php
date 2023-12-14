@@ -133,6 +133,9 @@
         <!-- Loop through each publish poll -->
         @foreach ($publishPolls as $poll)
         <div class="notice-container">
+        <div class="Nheader">
+            <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>
+        </div>
             <h3 style="text-decoration: underline; font-weight: bold;">{{ $poll->poll_title }}</h3>
             <p>{{ $poll->poll_desc }}</p>
             <img src="/uploads/{{ $poll->media_path }}" width='400' height='400' class="image"/>
@@ -163,6 +166,7 @@
        <script>
         document.addEventListener('DOMContentLoaded', function () {
     const publishPolls = @json($publishPolls);
+    
 
     console.log('Publish Polls:', publishPolls);
 
