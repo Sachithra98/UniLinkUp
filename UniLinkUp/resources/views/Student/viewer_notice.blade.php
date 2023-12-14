@@ -86,10 +86,36 @@
               <p>{{ $notice->Description }}
               <h3>{{ $notice->media_path }}</h3>
 
-              <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
-              <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-              <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-              </div>
+          <div class="card-footer">
+            <!-- Like Button with Bootstrap Icon -->
+            @if($notice->isLiked)
+
+            <button class="btn btn-primary" disabled>
+                <i class="fa fa-thumbs-up"></i> Liked {{ $notice->likes_count }}
+            </button>
+            <form class="btn"  action="{{ route('remove.like', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                @csrf
+                <button class="btn btn-danger"  type="submit"><i class="fa fa-thumbs-down" ></i> Unlike </button>
+            </form>
+            <!-- <a href="" type="button" class="btn btn-danger ">Unlike</a> -->
+            @else
+
+            <form class="btn"  action="{{ route('add.like', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                @csrf
+                <button class="btn" style="border-color: black;" type="submit"><i class="fa fa-thumbs-up"></i> Add Like {{ $notice->likes_count }} </button>
+            </form>
+            @endif
+           
+            <!-- Share Button with Bootstrap Icon -->
+
+            <form class="btn"  action="{{ route('post.share', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                @csrf
+                <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
+            </form>
+
+           
+            </div>
+        </div>
       @endforeach
 
     

@@ -32,7 +32,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\VoteController;
 use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
-
+use App\Http\Controllers\LikeShareController;
+use App\Http\Controllers\ShareController;
 
 
 /*
@@ -360,3 +361,8 @@ Route::delete('/delete-record/{pollId}', 'PublishNoticeController@deleteRecord')
 Route::get('/moderator_denied_event', function () {
     return view('/Moderator/moderator_denied_event');
 })->name('moderator_denied_event');
+
+
+//dhilmi
+
+Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
