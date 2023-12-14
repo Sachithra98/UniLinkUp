@@ -366,3 +366,8 @@ Route::get('/moderator_denied_event', function () {
 //dhilmi
 
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+
+Route::post('/unlike/{Publish_notice_id}', [LikeShareController::class, 'unlike'])->name('remove.like');
+Route::post('/add-like/{Publish_notice_id}', [LikeShareController::class, 'addLike'])->name('add.like');
+
+Route::get('/add-like-form', [LikeShareController::class, 'showAddLikeForm']);
