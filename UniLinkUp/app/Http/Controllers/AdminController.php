@@ -1,6 +1,7 @@
 <?php
 //jayani-starts
 namespace App\Http\Controllers;
+
 use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -41,15 +42,17 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Admin not found');
         }
         
-        $admin->Admin_Name = $request->Admin_Name;
-        $admin->Admin_Email = $request->Admin_Email;
-    
+        $admin->Admin_Name = $request->input('Admin_Name');
+        $admin->Admin_Email = $request->input('Admin_Email');
         $admin->save();
     
-        return redirect('Admin_UMA')->with('success', 'Admin data successfully updated!');
+        return redirect('/Admin_UMA')->with('success', 'Admin data successfully updated!');
     }
     
 
+
+
+       
 
 
     

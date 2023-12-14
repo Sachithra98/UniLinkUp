@@ -284,7 +284,11 @@ Route::get('/reviews', [ReviewController::class, 'index'])->name('reviews.index'
 
 //Route::post('update_data/{id}',[AdminController::class,'update_data']);
 // Route::post('/update_data/{Admin_Id}', [AdminController::class, 'update_data'])->name('update_data');
-Route::post('/update-admin/{admin}', [AdminController::class, 'update_data'])->name('admin.update');
+//Route::post('/update-admin/{admin}', [AdminController::class, 'update_data'])->name('admin.update');
+//Route::post('/update/admin/{Admin_Id}', 'AdminController::class@update_data');
 
+Route::post('update_data/{Admin_Id}', [AdminController::class, 'update_data']);
 Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
+
+
 
