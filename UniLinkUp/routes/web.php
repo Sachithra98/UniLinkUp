@@ -81,7 +81,7 @@ Route::get('/admin_UMM', function () {
     return view('/Admin/admin_UMM');
 });
 
-Route::get('/Admin/admin_UMA', function () {
+Route::get('/admin_UMA', function () {
     return view('/Admin/admin_UMA');
 });
 
