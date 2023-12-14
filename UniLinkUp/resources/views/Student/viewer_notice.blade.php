@@ -170,7 +170,10 @@
               <div class="buttons">
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
                 <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
+                <form class="share"  action="{{ route('post.share', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                @csrf
+                <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
+            </form>
                 
                 </div>
             </div>
