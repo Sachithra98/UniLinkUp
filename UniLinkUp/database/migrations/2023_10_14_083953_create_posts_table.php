@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id('Post_Id'); // This will make 'Post_Id' an auto-incrementing primary key
-            $table->string('Editor_Id');
+            $table->foreignId('Editor_Id')->constrained('editors','id');
             $table->string('Title');
             $table->text('Description');
             $table->string('media_path')->nullable();

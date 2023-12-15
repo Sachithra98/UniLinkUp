@@ -37,7 +37,7 @@ class StaffController extends Controller
      
          // Create a new staff with the generated password
          $admin = Staff::create([
-            'Staff_Id' => $request->input('Staff_Id'),
+           
             'Faculty_Id' => $request->input('Faculty_Id'),
             'email' => $request->input('email'),
             'password' => $hashedPassword, // Store the hashed password

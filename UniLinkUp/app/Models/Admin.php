@@ -9,7 +9,7 @@ class Admin extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    protected $primaryKey = 'Admin_Id';
+   
     protected $keyType = 'string';
     protected $fillable = [
           /* 'Admin_Id', */
@@ -18,11 +18,11 @@ class Admin extends Model
           'password'
         
 ];
-protected static function booted()
+/* protected static function booted()
 {
     static::creating(function ($admin) {
         $admin->Admin_Id = 'A' . str_pad(Admin::count() + 1, 3, '0', STR_PAD_LEFT);
     });
-}
+} */
 //jayani-ends
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('publish_notices', function (Blueprint $table) {
             $table->id();
             $table->foreignId('Publish_notice_id')->constrained('notices','Post_Id');
-            $table->string('Editor_Id');
+            $table->foreignId('Editor_Id')->constrained('editors','id');
             $table->string('Title');
             $table->text('Description');
             $table->string('media_path')->nullable();

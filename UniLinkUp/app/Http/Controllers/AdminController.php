@@ -20,7 +20,7 @@ class AdminController extends Controller
     
         // Create a new moderator with the generated password
         $admin = Admin::create([
-           'Admin_Id' => $request->input('Admin_Id'),
+          
            'email' => $request->input('email'),
            'password' => bcrypt($hashedPassword),
            'Admin_Name' => $request->input('Admin_Name'),

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('poll_id')->constrained(); // This creates a foreign key relationship with the "polls" table
+            $table->foreignId('poll_id')->constrained('publish_polls','poll_id'); // This creates a foreign key relationship with the "polls" table
             $table->string('choice');
             $table->timestamps();
         });

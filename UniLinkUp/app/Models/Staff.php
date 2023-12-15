@@ -18,11 +18,11 @@ class Staff extends Model
         
 ];
 
-protected static function booted()
-{
-    static::creating(function ($staff) {
-        $staff->Staff_Id = 'S' . str_pad(Staff::count() + 1, 3, '0', STR_PAD_LEFT);
-    });
-}
+// protected static function booted()
+// {
+//     static::creating(function ($staff) {
+//         $staff->Staff_Id = 'S' . str_pad(Staff::count() + 1, 3, '0', STR_PAD_LEFT);
+//     });
+// }
 //jayani-ends
 }

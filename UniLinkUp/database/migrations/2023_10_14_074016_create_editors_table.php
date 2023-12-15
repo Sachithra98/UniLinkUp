@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('editors', function (Blueprint $table) {
-            $table->string('Editor_Id')->primary();
+            $table->id();
             $table->string('Faculty_Id');
             $table->string('Batch_Id');
             $table->string('email');
-            $table->string('password');
+            $table->string('password')->unique;
             $table->string('E_Name');
             $table->string('Society_Id');
-            $table->string('Admin_Id');
+            $table->foreignId('Admin_Id')->constrained('admins','id');
             $table->string('Dep_Id');
             $table->timestamps();
         });

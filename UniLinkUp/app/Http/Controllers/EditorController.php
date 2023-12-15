@@ -35,7 +35,7 @@ class EditorController extends Controller
     
         // Create a new staff with the generated password
         $editor = Editor::create([
-           'Editor_Id' => $request->input('Editor_Id'),
+        
            'Faculty_Id' => $request->input('Faculty_Id'),
            'Batch_Id' => $request->input('Batch_Id'),
            'email' => $request->input('email'),

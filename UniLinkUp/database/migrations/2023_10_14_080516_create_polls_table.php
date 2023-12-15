@@ -12,6 +12,7 @@ return new class extends Migration
     {
         Schema::create('polls', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('Editor_Id')->constrained('editors','id');
             $table->string('poll_title');
             $table->text('poll_desc')->nullable();
             $table->string('media_path')->nullable();

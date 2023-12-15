@@ -36,7 +36,7 @@ class ModeratorController extends Controller
     
         // Create a new moderator with the generated password
         $moderator = Moderator::create([
-           'Moderator_Id' => $request->input('Moderator_Id'),
+          
            'email' => $request->input('email'),
            'password' => $hashedPassword,
            'M_Name' => $request->input('M_Name'),

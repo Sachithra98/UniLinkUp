@@ -20,11 +20,11 @@ class Editor extends Model
         'Dep_Id'
         
 ];
-protected static function booted()
-{
-    static::creating(function ($editor) {
-        $editor->Editor_Id = 'E' . str_pad(Editor::count() + 1, 3, '0', STR_PAD_LEFT);
-    });
-}
+// protected static function booted()
+// {
+//     static::creating(function ($editor) {
+//         $editor->Editor_Id = 'E' . str_pad(Editor::count() + 1, 3, '0', STR_PAD_LEFT);
+//     });
+// }
 //jayani-ends
 }

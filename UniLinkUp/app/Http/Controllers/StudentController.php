@@ -81,7 +81,7 @@ class StudentController extends Controller
           
               // Create a new student with the hashed password
               $student = Student::create([
-                  'Student_Id' => $request->input('Student_Id'),
+
                   'Faculty_Id' => $request->input('Faculty_Id'),
                   'Batch_Id' => $request->input('Batch_Id'),
                   'email' => $request->input('email'),

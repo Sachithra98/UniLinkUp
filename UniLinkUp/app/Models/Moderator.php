@@ -22,11 +22,11 @@ class Moderator extends Model
         
 ];
 
-protected static function booted()
-{
-    static::creating(function ($moderator) {
-        $moderator->Moderator_Id = 'M' . str_pad(Moderator::count() + 1, 3, '0', STR_PAD_LEFT);
-    });
-}
+// protected static function booted()
+// {
+//     static::creating(function ($moderator) {
+//         $moderator->Moderator_Id = 'M' . str_pad(Moderator::count() + 1, 3, '0', STR_PAD_LEFT);
+//     });
+// }
 //jayani-ends
 }
