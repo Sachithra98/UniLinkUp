@@ -550,12 +550,16 @@ Route::middleware('test')->group(function (){
         });
 
 
-
+//piyumi
 Route::post('update_data/{id}', [AdminController::class, 'update_data']);
 Route::get('edit_record/{id}',[AdminController::class,'edit_record']);
 
 Route::post('update/{id}', [EditorController::class, 'update']);
 Route::get('edit/{id}',[EditorController::class,'edit']);
+
+Route::post('update_M/{id}', [ModeratorController::class, 'update_M']);
+Route::get('edit_M/{id}',[ModeratorController::class,'edit_M']);
+//piyumi end
 
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');

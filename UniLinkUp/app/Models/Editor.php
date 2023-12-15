@@ -13,6 +13,9 @@ class Editor extends Authenticatable
 
     use HasApiTokens, HasFactory, Notifiable;
 
+    public $timestamps = false;
+    protected $primaryKey = 'id';
+    protected $keyType = 'string';
     /**
      * The attributes that are mass assignable.
      *
