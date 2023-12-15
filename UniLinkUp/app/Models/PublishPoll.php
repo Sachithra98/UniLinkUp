@@ -11,7 +11,9 @@ class PublishPoll extends Model
 
     protected $table = 'publish_polls';
 
-    protected $fillable = [  
+    protected $primaryKey = 'publish_poll_id';
+
+    protected $fillable = [
         'poll_id',
         'poll_title',
         'poll_desc',
@@ -25,12 +27,14 @@ class PublishPoll extends Model
         'option5',
         // Add other fields as needed
     ];
-    
+
     // PublishPoll.php
 
    public function votes()
     {
         return $this->hasMany(Vote::class, 'poll_id');
+
+        return $this->hasMany(Vote::class, 'poll_id', 'poll_id');
     }
 
     // Add any relationships or additional methods as needed
