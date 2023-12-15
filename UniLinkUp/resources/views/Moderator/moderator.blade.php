@@ -98,9 +98,9 @@
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back {{ Auth::guard('moderator')->user()->M_Name }}!</h3>
+            <h3>Welcome back !</h3>
             <h4>This is an moderator Page.</h4>
-            <h4> Every new day is a chance to change your life. Have a nice day...</h4>
+            <h4>  Your dedication ensures a safe and vibrant space for discussion. Use your moderation skills to encourage meaningful interactions, foster understanding, and bridge the gap between different perspectives.  Your efforts keep our community thriving.</h4>
             <div class="clock" id="clock"></div>
         </div>
 
@@ -139,6 +139,8 @@
 
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
+
+            var name = "{{ Auth::guard('moderator')->user()->M_Name }}";
 
 
 

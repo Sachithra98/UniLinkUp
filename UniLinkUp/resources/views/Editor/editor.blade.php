@@ -98,9 +98,9 @@
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back {{ Auth::guard('editor')->user()->E_Name }}!</h3>
-            <h4>This is an Eitor Page.</h4>
-            <h4> Every new day is a chance to change your life. Have a nice day...</h4>
+            <h3>Welcome back !</h3>
+            <h5>This is an Eitor Page.</h5>
+            <h4> You are the gatekeeper of excellence. Use your editing skills to filter information, polish content, and uphold our standards of quality. Your dedication safeguards the integrity of our platform.</h4>
             <div class="clock" id="clock"></div>
         </div>
 
@@ -158,6 +158,7 @@
 
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
+            var name = "{{ Auth::guard('editor')->user()->E_Name }}";
 
 
 
