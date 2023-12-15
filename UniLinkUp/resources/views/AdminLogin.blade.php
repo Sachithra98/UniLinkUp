@@ -40,7 +40,6 @@
 
                 .lgin .text1 h1 {
                     color:#D2F9F9;
-                    text-transform: uppercase;
                     padding:1rem 0;
                     font-size: 4vw;
                     text-decoration: none;
