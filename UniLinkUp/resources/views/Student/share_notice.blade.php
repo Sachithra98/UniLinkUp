@@ -100,7 +100,7 @@
                 <br>
                 <div class="btn-group">
                     <!-- WhatsApp share -->
-                    <a href="whatsapp://send?text=Check out this post: {{ url()->current() }}" class="btn btn-whatsapp" target="_blank">
+                    <a href="https://api.whatsapp.com/send?text=Check out this post: [URL]" class="btn btn-whatsapp" target="_blank">
                         <i class="fab fa-whatsapp"></i> WhatsApp
                     </a>
 
