@@ -21,15 +21,15 @@
    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-    <!-- jQuery library -->
+   
+   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
+   <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
+   <link rel="stylesheet" href="css <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
-   <!-- <link rel ="stylesheet" href="Plugin/bootstrap.min.css">
-   <link rel="stylesheet" href="css/index.css"> -->
 
    <style>
         * {
@@ -70,25 +70,22 @@
 
 
 <div class="main-content">
-    <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
-    </div>
+            <div class="back" >
+                <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+            </div>
 
     <div class="container">
-        <h1> Departments Management</h1>
-    <div class="row">
-        <div class="col-6 studentAdd">
-            <div>
-            @if(session()->has('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
-    </div>
-@endif
+       
+            @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success')}}
+            </div>
+             @endif 
            
             <h1>Edit Data</h1>
 
             @isset($admin)
-            <form action="{{ url('update_data/'.$admin->Admin_Id) }}" method="post">
+                <form action="{{ url('update_data/'.$admin->Admin_Id) }}" method="post">
                     @csrf
                     <!-- Your form fields here using $admin -->
                     <label for="Admin_Name">Admin Name</label>
@@ -101,16 +98,17 @@
                    
 
                     <br>
-                    <button type="submit" class="btn btn-danger">Update Admin</button>
+                    <button type="submit" class="btn btn-primary">Update Admin</button>
                 </form>
             @else
                 <p>No admin data found</p>
             @endisset
-        </div>
-        <div class="col-6">
-            <!-- ... (your other content) ... -->
-        </div>
     </div>
+        
+
+</div>
+
+<br>
     <!-- ... (your scripts) ... -->
 
        <br>
