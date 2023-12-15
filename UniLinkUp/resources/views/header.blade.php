@@ -18,6 +18,8 @@
   
 
 
+
+
 </head>
 <body>
   <!-- header section starts  -->
@@ -32,7 +34,46 @@
       <form class="search" action="/action_page.php" style="margin:auto;max-width:300px">
          <input type="text" placeholder="Search.." name="search2">
          <button type="submit"><i class="fa fa-search"></i></button>
+         
+
       </form>
+   </a>
+   <a>
+  <!-- Add this button to your navbar with a moon icon -->
+<button id="theme-toggle-btn" onclick="toggleTheme()" style="padding: 8px 12px; background-color: #7c838a; color: #fff; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease;">
+    <i class="fas fa-moon"></i> <!-- Font Awesome moon icon -->
+</button>
+
+<!-- Include this inline script after your existing JavaScript files -->
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+
+        // Save the current theme preference in localStorage
+        const isDarkMode = body.classList.contains('dark-mode');
+        localStorage.setItem('darkMode', isDarkMode);
+    }
+
+    // Check if there's a theme preference saved in localStorage
+    const savedTheme = localStorage.getItem('darkMode');
+    if (savedTheme === 'true') {
+        document.body.classList.add('dark-mode');
+    }
+</script>
+
+<!-- Add these styles directly within your HTML -->
+<style>
+    body.dark-mode {
+        background-color: #1a1a1a;
+        color: #c0c0c0; /* Change the font color for dark mode */
+    }
+    body {
+        transition: background-color 0.5s, color 0.5s;
+    }
+</style>
+
+
    </a>
    <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
    <a href="<?=url('')?>">Log Out</a>

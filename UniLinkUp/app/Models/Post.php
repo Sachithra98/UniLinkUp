@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id'; // Change 'Post_Id' to 'id'
+    protected $primaryKey = 'Post_Id'; // Change 'Post_Id' to 'id'
     public $incrementing = true; // This indicates that 'Post_Id' is an auto-incrementing field
     public $timestamps = true;
 

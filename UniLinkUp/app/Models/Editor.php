@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 class Editor extends Authenticatable
 {
+
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -17,6 +18,7 @@ class Editor extends Authenticatable
      *
      * @var array<int, string>
      */
+
     protected $fillable = [
         /*    'Editor_Id', */
            'Faculty_Id',

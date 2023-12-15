@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use DB;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -37,6 +38,7 @@ class AdminController extends Controller
         return redirect('/admin_createaccA')->with('success','Data successfully added!');
     }
     //jayani-ends
+
 
 
 
@@ -77,4 +79,29 @@ class AdminController extends Controller
     }
 
 //lahiru end
+
+    //piyumi start
+    public function edit_record($Admin_Id){
+        $admin = Admin::where('Admin_Id', $Admin_Id)->first();
+        return view('/Admin/admin_edit_UMA', compact('admin'));
+    }
+    
+
+    public function update_data(Request $request,  $Admin_Id) {
+        $admin = Admin::find($Admin_Id);
+       
+    
+        if (!$admin) {
+            return redirect()->back()->with('error', 'Admin not found');
+        }
+        
+        $admin->Admin_Name = $request->input('Admin_Name');
+        $admin->email= $request->input('email');
+        $admin->update();
+    
+        return redirect('/admin_UMA')->with('success', 'Admin data successfully updated!');
+    }
+
+
 }
+

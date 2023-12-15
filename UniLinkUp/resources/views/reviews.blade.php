@@ -104,7 +104,7 @@
                     <div class="col-md-4">
                         <div class="border border-primary p-3 mb-3">
                             <!-- User Image Icon -->
-                            <img src="{{asset('storage/images/site images/pic-5.png')}}" alt="User Icon" class="img-fluid mb-2">
+                            <!-- <img src="{{asset('storage/images/site images/pic-5.png')}}" alt="User Icon" class="img-fluid mb-2"> -->
 
                             <p class="text-primary">{{ $review->name }}</p>
                             <p>{{ $review->comment }}</p>

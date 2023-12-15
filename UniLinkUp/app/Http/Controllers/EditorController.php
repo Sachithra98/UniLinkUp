@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\Editor;
 use Illuminate\Http\Request;
+use DB;
 
 use App\Models\Faculty;
 use App\Models\Department;
@@ -84,18 +85,30 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Editor $editor)
+    public function edit($Editor_Id)
     {
-        //
+        $editor = Editor::where('Editor_Id', $Editor_Id)->first();
+        return view('/Editor/editor_edit_UME', compact('editor'));
     }
+    
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Editor $editor)
-    {
-        //
+    public function update(Request $request, $Editor_Id)
+{
+    $editor = Editor::find($Editor_Id);
+
+    if (!$editor) {
+        return redirect()->back()->with('error', 'Editor not found');
     }
+
+    $editor->E_Name = $request->input('E_Name');
+    $editor->email = $request->input('email');
+    $editor->update();
+
+    return redirect('/admin_UME')->with('success', 'Admin data successfully updated!');
+}
 
     /**
      * Remove the specified resource from storage.

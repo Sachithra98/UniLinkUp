@@ -83,15 +83,18 @@ button:hover {
 
     <div class="container">
         <div class="forgot-password-form">
+            <br>
             <h2>Forgot Password</h2>
-            <p>Please enter your email address to reset your password.</p>
-            <form action="#" method="post">
+            <br>
+            <p>Please contact system administrators to reset your password.</p>
+            <p>Don't be hesitate to contact us for any inquary. Our Contact delatils are provided in the footer section.</p>
+            <!-- <form action="#" method="post">
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <button class="btn" type="submit">Reset Password</button>
-            </form>
+            </form> -->
         </div>
     </div>
 

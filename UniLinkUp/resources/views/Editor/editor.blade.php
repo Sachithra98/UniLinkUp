@@ -124,13 +124,16 @@
     </div>
 
     <div class="new" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+        
+        <div class="denied requests" >
+            <a href="<?=url('editor_denied_event')?>" class="btn" style="margin-left: 3rem;">Rejected Events</a>
+        </div>
+        
         <div class="denied requests" >
             <a href="<?=url('editor_denied_notice')?>" class="btn" style="margin-left: 3rem;">Rejected Notices</a>
         </div>
 
-        <div class="denied requests" >
-            <a href="<?=url('editor_denied_event')?>" class="btn" style="margin-left: 3rem;">Rejected Events</a>
-        </div>
+        
 
         <div class="denied requests" >
             <a href="<?=url('editor_denied_poll')?>" class="btn" style="margin-left: 3rem;">Rejected Polls</a>

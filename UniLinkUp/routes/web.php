@@ -16,7 +16,12 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeniedNoticeController;
 use App\Http\Controllers\PublishNoticeController;
+
 use App\Http\Controllers\TestController;
+
+use App\Http\Controllers\BatchController;
+
+
 //jayani-end
 
 use App\Http\Controllers\CheckLoginController;
@@ -35,6 +40,8 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
+use App\Http\Controllers\ShareController;
+
 
 
 
@@ -105,7 +112,7 @@ Route::get('/admin_UMM', function () {
     return view('/Admin/admin_UMM');
 });
 
-Route::get('/Admin/admin_UMA', function () {
+Route::get('/admin_UMA', function () {
     return view('/Admin/admin_UMA');
 });
 
@@ -202,6 +209,17 @@ Route::get('/viewer', function () {
 });
 //sachithra-end
 
+//lishani
+
+Route::get('/admin_batch', function () {
+    return view('/Admin/admin_batch');
+});
+
+
+Route::get('/admin_add_batch', function () {
+    return view('/Admin/admin_add_batch');
+});
+
 
 
 
@@ -218,6 +236,11 @@ Route::post('/admin_add_department', [DepartmentController::class, 'department']
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
 Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
 
+
+//department 
+Route::post('/admin_batch', [BatchController::class, 'batch'])->name('admin_add_batch');
+Route::post('/batchInput', [BatchController::class, 'batchInput'])->name('batchInput');
+Route::get('/admin_add_batch', [BatchController::class, 'showBatchForm'])->name('showBatchForm'); 
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -407,6 +430,7 @@ Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -517,4 +541,15 @@ Route::middleware('test')->group(function (){
         Route::post('/login-submit', [TestController::class, 'login_submit'])->name('test_login_submit');
         });
 
+
+
+Route::post('update_data/{Admin_Id}', [AdminController::class, 'update_data']);
+Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
+
+Route::post('update/{Editor_Id}', [EditorController::class, 'update']);
+Route::get('edit/{Editor_Id}',[EditorController::class,'edit']);
+
+//dhilmi
+Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
 

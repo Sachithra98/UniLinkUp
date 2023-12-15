@@ -1,11 +1,12 @@
-<!-- sachithra-start -->
+
+<!-- lishani-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Add New Society</title>
+   <title>Add New Department</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -91,6 +92,15 @@
             margin-bottom: 15px;
         }
 
+        .main-content .container  .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+
         /* Style the form container (optional) */
         .main-content .container form {
             max-width: 800px;
@@ -122,46 +132,38 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('admin_societies')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('admin_batch')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
-        <h1>Add New society</h1>
+        <h1>Add New Batch</h1>
 
         @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success')}}
             </div>
-        @endif 
+        @endif   
 
-            <form action="{{route('storeSociety') }}" method="post"  enctype="multipart/form-data">
-                @csrf
-               <!--  <div class="form-group">
-                    <label for="society_id">Society ID:</label>
-                    <input type="text" id="society_id" name="society_id" required>
-                </div> -->
+            <form action="{{route('batchInput') }}" method="post" enctype="multipart/form-data">
+             @csrf
+               
+
 
                 <div class="form-group">
-                    <label for="society_name">Society Name:</label>
-                    <input type="text" id="society_name" name="society_name" required>
+                    <label for="Batch_Id">Batch ID:</label>
+                    <input type="text" id="Batch_Id" name="Batch_Id" required>
                 </div>
 
-
-                <!-- <div class="radio-group">
-                    <label>Choose Society Type:</label><br>
-                    <input type="radio" id="university_society" name="society_type" value="University Society" required>
-                    <label for="university_society">University Society</label>
-                    
-                    <input type="radio" id="faculty_society" name="society_type" value="Faculty Society" required>
-                    <label for="faculty_society">Faculty Society</label><br><br>
-                </div> -->
-
-                <!-- <div class="form-group">
-                    <label for="faculty">Faculty:</label>
-                    <input type="text" id="faculty" name="faculty" required>
-                </div> -->
+                <div class="form-group">
+                    <label for="Faculty_Id"> Faculty:</label>
+                        <select id="Faculty_Id" name="Faculty_Id" required>
+                             @foreach($faculties as $faculty)
+                                <option value="{{ $faculty->Faculty_Id }}">{{ $faculty->Faculty_Name }}</option>
+                                @endforeach
+                        </select>
+                    </div>
            
-                <div class="new_society" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <div class="new_department" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
                             <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
                             <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
@@ -179,4 +181,5 @@
 
 </body>
 </html>
-<!-- sachithra-end -->
+<!-- lishani-end -->
+    

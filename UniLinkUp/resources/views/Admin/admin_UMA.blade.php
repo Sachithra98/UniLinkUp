@@ -107,10 +107,10 @@
                 <td>{{ $row['Admin_Name'] }} </td>
                 <td>{{ $row['email'] }} </td>
              
-                <td>
-                <a href="" class="btn btn-success">Edit</a>
-                <a href="" class="btn btn-danger">Remove</a>
-            </td>
+                <td> <a href="edit_record/{{ $row['Admin_Id'] }}"class="btn btn-primary">Edit</a></td>
+
+                <td><a href="" class="btn btn-danger">Remove</a>
+                </td>
             </tr>
             @endwhile
         </tbody>
