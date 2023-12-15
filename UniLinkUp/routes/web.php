@@ -193,10 +193,10 @@ Route::get('/admin_add_department', function () {
 });
 //sachithra-end
 
-//department 
+//department
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
-Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm'); 
+Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
 
 
 //sachithra-start
@@ -378,3 +378,5 @@ Route::post('/deniedEventInput', [DeniedEventController::class, 'store'])->name(
 Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevnt'])->name('deniedevnt');
 Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
+
+Route::get('/poll_details', [PublishController::class, 'index']);
