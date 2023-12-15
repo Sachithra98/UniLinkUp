@@ -111,7 +111,7 @@
                 <td>{{ 'Society_Name' }} </td>
                 <td>{{ 'Dep_Name' }} </td>
                 <td>
-                <td> <a href="edit/{{ $row['Editor_Id'] }}"class="btn btn-primary">Edit</a></td>
+                <td> <a href="edit/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
             <td><a href="" class="btn btn-danger">Remove</a></td>
             </td>

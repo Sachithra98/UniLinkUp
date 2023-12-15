@@ -82,7 +82,7 @@ class AdminController extends Controller
 
     //piyumi start
     public function edit_record($Admin_Id){
-        $admin = Admin::where('Admin_Id', $Admin_Id)->first();
+        $admin = Admin::where('id', $Admin_Id)->first();
         return view('/Admin/admin_edit_UMA', compact('admin'));
     }
     

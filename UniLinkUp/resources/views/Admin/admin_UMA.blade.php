@@ -103,11 +103,11 @@
                     @while($row = $query->fetch_assoc())
         
             <tr>
-                <td>{{ $row['Admin_Id'] }} </td>
+                <td>{{ $row['id'] }} </td>
                 <td>{{ $row['Admin_Name'] }} </td>
                 <td>{{ $row['email'] }} </td>
              
-                <td> <a href="edit_record/{{ $row['Admin_Id'] }}"class="btn btn-primary">Edit</a></td>
+                <td> <a href="edit_record/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
                 <td><a href="" class="btn btn-danger">Remove</a>
                 </td>
