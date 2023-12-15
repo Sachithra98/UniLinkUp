@@ -111,7 +111,7 @@
                 <td>{{ $row['Position'] }} </td>
                 
                 <td>
-                <td> <a href="edit/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
+                <td> <a href="edit_M/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
                 <td><a href="" class="btn btn-danger">Remove</a></td>
             </td>
