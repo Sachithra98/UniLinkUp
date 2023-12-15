@@ -161,7 +161,11 @@
         <form action="{{ url('/pollInput') }}" method="post" enctype="multipart/form-data">
 
             @csrf
-              
+            <div class="form-group">
+                    <label for="Editor_Id">Editor_Id:</label>
+                    <input type="text" id="Editor_Id" name="Editor_Id" value="{{ Auth::guard('editor')->user()->id }}" readonly>
+                    
+                </div>
 
                 <div class="form-group">
                     <label for="poll_title">Poll Title:</label>
