@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\Staff;
 use Illuminate\Http\Request;
-
+use Hash;
 //sachi-start
 use App\Models\Faculty;
 use App\Models\Department;
-
+use Auth;
 
 class StaffController extends Controller
 {
 
     public function data()
     {
-      
+
         $faculties = Faculty::all();
         $departments = Department::all();
 
@@ -31,13 +31,13 @@ class StaffController extends Controller
          $request->validate([
             'password' => 'required|min:5', // Add any other validation rules you need
         ]);
-    
+
         // Hash the password
-        $hashedPassword = bcrypt($request->input('password'));
-     
+        $hashedPassword = Hash::make($request->input('password'));
+
          // Create a new staff with the generated password
          $admin = Staff::create([
-            'Staff_Id' => $request->input('Staff_Id'),
+
             'Faculty_Id' => $request->input('Faculty_Id'),
             'email' => $request->input('email'),
             'password' => $hashedPassword, // Store the hashed password
@@ -45,8 +45,8 @@ class StaffController extends Controller
             'Dep_Id' => $request->input('Dep_Id'),
             'Admin_Id' => $request->input('Admin_Id'),
          ]);
-     
-      
+
+
          return redirect('/admin_createaccS')->with('success','Data successfully added!');
      }
     public function index()
@@ -101,4 +101,42 @@ class StaffController extends Controller
     {
         //
     }
+
+
+
+    //lahiru start
+
+    public function dashboard(){
+
+        return view('Student.viewer');
+    }
+
+
+
+    public function login(){
+
+        return view('StaffLogin');
+    }
+
+
+    public function login_submit(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password'=>'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if(Auth::guard('staff')->attempt($credentials)){
+
+            $user=Staff::where('email',$request->input('email'))->first();
+                    Auth::guard('staff')->login($user);
+            return redirect()->route('staff_dashboard')->with('success', 'Login successful');
+        } else {
+            return redirect()->route('staff_login')->with('error', 'Login unsuccessful');
+
+        }
+    }
+
+
 }
