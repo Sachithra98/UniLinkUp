@@ -88,28 +88,28 @@ class ModeratorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Moderator $moderator)
+    public function edit($id)
     {
-        $editor = Editor::where('Editor_Id', $Editor_Id)->first();
-        return view('/Editor/editor_edit_UME', compact('editor'));
+        $moderator = Moderator::where('id', $id)->first();
+        return view('/Moderator/moderator_edit_UMM', compact('moderator'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Moderator $moderator)
+    public function update(Request $request, $id)
     {
-        $editor = Editor::find($Editor_Id);
+         $moderator = Moderator::find($id);
 
-        if (!$editor) {
-            return redirect()->back()->with('error', 'Editor not found');
-        }
-    
-        $editor->E_Name = $request->input('E_Name');
-        $editor->email = $request->input('email');
-        $editor->update();
-    
-        return redirect('/admin_UME')->with('success', 'Admin data successfully updated!');
+    if (!$moderator) {
+        return redirect()->back()->with('error', 'Moderator not found');
+    }
+
+    $moderator->M_Name = $request->input('M_Name');
+    $moderator->email = $request->input('email');
+    $moderator->update();
+
+    return redirect('/admin_UMM')->with('success', 'Admin data successfully updated!');
     }
 
     /**
