@@ -122,6 +122,8 @@
         transition: background-color 0.3s ease;
     }
 
+    
+
     .btn:hover {
         background-color: #2779bd; /* Button background color on hover */
     }
@@ -171,7 +173,8 @@
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
                 <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
                 <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-                
+                <a href="{{ asset('/uploads/' . $notice->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+
                 </div>
             </div>
       @endforeach
