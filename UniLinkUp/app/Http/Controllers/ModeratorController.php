@@ -88,6 +88,8 @@ class ModeratorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+
+     //piyumi
     public function edit($id)
     {
         $moderator = Moderator::where('id', $id)->first();
@@ -111,6 +113,7 @@ class ModeratorController extends Controller
 
     return redirect('/admin_UMM')->with('success', 'Admin data successfully updated!');
     }
+    //piyumi end
 
     /**
      * Remove the specified resource from storage.
