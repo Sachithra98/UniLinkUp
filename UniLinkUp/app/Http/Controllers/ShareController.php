@@ -11,4 +11,9 @@ class ShareController extends Controller
     {
         return view('/student/share_notice' , compact('id'));
     }
+
+    public function shareEvent(string $id)
+    {
+        return view('/student/share_event' , compact('id'));
+    }
 }
