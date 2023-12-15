@@ -398,3 +398,5 @@ Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevn
 Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
+Route::post('update_data/{Admin_Id}', [AdminController::class, 'update_data']);
+Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
