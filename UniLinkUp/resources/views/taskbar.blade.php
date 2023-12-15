@@ -21,9 +21,13 @@
     <nav class="sidebar">
       <div class="menu_content">
         <ul class="menu_items">
+        <br>
+          
           <div class="menu_title menu_dahsboard"></div>
           <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
           <!-- start -->
+          <br>
+          
 
           <li class="item">
             <a href="{{route('admin_dashboard')}}" class="nav_link">
