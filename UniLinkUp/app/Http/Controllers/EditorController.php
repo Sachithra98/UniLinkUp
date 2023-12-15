@@ -89,9 +89,9 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($Editor_Id)
+    public function edit($id)
     {
-        $editor = Editor::where('Editor_Id', $Editor_Id)->first();
+        $editor = Editor::where('id', $id)->first();
         return view('/Editor/editor_edit_UME', compact('editor'));
     }
     
@@ -99,9 +99,9 @@ class EditorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $Editor_Id)
-{
-    $editor = Editor::find($Editor_Id);
+    public function update(Request $request, $id)
+    {
+    $editor = Editor::find($id);
 
     if (!$editor) {
         return redirect()->back()->with('error', 'Editor not found');

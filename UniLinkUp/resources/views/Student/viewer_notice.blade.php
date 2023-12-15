@@ -177,7 +177,9 @@
                 <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
             </form>
 
+
                 <a href="{{ asset('/uploads/' . $notice->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+
                 
                 </div>
             </div>

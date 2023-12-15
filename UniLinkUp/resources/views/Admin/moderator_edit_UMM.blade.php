@@ -84,24 +84,24 @@
            
             <h1>Edit Data</h1>
 
-            @isset($editor)
-                <form action="{{ url('update/'.$editor->id) }}" method="post">
+            @isset($moderator)
+                <form action="{{ url('update_M/'.$moderator->id) }}" method="post">
                     @csrf
                     <!-- Your form fields here using $admin -->
-                    <label for="E_Name">Editor Name</label>
+                    <label for="M_Name">Moderator Name</label>
                     
-                    <input type="text" class="form-control" id="E_Name" name="E_Name" value="{{ $editor->E_Name }}">
+                    <input type="text" class="form-control" id="M_Name" name="M_Name" value="{{ $moderator->M_Name }}">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{ $editor->email }}">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ $moderator->email }}">
                     </div>
                    
 
                     <br>
-                    <button type="submit" class="btn btn-primary">Update Editor</button>
+                    <button type="submit" class="btn btn-primary">Update Moderator</button>
                 </form>
             @else
-                <p>No editor data found</p>
+                <p>No moderator data found</p>
             @endisset
     </div>
         
