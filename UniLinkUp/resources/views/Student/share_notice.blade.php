@@ -96,7 +96,7 @@
         </div><br>
             <div class="card-body" >
         
-                <div class="share-link" style="background-color:white" id="post-link">http://127.0.0.1:8000/post/{{$id}}</div>
+                <div class="share-link" style="background-color:white" id="post-link">http://127.0.0.1:8000/Notice/{{$id}}</div>
                 <br>
                 <div class="btn-group">
                     <!-- WhatsApp share -->
