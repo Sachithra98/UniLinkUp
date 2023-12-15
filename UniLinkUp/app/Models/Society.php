@@ -9,6 +9,13 @@ class Society extends Model
 {
     use HasFactory;
     public $timestamps = true;
-    protected $fillable = ['Society_Id', 'Society_Name'];
+    protected $fillable = ['Society_Name'];
+
+    protected static function booted()
+    {
+        static::creating(function ($society) {
+            $society->Society_Id = 'S' . str_pad(Society::count() + 1, 3, '0', STR_PAD_LEFT);
+        });
+    }
 
 }
