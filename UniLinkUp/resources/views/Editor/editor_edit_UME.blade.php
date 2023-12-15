@@ -85,7 +85,7 @@
             <h1>Edit Data</h1>
 
             @isset($editor)
-                <form action="{{ url('update/'.$editor->Editor_Id) }}" method="post">
+                <form action="{{ url('update/'.$editor->id) }}" method="post">
                     @csrf
                     <!-- Your form fields here using $admin -->
                     <label for="E_Name">Editor Name</label>
