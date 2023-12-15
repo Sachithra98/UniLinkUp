@@ -107,8 +107,13 @@
                             <td>{{ $row['email'] }}</td>
                            
                             <td>
-                                <a href="" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-danger">Remove</a>
+                            <a href="" class="btn btn-success">Edit</a>    
+                            <form action="{{ route('admin.remove', ['id' => $row['Admin_Id']]) }}" method="POST">
+                             @method('DELETE')
+                             @csrf
+                             <button type="submit" class="btn btn-danger">Remove</button>
+                             </form>
+
                             </td>
                         </tr>
                     @endwhile

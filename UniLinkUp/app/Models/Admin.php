@@ -25,4 +25,11 @@ protected static function booted()
     });
 }
 //jayani-ends
+
+public function achieve()
+{
+    return $this->belongsTo(AdminAchieve::class, 'Admin_Id', 'Admin_Id');
+}
+
+
 }

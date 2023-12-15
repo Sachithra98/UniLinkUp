@@ -404,3 +404,6 @@ Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
 Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
+
+Route::delete('/admin/remove/{Admin_id}', [AdminController::class, 'removeAdmin'])->name('admin.remove');
+

@@ -5,6 +5,8 @@ use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\AdminAchieve;
+
 
 class AdminController extends Controller
 {
@@ -55,5 +57,28 @@ class AdminController extends Controller
         return redirect('/admin_UMA')->with('success', 'Admin data successfully updated!');
     }
 
-}
 
+
+    public function removeAdmin($id)
+    {
+        $admin = Admin::find($id); // Fetch the admin by ID
+        if ($admin) {
+            // Create an 'achieve' record with the admin data
+            $achieve = new  Achieve();
+            $achieve->Admin_Id = $admin->Admin_Id;
+            $achieve->email = $admin->email;
+            $achieve->password = $admin->password;
+            $achieve->Admin_Name = $admin->Admin_Name;
+            $achieve->save();
+
+            // Delete the admin record
+            $admin->delete();
+
+            // Redirect or return a response
+            return redirect()->back()->with('success', 'Admin removed successfully.');
+        } else {
+            return redirect()->back()->with('error', 'Admin not found.');
+        }
+    }
+
+}
