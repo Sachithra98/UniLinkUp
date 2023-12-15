@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('societies', function (Blueprint $table) {
             $table->string('Society_Id')->primary();
             $table->string('Society_Name');
+            $table->timestamps();
 
         });
     }

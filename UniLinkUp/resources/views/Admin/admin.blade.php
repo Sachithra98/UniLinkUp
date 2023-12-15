@@ -100,7 +100,7 @@
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back {{ Auth::guard('admin')->user()->name }}!</h3>
+            <h3>Welcome back </h3>
             <h4>This is an Admin Page.</h4>
             <h4> Every new day is a chance to change your life. Have a nice day...</h4>
             <div class="clock" id="clock"></div>

@@ -136,10 +136,10 @@
 
             <form action="{{route('storeSociety') }}" method="post"  enctype="multipart/form-data">
                 @csrf
-               <!--  <div class="form-group">
+                <div class="form-group">
                     <label for="society_id">Society ID:</label>
                     <input type="text" id="society_id" name="society_id" required>
-                </div> -->
+                </div>
 
                 <div class="form-group">
                     <label for="society_name">Society Name:</label>
