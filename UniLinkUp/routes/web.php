@@ -35,7 +35,7 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
-
+use App\Http\Controllers\ShareController;
 
 
 
@@ -400,3 +400,7 @@ Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
 Route::post('update_data/{Admin_Id}', [AdminController::class, 'update_data']);
 Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
+
+//dhilmi
+Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');

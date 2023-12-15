@@ -161,7 +161,7 @@
       
     
       
-            <div class="notice-container">
+    <div class="notice-container">
                 <div class="Nheader">
               <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
               <!-- <h5>Notice Id:{{$notice->Publish_notice_id}}</h5> -->
@@ -172,9 +172,13 @@
               <div class="buttons">
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
                 <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
-                <a href="{{ asset('/uploads/' . $notice->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+                <form class="share"  action="{{ route('post.share', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                @csrf
+                <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
+            </form>
 
+                <a href="{{ asset('/uploads/' . $notice->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+                
                 </div>
             </div>
       @endforeach
