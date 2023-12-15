@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 
 use App\Models\Department;
 use App\Models\Society;
-
+use Hash;
+use Auth;
 class ModeratorController extends Controller
 {
     //sachi start
     public function data()
     {
-      
-    
+
+
         $societies = Society::all();
         $departments = Department::all();
 
@@ -30,13 +31,13 @@ class ModeratorController extends Controller
          $request->validate([
             'password' => 'required|min:5', // Add any other validation rules you need
         ]);
-    
+
         // Hash the password
-        $hashedPassword = bcrypt($request->input('password'));
-    
+        $hashedPassword = Hash::make($request->input('password'));
+
         // Create a new moderator with the generated password
         $moderator = Moderator::create([
-          
+        
            'email' => $request->input('email'),
            'password' => $hashedPassword,
            'M_Name' => $request->input('M_Name'),
@@ -45,15 +46,15 @@ class ModeratorController extends Controller
            'Admin_Id' => $request->input('Admin_Id'),
            'Society_Id'=> $request->input('Society_Id'),
            'Faculty_Id' => $request->input('Faculty_Id'),
-        ]); 
-       
-        
-    
-     
+        ]);
+
+
+
+
         return redirect('/admin_createaccM')->with('success','Data successfully added!');
     }
 
-   
+
 
     public function index()
     {
@@ -109,4 +110,35 @@ class ModeratorController extends Controller
     }
 
     //jayani-ends
+
+    //lahiru start
+
+
+    public function dashboard(){
+
+        return view('Moderator.moderator');
+    }
+
+    public function login(){
+
+        return view('ModeratorLogin');
+    }
+    public function login_submit(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            'password'=>'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if(Auth::guard('moderator')->attempt($credentials)){
+
+            $user=Moderator::where('email',$request->input('email'))->first();
+                    Auth::guard('moderator')->login($user);
+            return redirect()->route('moderator_dashboard')->with('success', 'Login successful');
+        } else {
+            return redirect()->route('moderator_login')->with('error', 'Login unsuccessful');
+
+        }
+    }
 }

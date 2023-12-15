@@ -13,13 +13,15 @@ return new class extends Migration
     {
         Schema::create('moderators', function (Blueprint $table) {
             $table->id();
-            $table->string('Dep_Id');
-            $table->string('Position');
-            $table->string('email')->unique;
-            $table->string('password');
             $table->string('M_Name');
-            $table->string('Society_Id');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('Dep_Id')->nullable();
+            $table->string('Position');
+            $table->string('Society_Id')->nullable();
             $table->foreignId('Admin_Id')->constrained('admins','id');
+            $table->rememberToken();
             $table->timestamps();
 
         });

@@ -1,28 +1,52 @@
 <?php
-//jayani-starts
+
 namespace App\Models;
 
+// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
+class Admin extends Authenticatable
+{
 
-class Admin extends Model
-{
-    use HasFactory;
-    public $timestamps = false;
-   
-    protected $keyType = 'string';
+    use HasApiTokens, HasFactory, Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+
     protected $fillable = [
-          /* 'Admin_Id', */
-          'email',
-          'Admin_Name',
-          'password'
-        
-];
-/* protected static function booted()
-{
-    static::creating(function ($admin) {
-        $admin->Admin_Id = 'A' . str_pad(Admin::count() + 1, 3, '0', STR_PAD_LEFT);
-    });
-} */
-//jayani-ends
+        'Admin_Name',
+        'email',
+        'password',
+    ];
+    protected $guard = 'admin';
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+//     public function setPasswordAttribute($password)
+// {
+//     $this->attributes['password'] = bcrypt($password);
+// }
 }

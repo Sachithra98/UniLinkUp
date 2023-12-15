@@ -14,16 +14,15 @@ return new class extends Migration
             $table->id();
             $table->foreignId('Editor_Id')->constrained('editors','id');
             $table->string('poll_title');
-            $table->text('poll_desc')->nullable();
-            $table->string('media_path')->nullable();
-            $table->string('Approval_Letter')->nullable();
+            $table->string('poll_desc')->nullable();
+            $table->String('media_path')->nullable();
             $table->string('question')->nullable();
             $table->string('option1')->nullable();
             $table->string('option2')->nullable();
             $table->string('option3')->nullable();
             $table->string('option4')->nullable();
             $table->string('option5')->nullable();
-            
+
             $table->timestamps();
         });
     }

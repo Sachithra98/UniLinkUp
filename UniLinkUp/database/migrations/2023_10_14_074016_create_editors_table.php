@@ -13,14 +13,16 @@ return new class extends Migration
     {
         Schema::create('editors', function (Blueprint $table) {
             $table->id();
-            $table->string('Faculty_Id');
-            $table->string('Batch_Id');
-            $table->string('email');
-            $table->string('password')->unique;
             $table->string('E_Name');
-            $table->string('Society_Id');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('Faculty_Id')->nullable();
+            $table->string('Batch_Id')->nullable();
+            $table->string('Society_Id')->nullable();
             $table->foreignId('Admin_Id')->constrained('admins','id');
-            $table->string('Dep_Id');
+            $table->string('Dep_Id')->nullable();
+            $table->rememberToken();
             $table->timestamps();
         });
     }

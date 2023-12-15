@@ -17,15 +17,16 @@ return new class extends Migration
             $table->foreignId('Editor_Id')->constrained('editors','id');
             $table->string('Title');
             $table->text('Description');
-           $table->string('media_path')->nullable();
-            $table->string('Approval_Letter')->nullable();
+           /*  $table->timestamp('Expire_Date'); */
+            $table->binary('media_path')->nullable();
+            $table->binary('Approval_Letter')->nullable();
             $table->string('Society_Id')->nullable();
             $table->string('Dep_Id')->nullable();
             $table->string('Faculty_Id')->nullable();
-    
+
             $table->timestamps(); // or remove the default value
 
-    
+
             // Fix the typo in the foreign key declaration
             $table->foreign('Editor_Id')->references('Editor_Id')->on('editors');
             // Assuming 'id' is the primary key of 'societies' and 'departments' tables
