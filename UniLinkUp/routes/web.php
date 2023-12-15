@@ -32,6 +32,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\PollController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\societyController;
+use App\Http\Controllers\ShareController;
 //sachithra - end
 
 use App\Http\Controllers\ReviewController;
@@ -423,6 +424,11 @@ Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->nam
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
 
+//dhilmi
+
+Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+
+
 
 
 
@@ -554,4 +560,5 @@ Route::get('edit/{id}',[EditorController::class,'edit']);
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
 Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
+
 

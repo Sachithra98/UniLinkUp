@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('publish_polls', function (Blueprint $table) {
             $table->id(); // Auto-incrementing primary key
+
             $table->foreignId('poll_id')->constrained('publish_polls','id'); // Foreign key relationship
             $table->string('poll_title'); // String column for poll title
             $table->text('poll_desc')->nullable(); // Nullable string column for poll description

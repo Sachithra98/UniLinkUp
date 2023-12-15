@@ -1,3 +1,6 @@
+<!-- sachithra-start -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -146,8 +149,10 @@
         <script src="{{ asset('js/your-js-file.js') }}"></script>
         @endsection
 
+
 </body>
     </html>
+
 
 
 
