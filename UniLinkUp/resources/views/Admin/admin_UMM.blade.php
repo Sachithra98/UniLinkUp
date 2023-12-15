@@ -111,8 +111,9 @@
                 <td>{{ $row['Position'] }} </td>
                 
                 <td>
-                <a href="" class="btn btn-success">Edit</a>
-                <a href="" class="btn btn-danger">Remove</a>
+                <td> <a href="edit/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
+
+                <td><a href="" class="btn btn-danger">Remove</a></td>
             </td>
             </tr>
             @endwhile
