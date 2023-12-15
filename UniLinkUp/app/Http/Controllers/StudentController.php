@@ -9,14 +9,14 @@ use Illuminate\Support\Facades\Response;
 //sachi-start
 use App\Models\Faculty;
 use App\Models\Department;
-
-
+use Hash;   //lahiru
+use Auth;
 class StudentController extends Controller
 {
 
     public function data()
     {
-      
+
         $faculties = Faculty::all();
         $departments = Department::all();
 
@@ -25,20 +25,20 @@ class StudentController extends Controller
     }
 //sachi-end
 
-    
+
     public function upload(Request $request)
           {
               $request->validate([
                   'file' => 'required|mimes:csv,txt|max:10240',
               ]);
-      
+
               $path = $request->file('file')->store('csv');
-      
+
               $this->processCSV($path);
-      
+
               return redirect('/admin_createaccV')->with('success','Data successfully added!');
           }
-      
+
           private function processCSV($path)
 {
     $file = File::get(storage_path('app/' . $path));
@@ -75,13 +75,12 @@ class StudentController extends Controller
               $request->validate([
                   'password' => 'required|min:5', // Add any other validation rules you need
               ]);
-          
+
               // Hash the password
-              $hashedPassword = bcrypt($request->input('password'));
-          
+              $hashedPassword = Hash::make($request->input('password'));
               // Create a new student with the hashed password
               $student = Student::create([
-                  'Student_Id' => $request->input('Student_Id'),
+
                   'Faculty_Id' => $request->input('Faculty_Id'),
                   'Batch_Id' => $request->input('Batch_Id'),
                   'email' => $request->input('email'),
@@ -90,11 +89,11 @@ class StudentController extends Controller
                   'Dep_Id' => $request->input('Dep_Id'),
                   'Admin_Id' => $request->input('Admin_Id'),
               ]);
-          
+
               // Redirect with success message
               return redirect('/admin_createaccV')->with('success', 'Data successfully added!');
           }
-          
+
    /*   public function downloadPasswords()
 {
     // Fetch student numbers and decrypted passwords
@@ -117,4 +116,40 @@ class StudentController extends Controller
     return Response::download($csvFile, $csvFileName, ['Content-Type' => 'text/csv']);
 } */
           //jayani-end
+
+
+
+
+
+//lahiru start
+public function dashboard(){
+
+    return view('Student.viewer');
+}
+
+public function login(){
+
+    return view('StudentLogin');
+}
+public function login_submit(Request $request){
+    $request->validate([
+        'email' => 'required|email',
+        'password'=>'required',
+    ]);
+
+    $credentials = $request->only('email', 'password');
+
+    if(Auth::guard('student')->attempt($credentials)){
+
+        $user=Student::where('email',$request->input('email'))->first();
+                Auth::guard('student')->login($user);
+        return redirect()->route('student_dashboard')->with('success', 'Login successful');
+    } else {
+        return redirect()->route('student_login')->with('error', 'Login unsuccessful');
+
+    }
+}
+
+
+
 }

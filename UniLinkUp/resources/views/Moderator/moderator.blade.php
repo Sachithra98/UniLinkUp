@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="css/index.css"> -->
 
 
-    
+
     <style>
         * {
             margin: 0;
@@ -41,7 +41,7 @@
         body {
             font-family: Roboto, sans-serif;
             background-color: aliceblue;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
 
         .container {
@@ -86,19 +86,19 @@
 
 </head>
 <body>
-   
+
     <!-- header section starts -->
     @include('header')
 	<!-- header section ends -->
 
 <div class="con">
 
-   
+
 
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back Moderator!</h3>
+            <h3>Welcome back {{ Auth::guard('moderator')->user()->M_Name }}!</h3>
             <h4>This is an moderator Page.</h4>
             <h4> Every new day is a chance to change your life. Have a nice day...</h4>
             <div class="clock" id="clock"></div>
@@ -140,7 +140,7 @@
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
 
-            
+
 
             // Greeting message with the user's name
             var greeting;
@@ -172,7 +172,7 @@
 
 
 
-        
+
         // Call the clock function after defining it
         clock();
     </script>
@@ -184,7 +184,7 @@
    <!-- footer section starts -->
 	@include('footer')
 	<!-- footer section ends -->
-    
+
 </div>
 </body>
 </html>

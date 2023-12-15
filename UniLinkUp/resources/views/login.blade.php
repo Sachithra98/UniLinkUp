@@ -244,31 +244,17 @@
 
 		<div class="box1">
 
-			<form action="{{ route('loginCheck') }}" method="POST">
-                @csrf
-                <h1>Sign In</h1>
-                <div class="inputBox1">
-                    <input type="text" name="id" required>
-                    <span>Username</span>
-                    <i></i>
-                </div>
-                <div class="inputBox1">
-                    <input type="password" name="password" required>
-                    <span>Enter Password</span>
-                    <i></i>
-                </div>
-                <select name="role" id="role">
-					<option value="Student">Viewer</option>
-                    <option value="Editor">Editor</option>
-                    <option value="Moderator">Moderator</option>
-                    <option value="Admin">Admin</option>
-                    
-                </select>
-                <button class="btn" type="submit">Log In</button>
-                <div class="links">
-                    <a href="<?=url('forget')?>">Forgot Password?</a>
-                </div>
-            </form>
+
+                <h1>Please choose your Role here</h1>
+
+                <a href="<?=url('login')?>" class="btn">Admin</a>
+                <a href="<?=url('login')?>" class="btn">Editor</a>
+                <a href="<?=url('login')?>" class="btn">Moderator</a>
+                <a href="<?=url('login')?>" class="btn">Student</a>
+                <a href="<?=url('login')?>" class="btn">Staff</a>
+
+
+
 
 
 
