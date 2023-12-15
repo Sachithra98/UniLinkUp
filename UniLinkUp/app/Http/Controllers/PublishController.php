@@ -17,7 +17,7 @@ class PublishController extends Controller
         // Redirect to the moderator_denied_poll blade or perform other actions
         return redirect()->route('moderator_denied_poll');
     }
-    
+
     public function addDataToPublishPoll(Request $request, $pollId)
 {
     try {
@@ -41,7 +41,7 @@ class PublishController extends Controller
             // Add other fields as needed
         ]);
 
-        
+
         // $publishpoll=new PublishPoll();
         // $publishpoll->poll_title=$poll->poll_title;
         // $publishpoll->poll_desc= $poll->poll_desc;
@@ -73,5 +73,10 @@ class PublishController extends Controller
         // Pass the publish polls data to the view
         return view('Student/viewer_poll', compact('publishPolls'));
     }
+    public function index()
+    {
+        $polls = PublishPoll::with('votes')->get();
 
+        return view('Editor.poll_details', compact('polls'));
+    }
 }
