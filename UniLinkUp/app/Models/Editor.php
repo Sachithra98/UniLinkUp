@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Editor extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $primaryKey = 'Editor_Id';
+    protected $keyType = 'string';
     protected $fillable = [
      /*    'Editor_Id', */
         'Faculty_Id',
