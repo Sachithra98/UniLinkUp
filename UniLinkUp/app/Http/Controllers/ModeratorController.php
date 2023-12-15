@@ -90,16 +90,16 @@ class ModeratorController extends Controller
      */
 
      //piyumi
-    public function edit($id)
+    public function edit_M($id)
     {
         $moderator = Moderator::where('id', $id)->first();
-        return view('/Moderator/moderator_edit_UMM', compact('moderator'));
+        return view('/Admin/moderator_edit_UMM', compact('moderator'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update_M(Request $request, $id)
     {
          $moderator = Moderator::find($id);
 
