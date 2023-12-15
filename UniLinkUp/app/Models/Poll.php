@@ -9,7 +9,7 @@ class Poll extends Model
 {
     use HasFactory;
     public $timestamps = true;
-
+    protected $primaryKey = 'id';
     protected $fillable = [
     'poll_title',
     'poll_desc',

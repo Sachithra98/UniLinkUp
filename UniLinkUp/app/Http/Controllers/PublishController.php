@@ -21,13 +21,15 @@ class PublishController extends Controller
     public function addDataToPublishPoll(Request $request, $pollId)
 {
     try {
+        
         // Retrieve the poll data
         $poll = Poll::findOrFail($pollId);
 
         //Create a new record in the publish_polls table
         PublishPoll::create([
-            /* 'poll_id' => $poll->id, */
+
             'poll_id' => $poll->id,
+            
             'poll_title' => $poll->poll_title,
             'poll_desc' => $poll->poll_desc,
             'media_path' => $poll->media_path,
@@ -40,6 +42,7 @@ class PublishController extends Controller
             'option5' => $poll->option5,
             // Add other fields as needed
         ]);
+
 
         
         // $publishpoll=new PublishPoll();
