@@ -9,6 +9,8 @@ class Admin extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $primaryKey = 'Admin_Id';
+    protected $keyType = 'string';
     protected $fillable = [
           /* 'Admin_Id', */
           'email',
