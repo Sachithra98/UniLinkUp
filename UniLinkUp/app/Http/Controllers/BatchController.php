@@ -25,7 +25,7 @@ class BatchController extends Controller
      */
     public function batchInput(Request $request)
     {
-        // Validate the request data
+       // Validate the request data
         $request->validate([
             'Batch_Id' => 'required',
             'Faculty_Id' => 'required',

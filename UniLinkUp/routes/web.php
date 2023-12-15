@@ -15,6 +15,7 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeniedNoticeController;
 use App\Http\Controllers\PublishNoticeController;
+use App\Http\Controllers\BatchController;
 
 //jayani-end
 
@@ -34,7 +35,7 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
-use App\Http\Controllers\BatchController;
+
 
 
 
@@ -187,7 +188,7 @@ Route::get('/admin_batch', function () {
 
 
 Route::get('/admin_add_batch', function () {
-    return view('/admin_add_batch');
+    return view('/Admin/admin_add_batch');
 });
 
 

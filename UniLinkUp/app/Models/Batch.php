@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Batch extends Model
 {
     use HasFactory;
-    public $timestamps = true;
+    
+    public $timestamps = false;
     protected $primarykey='Batch_Id';
     protected $fillable = [
         'Batch_Id',
