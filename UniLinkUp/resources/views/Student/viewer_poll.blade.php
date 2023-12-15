@@ -166,6 +166,7 @@
        <script>
         document.addEventListener('DOMContentLoaded', function () {
     const publishPolls = @json($publishPolls);
+    
 
     console.log('Publish Polls:', publishPolls);
 

@@ -163,10 +163,8 @@
 
                 <div class="form-group">
                     <label for="post_title">Editor_Id:</label>
-                    <input type="text" id="Editor_Id" name="Editor_Id" value="{{ old('Editor_Id') }}" required>
-                    @error('Editor_Id')
-                        <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
+                    <input type="text" id="Editor_Id" name="Editor_Id" value="{{ Auth::guard('editor')->user()->id }}" readonly>
+                    
                 </div>
                 
                 <div class="form-group">

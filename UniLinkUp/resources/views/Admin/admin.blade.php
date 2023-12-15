@@ -102,7 +102,7 @@
             <h1><div class="greeting" id="greeting"></div></h1>
             <h3>Welcome back  {{ Auth::guard('admin')->user()->Admin_Name }}!</h3>
             <h4>This is an Admin Page.</h4>
-            <h4> Every new day is a chance to change your life. Have a nice day...</h4>
+            <h4>Your tireless efforts keep our platform thriving. Use your dashboard to oversee user management, content moderation, and system settings. Let's empower our community together!</h4>
             <div class="clock" id="clock"></div>
         </div>
 

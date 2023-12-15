@@ -61,6 +61,10 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 	<style>
+		*{
+			font-family: 'Inter', sans-serif; 
+		}
+		
 		.lgin {
 			position: relative;
 			width: 100%;
@@ -89,7 +93,6 @@
 
 		.lgin .text1 h1 {
 			color:#D2F9F9;
-			text-transform: uppercase;
 			padding:1rem 0;
 			font-size: 4vw;
 			text-decoration: none;
@@ -188,7 +191,7 @@
 		<div class="imgBx" style="background:url('{{asset('storage/images/site images/6.jpg')}}')no-repeat">
 
 			<div class="text1">
-				<h1>ConnectU</h1>
+				<h1 >ConnectU</h1>
 				<h3> Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
 			</div>
 		</div>

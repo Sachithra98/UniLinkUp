@@ -93,14 +93,16 @@
 
 <div class="con">
 
-
+<!-- taskbar section starts -->
+@include('editor_task')
+	<!-- taskbar section ends -->
 
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back {{ Auth::guard('editor')->user()->E_Name }}!</h3>
-            <h4>This is an Eitor Page.</h4>
-            <h4> Every new day is a chance to change your life. Have a nice day...</h4>
+            <h3>Welcome back !</h3>
+            <h5>This is an Eitor Page.</h5>
+            <h4> You are the gatekeeper of excellence. Use your editing skills to filter information, polish content, and uphold our standards of quality. Your dedication safeguards the integrity of our platform.</h4>
             <div class="clock" id="clock"></div>
         </div>
 
@@ -109,38 +111,9 @@
         </div>
     </div>
 
-    <div class="new" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="create_event" >
-            <a href="<?=url('editor_create_event')?>" class="btn" style="margin-left: 3rem;">Create Events</a>
-        </div>
-
-        <div class="create_event">
-            <a href="<?=url('editor_create_notice')?>" class="btn" style="margin-left: 3rem;">Create Notices</a>
-        </div>
-
-        <div class="create_polls">
-            <a href="<?=url('editor_create_poll')?>" class="btn" style="margin-left: 3rem;">Create Polls</a>
-        </div>
-    </div>
-
-    <div class="new" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-        
-        <div class="denied requests" >
-            <a href="<?=url('editor_denied_event')?>" class="btn" style="margin-left: 3rem;">Rejected Events</a>
-        </div>
-        
-        <div class="denied requests" >
-            <a href="<?=url('editor_denied_notice')?>" class="btn" style="margin-left: 3rem;">Rejected Notices</a>
-        </div>
-
-        
-
-        <div class="denied requests" >
-            <a href="<?=url('editor_denied_poll')?>" class="btn" style="margin-left: 3rem;">Rejected Polls</a>
-        </div>
+    <br><br>
 
 
-    </div>
 
 
 
@@ -158,6 +131,7 @@
 
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
+            var name = "{{ Auth::guard('editor')->user()->E_Name }}";
 
 
 

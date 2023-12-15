@@ -9,6 +9,7 @@ use DB;
 use App\Models\Faculty;
 use App\Models\Department;
 use App\Models\Society;
+use App\Models\Batch;
 
 use Auth;
 use Hash;
@@ -22,8 +23,9 @@ class EditorController extends Controller
         $faculties = Faculty::all();
         $societies = Society::all();
         $departments = Department::all();
+        $batches = Batch::all();
 
-        return view('Admin/admin_createaccE', compact('faculties','societies','departments'));
+        return view('Admin/admin_createaccE', compact('faculties','societies','departments','batches'));
 
     }
 
@@ -33,6 +35,8 @@ class EditorController extends Controller
          $request->validate([
             'password' => 'required|min:5', // Add any other validation rules you need
         ]);
+
+        
 
         // Hash the password
         $hashedPassword = Hash::make($request->input('password'));
