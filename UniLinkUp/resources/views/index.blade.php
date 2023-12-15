@@ -24,7 +24,7 @@
 
 <section class="header">
 
-   <a href="<?=url('index')?>" class="logo">UniLinkUp</a>
+   <a href="<?=url('index')?>" class="logo">ConnectU</a>
 
    <nav class="navbar">
       <a href="<?=url('index')?>">Home</a>
@@ -55,7 +55,7 @@
 
          <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home17.jpg')}}')no-repeat">
             <div class="content">
-                <h1 style="color: #000080;">UniLinkUp</h1>
+                <h1 style="color: #000080;">ConnectU</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000040;"> Make it easy to stay in touch...</h3>
                <a href="<?=url('login')?>" class="btn">Log In</a>
@@ -64,7 +64,7 @@
 
          <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home19.jpg')}}') no-repeat">
          <div class="content">
-               <h1 style="color: #000080;">UniLinkUp</h1>
+               <h1 style="color: #000080;">ConnectU</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000080;"> Make it easy to stay in touch...</h3>
                <a href="<?=url('login')?>" class="btn">Log In</a>
@@ -73,7 +73,7 @@
 
          <div class="swiper-slide slide" style="background:url('{{asset('storage/images/site images/home16.jpg')}}') no-repeat">
          <div class="content">
-               <h1 style="color: #000080;">UniLinkUp</h1>
+               <h1 style="color: #000080;">ConnectU</h1>
                <span style="color: #000000;">Glad to see you in here!</span>
                <h3 style="color: #000040;"> Make it easy to stay in touch... </h3>
                <a href="<?=url('login')?>" class="btn">Log In</a>
@@ -194,7 +194,7 @@
 
    </div>
 
-   <div class="load-more"> <a href="<?=url('')?>" class="btn">Load More</a> </div>
+   <div class="load-more"> <a href="<?=url('login')?>" class="btn">Load More</a> </div>
 
 </section>
 
@@ -345,7 +345,7 @@
          <h3>contact info</h3>
          <a href="<?=url('')?>"> <i class="fas fa-phone"></i> +123-456-7890 </a>
          <a href="<?=url('')?>"> <i class="fas fa-phone"></i> +94-779917404 </a>
-         <a href="<?=url('')?>"> <i class="fas fa-envelope"></i> Unilinkup@gmail.com</a>
+         <a href="<?=url('')?>"> <i class="fas fa-envelope"></i> connectu@gmail.com</a>
          <a href="<?=url('')?>"> <i class="fas fa-map"></i> University of Ruhuna, Wellamadama, Matara.</a>
       </div>
 
@@ -359,7 +359,7 @@
 
    </div>
 
-   <div class="credit"> created by <span> UniLinkUp Creaters </span> | all rights reserved! </div>
+   <div class="credit"> created by <span> ConnectU Creaters </span> | all rights reserved! </div>
 
 </section>
 

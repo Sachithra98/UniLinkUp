@@ -26,7 +26,7 @@
 
 <section class="header">
 
-<a href="home.php" class="logo">UniLinkUp</a>
+<a href="home.php" class="logo">ConnectU</a>
 
 <nav class="navbar">
    <a href="<?=url('index')?>"><i class="fa fa-home" style="font-size:24px"></i></a>

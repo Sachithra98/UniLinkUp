@@ -59,7 +59,7 @@
          <h3>contact info</h3>
          <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
          <a href="#"> <i class="fas fa-phone"></i> +94-779917404 </a>
-         <a href="#"> <i class="fas fa-envelope"></i> unilinkup@gmail.com</a>
+         <a href="#"> <i class="fas fa-envelope"></i> connectu@gmail.com</a>
          <a href="#"> <i class="fas fa-map"></i> University of Ruhuna, Wellamadama, Matara. </a>
       </div>
 
@@ -73,7 +73,7 @@
 
    </div>
 
-   <div class="credit"> created by <span>unilinkup </span> | all rights reserved! </div>
+   <div class="credit"> created by <span>ConnectU </span> | all rights reserved! </div>
 
 </section>
 

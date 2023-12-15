@@ -148,9 +148,9 @@
 		}
 
 		.lgin .btn{
-			display: inline-block;
+			display: block;
 			background: var(--black);
-			margin-top: 5rem;
+			margin-top: 2rem;
 			color:var(--white);
 			font-size: 1.7rem;
             border-radius: 20px;
@@ -188,8 +188,8 @@
 		<div class="imgBx" style="background:url('{{asset('storage/images/site images/6.jpg')}}')no-repeat">
 
 			<div class="text1">
-				<h1>Welcome to UniLinkUp</h1>
-				<h3>"Welcome to our UniLinkUp ! Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
+				<h1>ConnectU</h1>
+				<h3> Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
 			</div>
 		</div>
 
@@ -197,7 +197,10 @@
 		<div class="box1">
 
                 <form>
-                <h4>Please choose your Role here</h4>
+                
+				<h2>Welcome to ConnectU</h2>
+				<p>your one-stop shop for all things campus! Stay in the loop, discover events, and connect with fellow students</p>
+				<h4>Please choose your Role here</h4>
 
                 <a href="<?=url('AdminLogin')?>" class="btn" >Admin</a>
                 <a href="<?=url('EditorLogin')?>" class="btn">Editor</a>
