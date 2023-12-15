@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Response;
 //sachi-start
 use App\Models\Faculty;
 use App\Models\Department;
-use Hash;   //lahiru
+use App\Models\Batch;
+use Hash;   
 use Auth;
 class StudentController extends Controller
 {
@@ -19,8 +20,9 @@ class StudentController extends Controller
 
         $faculties = Faculty::all();
         $departments = Department::all();
+        $batches = Batch::all();
 
-        return view('Admin/admin_createaccV', compact('faculties','departments'));
+        return view('Admin/admin_createaccV', compact('faculties','departments','batches'));
 
     }
 //sachi-end

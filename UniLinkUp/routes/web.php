@@ -449,6 +449,8 @@ Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
 
 //Lahiru start/////////////////////////////////////////////////////////////
+
+//error
 Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
 Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
 Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');

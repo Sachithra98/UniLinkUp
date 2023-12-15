@@ -149,16 +149,26 @@
 
             <form action="{{ url('/studentInput') }}" method="post">
                 @csrf
-               {{--  <div class="form-group">
+               <!-- <div class="form-group">
                     <label for="Student_Id">Student ID:</label>
                     <input type="text" id="Student_Id" name="Student_Id" required>
-                </div>
- --}}
+                </div> -->
+ 
 
 
-                <div class="form-group">
+            <div class="form-group">
                     <label for="Batch_Id">Batch ID:</label>
-                    <input type="text" id="Batch_Id" name="Batch_Id" required>
+                    <select name="Batch_Id" id="Batch_Id" required >
+                        <option value="">Select Batches :</option>
+                        @foreach($batches as $row4)
+                            <option value="{{ $row4->Batch_Id }}" {{ old('Batch_Id') == $row4->Batch_Id ? 'selected' : '' }}>
+                                {{ $row4->Batch_Id }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('Batch_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -178,7 +188,7 @@
 
                 <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+                    <input type="text" id="Admin_Id" name="Admin_Id" value="{{ Auth::guard('admin')->user()->id }}" readonly>
                 </div>
 
 
