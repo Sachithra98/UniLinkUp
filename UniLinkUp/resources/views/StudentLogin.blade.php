@@ -236,8 +236,8 @@
                 <div class="imgBx" style="background:url('{{asset('storage/images/site images/6.jpg')}}')no-repeat">
 
                     <div class="text1">
-                        <h1>Welcome to UniLinkUp</h1>
-                        <h3>"Welcome to our UniLinkUp ! Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
+                        <h1>ConnectU</h1>
+                        <h3>"Welcome to our ConnectU ! Connect, share, and engage with fellow scholars to enrich your academic journey here."</h3>
                     </div>
                 </div>
 

@@ -543,11 +543,11 @@ Route::middleware('test')->group(function (){
 
 
 
-Route::post('update_data/{Admin_Id}', [AdminController::class, 'update_data']);
-Route::get('edit_record/{Admin_Id}',[AdminController::class,'edit_record']);
+Route::post('update_data/{id}', [AdminController::class, 'update_data']);
+Route::get('edit_record/{id}',[AdminController::class,'edit_record']);
 
-Route::post('update/{Editor_Id}', [EditorController::class, 'update']);
-Route::get('edit/{Editor_Id}',[EditorController::class,'edit']);
+Route::post('update/{id}', [EditorController::class, 'update']);
+Route::get('edit/{id}',[EditorController::class,'edit']);
 
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');

@@ -199,8 +199,8 @@
                 <form>
                 
 				<h2>Welcome to ConnectU</h2>
-				<p>your one-stop shop for all things campus! Stay in the loop, discover events, and connect with fellow students</p>
-				<h4>Please choose your Role here</h4>
+				<h4>your one-stop shop for all things campus! Stay in the loop, discover events, and connect with fellow students</h4>
+				<h4>Please choose your Role to log in</h4>
 
                 <a href="<?=url('AdminLogin')?>" class="btn" >Admin</a>
                 <a href="<?=url('EditorLogin')?>" class="btn">Editor</a>
