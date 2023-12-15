@@ -20,7 +20,7 @@ class RoleController extends Controller
         $Role->Who_Are_Responsible=$request->Who_Are_Responsible;
         $Role->save(); */
 
-        role::create([
+        Role::create([
          /*    'Role_Id'=> $request -> Role_Id, */
             'Role_Name' => $request -> Role_Name,
             'Responsibilities'=> $request -> Responsibilities,

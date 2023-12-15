@@ -59,7 +59,7 @@
  
 <section class="header">
 
-<a href="<?=url('index')?>" class="logo">UniLinkUp</a>
+<a href="<?=url('index')?>" class="logo">ConnectU</a>
 
 <nav class="navbar">
    <a href="<?=url('index')?>">Home</a>

@@ -39,6 +39,24 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],'editor' => [
+            'driver' => 'session',
+            'provider' => 'editors',
+        ],'moderator' => [
+            'driver' => 'session',
+            'provider' => 'moderators',
+        ],'staff' => [
+            'driver' => 'session',
+            'provider' => 'staff',
+        ],'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],'test' => [
+            'driver' => 'session',
+            'provider' => 'tests',
         ],
     ],
 
@@ -63,6 +81,24 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Admin::class,
+        ],'editors' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Editor::class,
+        ],'moderators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Moderator::class,
+        ],'students' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Student::class,
+        ],'tests' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Test::class,
+        ],'staff' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Staff::class,
         ],
 
         // 'users' => [

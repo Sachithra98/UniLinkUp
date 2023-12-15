@@ -210,7 +210,7 @@
 
                 <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+                    <input type="text" id="Admin_Id" name="Admin_Id" value="{{ Auth::guard('admin')->user()->id }}" readonly>
                 </div>
 
                <!--  <div class="form-group">

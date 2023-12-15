@@ -37,9 +37,9 @@
         }
 
         .container {
-           
+
             background-color: #eee;
-            margin-top: 30px; 
+            margin-top: 30px;
             padding-bottom: 40px;
         }
 
@@ -77,7 +77,7 @@
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;   
+            border-radius: 4px;
         }
 
         /* Style file input fields */
@@ -116,13 +116,13 @@
             background-color: #f9f9f9;
         }
 
-        
+
 
     </style>
 
 </head>
 <body>
-   
+
 
     <!-- header section starts -->
     @include('header')
@@ -134,7 +134,7 @@
 
 
 <div class="main-content">
-    
+
     <div class="back" >
         <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
@@ -149,16 +149,26 @@
 
             <form action="{{ url('/studentInput') }}" method="post">
                 @csrf
-                <div class="form-group">
+               <!-- <div class="form-group">
                     <label for="Student_Id">Student ID:</label>
                     <input type="text" id="Student_Id" name="Student_Id" required>
-                </div>
+                </div> -->
+ 
 
-                
 
-                <div class="form-group">
+            <div class="form-group">
                     <label for="Batch_Id">Batch ID:</label>
-                    <input type="text" id="Batch_Id" name="Batch_Id" required>
+                    <select name="Batch_Id" id="Batch_Id" required >
+                        <option value="">Select Batches :</option>
+                        @foreach($batches as $row4)
+                            <option value="{{ $row4->Batch_Id }}" {{ old('Batch_Id') == $row4->Batch_Id ? 'selected' : '' }}>
+                                {{ $row4->Batch_Id }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('Batch_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
@@ -178,7 +188,7 @@
 
                 <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+                    <input type="text" id="Admin_Id" name="Admin_Id" value="{{ Auth::guard('admin')->user()->id }}" readonly>
                 </div>
 
 
@@ -214,20 +224,20 @@
                     @error('Dep_Id')
                         <div class="alert alert-danger">{{$message}}</div>
                     @enderror
-                </div> 
-
-               
-           
-                <div class="new_accountsV" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
-                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button> 
                 </div>
 
-     
+
+
+                <div class="new_accountsV" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                            <button class="btn" style="margin-left: 1rem;" type="reset">Reset</button>
+                            <button class="btn" style="margin-left: 1rem;" type="submit">Save</button>
+                </div>
+
+
 
             </form>
             <!--sachithra-end -->
- 
+
             <!-- jayani-start-->
             <form action="{{route('upload') }}" method="post" enctype="multipart/form-data">
             @csrf
@@ -247,8 +257,8 @@
 
     </div>
 
-   
-    
+
+
 </div>
 
     <!-- footer section starts -->

@@ -9,6 +9,13 @@ class ShareController extends Controller
 {
     public function share(string $id)
     {
-        return view('Student.share' , compact('id'));
+
+        return view('/student/share_notice' , compact('id'));
+    }
+
+    public function shareEvent(string $id)
+    {
+        return view('/student/share_event' , compact('id'));
+
     }
 }

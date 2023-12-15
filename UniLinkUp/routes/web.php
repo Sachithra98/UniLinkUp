@@ -2,6 +2,7 @@
 //sachithra-start
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FacultyController;
+use App\Http\Controllers\ProfileController;
 
 //sachithra - end
 
@@ -15,6 +16,11 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeniedNoticeController;
 use App\Http\Controllers\PublishNoticeController;
+
+use App\Http\Controllers\TestController;
+
+use App\Http\Controllers\BatchController;
+
 
 //jayani-end
 
@@ -35,6 +41,8 @@ use App\Http\Controllers\DeniedController;
 use App\Http\Controllers\PublishController;
 use App\Http\Controllers\PublishEventController;
 use App\Http\Controllers\DeniedEventController;
+use App\Http\Controllers\ShareController;
+
 
 
 
@@ -49,11 +57,15 @@ use App\Http\Controllers\DeniedEventController;
 |
 */
 //sachithra-start
+
+
+
+
 Route::get('/', function () {
     return view('index');
 });
 
-Route::get('login', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
@@ -63,6 +75,26 @@ Route::get('admin', function () {
 
 Route::get('forget', function () {
     return view('forget');
+});
+
+Route::get('/AdminLogin', function () {
+    return view('/AdminLogin');
+});
+
+Route::get('/EditorLogin', function () {
+    return view('/EditorLogin');
+});
+
+Route::get('/ModeratorLogin', function () {
+    return view('/ModeratorLogin');
+});
+
+Route::get('/StudentLogin', function () {
+    return view('/StudentLogin');
+});
+
+Route::get('/StaffLogin', function () {
+    return view('/StaffLogin');
 });
 
 Route::get('/search', 'PostController@search')->name('search');
@@ -81,7 +113,7 @@ Route::get('/admin_UMM', function () {
     return view('/Admin/admin_UMM');
 });
 
-Route::get('/Admin/admin_UMA', function () {
+Route::get('/admin_UMA', function () {
     return view('/Admin/admin_UMA');
 });
 
@@ -178,15 +210,21 @@ Route::get('/viewer', function () {
 });
 //sachithra-end
 
+//lishani
+
+Route::get('/admin_batch', function () {
+    return view('/Admin/admin_batch');
+});
 
 
-Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
-Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
-Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
-Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
-Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+Route::get('/admin_add_batch', function () {
+    return view('/Admin/admin_add_batch');
+});
 
-Route::get('/dashboard/generic', [DashboardController::class,'error'])->name('error.dashboard');
+
+
+
+
 
 //sachithra-start
 Route::get('/admin_add_department', function () {
@@ -194,11 +232,16 @@ Route::get('/admin_add_department', function () {
 });
 //sachithra-end
 
-//department 
+//department
 Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
 Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
-Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm'); 
+Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
 
+
+//department 
+Route::post('/admin_batch', [BatchController::class, 'batch'])->name('admin_add_batch');
+Route::post('/batchInput', [BatchController::class, 'batchInput'])->name('batchInput');
+Route::get('/admin_add_batch', [BatchController::class, 'showBatchForm'])->name('showBatchForm'); 
 
 //sachithra-start
 Route::get('admin_add_role', function () {
@@ -380,6 +423,142 @@ Route::post('/moderator_denied_event', [DeniedEventController::class, 'deniedevn
 Route::get('/editor_denied_event', [DeniedEventController::class, 'showE'])->name('showE');
 Route::get('/moderator_event', [PostController::class, 'showM'])->name('showM');
 
+
 //dhilmi
 
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+
+
+
+
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
+|
+*/
+
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+//Lahiru start/////////////////////////////////////////////////////////////
+
+//error
+Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
+Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
+Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
+Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
+Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+
+
+
+
+
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+// Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
+///////////////////////////////////////////////
+Route::middleware('admin')->group(function (){
+    Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
+    });
+
+    Route::prefix('admin')->group(function (){
+        Route::get('/login', [AdminController::class, 'login'])->name('admin_login');
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin_logout');
+        Route::post('/login-submit', [AdminController::class, 'login_submit'])->name('admin_login_submit');
+        });
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
+        Route::middleware('editor')->group(function (){
+            Route::get('editor/dashboard', [EditorController::class, 'dashboard'])->name('editor_dashboard');
+            });
+
+            Route::prefix('editor')->group(function (){
+                Route::get('/login', [EditorController::class, 'login'])->name('editor_login');
+                Route::get('/logout', [EditorController::class, 'logout'])->name('editor_logout');
+                Route::post('/login-submit', [EditorController::class, 'login_submit'])->name('editor_login_submit');
+                });
+////////////////////////////////////////////////////////////////////
+Route::middleware('moderator')->group(function (){
+    Route::get('moderator/dashboard', [ModeratorController::class, 'dashboard'])->name('moderator_dashboard');
+    });
+
+    Route::prefix('moderator')->group(function (){
+        Route::get('/login', [ModeratorController::class, 'login'])->name('moderator_login');
+        Route::get('/logout', [ModeratorController::class, 'logout'])->name('moderator_logout');
+        Route::post('/login-submit', [ModeratorController::class, 'login_submit'])->name('moderator_login_submit');
+        });
+/////////////////////////////////////////////
+Route::middleware('staff')->group(function (){
+    Route::get('staff/dashboard', [StaffController::class, 'dashboard'])->name('staff_dashboard');
+    });
+
+    Route::prefix('staff')->group(function (){
+        Route::get('/login', [StaffController::class, 'login'])->name('staff_login');
+        Route::get('/logout', [StaffController::class, 'logout'])->name('staff_logout');
+        Route::post('/login-submit', [StaffController::class, 'login_submit'])->name('staff_login_submit');
+        });
+/////////////////////////////////////////////
+Route::middleware('student')->group(function (){
+    Route::get('student/dashboard', [StudentController::class, 'dashboard'])->name('student_dashboard');
+    });
+
+    Route::prefix('student')->group(function (){
+        Route::get('/login', [StudentController::class, 'login'])->name('student_login');
+        Route::get('/logout', [StudentController::class, 'logout'])->name('student_logout');
+        Route::post('/login-submit', [StudentController::class, 'login_submit'])->name('student_login_submit');
+        });
+
+/////////////////////////////////////////////
+Route::middleware('test')->group(function (){
+    Route::get('test/dashboard', [TestController::class, 'dashboard'])->name('test_dashboard');
+    });
+
+    Route::prefix('test')->group(function (){
+        Route::get('/login', [TestController::class, 'login'])->name('test_login');
+        Route::get('/logout', [TestController::class, 'logout'])->name('test_logout');
+        Route::post('/login-submit', [TestController::class, 'login_submit'])->name('test_login_submit');
+        });
+
+
+
+Route::post('update_data/{id}', [AdminController::class, 'update_data']);
+Route::get('edit_record/{id}',[AdminController::class,'edit_record']);
+
+Route::post('update/{id}', [EditorController::class, 'update']);
+Route::get('edit/{id}',[EditorController::class,'edit']);
+
+//dhilmi
+Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
+Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
+
+

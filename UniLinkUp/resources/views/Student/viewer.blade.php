@@ -30,7 +30,7 @@
    <link rel="stylesheet" href="css/index.css"> -->
 
 
-    
+
     <style>
         * {
             margin: 0;
@@ -41,7 +41,7 @@
         body {
             font-family: Roboto, sans-serif;
             background-color: aliceblue;
-            margin-top: 20px; 
+            margin-top: 20px;
         }
 
         .container {
@@ -86,21 +86,21 @@
 
 </head>
 <body>
-   
+
     <!-- header section starts -->
     @include('header')
 	<!-- header section ends -->
 
 <div class="con">
 
-   
+
 
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back!</h3>
+            <h3>Welcome back !</h3>
             <h4>Glad to see you in here!</h4>
-            <h4> Every new day is a chance to change your life. Have a nice day...</h4>
+            <h4> Dive into events, clubs, and initiatives. Grow your network, participate in workshops, and explore hidden gems on campus. This platform is your window into the vibrant community beyond your classes. Connect, collaborate, and make your mark.</h4>
             <div class="clock" id="clock"></div>
         </div>
 
@@ -140,7 +140,9 @@
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
 
-            
+            var name = "{{ Auth::guard('student')->user()->S_Name }}";
+
+
 
             // Greeting message with the user's name
             var greeting;
@@ -172,7 +174,7 @@
 
 
 
-        
+
         // Call the clock function after defining it
         clock();
     </script>
@@ -184,7 +186,7 @@
    <!-- footer section starts -->
 	@include('footer')
 	<!-- footer section ends -->
-    
+
 </div>
 </body>
 </html>

@@ -146,9 +146,15 @@
                 <div class="buttons">
                 <button class="btn">Like <i class="fa fa-thumbs-up"></i></button>
                 <button class="btn">Dislike <i class="fa fa-thumbs-down"></i></button>
-                <button class="btn">Share <i class="fa fa-share-alt"></i></button>
+                <form class="share"  action="{{ route('event.share', ['Publish_event_id' => $post->Publish_event_id]) }}" method="post">
+                @csrf
+                <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
+            </form>
+
+                <a href="{{ asset('/uploads/' . $post->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+                
                 </div>
-        </div>
+            </div>
         @endforeach
 
         </div>

@@ -170,10 +170,25 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Batch_Id">Batch ID:</label>
                     <input type="text" id="Batch_Id" name="Batch_Id" required>
-                </div>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="Batch_Id">Batch ID:</label>
+                    <select name="Batch_Id" id="Batch_Id" required >
+                        <option value="">Select Batches :</option>
+                        @foreach($batches as $row4)
+                            <option value="{{ $row4->Batch_Id }}" {{ old('Batch_Id') == $row4->Batch_Id ? 'selected' : '' }}>
+                                {{ $row4->Batch_Id }}
+                            </option>
+                        @endforeach
+                    </select>
+                    @error('Batch_Id')
+                        <div class="alert alert-danger">{{$message}}</div>
+                    @enderror
+                </div> 
 
                 <div class="form-group">
                     <label for="E_Email">Editor Email:</label>
@@ -192,7 +207,7 @@
 
                 <div class="form-group">
                     <label for="Admin_Id">Admin ID:</label>
-                    <input type="text" id="Admin_Id" name="Admin_Id" required>
+                    <input type="text" id="Admin_Id" name="Admin_Id" value="{{ Auth::guard('admin')->user()->id }}" readonly>
                 </div>
 
                 <div class="form-group">
