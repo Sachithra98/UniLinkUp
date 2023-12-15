@@ -90,7 +90,8 @@ class ModeratorController extends Controller
      */
     public function edit(Moderator $moderator)
     {
-        //
+        $editor = Editor::where('Editor_Id', $Editor_Id)->first();
+        return view('/Editor/editor_edit_UME', compact('editor'));
     }
 
     /**
@@ -98,7 +99,17 @@ class ModeratorController extends Controller
      */
     public function update(Request $request, Moderator $moderator)
     {
-        //
+        $editor = Editor::find($Editor_Id);
+
+        if (!$editor) {
+            return redirect()->back()->with('error', 'Editor not found');
+        }
+    
+        $editor->E_Name = $request->input('E_Name');
+        $editor->email = $request->input('email');
+        $editor->update();
+    
+        return redirect('/admin_UME')->with('success', 'Admin data successfully updated!');
     }
 
     /**
