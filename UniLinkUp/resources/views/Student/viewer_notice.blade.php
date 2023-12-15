@@ -15,6 +15,8 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
+
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -56,18 +58,19 @@
 
         
     </style>
-</head>
 
+</head>
 <body>
 
-
+@if(Session::has('success'))
+<div class="alert alert-success" role="alert">
+    {{ Session::get('success') }}
+</div>
+@endif
     <!-- header section starts -->
     @include('header')
 	<!-- header section ends -->
-
     
-
-
     <div class="back" >
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
@@ -76,6 +79,7 @@
 
     <h2 style="text-decoration: underline;">Published Notices</h2>
     
+    @if($publishNotices->count() > 0)
     @foreach ($publishNotices as $notice)
       
       
@@ -86,7 +90,7 @@
               <p>{{ $notice->Description }}
               <h3>{{ $notice->media_path }}</h3>
 
-          <div class="card-footer">
+              <div class="card-footer">
             <!-- Like Button with Bootstrap Icon -->
             @if($notice->isLiked)
 
@@ -105,7 +109,6 @@
                 <button class="btn" style="border-color: black;" type="submit"><i class="fa fa-thumbs-up"></i> Add Like {{ $notice->likes_count }} </button>
             </form>
             @endif
-           
             <!-- Share Button with Bootstrap Icon -->
 
             <form class="btn"  action="{{ route('post.share', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
@@ -117,6 +120,7 @@
             </div>
         </div>
       @endforeach
+      @endif  
 
     
 </div>
@@ -126,6 +130,7 @@
         <!-- footer section ends -->
         @section('scripts')
         <script src="{{ asset('js/your-js-file.js') }}"></script>
+       
         @endsection
 </body>
 

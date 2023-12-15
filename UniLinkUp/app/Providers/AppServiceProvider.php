@@ -20,6 +20,6 @@ class AppServiceProvider extends ServiceProvider
    
     public function boot(): void
     {
-        config(['app.Student_Id' => 1]);
+        
     }
 }

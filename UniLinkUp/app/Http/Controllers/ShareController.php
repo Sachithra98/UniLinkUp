@@ -13,12 +13,17 @@ class ShareController extends Controller
     }
 
     public function show(string $id)
-    { foreach ($publishNotices as $notice) {
-        if($noticet->Publish_notice_id == $id){
-            $selected_notice  = $notice;
-        }
-    }
+    {
+        $validStudentID = config('app.Student_Id');
 
-      return view('Student.show', compact('selected_Publish_notice'));
-}
+     
+        foreach ($publishNotices as $notice) {
+            if ($notice->Publish_notice_id == $id) {
+                $selected_notice = $notice;
+                break;
+            }
+        }
+
+        return view('Student.show', compact('selected_notice'));
+    }
 }

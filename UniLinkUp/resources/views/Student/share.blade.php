@@ -36,10 +36,10 @@
     </div>
     <div class="card-body" >
         <h5 class="card-title">Share Post</h5>
-        <div class="share-link" id="post-link">http://127.0.0.1:8000/post/{{$id}}</div>
+        <div class="share-link" id="post-link">http://127.0.0.1:8000/Notice/{{$id}}</div>
         <div class="btn-group">
             <!-- WhatsApp share -->
-            <a href="whatsapp://send?text=Check out this post: {{ url()->current() }}" class="btn btn-whatsapp" target="_blank">
+            <a href="https://api.whatsapp.com/send?text=Check out this post: [URL]" class="btn btn-whatsapp" target="_blank">
                 <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
 

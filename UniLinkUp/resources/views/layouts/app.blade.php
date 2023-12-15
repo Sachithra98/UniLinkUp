@@ -11,7 +11,7 @@
 </head>
 
 <body>
-   
+  
     <div class="container py-5">
         @yield('body')
     </div>

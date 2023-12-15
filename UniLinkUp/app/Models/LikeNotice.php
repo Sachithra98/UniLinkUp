@@ -14,4 +14,9 @@ class LikeNotice extends Model
          return $this->belongsToMany(Student::class);
     }
 
+    public function notice()
+    {
+        return $this->hasOne(PublishNotice::class, 'Publish_notice_id');
+    }
+
 }

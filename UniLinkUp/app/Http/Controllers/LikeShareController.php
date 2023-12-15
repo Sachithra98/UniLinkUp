@@ -7,119 +7,77 @@ use App\Models\LikeNotice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class LikeShareController extends Controller
 {
-     
-    /**
-     * Display a listing of the resource.
-     */
-    public function viewer_notice()
+    public function index()
     {
+        $validStudentID = config('app.Student_Id');
+
         $likes = Like::orderBy('created_at', 'DESC')->get();
-        $currentStudentID = config('app.Student_Id');
-        
         $publishNotices = LikeNotice::orderBy('created_at', 'DESC')->get();
-        $StudentID  = $currentStudentID ;
+        $Student = $validStudentID; // Assuming this is the correct assignment
 
-        $likedpublishNoticeIds = Like::where('Student_Id', $StudentID )->pluck('Publish_notice_id')->toArray();
-
-
+        $likedpublishNoticeIds = Like::where('Student_Id', $Student)->pluck('Publish_notice_id')->toArray();
 
         foreach ($publishNotices as $notice) {
-            $notice->isLiked = false;
-            foreach ($likedpublishNoticeIds as $likedpublishNoticeId) {
-                if ($notice->Publish_notice_id === $likedpublishNoticeId) {
-                    $notice->isLiked = true;
-                    break;
-                }
-            }
+            $notice->isLiked = in_array($notice->Publish_notice_id, $likedpublishNoticeIds);
         }
 
-
-        return view('Student.viewer_notice', compact('Student'));
+        return view('Student.index', compact('publishNotices', 'Student'));
     }
 
     public function addLike($Publish_notice_id)
     {
-        $currentStudentID = config('app.Student_ID');
+        $validStudentID = config('app.Student_ID');
 
         $like = new Like();
-         
-        $existingLike = Like::where('Publish_notice_id', $Publish_notice_id)
-                            ->where('Student_ID',1 ) 
-                            ->first();
-
-        if ($existingLike) {
-            return "Like already exists!";
-        }
-        $like->save();
-        $like->Student_ID = $currentStudentID;
+        $like->Student_ID = $validStudentID;
         $like->Publish_notice_id = $Publish_notice_id;
+        $like->save();
 
-        
         LikeNotice::where('Publish_notice_id', $Publish_notice_id)->increment('likes_count');
+
         return redirect()->route('showAllN');
     }
 
     public function unlike($Publish_notice_id)
     {
-        $currentStudentID= config('app.Student_ID');
-    
+        $validStudentID = config('app.Student_ID');
 
-        // Find and delete the like record based on the hardcoded values
-        Like::where('Student_ID', $currentStudentID)
+        Like::where('Student_ID', $validStudentID)
             ->where('Publish_notice_id', $Publish_notice_id)
             ->delete();
-            LikeNotice::where('Publish_notice_id', $Publish_notice_id)->decrement('likes_count');
+
+        LikeNotice::where('Publish_notice_id', $Publish_notice_id)->decrement('likes_count');
+
         return redirect()->route('showAllN');
-
     }
 
-
-
-    public function showAddLikeForm()
-    {
-        return view('add-like');
-    }
-
-    
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
+        $validStudentID = config('app.Student_Id');
+
         $likes = Like::orderBy('created_at', 'DESC')->get();
-        $currentStudentId= config('app.Student_Id');
-        
-        $publishNotices =LikeNotice::orderBy('created_at', 'DESC')->get();
-        $StudentId = $currentStudentId;
+        $publishNotices = LikeNotice::orderBy('created_at', 'DESC')->get();
+        $Student = $validStudentID; // Assuming this is the correct assignment
 
-        $likedpublishNoticeIds = Like::where('Student_Id', $StudentId)->pluck('Publish_notice_id')->toArray();
-
-
+        $likedpublishNoticeIds = Like::where('Student_Id', $Student)->pluck('Publish_notice_id')->toArray();
 
         foreach ($publishNotices as $notice) {
-            $notice->isLiked = false;
-            foreach ($likedpublishNoticeIds as $likedpublishNoticeId) {
-                if ($notice->Publish_notice_id === $likedpublishNoticeId) {
-                    $notice->isLiked = true;
-                    break;
-                }
-            }
+            $notice->isLiked = in_array($notice->Publish_notice_id, $likedpublishNoticeIds);
         }
-         
-        $selected_notice = null; 
 
+        $selected_notice = null;
         foreach ($publishNotices as $notice) {
-            if($noticet->Publish_notice_id == $id){
-                $selected_notice  = $notice;
+            if ($notice->Publish_notice_id == $id) {
+                $selected_notice = $notice;
+                break;
             }
         }
 
-          return view('Student.show', compact('selected_notice'));
+        return view('Student.show', compact('selected_notice'));
     }
- 
-    
-    
-
 }
+
+

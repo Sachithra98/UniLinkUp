@@ -24,7 +24,12 @@ class PublishNotice extends Model
 
      public function likes()
     {
-        return $this->hasMany(Like::class, 'Publish_notice_id', 'Publish_notice_id');
+        return $this->hasMany(Like::class, 'Publish_notice_id');
     }
 
+    // Define the relationship to like_notices
+    public function likeNotice()
+    {
+        return $this->belongsTo(LikeNotice::class, 'Publish_notice_id');
+    }
 }

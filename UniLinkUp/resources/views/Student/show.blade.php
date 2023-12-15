@@ -1,4 +1,3 @@
-<!-- sachithra-start -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +14,6 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
-
-   <a href="{{route('showAllN')}}"></a>
 
 
     <style>
@@ -60,8 +57,10 @@
 
         
     </style>
+    
+  @extends('layouts.app')
+
 </head>
- @extends('layouts.app')
 <body>
 
 
@@ -69,8 +68,13 @@
     @include('header')
 	<!-- header section ends -->
 
+    @if(Session::has('success'))
+    <div class="alert alert-success" role="alert">
+    {{ Session::get('success') }}
+    </div>
+    @endif
     
-
+    
 
     <div class="back" >
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
@@ -103,7 +107,7 @@
 
             <form class="btn"  action="{{ route('add.like', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
                 @csrf
-                <button class="btn" style="border-color: black;" type="submit"><i class="fa fa-thumbs-up"></i> Add Like {{ $selected_notice->likes_count }} </button>
+                <button class="btn" style="border-color: black;" type="submit"><i class="fa fa-thumbs-up"></i> Add Like {{$selected_notice->likes_count }} </button>
             </form>
             @endif
             <!-- Share Button with Bootstrap Icon -->

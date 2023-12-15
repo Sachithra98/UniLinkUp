@@ -11,8 +11,14 @@ class Like extends Model
     use HasFactory;
     protected $fillable = ['Student_Id', 'Publish_notice_id'];
 
-    public function post()
+    public function notice()
     {
-        return $this->belongsTo(LikeNotice::class, 'Publish_notice_id');
+        return $this->belongsTo(PublishNotice::class, 'Publish_notice_id');
+    }
+
+    // Define the relationship to the user/student
+    public function user()
+    {
+        return $this->belongsTo(Student::class, 'Student_Id');
     }
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('likes', function (Blueprint $table) {
             $table->id();
-            $table->string('Student_Id');
-            $table->unsignedBigInteger('Publish_notice_id');
+            $table->string('Student_Id')->nullable();
+            $table->unsignedBigInteger('Publish_notice_id')->default(0);
             $table->timestamps();
     
             $table->foreign('Student_Id')->references('Student_Id')->on('students');
