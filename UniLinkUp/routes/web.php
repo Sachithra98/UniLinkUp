@@ -561,6 +561,10 @@ Route::post('update_M/{id}', [ModeratorController::class, 'update_M']);
 Route::get('edit_M/{id}',[ModeratorController::class,'edit_M']);
 //piyumi end
 
+//lishani start
+Route::post('update_S/{id}', [StudentController::class, 'update_S']);
+Route::get('edit_S/{id}',[StudentController::class,'edit_S']);
+
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
 Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
