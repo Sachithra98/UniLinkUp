@@ -30,7 +30,7 @@
 
 
           <li class="item">
-            <a href="{{route('admin_dashboard')}}" class="nav_link">
+            <a href="admin.dashboard" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>

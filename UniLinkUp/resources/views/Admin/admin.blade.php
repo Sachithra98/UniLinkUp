@@ -118,15 +118,28 @@
     <section class="services">
         <h1 class="heading-title">Reports</h1>
 
-        <div class="box-container">
-
-
-              
-
-
-
-              
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $facultyCount }}</h2>
+                        <h3>Total Faculties</h3>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+              
+
+
+
+              
+   
 
     </section>
 

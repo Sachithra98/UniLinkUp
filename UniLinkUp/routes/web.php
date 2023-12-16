@@ -618,3 +618,9 @@ Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('a
 
 //dhanu
 Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
+
+
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.home');
+

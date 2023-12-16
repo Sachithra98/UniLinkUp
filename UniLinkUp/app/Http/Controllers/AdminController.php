@@ -5,6 +5,7 @@ use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Faculty;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -161,6 +162,21 @@ public function logout(){
             return redirect()->back()->with('error', 'User not found.');
         }
     }
+
+    
+public function index()
+{
+    $user = Auth::user(); // Assuming you have user authentication
+    $facultyCount = Faculty::count();
+    // Add similar lines to retrieve counts from other tables
+
+    return view('Admin/admin', [
+        //'name' => $user->name, // Pass the user's name to the view
+        'facultyCount' => $facultyCount,
+        // Add similar lines to pass counts from other tables
+    ]);
+}
+
 
 
 }
