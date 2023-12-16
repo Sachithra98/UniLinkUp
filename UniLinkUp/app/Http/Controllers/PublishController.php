@@ -33,7 +33,7 @@ class PublishController extends Controller
             'poll_title' => $poll->poll_title,
             'poll_desc' => $poll->poll_desc,
             'media_path' => $poll->media_path,
-            'Approval_Letter'=> $poll->approval,
+            // 'Approval_Letter'=> $poll->approval,
             'question' => $poll->question,
             'option1' => $poll->option1,
             'option2' => $poll->option2,

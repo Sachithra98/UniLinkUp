@@ -16,7 +16,8 @@ use App\Http\Controllers\EditorController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DeniedNoticeController;
 use App\Http\Controllers\PublishNoticeController;
-
+use App\Http\Controllers\LikeNoticeController;
+use App\Http\Controllers\UnlikeNoticeController;
 use App\Http\Controllers\TestController;
 
 use App\Http\Controllers\BatchController;
@@ -457,9 +458,11 @@ Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->na
 //Lahiru start/////////////////////////////////////////////////////////////
 
 //error
-//Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
-Route::get('admin/dashboard', [DashboardController::class,'admin'])->name('admin_dashboard');
-//Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
+Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
+Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
+Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
+Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
 
 
 
@@ -568,3 +571,5 @@ Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->na
 Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEvent'])->name('event.share');
 
 
+Route::post('/like-notice/{notice}', [LikeNoticeController::class, 'like'])->name('like-notice');
+Route::post('/unlike-notice/{notice}', [UnlikeNoticeController::class, 'unlike'])->name('unlike-notice');

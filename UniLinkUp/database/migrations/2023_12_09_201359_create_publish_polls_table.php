@@ -18,7 +18,7 @@ return new class extends Migration
         // This creates a foreign key relationship with the "polls" table
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
-            //$table->binary('media_path')->nullable();
+            $table->string('media_path')->nullable();
             $table->string('question')->nullable();
             $table->string('option1')->nullable();
             $table->string('option2')->nullable();

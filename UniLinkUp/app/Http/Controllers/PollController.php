@@ -52,7 +52,7 @@ class PollController extends Controller
             $poll->poll_desc= $request->poll_desc;
             $poll->question = $request->question;
             $poll->media_path = $request->ppost;
-            $poll->approval_letter = $request->approval;
+            $poll->Approval_Letter = $request->approval;
             $poll->option1 = $request->option1;
             $poll->option2 =$request->option2;
             $poll->option3 = $request->option3;
@@ -90,7 +90,7 @@ class PollController extends Controller
                     $photoname1 = time() . '.' . $extension;
 
                     $request->approval->move('uploads', $photoname1);
-                    $poll->approval_letter = $photoname1;
+                    $poll->Approval_Letter = $photoname1;
                     // dd($photoname);
                     //$notice->media_path=$photoname;
 

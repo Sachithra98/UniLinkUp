@@ -48,8 +48,6 @@ class NoticeController extends Controller
 
     public function store(Request $request)
     {
-
-       
         // Check if there is a logged-in user
         //if ($user = Auth::user()) {
             $validator = $this->validate($request, [
@@ -58,7 +56,9 @@ class NoticeController extends Controller
                 
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
-                
+                'soc_id' => 'required|string',
+                'dep_id' => 'required|string',
+                'fac_id' => 'required|string',
             ]);
 
             // if ($validator->fails()) {
@@ -84,9 +84,9 @@ class NoticeController extends Controller
 
                 
             // ]);
-           
+
             $notice=new Notice();
-            $notice->Editor_Id=$request->Editor_Id; 
+            $notice->Editor_Id=$request->Editor_Id;
             $notice->Title= $request->post_title;
             $notice->Description = $request->desc;
             $notice->media_path = $request->ppost;
@@ -94,10 +94,10 @@ class NoticeController extends Controller
             $notice->Faculty_Id = $request->fac_id;
             $notice->Society_Id =$request->soc_id;
             $notice->Dep_Id = $request->dep_id;
-          
+
 
             $photo = $request->file('ppost'); // Change this line to get the file from the request
-          
+
             
 
                 if($photo)
@@ -116,7 +116,7 @@ class NoticeController extends Controller
 
                 $photo1 = $request->file('approval'); // Change this line to get the file from the request
 
-                
+            
 
                 if($photo1)
                 {
@@ -132,7 +132,11 @@ class NoticeController extends Controller
 
                 }
                 $notice->save();
-               
+
+                // Delete the original notice from the notice table
+                $notice->delete();
+
+
             return redirect('/editor_create_notice')->with('success','Data successfully added!');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('poll_title');
             $table->string('poll_desc')->nullable();
             $table->String('media_path')->nullable();
+            $table->string('Approval_Letter')->nullable();
             $table->string('question')->nullable();
             $table->string('option1')->nullable();
             $table->string('option2')->nullable();
