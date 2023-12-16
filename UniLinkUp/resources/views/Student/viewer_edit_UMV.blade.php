@@ -1,5 +1,5 @@
 
-<!-- piyumi-start -->
+<!-- lishani-start -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,21 +84,21 @@
            
             <h1>Edit Data</h1>
 
-            @isset($editor)
-                <form action="{{ url('update/'.$editor->id) }}" method="post">
+            @isset($student)
+                <form action="{{ url('update_S/'.$student->id) }}" method="post">
                     @csrf
-                    <!-- Your form fields here using $admin -->
-                    <label for="E_Name">Editor Name</label>
+                    <!-- Your form fields here using $student -->
+                    <label for="S_Name">Student Name</label>
                     
-                    <input type="text" class="form-control" id="E_Name" name="E_Name" value="{{ $editor->E_Name }}">
+                    <input type="text" class="form-control" id="S_Name" name="S_Name" value="{{ $student->S_Name }}">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                        <input type="email" class="form-control" name="email" id="email" value="{{ $editor->email }}">
+                        <input type="email" class="form-control" name="email" id="email" value="{{ $student->email }}">
                     </div>
                    
 
                     <br>
-                    <button type="submit" class="btn btn-primary">Update Editor</button>
+                    <button type="submit" class="btn btn-primary">Update Student</button>
                 </form>
             @else
                 <p>No editor data found</p>
