@@ -49,8 +49,9 @@ class PublishEventController extends Controller
             public function showAllE()
             {
                 // Retrieve all publish polls from the database
-                $publishEvent = PublishEvent::all();
-        
+                $publishEvents = PublishEvent::all();
+                $publishEvents = PublishEvent::with('likes')->get();
+                $publishEvents = PublishEvent::with('unlikes')->get();
                 // Pass the publish polls data to the view
                 return view('Student/viewer_event', compact('publishEvent'));
             }
