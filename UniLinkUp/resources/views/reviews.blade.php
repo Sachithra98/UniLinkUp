@@ -67,7 +67,10 @@
 
         <section class="header">
 
-            <a href="<?=url('index')?>" class="logo">ConnectU</a>
+        <div class="logo">
+                <a href="<?=url('')?>"><img src="{{asset('storage/images/site images/connectu.png')}}" style="padding:0px" height="50px" width="200px" alt="Logo"></a>
+   </div>
+
 
             <nav class="navbar">
                 <a href="<?=url('index')?>">Home</a>
