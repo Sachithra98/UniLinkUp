@@ -150,7 +150,17 @@ public function logout(){
         return redirect('/admin_UMA')->with('success', 'Admin data successfully updated!');
     }
 
+    public function delete($id)
+    {
+        $admin = Admin::find($id);
 
+        if ($admin) {
+            $admin->delete();
+            return redirect()->back()->with('success', 'User deleted successfully.');
+        } else {
+            return redirect()->back()->with('error', 'User not found.');
+        }
+    }
 
 
 }

@@ -109,7 +109,11 @@
              
                 <td> <a href="edit_record/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
-                <td><a href="" class="btn btn-danger">Remove</a>
+                <td><form method="POST" action="{{ route('admin.delete', $row['id']) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Remove</button>
+                    </form>
                 </td>
             </tr>
             @endwhile

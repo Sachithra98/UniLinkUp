@@ -612,3 +612,6 @@ Route::delete('/events/{id}', [PublishEventController::class, 'delete'])->name('
 
 // Add the route for deleting a poll
 Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('delete-poll');
+
+//admin_UMA delete
+Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
