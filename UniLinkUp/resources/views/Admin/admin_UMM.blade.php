@@ -113,7 +113,13 @@
                 <td>
                 <td> <a href="edit_M/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
-                <td><a href="" class="btn btn-danger">Remove</a></td>
+                <td>
+                 <a href="{{ route('delete_moderator', $row['id']) }}" class="btn btn-danger">Remove</a>
+                </td>
+
+
+
+
             </td>
             </tr>
             @endwhile

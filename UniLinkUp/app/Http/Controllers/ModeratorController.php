@@ -181,4 +181,25 @@ class ModeratorController extends Controller
 
 
     //lahiru end
+
+
+    //dhanu star
+    public function delete($id)
+    {
+        // Delete the moderator with the given ID from the database
+        // Example code (make sure to adjust it based on your database and model):
+        $moderator = Moderator::find($id);
+        $moderator->delete();
+    
+        // Redirect back to the user management page
+        return redirect()->route('admin.user_management');
+
+    }
+
+    //dhanu end
+
+
+
+
+
 }

@@ -615,3 +615,6 @@ Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('delete-po
 
 //admin_UMA delete
 Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+
+//dhanu
+Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
