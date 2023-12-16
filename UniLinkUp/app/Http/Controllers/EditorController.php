@@ -94,7 +94,7 @@ class EditorController extends Controller
     public function edit($id)
     {
         $editor = Editor::where('id', $id)->first();
-        return view('/Editor/editor_edit_UME', compact('editor'));
+        return view('/Admin/editor_edit_UME', compact('editor'));
     }
 
 

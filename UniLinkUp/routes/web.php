@@ -381,7 +381,7 @@ Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addData
 // Show viewer poll for publish_polls
 Route::get('/viewer_poll', [PublishController::class, 'showAll'])
     ->name('showAll');
-Route::get('/editor_publish_poll', [PublishController::class, 'showPEditor'])
+Route::get('/editor_publish_polls', [PublishController::class, 'showPEditor'])
     ->name('showPEditor');
 
 // Route::post('/api/vote', [VoteController::class, 'vote']);

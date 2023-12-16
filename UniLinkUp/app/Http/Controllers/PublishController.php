@@ -82,7 +82,7 @@ class PublishController extends Controller
         $publishPolls = PublishPoll::all();
 
         // Pass the publish polls data to the view
-        return view('Editor/editor_publish_poll', compact('publishPolls'));
+        return view('Editor/editor_publish_polls', compact('publishPolls'));
     }
 
     public function delete($id)
