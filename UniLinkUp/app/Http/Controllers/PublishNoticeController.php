@@ -56,6 +56,17 @@ class PublishNoticeController extends Controller
             return view('Student/viewer_notice', compact('publishNotices'));
         }
 
+        public function showNEditor()
+        {
+            // Retrieve all publish polls from the database
+            $publishNotices = PublishNotice::all();
+            $publishNotices = PublishNotice::with('likes')->get();
+            $publishNotices = PublishNotice::with('unlikes')->get();
+    
+            // Pass the publish polls data to the view
+            return view('Editor/editor_publish_notices', compact('publishNotices'));
+        }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -102,5 +113,12 @@ class PublishNoticeController extends Controller
     public function destroy(PublishNotice $publishNotice)
     {
         //
+    }
+    public function delete($id)
+    {
+        $notice = PublishNotice::findOrFail($id);
+        $notice->delete();
+
+        return response()->json(['message' => 'Notice deleted successfully']);
     }
 }

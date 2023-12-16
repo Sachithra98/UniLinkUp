@@ -166,9 +166,46 @@
                 
                 
                 </div>
+
+                <div class="delete" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <a href="#" class="btn delete-event-btn" data-event-id="{{ $event->id }}" style="margin-left: 1rem; background-color: red;">Delete Events</a>
+            </div>
             </div>
       @endforeach
         </div>
+
+        <!-- ... Your existing HTML code ... -->
+
+<script>
+    // Use JavaScript to make an AJAX request when the delete button is clicked
+    document.querySelectorAll('.delete-event-btn').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Get the event ID from the button's data attribute
+            const eventId = this.getAttribute('data-event-id');
+
+            // Make an AJAX request to delete the event
+            fetch(`/events/${eventId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response, e.g., remove the deleted event from the DOM
+                console.log(data.message);
+                this.closest('.notice-container').remove();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
+
 
       <!-- footer section starts -->
       @include('footer')

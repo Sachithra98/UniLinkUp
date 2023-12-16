@@ -113,5 +113,14 @@ class PublishEventController extends Controller
         {
             //
         }
+
+        public function delete($id)
+    {
+        $event = PublishEvent::findOrFail($id);
+        $event->delete();
+
+        return response()->json(['message' => 'Event deleted successfully']);
     }
+}
+    
 

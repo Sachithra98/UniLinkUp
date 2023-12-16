@@ -76,5 +76,20 @@ class PublishController extends Controller
         // Pass the publish polls data to the view
         return view('Student/viewer_poll', compact('publishPolls'));
     }
+    public function showPEditor()
+    {
+        // Retrieve all publish polls from the database
+        $publishPolls = PublishPoll::all();
 
+        // Pass the publish polls data to the view
+        return view('Editor/editor_publish_poll', compact('publishPolls'));
+    }
+
+    public function delete($id)
+    {
+        $poll = PublishPoll::findOrFail($id);
+        $poll->delete();
+
+        return response()->json(['message' => 'Poll deleted successfully']);
+    }
 }

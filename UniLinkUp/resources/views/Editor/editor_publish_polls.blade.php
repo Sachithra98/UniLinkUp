@@ -160,6 +160,11 @@
             <!-- Display vote results for each poll separately -->
           
             <div id="vote-results-{{ $poll->id }}"></div>
+
+            <div class="delete" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <a href="#" class="btn delete-poll-btn" data-poll-id="{{ $poll->id }}" style="margin-left: 1rem; background-color: red;">Delete Poll</a>
+            </div>
+
         </div>
         @endforeach
 
@@ -240,6 +245,36 @@
             });
         }
     </script>
+
+<script>
+    // Use JavaScript to make an AJAX request when the delete button is clicked
+    document.querySelectorAll('.delete-poll-btn').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Get the poll ID from the button's data attribute
+            const pollId = this.getAttribute('data-poll-id');
+
+            // Make an AJAX request to delete the poll
+            fetch(`/polls/${pollId}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
+                },
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response, e.g., remove the deleted poll from the DOM
+                console.log(data.message);
+                this.closest('.notice-container').remove();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
 
 
 

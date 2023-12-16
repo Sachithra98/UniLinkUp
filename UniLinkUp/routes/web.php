@@ -381,6 +381,8 @@ Route::post('/add-to-publish-poll/{pollId}', [PublishController::class, 'addData
 // Show viewer poll for publish_polls
 Route::get('/viewer_poll', [PublishController::class, 'showAll'])
     ->name('showAll');
+Route::get('/editor_publish_poll', [PublishController::class, 'showPEditor'])
+    ->name('showPEditor');
 
 // Route::post('/api/vote', [VoteController::class, 'vote']);
 
@@ -397,6 +399,7 @@ Route::post('/add-to-publish-notice/{NoticeId}', [PublishNoticeController::class
 
 
 Route::get('/viewer_notice', [PublishNoticeController::class, 'showAllN'])->name('showAllN');
+Route::get('/editor_publish_notices', [PublishNoticeController::class, 'showNEditor'])->name('showNEditor');
 
 
 
@@ -598,3 +601,14 @@ Route::get('/admin_edit_profile', function () {
 Route::get('/moderator_edit_profile', function () {
     return view('/Moderator/moderator_edit_profile');
 });
+
+
+// Add the route for deleting a notice
+Route::delete('/notices/{id}', [PublishNoticeController::class, 'delete'])->name('delete-notice');
+
+
+// Add the route for deleting an event
+Route::delete('/events/{id}', [PublishEventController::class, 'delete'])->name('delete-event');
+
+// Add the route for deleting a poll
+Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('delete-poll');
