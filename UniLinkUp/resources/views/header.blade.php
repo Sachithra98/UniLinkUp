@@ -63,7 +63,7 @@
 </script>
 
 <!-- Add these styles directly within your HTML -->
-<style>
+<!-- <style>
     body.dark-mode {
         background-color: #1a1a1a;
         color: #c0c0c0; /* Change the font color for dark mode */
@@ -71,7 +71,7 @@
     body {
         transition: background-color 0.5s, color 0.5s;
     }
-</style>
+</style> -->
 
 
    </a>
