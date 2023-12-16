@@ -248,7 +248,7 @@
                             <div class="message">{{ session('status') }}</div>
                         @endif
 
-                        <!-- Errors -->
+                       <!-- Errors -->
                         @if($errors->any())
                             <div class="errors">
                                 @foreach($errors->all() as $error)
@@ -256,6 +256,7 @@
                                 @endforeach
                             </div>
                         @endif
+
 
                         @if(Session::get('error'))
                             <div class="error">{{ Session::get('error') }}</div>
