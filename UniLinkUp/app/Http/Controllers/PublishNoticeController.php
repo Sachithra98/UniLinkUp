@@ -49,6 +49,8 @@ class PublishNoticeController extends Controller
         {
             // Retrieve all publish polls from the database
             $publishNotices = PublishNotice::all();
+            $publishNotices = PublishNotice::with('likes')->get();
+            $publishNotices = PublishNotice::with('unlikes')->get();
     
             // Pass the publish polls data to the view
             return view('Student/viewer_notice', compact('publishNotices'));
