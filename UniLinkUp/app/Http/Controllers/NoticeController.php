@@ -56,9 +56,7 @@ class NoticeController extends Controller
                 
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
-                'soc_id' => 'required|string',
-                'dep_id' => 'required|string',
-                'fac_id' => 'required|string',
+                
             ]);
 
             // if ($validator->fails()) {

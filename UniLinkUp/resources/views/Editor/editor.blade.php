@@ -101,7 +101,7 @@
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
             <h3>Welcome back !</h3>
-            <h5>This is an Eitor Page.</h5>
+            <h5>This is an Editor Page.</h5>
             <h4> You are the gatekeeper of excellence. Use your editing skills to filter information, polish content, and uphold our standards of quality. Your dedication safeguards the integrity of our platform.</h4>
             <div class="clock" id="clock"></div>
         </div>
