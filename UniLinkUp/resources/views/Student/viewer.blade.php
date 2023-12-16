@@ -94,7 +94,7 @@
 <div class="con">
 
     <!-- taskbar section starts -->
-    @include('viewer_task')
+    @include('Viewer/viewer_task')
 	<!-- taskbar section ends -->
 
 <br>

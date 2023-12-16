@@ -93,9 +93,9 @@
 
 <div class="con">
 
-<!-- taskbar section starts -->
-@include('editor_task')
-	<!-- taskbar section ends -->
+    <!-- taskbar section starts -->
+    @include('Editor/editor_task')
+    <!-- taskbar section ends -->
 
     <div class="container">
         <div class="greeting-box">

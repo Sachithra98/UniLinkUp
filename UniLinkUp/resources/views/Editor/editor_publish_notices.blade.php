@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Notices</title>
+   <title>Publish Notices</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -147,15 +147,12 @@
 	<!-- header section ends -->
 
     <!-- taskbar section starts -->
-    @include('Viewer/viewer_task')
-	<!-- taskbar section ends -->
-
-
-    
+    @include('Editor/editor_task')
+    <!-- taskbar section ends -->
 
 
     <div class="back" >
-        <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
+        <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>
 
     <div class="main">

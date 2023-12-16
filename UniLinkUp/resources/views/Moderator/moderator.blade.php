@@ -93,8 +93,8 @@
 
 <div class="con">
 
-    <!-- taskbar section starts -->
-    @include('moderator_task')
+   <!-- taskbar section starts -->
+   @include('Moderator/moderator_task')
 	<!-- taskbar section ends -->
 
 

@@ -130,9 +130,8 @@
 	<!-- header section ends -->
 
     <!-- taskbar section starts -->
-    @include('taskbar')
+    @include('Admin/taskbar')
 	<!-- taskbar section ends -->
-
 
 <div class="main-content">
     

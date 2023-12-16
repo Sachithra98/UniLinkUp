@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+   <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Notices</title>
+   <title>Publish Events</title>
 
    <!-- swiper css link  -->
    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
@@ -33,28 +33,8 @@
             color:var(--black);
         }
 
-        .main .con{
-            border: 1px solid black;
-            border-radius: 8px;
-            
-            margin-bottom: 20px;
-            margin-top: 20px;
-            background: var(--light-white);
-        }
 
-
-        /* .notice-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid black;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            background: var(--white);
-        } */
-
-    .notice-container {
+        .notice-container {
         max-width: 800px;
         margin: auto;
         padding: 20px;
@@ -122,8 +102,6 @@
         transition: background-color 0.3s ease;
     }
 
-    
-
     .btn:hover {
         background-color: #2779bd; /* Button background color on hover */
     }
@@ -133,9 +111,6 @@
         margin-right: 5px;
     }
 
-
-
-        
     </style>
 </head>
 
@@ -145,62 +120,55 @@
     <!-- header section starts -->
     @include('header')
 	<!-- header section ends -->
-
-    <!-- taskbar section starts -->
-    @include('Viewer/viewer_task')
-	<!-- taskbar section ends -->
-
-
+<!-- taskbar section starts -->
+@include('Editor/editor_task')
+    <!-- taskbar section ends -->
     
 
+    
 
     <div class="back" >
-        <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
-    </div>
+            <a href="<?=url('editor')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
+        </div>
 
-    <div class="main">
+        <div class="main">
 
-    <h2 style="text-decoration: underline;">Published Notices</h2>
-    
-    @foreach ($publishNotices as $notice)
-      
-    
-      
-    <div class="notice-container">
-                <div class="Nheader">
-              <span>Created on: {{ $notice->created_at->format('Y-m-d') }}</span>
-              <!-- <h5>Notice Id:{{$notice->Publish_notice_id}}</h5> -->
-                </div>
-              <h2 style=" font-weight: bold;">{{ $notice->Title }}</h2>
-              <p>{{ $notice->Description }}</p>
-              <img src="/uploads/{{ $notice->media_path }}" width='400' height='400' class="image"/>
-              <div class="buttons">
-               <!-- Like form -->
-            <form action="{{ route('like-notice', $notice) }}" method="post">
+        <h2 style="text-decoration: underline;">Published Events</h2>
+
+    @foreach ($publishEvent as $post)
+        <div class="con">
+            
+            <div class="notice-container">
+            <div class="Nheader">
+                <span>Created on: {{ $post->created_at->format('Y-m-d') }}</span>
+                <!-- <h5>Post Id:{{ $post->Post_Id }}</h5> -->
+            </div>
+                <h3 style=" font-weight: bold;">{{ $post->Title }}</h3>
+                <p>Post Description: {{ $post->Description }}</p>
+                <img src="/uploads/{{ $post->media_path }}" width='400' height='400' class="image"/>
+
+                <div class="buttons">
+                <form action="{{ route('like-event', $event) }}" method="post">
                 @csrf
                 <button type="submit" class="btn like-btn">Like <i class="fa fa-thumbs-up"></i></button>
             </form>
-            <form action="{{ route('unlike-notice', $notice) }}" method="post">
+            <form action="{{ route('unlike-event', $event) }}" method="post">
                 @csrf
                 <button type="submit" class="btn unlike-btn">Unlike <i class="fa fa-thumbs-down"></i></button>
             </form>
-                <form class="share"  action="{{ route('post.share', ['Publish_notice_id' => $notice->Publish_notice_id]) }}" method="post">
+                <form class="share"  action="{{ route('post.share', ['Publish_event_id' => $event->Publish_event_id]) }}" method="post">
                 @csrf
                 <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
             </form>
-            <a href="{{ asset('/uploads/' . $notice->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
-            <span class="like-count">Likes: {{ $notice->likes->count() }}</span>
-            <span class="unlike-count">Dislikes: {{ $notice->unlikes->count() }}</span>
+            <a href="{{ asset('/uploads/' . $event->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+            <span class="like-count">Likes: {{ $event->likes->count() }}</span>
+            <span class="unlike-count">Dislikes: {{ $event->unlikes->count() }}</span>
                 
                 
                 </div>
             </div>
       @endforeach
-
-    
-</div>
-
-
+        </div>
 
       <!-- footer section starts -->
       @include('footer')

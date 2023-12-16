@@ -94,7 +94,7 @@
 <div class="con">
 
    <!-- taskbar section starts -->
-   @include('taskbar')
+   @include('Admin/taskbar')
 	<!-- taskbar section ends -->
 
     <div class="container">
