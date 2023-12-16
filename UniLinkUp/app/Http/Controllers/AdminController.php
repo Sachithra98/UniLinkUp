@@ -9,7 +9,7 @@ use App\Models\Faculty;
 use App\Models\Society;
 use App\Models\Department;
 use App\Models\Role;
-
+use App\Models\Batch;
 use App\Models\Editor;
 use App\Models\Student;
 use App\Models\Staff;
@@ -190,6 +190,7 @@ public function index()
     $totalEvents =  PublishEvent::count();
     $totalNotices =  PublishNotice::count();
     $totalRoles =  Role::count();// Your logic to get total roles count;
+    $totalBatch =  Batch::count();
     
     // Add similar lines to retrieve counts from other tables
 
@@ -207,6 +208,7 @@ public function index()
         'totalEvents' => $totalEvents,
         'totalNotices' => $totalNotices,
         'totalRoles' => $totalRoles,
+        'totalBatch' => $totalBatch,
         
         // Add similar lines to pass counts from other tables
     ]);

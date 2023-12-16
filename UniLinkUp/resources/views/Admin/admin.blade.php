@@ -120,6 +120,11 @@
     <section class="services">
         <h1 class="heading-title">Reports</h1>
 
+
+    
+
+           
+
     <div class="box-container">
         <div class="box">
             <div class="cards">
@@ -134,9 +139,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -150,10 +153,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -167,10 +167,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -184,10 +181,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -201,10 +195,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+   
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -218,10 +209,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -235,10 +223,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+   
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -252,9 +237,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="box-container">
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -268,10 +251,21 @@
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalBatch }}</h2>
+                        <h3>Total Batches</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -285,10 +279,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+   
         <div class="box">
             <div class="cards">
                 <div class="card">
@@ -302,10 +293,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-    <div class="box-container">
+   
         <div class="box">
             <div class="cards">
                 <div class="card">
