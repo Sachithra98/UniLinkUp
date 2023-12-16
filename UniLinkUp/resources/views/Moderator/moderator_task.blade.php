@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="{{ asset('css/style_tb.css') }} "/>
   </head>
   <body>
-  
-  
+
+
 
     <!-- sidebar -->
     <nav class="taskbar">
          <i class="bx bx-menu" id="sidebarOpen"></i>
     </nav>
 
-    
+
 
     <nav class="sidebar">
       <div class="menu_content">
@@ -46,13 +46,13 @@
               <span class="navlink">Publish Requests </span>
               <i class="bx bx-chevron-right arrow-left"></i>
             </a>
-          
+
 
             <ul class="menu_items submenu">
               <a href=<?=url('moderator_event')?> class="nav_link sublink">Publish Events</a>
               <a href=<?=url('moderator_notice')?> class="nav_link sublink">Publish Notices</a>
               <a href=<?=url('moderator_poll')?> class="nav_link sublink">Publish Polls</a>
-              
+
             </ul>
             </li>
 
@@ -68,7 +68,7 @@
 
              <!-- logout -->
              <li class="item">
-            <a href="" class="nav_link">
+            <a href="{{ route('moderator_logout') }}" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-sign-out-alt" ></i>
               </span>
@@ -76,7 +76,7 @@
             </a>
             </li>
 
-         
+
 
         <!-- Sidebar Open / Close -->
         <div class="bottom_content">
@@ -84,7 +84,7 @@
             <span> Expand</span>
             <i class='bx bx-log-in' ></i>
           </div>
-        
+
           <div class="bottom collapse_sidebar">
             <span> Collapse</span>
             <i class='bx bx-log-out'></i>

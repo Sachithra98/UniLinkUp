@@ -8,26 +8,26 @@
     <link rel="stylesheet" href="{{ asset('css/style_tb.css') }} "/>
   </head>
   <body>
-  
-  
+
+
 
     <!-- sidebar -->
     <nav class="taskbar">
          <i class="bx bx-menu" id="sidebarOpen"></i>
     </nav>
 
-    
+
 
     <nav class="sidebar">
       <div class="menu_content">
         <ul class="menu_items">
         <br>
-          
+
           <div class="menu_title menu_dahsboard"></div>
           <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
           <!-- start -->
-          
-          
+
+
 
           <li class="item">
             <a href="{{route('admin_dashboard')}}" class="nav_link">
@@ -46,7 +46,7 @@
               <span class="navlink">Create Accounts</span>
               <i class="bx bx-chevron-right arrow-left"></i>
             </a>
-          
+
 
             <ul class="menu_items submenu">
               <a href=<?=url('admin_createaccV')?> class="nav_link sublink">Student</a>
@@ -72,8 +72,8 @@
               <a href="<?=url('admin_UMA')?>" class="nav_link sublink">Admin</a>
             </ul>
           </li>
-                   
-        
+
+
 
           <li class="item">
             <a href="<?=url('admin_Role_UMR')?>" class="nav_link">
@@ -130,7 +130,7 @@
 
              <!-- logout -->
              <li class="item">
-            <a href="" class="nav_link">
+            <a href="{{ route('admin_logout') }}" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-sign-out-alt" ></i>
               </span>
@@ -144,7 +144,7 @@
             <span> Expand</span>
             <i class='bx bx-log-in' ></i>
           </div>
-        
+
           <div class="bottom collapse_sidebar">
             <span> Collapse</span>
             <i class='bx bx-log-out'></i>
