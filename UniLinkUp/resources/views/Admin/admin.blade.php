@@ -81,6 +81,8 @@
             border-radius: 50%; /* Make the image circular */
         }
 
+        
+
 
     </style>
 
@@ -126,6 +128,90 @@
                         <i class="fas fa-user-cog" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
+                        <h2>{{ $studentCounts }}</h2>
+                        <h3>Total Students</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $staffCounts }}</h2>
+                        <h3>Total Staff</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $AdminCount }}</h2>
+                        <h3>Total Admin</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $EditorCount }}</h2>
+                        <h3>Total Editor</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $ModeratorCount }}</h2>
+                        <h3>Total Moderator</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
                         <h2>{{ $facultyCount }}</h2>
                         <h3>Total Faculties</h3>
                     </div>
@@ -133,6 +219,110 @@
             </div>
         </div>
     </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $SocietyCount }}</h2>
+                        <h3>Total Societies</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $DepartmentCount }}</h2>
+                        <h3>Total Departments</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalRoles }}</h2>
+                        <h3>Total Roles</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalNotices }}</h2>
+                        <h3>Total Notices</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalEvents }}</h2>
+                        <h3>Total Events</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalPolls }}</h2>
+                        <h3>Total Polls</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
 
               
 
