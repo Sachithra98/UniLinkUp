@@ -135,7 +135,7 @@
 
         <h2 style="text-decoration: underline;">Published Events</h2>
 
-    @foreach ($publishEvent as $post)
+    @foreach ($publishEvents as $post)
         <div class="con">
             
             <div class="notice-container">

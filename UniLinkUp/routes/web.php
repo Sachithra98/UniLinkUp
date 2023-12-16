@@ -415,6 +415,8 @@ Route::post('/add-to-publish-event/{postId}', [PublishEventController::class, 'a
 
 
 Route::get('/viewer_event', [PublishEventController::class, 'showAllE'])->name('showAllE');
+Route::get('/editor_publish_events', [PublishEventController::class, 'showEEditor'])->name('showEEditor');
+
 
 // Example route in web.php
 /* Route::delete('/delete-record/{postId}', 'PublishEventController@deleteRecord'); */
