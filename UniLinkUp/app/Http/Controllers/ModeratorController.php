@@ -192,7 +192,8 @@ class ModeratorController extends Controller
         $moderator->delete();
     
         // Redirect back to the user management page
-        return redirect()->route('admin.user_management');
+        return redirect()->back()->with('success', 'User deleted successfully.');
+        
 
     }
 
