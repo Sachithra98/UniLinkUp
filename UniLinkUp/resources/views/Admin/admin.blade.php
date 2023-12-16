@@ -130,7 +130,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-users" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $studentCounts }}</h2>
@@ -144,7 +144,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-user-alt" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $staffCounts }}</h2>
@@ -172,7 +172,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-user-edit" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $EditorCount }}</h2>
@@ -186,7 +186,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-user-check" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $ModeratorCount }}</h2>
@@ -200,7 +200,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fa fa-graduation-cap" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $facultyCount }}</h2>
@@ -214,7 +214,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-id-card-alt" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $SocietyCount }}</h2>
@@ -228,7 +228,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-laptop-house" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $DepartmentCount }}</h2>
@@ -242,7 +242,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="	fas fa-user-tag" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $totalRoles }}</h2>
@@ -256,7 +256,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-folder-open" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $totalBatch }}</h2>
@@ -270,7 +270,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fa fa-address-card" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $totalNotices }}</h2>
@@ -284,7 +284,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fa fa-calendar" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $totalEvents }}</h2>
@@ -298,7 +298,7 @@
             <div class="cards">
                 <div class="card">
                     <div class="card icon">
-                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                        <i class="fas fa-poll-h" style="font-size:36px"></i>
                     </div>
                     <div class="card icon">
                         <h2>{{ $totalPolls }}</h2>
