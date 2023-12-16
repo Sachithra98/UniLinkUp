@@ -26,7 +26,7 @@
           <div class="menu_title menu_dahsboard"></div>
           <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
           <!-- start -->
-          <br>
+          
           
 
           <li class="item">
@@ -125,6 +125,16 @@
                 <i class="fas fa-user-edit"></i>
               </span>
               <span class="navlink">Edit Profile</span>
+            </a>
+            </li>
+
+             <!-- logout -->
+             <li class="item">
+            <a href="" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fas fa-sign-out-alt" ></i>
+              </span>
+              <span class="navlink">Log Out</span>
             </a>
             </li>
 

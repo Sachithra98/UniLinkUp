@@ -575,10 +575,6 @@ Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEve
 Route::post('/like-notice/{notice}', [LikeNoticeController::class, 'like'])->name('like-notice');
 Route::post('/unlike-notice/{notice}', [UnlikeNoticeController::class, 'unlike'])->name('unlike-notice');
 
-<<<<<<< Updated upstream
-Route::post('/like-event/{event}', [LikeNoticeController::class, 'like'])->name('like-event');
-Route::post('/unlike-event/{event}', [UnlikeNoticeController::class, 'unlike'])->name('unlike-event');
-=======
 
 //edit profile
 
@@ -600,4 +596,3 @@ Route::get('/admin_edit_profile', function () {
 Route::get('/moderator_edit_profile', function () {
     return view('/Moderator/moderator_edit_profile');
 });
->>>>>>> Stashed changes

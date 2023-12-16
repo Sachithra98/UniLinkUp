@@ -65,7 +65,8 @@
             </a>
             </li>
 
-            <li class="item">
+             <!-- logout -->
+             <li class="item">
             <a href="" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-sign-out-alt" ></i>

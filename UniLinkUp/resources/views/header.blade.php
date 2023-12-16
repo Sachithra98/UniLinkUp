@@ -77,8 +77,7 @@
    </a>
    <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
 
-   <!-- <a href="<?=url('')?>"><i class="fas fa-user-edit edit-profile-icon"></i></a> -->
-   <a href="<?=url('')?>">Log Out</a>
+
 
 
 
