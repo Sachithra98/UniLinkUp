@@ -156,7 +156,7 @@ public function login_submit(Request $request){
 public function edit_S($id)
     {
         $student = Student::where('id', $id)->first();
-        return view('/Student/viewer_edit_UMV', compact('student'));
+        return view('/Admin/viewer_edit_UMV', compact('student'));
     }
     
 

@@ -71,7 +71,7 @@
 
 <div class="main-content">
     <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin_dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 <div class="container">
     <h1>User Management of Admin</h1>
