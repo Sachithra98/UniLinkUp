@@ -187,4 +187,16 @@ class EditorController extends Controller
 
 //lahiru end
 
+//dhanu
+public function delete($id)
+{
+    // Delete the editor with the given ID from the database
+    // Example code (make sure to adjust it based on your database and model):
+    $editor = Editor::find($id);
+    $editor->delete();
+
+    // Redirect back to the user management page
+    return redirect()->back()->with('success', 'User deleted successfully.')
+    ;}
+
 }
