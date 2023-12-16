@@ -31,13 +31,13 @@ class SocietyController extends Controller
 
         // Create a new department
         Society::create([
-            'Society_Id' => $request->input('society_id'),
+          
             'Society_Name' => $request->input('society_name'),
             //'Faculty_Id' => $request->input('Faculty_Id'),
         ]);
 
         // Redirect with success message
-        return redirect()->route('admin_add_society')->with('success', 'Department added successfully');
+        return redirect()->route('society')->with('success', 'Department added successfully');
     }
 
     /**
