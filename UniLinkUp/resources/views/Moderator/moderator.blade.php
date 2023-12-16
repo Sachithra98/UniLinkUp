@@ -93,6 +93,9 @@
 
 <div class="con">
 
+    <!-- taskbar section starts -->
+    @include('moderator_task')
+	<!-- taskbar section ends -->
 
 
     <div class="container">
@@ -108,7 +111,7 @@
             <img class="image" src="{{asset('storage/images/site images/wel.jpg')}}" alt="Welcome Image">
         </div>
     </div>
-
+<!-- 
     <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
         <div class="create_event" >
             <a href="<?=url('moderator_event')?>" class="btn" style="margin-left: 3rem;">View Publish requests of events</a>
@@ -121,9 +124,9 @@
         <div class="create_polls">
             <a href="<?=url('moderator_poll')?>" class="btn" style="margin-left: 3rem;">View Publish requests of polls</a>
         </div>
-    </div>
+    </div> -->
 
-
+<br><br>
 
     <script>
     function clock() {

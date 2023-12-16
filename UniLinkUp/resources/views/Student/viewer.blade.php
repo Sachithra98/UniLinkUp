@@ -93,7 +93,11 @@
 
 <div class="con">
 
+    <!-- taskbar section starts -->
+    @include('viewer_task')
+	<!-- taskbar section ends -->
 
+<br>
 
     <div class="container">
         <div class="greeting-box">
@@ -109,7 +113,7 @@
         </div>
     </div>
 
-    <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+    <!-- <div class="new_role" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
         <div class="create_event" >
             <a href="<?=url('viewer_event')?>" class="btn" style="margin-left: 3rem;">View Events</a>
         </div>
@@ -121,9 +125,9 @@
         <div class="create_polls">
             <a href="<?=url('viewer_poll')?>" class="btn" style="margin-left: 3rem;">View Polls</a>
         </div>
-    </div>
+    </div> -->
 
-
+<br><br>
 
     <script>
     function clock() {

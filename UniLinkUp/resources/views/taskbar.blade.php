@@ -119,6 +119,15 @@
             </a>
           </li>
 
+          <li class="item">
+            <a href="<?=url('admin_edit_profile')?>" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fas fa-user-edit"></i>
+              </span>
+              <span class="navlink">Edit Profile</span>
+            </a>
+            </li>
+
         <!-- Sidebar Open / Close -->
         <div class="bottom_content">
           <div class="bottom expand_sidebar">

@@ -30,7 +30,7 @@
           <br>
 
           <li class="item">
-            <a href="{{route('editor_dashboard')}}" class="nav_link">
+            <a href="{{route('moderator_dashboard')}}" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>
@@ -43,36 +43,20 @@
               <span class="navlink_icon">
                 <i class="bx bx-folder-plus"></i>
               </span>
-              <span class="navlink">Create </span>
+              <span class="navlink">View Posts </span>
               <i class="bx bx-chevron-right arrow-left"></i>
             </a>
           
 
             <ul class="menu_items submenu">
-              <a href=<?=url('editor_create_event')?> class="nav_link sublink">Events</a>
-              <a href=<?=url('editor_create_notice')?> class="nav_link sublink">Notices</a>
-              <a href=<?=url('editor_create_poll')?> class="nav_link sublink">Polls</a>
+              <a href=<?=url('viewer_event')?> class="nav_link sublink">View Events</a>
+              <a href=<?=url('viewer_notice')?> class="nav_link sublink">View Notices</a>
+              <a href=<?=url('viewer_poll')?> class="nav_link sublink">View Polls</a>
               
             </ul>
             </li>
 
-              <div href="#" class="nav_link submenu_item">
-              <span class="navlink_icon">
-                <i class="bx bx-folder-minus"></i>
-              </span>
-              <span class="navlink">Rejected</span>
-              <i class="bx bx-chevron-right arrow-left"></i>
-            </div>
-
-            <ul class="menu_items submenu">
-            <a href=<?=url('editor_denied_event')?> class="nav_link sublink">Events</a>
-              <a href=<?=url('editor_denied_notice')?> class="nav_link sublink">Notices</a>
-              <a href=<?=url('editor_denied_poll')?> class="nav_link sublink">Polls</a>
-            </ul>
-          </li>
-
-
-          <li class="item">
+            <li class="item">
             <a href="<?=url('admin_edit_profile')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-user-edit"></i>
@@ -80,8 +64,7 @@
               <span class="navlink">Edit Profile</span>
             </a>
             </li>
-                   
-        
+          
 
          
 
