@@ -146,6 +146,11 @@
     @include('header')
 	<!-- header section ends -->
 
+    <!-- taskbar section starts -->
+    @include('Viewer/viewer_task')
+	<!-- taskbar section ends -->
+
+
     
 
 

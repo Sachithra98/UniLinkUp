@@ -128,6 +128,10 @@
     @include('header')
 	<!-- header section ends -->
 
+    <!-- taskbar section starts -->
+    @include('Admin/taskbar')
+	<!-- taskbar section ends -->
+
 
 
 <div class="main-content">

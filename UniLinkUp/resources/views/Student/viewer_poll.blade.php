@@ -122,6 +122,11 @@
     @include('header')
 	<!-- header section ends -->
 
+    <!-- taskbar section starts -->
+    @include('Viewer/viewer_task')
+	<!-- taskbar section ends -->
+
+
     <div class="back" >
         <a href="<?=url('viewer')?>" class="btn"  style="margin-bottom: 20px; margin-right: 1200px;">Back</a>
     </div>

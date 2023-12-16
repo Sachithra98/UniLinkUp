@@ -71,6 +71,24 @@
             </ul>
           </li>
 
+          <div href="#" class="nav_link submenu_item">
+              <span class="navlink_icon">
+              <i class="bx bx-news"></i>
+              </span>
+              <span class="navlink">Publish</span>
+              <i class="bx bx-chevron-right arrow-left"></i>
+            </div>
+
+            <ul class="menu_items submenu">
+            <a href=<?=url('editor_publish_events')?> class="nav_link sublink">Publish Events</a>
+              <a href=<?=url('editor_publish_notices')?> class="nav_link sublink">Publish Notices</a>
+              <a href=<?=url('editor_publish_polls')?> class="nav_link sublink">Publish Polls</a>
+            </ul>
+          </li>
+          
+               
+              
+
 
           <li class="item">
             <a href="<?=url('editor_edit_profile')?>" class="nav_link">

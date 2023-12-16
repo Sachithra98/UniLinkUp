@@ -62,6 +62,10 @@
     @include('header')
 	<!-- header section ends -->
 
+    <!-- taskbar section starts -->
+    @include('Editor/editor_task')
+    <!-- taskbar section ends -->
+
 
 
 <div class="main">
