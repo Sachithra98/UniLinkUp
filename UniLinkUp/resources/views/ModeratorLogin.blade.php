@@ -308,6 +308,10 @@
                             <label for="remember_me">Remember me</label>
                         </div>
 
+                        <div class="links">
+                                <a href="<?=url('forget')?>">Forgot Password?</a>
+                            </div>
+
                         <div class="form-group">
                             <button class="btn" type="submit">Log in</button>
                         </div>
