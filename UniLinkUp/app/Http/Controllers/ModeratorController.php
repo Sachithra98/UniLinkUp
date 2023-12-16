@@ -93,7 +93,7 @@ class ModeratorController extends Controller
     public function edit_M($id)
     {
         $moderator = Moderator::where('id', $id)->first();
-        return view('/Admin/moderator_edit_UMM', compact('moderator'));
+        return view('/Admin/admin_edit_UMM', compact('moderator'));
     }
 
     /**
