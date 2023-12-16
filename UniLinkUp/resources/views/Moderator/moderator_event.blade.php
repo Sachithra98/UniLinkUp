@@ -140,7 +140,24 @@
                 <p>Post Description: {{ $post->Description }}</p>
                 
                 <img src="/uploads/{{ $post->media_path }}" width='400' height='400' class="image"/>
-                <img src="/uploads/{{ $post->Approval_Letter }}" width='400' height='400' class="image"/>
+                @php
+                    $isImage = false; // Assume not an image initially
+
+                    // Get the file extension
+                    $fileExtension = pathinfo($post->Approval_Letter, PATHINFO_EXTENSION);
+
+                    // Check if it's a common image extension
+                    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                    if (in_array(strtolower($fileExtension), $imageExtensions)) {
+                    $isImage = true;
+                    }
+                    @endphp
+
+                    @if ($isImage)
+                    <img src="/uploads/{{ $post->Approval_Letter }}" width='400' height='400' class="image" />
+                    @else
+                    <a href="/uploads/{{ $post->Approval_Letter }}" download>Download Approval Letter (PDF)</a>
+                    @endif
 
                 
 
