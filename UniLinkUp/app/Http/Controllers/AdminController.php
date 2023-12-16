@@ -109,7 +109,8 @@ class AdminController extends Controller
 
         return redirect()->route('admin_dashboard')->with('success', 'Login successful');
     } catch (\Exception $e) {
-        return redirect()->route('admin_login')->with('error', $e->getMessage());
+       return redirect()->route('admin_login')->withErrors(['error' => $e->getMessage()]);
+
     }
 }
 
