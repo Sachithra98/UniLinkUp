@@ -106,10 +106,9 @@
                             <td>{{ $row['S_Name'] }}</td>
                             <td>{{ $row['email'] }}</td>
                            
-                            <td>
-                                <a href="" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-danger">Remove</a>
-                            </td>
+                            <td> <a href="edit_S/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
+
+                            <td><a href="" class="btn btn-danger">Remove</a></td>
                         </tr>
                     @endwhile
         </tbody>

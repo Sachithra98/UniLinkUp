@@ -89,6 +89,8 @@ class EditorController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
+
+     //start piyumi
     public function edit($id)
     {
         $editor = Editor::where('id', $id)->first();
@@ -114,6 +116,7 @@ class EditorController extends Controller
     return redirect('/admin_UME')->with('success', 'Admin data successfully updated!');
 }
 
+    //end piyumi
     /**
      * Remove the specified resource from storage.
      */

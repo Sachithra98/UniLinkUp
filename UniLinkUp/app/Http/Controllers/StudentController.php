@@ -152,6 +152,35 @@ public function login_submit(Request $request){
     }
 }
 
+//start lishani
+public function edit_S($id)
+    {
+        $student = Student::where('id', $id)->first();
+        return view('/Student/viewer_edit_UMV', compact('student'));
+    }
+    
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update_S(Request $request, $id)
+    {
+        $student = Student::find($id);
+
+    if (!$student ) {
+        return redirect()->back()->with('error', 'Student not found');
+    }
+
+    $student->S_Name = $request->input('S_Name');
+    $student->email = $request->input('email');
+    $student->update();
+
+    return redirect('/admin_UMV')->with('success', 'Student data successfully updated!');
+}
+
+//end lishani
+
+
 
 
 }
