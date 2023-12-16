@@ -621,3 +621,6 @@ Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->nam
 
 Route::get('delete_editor/{id}', [EditorController::class, 'delete'])->name('delete_editor');
 
+Route::get('delete_student/{id}', [StudentController::class, 'delete'])->name('delete_student');
+
+
