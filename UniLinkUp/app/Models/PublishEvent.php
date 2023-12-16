@@ -22,5 +22,15 @@ class PublishEvent extends Model
         'Faculty_Id',
      ];
 
+     public function likes()
+     {
+         return $this->hasMany(LikeEvent::class, 'event_id', 'Publish_event_id');
+     }
+ 
+     public function unlikes()
+     {
+         return $this->hasMany(UnlikeEvent::class, 'event_id', 'Publish_event_id');
+     }
+
     
 }
