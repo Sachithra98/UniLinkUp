@@ -95,7 +95,7 @@ class AdminController extends Controller
         if (!Auth::guard('admin')->attempt($credentials)) {
 
             if (!Admin::where('email', $request->input('email'))->exists()) {
-              
+
                 throw new \Exception('No account associated with this email address.');
             } else if (Hash::check($request->input('password'), Admin::where('email', $request->input('email'))->first()->password)) {
                 throw new \Exception('Your account is currently disabled. Please contact the administrator.');
@@ -119,6 +119,8 @@ public function logout(){
     Auth::guard('admin')->logout();
     return redirect()->route('admin_login')->with('Success','Logout Successfully');
 }
+
+
 
 
 

@@ -138,24 +138,41 @@ class EditorController extends Controller
 
         return view('EditorLogin');
     }
-    public function login_submit(Request $request){
-        $request->validate([
-            'email' => 'required|email',
-            'password'=>'required',
-        ]);
-
-        $credentials = $request->only('email', 'password');
 
 
-        if(Auth::guard('editor')->attempt($credentials)){
 
 
-            $user=Editor::where('email',$request->input('email'))->first();
-                    Auth::guard('editor')->login($user);
+
+
+
+    public function login_submit(Request $request)
+    {
+        try {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+
+            $credentials = $request->only('email', 'password');
+
+            if (!Auth::guard('editor')->attempt($credentials)) {
+
+                if (!Editor::where('email', $request->input('email'))->exists()) {
+
+                    throw new \Exception('No account associated with this email address.');
+                } else if (Hash::check($request->input('password'), Editor::where('email', $request->input('email'))->first()->password)) {
+                    throw new \Exception('Your account is currently disabled. Please contact the administrator.');
+                } else {
+                    throw new \Exception('Incorrect password. Please try again.');
+                }
+            }
+
+            $user = Editor::where('email', $request->input('email'))->first();
+            Auth::guard('editor')->login($user);
+
             return redirect()->route('editor_dashboard')->with('success', 'Login successful');
-        } else {
-            return redirect()->route('editor_login')->with('error', 'Login unsuccessful');
-
+        } catch (\Exception $e) {
+            return redirect()->route('editor_login')->with('error', $e->getMessage());
         }
     }
 
