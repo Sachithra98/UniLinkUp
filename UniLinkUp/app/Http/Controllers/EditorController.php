@@ -36,7 +36,7 @@ class EditorController extends Controller
             'password' => 'required|min:5', // Add any other validation rules you need
         ]);
 
-        
+
 
         // Hash the password
         $hashedPassword = Hash::make($request->input('password'));
@@ -96,7 +96,7 @@ class EditorController extends Controller
         $editor = Editor::where('id', $id)->first();
         return view('/Editor/editor_edit_UME', compact('editor'));
     }
-    
+
 
     /**
      * Update the specified resource in storage.
@@ -162,5 +162,12 @@ class EditorController extends Controller
 
 
 
+    public function logout(){
+
+        Auth::guard('editor')->logout();
+        return redirect()->route('editor_login')->with('Success','Logout Successfully');
+    }
+
+//lahiru end
 
 }

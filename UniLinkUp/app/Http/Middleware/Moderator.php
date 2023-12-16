@@ -17,7 +17,7 @@ class Moderator
     {
 
             if(!Auth::guard('moderator')->check()){
-                return redirect()->route('moderator_login')->with('error','you do not have access');
+                return redirect()->route('moderator_login')->with('error','you do not have permission to access this page');
 
             }
 

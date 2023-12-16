@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Response;
 use App\Models\Faculty;
 use App\Models\Department;
 use App\Models\Batch;
-use Hash;   
+use Hash;
 use Auth;
 class StudentController extends Controller
 {
@@ -59,7 +59,7 @@ class StudentController extends Controller
 
         // Insert data into the database
         Student::create([
-          
+
             'Faculty_Id' => $row[1],
             'Batch_Id' => $row[2],
             'email' => $row[3],
@@ -152,13 +152,25 @@ public function login_submit(Request $request){
     }
 }
 
+
+
+
+public function logout(){
+
+    Auth::guard('student')->logout();
+    return redirect()->route('student_login')->with('Success','Logout Successfully');
+}
+
+
+//lahiru end
+
 //start lishani
 public function edit_S($id)
     {
         $student = Student::where('id', $id)->first();
         return view('/Student/viewer_edit_UMV', compact('student'));
     }
-    
+
 
     /**
      * Update the specified resource in storage.

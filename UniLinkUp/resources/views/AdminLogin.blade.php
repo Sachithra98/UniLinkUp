@@ -189,6 +189,20 @@
                     height: 44px;
                 }
 
+                .lgin .box1 .errors {
+                    border: 2px solid #ff0000; /* Set the border color to red or your preferred color */
+                    border-radius: 5px; /* Add rounded corners to the box */
+                    padding: 10px; /* Add some padding inside the box */
+                    color: #ff0000; /* Set the text color to red or your preferred color */
+                    font-size: 1.2rem; /* Adjust the font size as needed */
+                    margin-top: 10px; /* Add some space at the top of the error messages */
+                }
+
+                .lgin .box1 .errors .error {
+                    margin-bottom: 5px; /* Add space between individual error messages */
+                }
+
+
                 .lgin .links {
                     display: flex;
                     justify-content: space-between;
@@ -248,14 +262,9 @@
                             <div class="message">{{ session('status') }}</div>
                         @endif
 
-                       <!-- Errors -->
-                        @if($errors->any())
-                            <div class="errors">
-                                @foreach($errors->all() as $error)
-                                    <div class="error">{{ $error }}</div>
-                                @endforeach
-                            </div>
-                        @endif
+
+                        
+
 
 
                         @if(Session::get('error'))
@@ -270,6 +279,17 @@
                             @csrf
 
                             <h1>Sign In</h1>
+
+                            <div class="error">
+                                        <!-- Errors -->
+                                @if($errors->any())
+                                    <div class="errors">
+                                        @foreach($errors->all() as $error)
+                                            <div class="error">{{ $error }}</div>
+                                        @endforeach
+                                    </div>
+                                @endif
+                            <div class="error">
 
                             <!-- Email Address -->
                             <div class="inputBox1">

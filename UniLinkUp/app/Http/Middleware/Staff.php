@@ -17,7 +17,7 @@ class Staff
     {
 
             if(!Auth::guard('staff')->check()){
-                return redirect()->route('staff_login')->with('error','you do not have access');
+                return redirect()->route('staff_login')->with('error','you do not have permission to access this page');
 
             }
 
