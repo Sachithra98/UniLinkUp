@@ -15,7 +15,7 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="{{ asset('css/sty.css') }}">
-  
+
 
 
 
@@ -34,7 +34,7 @@
       <form class="search" action="/action_page.php" style="margin:auto;max-width:300px">
          <input type="text" placeholder="Search.." name="search2">
          <button type="submit"><i class="fa fa-search"></i></button>
-         
+
 
       </form>
    </a>
@@ -77,14 +77,14 @@
    </a>
    <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
    <a href="<?=url('')?>">Log Out</a>
-   
 
-     
-   
+
+
+
    <!-- <?php
 if (isset($_SESSION['User_Fname'])){
 echo "
-   
+
    <li class='nav-item'>
    <a id='sign_out' class='nav-link' href='sign_out.php'>Sign out</a>
    </li>

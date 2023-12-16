@@ -17,7 +17,7 @@ class Admin
     {
 
             if(!Auth::guard('admin')->check()){
-                return redirect()->route('admin_login')->with('error','you do not have access');
+                return redirect()->route('admin_login')->with('error','you do not have permission to access this page');
 
             }
 

@@ -17,7 +17,7 @@ class Editor
     {
 
             if(!Auth::guard('editor')->check()){
-                return redirect()->route('editor_login')->with('error','you do not have access');
+                return redirect()->route('editor_login')->with('error','you do not have permission to access this page');
 
             }
 

@@ -37,7 +37,7 @@ class ModeratorController extends Controller
 
         // Create a new moderator with the generated password
         $moderator = Moderator::create([
-        
+
            'email' => $request->input('email'),
            'password' => $hashedPassword,
            'M_Name' => $request->input('M_Name'),
@@ -155,4 +155,17 @@ class ModeratorController extends Controller
 
         }
     }
+
+
+
+
+
+    public function logout(){
+
+        Auth::guard('moderator')->logout();
+        return redirect()->route('moderator_login')->with('Success','Logout Successfully');
+    }
+
+
+    //lahiru end
 }

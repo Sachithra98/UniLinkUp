@@ -17,7 +17,7 @@ class Student
     {
 
             if(!Auth::guard('student')->check()){
-                return redirect()->route('student_login')->with('error','you do not have access');
+                return redirect()->route('student_login')->with('error','you do not have permission to access this page');
 
             }
 

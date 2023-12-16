@@ -138,4 +138,17 @@ class StaffController extends Controller
     }
 
 
+
+
+
+
+    public function logout(){
+
+        Auth::guard('staff')->logout();
+        return redirect()->route('staff_login')->with('Success','Logout Successfully');
+    }
+
+
+
+    //lahiru end
 }
