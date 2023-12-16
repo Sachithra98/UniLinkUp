@@ -123,7 +123,9 @@
 	<!-- header section ends -->
 
     <!-- taskbar section starts -->
-    @include('VieStudentwer/viewer_task')
+
+    @include('Student/viewer_task')
+
 	<!-- taskbar section ends -->
 
 

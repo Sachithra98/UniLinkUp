@@ -53,7 +53,17 @@ class PublishEventController extends Controller
                 $publishEvents = PublishEvent::with('likes')->get();
                 $publishEvents = PublishEvent::with('unlikes')->get();
                 // Pass the publish polls data to the view
-                return view('Student/viewer_event', compact('publishEvent'));
+                return view('Student/viewer_event', compact('publishEvents'));
+            }
+
+            public function showEEditor()
+            {
+                // Retrieve all publish polls from the database
+                $publishEvents = PublishEvent::all();
+                $publishEvents = PublishEvent::with('likes')->get();
+                $publishEvents = PublishEvent::with('unlikes')->get();
+                // Pass the publish polls data to the view
+                return view('Editor/editor_publish_events', compact('publishEvents'));
             }
     
         /**
@@ -103,5 +113,14 @@ class PublishEventController extends Controller
         {
             //
         }
+
+        public function delete($id)
+    {
+        $event = PublishEvent::findOrFail($id);
+        $event->delete();
+
+        return response()->json(['message' => 'Event deleted successfully']);
     }
+}
+    
 

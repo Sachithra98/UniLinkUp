@@ -30,7 +30,7 @@
           <br>
 
           <li class="item">
-            <a href="{{route('moderator_dashboard')}}" class="nav_link">
+            <a href="{{route('student_dashboard')}}" class="nav_link">
               <span class="navlink_icon">
                 <i class="bx bx-home-alt"></i>
               </span>

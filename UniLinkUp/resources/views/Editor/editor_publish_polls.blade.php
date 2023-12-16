@@ -160,6 +160,12 @@
             <!-- Display vote results for each poll separately -->
           
             <div id="vote-results-{{ $poll->id }}"></div>
+
+            <div class="delete" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <a href="#" class="btn delete-poll-btn" data-poll-id="{{ $poll->id }}" style="margin-left: 1rem; background-color: red;">Delete Poll</a>
+            </div>
+
+
         </div>
         @endforeach
 
@@ -168,78 +174,39 @@
        <!-- Add this script at the end of the body section, after the HTML content -->
 
 
-       <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    const publishPolls = @json($publishPolls);
-    
+  <!-- ... Your existing HTML code ... -->
 
-    console.log('Publish Polls:', publishPolls);
+<script>
+    // Use JavaScript to make an AJAX request when the delete button is clicked
+    document.querySelectorAll('.delete-poll-btn').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
 
-    publishPolls.forEach(poll => {
-        console.log('Processing Poll:', poll);
+            // Get the poll ID from the button's data attribute
+            const pollId = this.getAttribute('data-poll-id');
 
-        const totalVotes = poll.votes.reduce((total, vote) => total + vote.count, 0);
-        const voteResultsContainer = document.getElementById(`vote-results-container-${poll.id}`); // Use poll ID
-
-        if (!voteResultsContainer) {
-            console.error(`Vote Results Container not found for Poll ID: ${poll.id}`);
-            return;
-        }
-
-        const voteResultsElement = document.createElement('div');
-        voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
-
-        poll.options.forEach(option => {
-            const vote = poll.votes.find(vote => vote.choice === option) || { count: 0 };
-            const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
-
-            console.log(`Option: ${option}, Percentage: ${percentage.toFixed(2)}%, Votes: ${vote.count}`);
-
-            voteResultsElement.innerHTML += `<p>${option}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
-        });
-
-        voteResultsContainer.appendChild(voteResultsElement);
-    });
-});
-
-
-        function vote(choice, pollId) {
-            const url = '/vote';
-
-            fetch(url, {
-                method: 'POST',
+            // Make an AJAX request to delete the poll
+            fetch(`/polls/${pollId}`, {
+                method: 'DELETE',
                 headers: {
-                    'Content-Type': 'application/json',
                     'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({
-                    choice: choice,
-                    pollId: pollId
-                }),
             })
             .then(response => response.json())
-            .then(result => {
-                const resultElement = document.getElementById(`result-${pollId}`);
-                resultElement.innerHTML = `<p>Thank you for your vote! You voted: ${result.choice}</p>`;
-
-                // Display updated vote results for the specific poll
-                displayVoteResults(result.votes, pollId);
+            .then(data => {
+                // Handle the response, e.g., remove the deleted poll from the DOM
+                console.log(data.message);
+                this.closest('.notice-container').remove();
             })
-            .catch(error => console.error('Error:', error));
-        }
-
-        function displayVoteResults(votes, pollId) {
-            const voteResultsElement = document.getElementById(`vote-results-${pollId}`);
-            voteResultsElement.innerHTML = '<h2>Poll Results</h2>';
-
-            const totalVotes = votes.reduce((total, vote) => total + vote.count, 0);
-
-            votes.forEach(vote => {
-                const percentage = (totalVotes > 0) ? (vote.count / totalVotes) * 100 : 0;
-                voteResultsElement.innerHTML += `<p>${vote.choice}: ${percentage.toFixed(2)}% (${vote.count} votes)</p>`;
+            .catch(error => {
+                console.error('Error:', error);
             });
-        }
-    </script>
+        });
+    });
+</script>
+
+
 
 
 
