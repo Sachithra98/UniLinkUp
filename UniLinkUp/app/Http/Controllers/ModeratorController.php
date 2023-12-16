@@ -137,26 +137,39 @@ class ModeratorController extends Controller
 
         return view('ModeratorLogin');
     }
-    public function login_submit(Request $request){
-        $request->validate([
-            'email' => 'required|email',
-            'password'=>'required',
-        ]);
 
-        $credentials = $request->only('email', 'password');
 
-        if(Auth::guard('moderator')->attempt($credentials)){
 
-            $user=Moderator::where('email',$request->input('email'))->first();
-                    Auth::guard('moderator')->login($user);
+    public function login_submit(Request $request)
+    {
+        try {
+            $request->validate([
+                'email' => 'required|email',
+                'password' => 'required',
+            ]);
+
+            $credentials = $request->only('email', 'password');
+
+            if (!Auth::guard('moderator')->attempt($credentials)) {
+
+                if (!Moderator::where('email', $request->input('email'))->exists()) {
+
+                    throw new \Exception('No account associated with this email address.');
+                } else if (Hash::check($request->input('password'), Moderator::where('email', $request->input('email'))->first()->password)) {
+                    throw new \Exception('Your account is currently disabled. Please contact the administrator.');
+                } else {
+                    throw new \Exception('Incorrect password. Please try again.');
+                }
+            }
+
+            $user = Moderator::where('email', $request->input('email'))->first();
+            Auth::guard('moderator')->login($user);
+
             return redirect()->route('moderator_dashboard')->with('success', 'Login successful');
-        } else {
-            return redirect()->route('moderator_login')->with('error', 'Login unsuccessful');
-
+        } catch (\Exception $e) {
+            return redirect()->route('moderator_login')->with('error', $e->getMessage());
         }
     }
-
-
 
 
 
