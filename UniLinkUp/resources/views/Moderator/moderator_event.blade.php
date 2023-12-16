@@ -132,7 +132,7 @@
                 @endif
 
         <!-- Loop through each poll -->
-        @foreach ($posts as $post)
+        @foreach ($posts->reverse() as $post)
         <div class="con">
             
             <div class="notice-container">

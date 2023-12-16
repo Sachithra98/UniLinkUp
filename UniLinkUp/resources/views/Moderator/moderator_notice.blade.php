@@ -135,7 +135,7 @@
                 @endif
 
         <!-- Loop through each notice -->
-        @foreach ($notices as $notice)
+        @foreach ($notices->reverse() as $notice)
        
         <div class="con">
             

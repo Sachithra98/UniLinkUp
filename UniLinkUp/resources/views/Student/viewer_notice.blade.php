@@ -162,7 +162,7 @@
 
     <h2 style="text-decoration: underline;">Published Notices</h2>
     
-    @foreach ($publishNotices as $notice)
+    @foreach ($publishNotices->reverse() as $notice)
       
     
       
