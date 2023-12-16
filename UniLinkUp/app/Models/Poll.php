@@ -14,7 +14,7 @@ class Poll extends Model
     'poll_title',
     'poll_desc',
     'media_path' ,
-    'Approval_Letter',
+    'approval_letter',
     'question',
     'option1',
     'option2',

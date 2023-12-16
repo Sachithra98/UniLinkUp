@@ -55,11 +55,11 @@ class StudentController extends Controller
         }
 
         // Check if a password is provided, otherwise generate one
-        $hashedPassword = !empty($row[4]) ? bcrypt($row[4]) : bcrypt(\Illuminate\Support\Str::random(5));
+        $hashedPassword = !empty($row[4]) ? Hash::make($row[4]) : Hash::make(\Illuminate\Support\Str::random(5));
 
         // Insert data into the database
         Student::create([
-            'Student_Id' => $row[0],
+          
             'Faculty_Id' => $row[1],
             'Batch_Id' => $row[2],
             'email' => $row[3],
