@@ -58,7 +58,7 @@
 
 
             <li class="item">
-            <a href="<?=url('admin_edit_profile')?>" class="nav_link">
+            <a href="<?=url('moderator_edit_profile')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-user-edit"></i>
               </span>

@@ -57,11 +57,20 @@
             </li>
 
             <li class="item">
-            <a href="<?=url('admin_edit_profile')?>" class="nav_link">
+            <a href="<?=url('student_edit_profile')?>" class="nav_link">
               <span class="navlink_icon">
                 <i class="fas fa-user-edit"></i>
               </span>
               <span class="navlink">Edit Profile</span>
+            </a>
+            </li>
+
+            <li class="item">
+            <a href="" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa fa-sign-out"></i>
+              </span>
+              <span class="navlink">Log Out</span>
             </a>
             </li>
           
