@@ -225,6 +225,23 @@ public function delete($id)
     return redirect()->back()->with('success', 'User deleted successfully.')
     ;}
 
+    public function updateProfile(Request $request)
+    {
+        // Validate the form data
+       
+
+        // Update the admin profile
+        $student = Auth::guard('student')->user();
+        $student->email = $request->input('email');
+        $student->S_Name = $request->input('S_Name');
+        // Update other fields as needed
+
+        $student->save();
+
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Profile updated successfully');
+    }
+
 
 
 

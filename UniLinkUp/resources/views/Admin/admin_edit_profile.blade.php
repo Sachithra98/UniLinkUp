@@ -137,20 +137,19 @@
 <div class="main-content">
 
     <div class="back" >
-        <a href="{{route('moderator_dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin_dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
         <h1>Edit Profile</h1>
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success')}}
-            </div>
-        @endif
+          @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success')}}
+        </div>
+    @endif
 
-            <form action="" method="post">
-                @csrf
-               
+    <form action="{{ route('admin.profile.update') }}" method="post">
+        @csrf
 
 
                 <div class="form-group">

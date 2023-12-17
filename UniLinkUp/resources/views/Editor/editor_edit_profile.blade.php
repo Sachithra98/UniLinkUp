@@ -149,8 +149,8 @@
             </div>
         @endif
 
-            <form action="" method="post">
-                @csrf
+        <form action="{{ route('editor.profile.update') }}" method="post">
+        @csrf
                
 
 
