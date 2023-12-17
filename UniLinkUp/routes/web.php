@@ -464,12 +464,12 @@ Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->na
 
 //Lahiru start/////////////////////////////////////////////////////////////
 
-//error
-Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
-Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
-Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
-Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
-Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+// //error
+// Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
+// Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
+// Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
+// Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
+// Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
 
 
 
@@ -625,5 +625,5 @@ Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->nam
 
 
 
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.home');
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
 
