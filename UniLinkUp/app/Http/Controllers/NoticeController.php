@@ -48,6 +48,7 @@ class NoticeController extends Controller
 
     public function store(Request $request)
     {
+        
         // Check if there is a logged-in user
         //if ($user = Auth::user()) {
             $validator = $this->validate($request, [
@@ -56,11 +57,11 @@ class NoticeController extends Controller
                 
                 'ppost' => 'nullable|file',
                 'approval' => 'nullable|file',
-                'soc_id' => 'required|string',
+               /*  'soc_id' => 'required|string',
                 'dep_id' => 'required|string',
-                'fac_id' => 'required|string',
+                'fac_id' => 'required|string', */
             ]);
-
+            
             // if ($validator->fails()) {
             //     return redirect()->back()->withErrors($validator)->withInput();
             // }
@@ -117,7 +118,7 @@ class NoticeController extends Controller
                 $photo1 = $request->file('approval'); // Change this line to get the file from the request
 
             
-
+                
                 if($photo1)
                 {
                    
@@ -129,12 +130,19 @@ class NoticeController extends Controller
                     $notice->Approval_Letter = $photoname1;
                     // dd($photoname);
                     //$notice->media_path=$photoname;
-
+                    
                 }
                 $notice->save();
-
                 // Delete the original notice from the notice table
-                $notice->delete();
+              /*   $notice->delete(); */
+              $notice = Notice::find($id);
+
+        if ($notice) {
+            $notice->delete();
+            return redirect()->back()->with('success', 'User deleted successfully.');
+        } else {
+            return redirect()->back()->with('error', 'User not found.');
+        }
 
 
             return redirect('/editor_create_notice')->with('success','Data successfully added!');

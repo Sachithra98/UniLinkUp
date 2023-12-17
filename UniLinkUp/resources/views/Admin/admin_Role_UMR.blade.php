@@ -75,7 +75,7 @@
 <div class="main-content">
 
     <div class="back" >
-        <a href="{{route('admin.dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="{{route('admin_dashboard')}}" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
     <div class="container">
@@ -111,7 +111,7 @@
             
             
                 <tr>
-                    <td>{{ $row['Role_Id'] }} </td>
+                    <td>{{ $row['id'] }} </td>
                     <td>{{ $row['Role_Name'] }}</td>
                     <td style="width: 300px;">{{ $row['Responsibilities'] }} </td>
                     <td>{{ $row['Who_Are_Responsible'] }} </td>

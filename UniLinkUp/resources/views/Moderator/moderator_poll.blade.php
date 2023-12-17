@@ -126,7 +126,7 @@
                     </div>
                 @endif
         <!-- Loop through each poll -->
-        @foreach ($polls as $poll)
+        @foreach ($polls->reverse() as $poll)
         <div class="con">
             
             <div class="notice-container">

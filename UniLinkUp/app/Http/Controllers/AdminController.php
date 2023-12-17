@@ -5,6 +5,18 @@ use App\Models\Admin;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Faculty;
+use App\Models\Society;
+use App\Models\Department;
+use App\Models\Role;
+use App\Models\Batch;
+use App\Models\Editor;
+use App\Models\Student;
+use App\Models\Staff;
+use App\Models\Moderator;
+use App\Models\PublishPoll;
+use App\Models\PublishNotice;
+use App\Models\PublishEvent;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -161,6 +173,47 @@ public function logout(){
             return redirect()->back()->with('error', 'User not found.');
         }
     }
+
+    
+public function index()
+{
+    $user = Auth::user(); // Assuming you have user authentication
+    $facultyCount = Faculty::count();
+    $SocietyCount = Society::count();
+    $DepartmentCount = Department::count();
+    $AdminCount = Admin::count();
+    $EditorCount = Editor::count();
+    $ModeratorCount = Moderator::count();
+    $studentCounts = Student::count(); // Your logic to get student counts;
+    $staffCounts = Staff::count(); // Your logic to get staff counts;
+    $totalPolls =  PublishPoll::count();// Your logic to get total polls count;
+    $totalEvents =  PublishEvent::count();
+    $totalNotices =  PublishNotice::count();
+    $totalRoles =  Role::count();// Your logic to get total roles count;
+    $totalBatch =  Batch::count();
+    
+    // Add similar lines to retrieve counts from other tables
+
+    return view('Admin/admin', [
+        //'name' => $user->name, // Pass the user's name to the view
+        'facultyCount' => $facultyCount,
+        'SocietyCount' => $SocietyCount,
+        'DepartmentCount' => $DepartmentCount,
+        'AdminCount' => $AdminCount,
+        'EditorCount' => $EditorCount,
+        'ModeratorCount' => $ModeratorCount,
+        'studentCounts' => $studentCounts,
+        'staffCounts' => $staffCounts,
+        'totalPolls' => $totalPolls,
+        'totalEvents' => $totalEvents,
+        'totalNotices' => $totalNotices,
+        'totalRoles' => $totalRoles,
+        'totalBatch' => $totalBatch,
+        
+        // Add similar lines to pass counts from other tables
+    ]);
+}
+
 
 
 }

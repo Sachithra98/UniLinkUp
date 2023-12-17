@@ -19,7 +19,8 @@ use App\Http\Controllers\PublishNoticeController;
 use App\Http\Controllers\LikeNoticeController;
 use App\Http\Controllers\UnlikeNoticeController;
 use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\LikeEventController;
+use App\Http\Controllers\UnlikeEventController;
 use App\Http\Controllers\BatchController;
 
 
@@ -463,12 +464,12 @@ Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->na
 
 //Lahiru start/////////////////////////////////////////////////////////////
 
-//error
-Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
-Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
-Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
-Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
-Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
+// //error
+// Route::post('/loginCheck', [CheckLoginController::class,'redirectToDashboard'])->name('loginCheck');
+// Route::get('/dashboard/editor', [DashboardController::class,'editor'])->name('editor.dashboard');
+// Route::get('/dashboard/moderator', [DashboardController::class,'moderator'])->name('moderator.dashboard');
+// Route::get('/dashboard/admin', [DashboardController::class,'admin'])->name('admin.dashboard');
+// Route::get('/dashboard/student', [DashboardController::class,'student'])->name('student.dashboard');
 
 
 
@@ -580,6 +581,8 @@ Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEve
 Route::post('/like-notice/{notice}', [LikeNoticeController::class, 'like'])->name('like-notice');
 Route::post('/unlike-notice/{notice}', [UnlikeNoticeController::class, 'unlike'])->name('unlike-notice');
 
+Route::post('/like-event/{post}', [LikeEventController::class, 'like'])->name('like-event');
+Route::post('/unlike-event/{post}', [UnlikeEventController::class, 'unlike'])->name('unlike-event');
 
 //edit profile
 
@@ -619,8 +622,15 @@ Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('a
 //dhanu
 Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
 
+
 Route::get('delete_editor/{id}', [EditorController::class, 'delete'])->name('delete_editor');
 
 Route::get('delete_student/{id}', [StudentController::class, 'delete'])->name('delete_student');
+
+
+
+
+
+Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
 
 

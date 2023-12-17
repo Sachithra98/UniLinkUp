@@ -136,7 +136,7 @@
     <h2 style="text-decoration: underline;">Published Polls</h2>
 
         <!-- Loop through each publish poll -->
-        @foreach ($publishPolls as $poll)
+        @foreach ($publishPolls->reverse() as $poll)
         <div class="notice-container">
         <div class="Nheader">
             <span>Created on: {{ $poll->created_at->format('Y-m-d') }}</span>

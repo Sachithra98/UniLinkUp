@@ -81,6 +81,8 @@
             border-radius: 50%; /* Make the image circular */
         }
 
+        
+
 
     </style>
 
@@ -100,7 +102,7 @@
     <div class="container">
         <div class="greeting-box">
             <h1><div class="greeting" id="greeting"></div></h1>
-            <h3>Welcome back  {{ Auth::guard('admin')->user()->Admin_Name }}!</h3>
+            <h3>Welcome back !</h3>
             <h4>This is an Admin Page.</h4>
             <h4>Your tireless efforts keep our platform thriving. Use your dashboard to oversee user management, content moderation, and system settings. Let's empower our community together!</h4>
             <div class="clock" id="clock"></div>
@@ -118,15 +120,204 @@
     <section class="services">
         <h1 class="heading-title">Reports</h1>
 
-        <div class="box-container">
 
+    
 
-              
+           
 
-
-
-              
+    <div class="box-container">
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-users" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $studentCounts }}</h2>
+                        <h3>Total Students</h3>
+                    </div>
                 </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-alt" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $staffCounts }}</h2>
+                        <h3>Total Staff</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-cog" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $AdminCount }}</h2>
+                        <h3>Total Admin</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-edit" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $EditorCount }}</h2>
+                        <h3>Total Editor</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-user-check" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $ModeratorCount }}</h2>
+                        <h3>Total Moderator</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fa fa-graduation-cap" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $facultyCount }}</h2>
+                        <h3>Total Faculties</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-id-card-alt" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $SocietyCount }}</h2>
+                        <h3>Total Societies</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-laptop-house" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $DepartmentCount }}</h2>
+                        <h3>Total Departments</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="	fas fa-user-tag" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalRoles }}</h2>
+                        <h3>Total Roles</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-folder-open" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalBatch }}</h2>
+                        <h3>Total Batches</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fa fa-address-card" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalNotices }}</h2>
+                        <h3>Total Notices</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fa fa-calendar" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalEvents }}</h2>
+                        <h3>Total Events</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        <div class="box">
+            <div class="cards">
+                <div class="card">
+                    <div class="card icon">
+                        <i class="fas fa-poll-h" style="font-size:36px"></i>
+                    </div>
+                    <div class="card icon">
+                        <h2>{{ $totalPolls }}</h2>
+                        <h3>Total Polls</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+              
+
+
+
+              
+   
 
     </section>
 
@@ -146,6 +337,8 @@
 
             // If-else condition
             midday = (hours >= 12) ? "PM" : "AM";
+
+            var name = " {{ Auth::guard('admin')->user()->Admin_Name }}";
 
 
 
