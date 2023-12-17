@@ -35,7 +35,7 @@ class PublishNoticeController extends Controller
             ]);
 
             // Delete the original notice record
-            $notice->delete();
+            //$notice->delete();
     
             // Handle any additional logic here
     
