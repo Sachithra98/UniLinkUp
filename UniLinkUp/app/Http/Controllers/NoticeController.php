@@ -134,7 +134,15 @@ class NoticeController extends Controller
                 }
                 $notice->save();
                 // Delete the original notice from the notice table
-                $notice->delete();
+              /*   $notice->delete(); */
+              $notice = Notice::find($id);
+
+        if ($notice) {
+            $notice->delete();
+            return redirect()->back()->with('success', 'User deleted successfully.');
+        } else {
+            return redirect()->back()->with('error', 'User not found.');
+        }
 
 
             return redirect('/editor_create_notice')->with('success','Data successfully added!');
