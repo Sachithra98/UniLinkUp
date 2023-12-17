@@ -147,7 +147,7 @@
                     <h3 style=" font-weight: bold;">{{ $notice->Title }}</h3>
                     <p>{{ $notice->Description }}</p>
                     <img src="/uploads/{{ $notice->media_path }}" width='400' height='400' class="image"/>
-                    @php
+                    <!-- @php
                     $isImage = false; // Assume not an image initially
 
                     // Get the file extension
@@ -160,11 +160,11 @@
                     }
                     @endphp
 
-                    @if ($isImage)
+                    @if ($isImage) -->
                     <img src="/uploads/{{ $notice->Approval_Letter }}" width='400' height='400' class="image" />
-                    @else
+                    <!-- @else
                     <a href="/uploads/{{ $notice->Approval_Letter }}" download>Download Approval Letter (PDF)</a>
-                    @endif
+                    @endif -->
                     
                 
             </div>

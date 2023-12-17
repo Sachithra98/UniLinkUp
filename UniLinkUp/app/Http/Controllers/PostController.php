@@ -136,7 +136,7 @@ class PostController extends Controller
             }
             $post->save();
 
-            return redirect('/editor_create_event')->with('success','Data successfully added!');
+            return redirect('/editor_create_event')->with('success','Requested to create event successfully !');
         //} else {
             // User is not authenticated, handle accordingly (e.g., redirect to login)
             //return 'error';
