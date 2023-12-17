@@ -105,7 +105,7 @@
                     <td>{{ $row['Society_Name'] }} </td>
                 <td>
                     <a href="" class="btn btn-success">Edit</a>
-                    <a href="" class="btn btn-danger">Remove</a>
+                    <a href="{{ route('delete_society', $row['Society_Id']) }}" class="btn btn-danger">Remove</a>
                 </td>
                 </tr>
                 @endwhile 
