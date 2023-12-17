@@ -214,7 +214,21 @@ public function index()
     ]);
 }
 
+public function updateProfile(Request $request)
+    {
 
+        // Update the admin profile
+        $admin = Auth::guard('admin')->user();
+        $admin->email = $request->input('email');
+        $admin->Admin_Name = $request->input('S_Name');
+        // Update other fields as needed
 
+        $admin->save();
+
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Profile updated successfully');
+    }
 }
+
+
 

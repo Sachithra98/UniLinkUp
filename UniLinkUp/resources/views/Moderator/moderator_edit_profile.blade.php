@@ -148,8 +148,8 @@
             </div>
         @endif
 
-            <form action="" method="post">
-                @csrf
+        <form action="{{ route('moderator.profile.update') }}" method="post">
+        @csrf
                
 
 

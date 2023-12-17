@@ -633,4 +633,9 @@ Route::get('delete_student/{id}', [StudentController::class, 'delete'])->name('d
 
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
 
+// routes/web.php
 
+Route::post('/admin/profile/update', [AdminController::class,'updateProfile'])->name('admin.profile.update');
+Route::post('/editor/profile/update', [EditorController::class,'updateProfile'])->name('editor.profile.update');
+Route::post('/student/profile/update', [StudentController::class,'updateProfile'])->name('student.profile.update');
+Route::post('/moderator/profile/update', [ModeratorController::class,'updateProfile'])->name('moderator.profile.update');

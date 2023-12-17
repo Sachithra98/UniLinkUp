@@ -198,6 +198,22 @@ class ModeratorController extends Controller
     }
 
     //dhanu end
+    public function updateProfile(Request $request)
+    {
+        // Validate the form data
+       
+
+        // Update the admin profile
+        $moderator = Auth::guard('moderator')->user();
+        $moderator->email = $request->input('email');
+        $moderator->M_Name = $request->input('S_Name');
+        // Update other fields as needed
+
+        $moderator->save();
+
+        // Redirect back with success message
+        return redirect()->back()->with('success', 'Profile updated successfully');
+    }
 
 
 
