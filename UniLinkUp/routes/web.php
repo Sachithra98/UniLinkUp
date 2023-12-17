@@ -332,7 +332,7 @@ Route::post('/admin/department/store', [DepartmentController::class, 'storeDepar
 
 
 //sachithra-start
-Route::get('/admin_createaccE', [EditorController::class, 'data'])->name('data');
+Route::get('/admin_createaccE', [EditorController::class,'data'])->name('data');
 Route::get('/admin_createaccM', [ModeratorController::class, 'data'])->name('data');
 Route::get('/admin_createaccS', [StaffController::class, 'data'])->name('data');
 Route::get('/admin_createaccV', [StudentController::class, 'data'])->name('data');

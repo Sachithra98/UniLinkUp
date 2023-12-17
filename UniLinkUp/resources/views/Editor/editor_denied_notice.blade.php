@@ -86,6 +86,7 @@
                 <p style="color:blue">Corrections Should be Done: {{ $denied_notice->corrections }}</p>
                 
                 <!-- Display associated poll details -->
+                @if ($denied_notice->notice)
                 <div class="notice-container">
                     <h3>Associated Notice:</h3>
                     <p>Notice Title: {{ $denied_notice->notice->Title }}</p>
@@ -93,6 +94,8 @@
                     <img src="/uploads/{{ $denied_notice->notice->media_path }}" width='200' height='200' class="image"/>
                     <img src="/uploads/{{ $denied_notice->notice->Approval_Letter }}" width='200' height='200' class="image"/>
                 </div>
+            @endif
+
                 
                 <!-- Other fields if needed -->
             </div>
