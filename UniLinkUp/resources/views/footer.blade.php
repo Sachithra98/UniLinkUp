@@ -41,10 +41,10 @@
 
       <div class="box">
          <h3>quick links</h3>
-         <a href="home.php"> <i class="fas fa-angle-right"></i> Home</a>
+         <a href="<?=url('index')?>"> <i class="fas fa-angle-right"></i> Home</a>
          <a href="{{ route('about') }}"> <i class="fas fa-angle-right"></i> About Us</a>
-         <a href="package.php"> <i class="fas fa-angle-right"></i>Albums</a>
-         <a href="book.php"> <i class="fas fa-angle-right"></i> News feed</a>
+         <a href="<?=url('login')?>"> <i class="fas fa-angle-right"></i>login</a>
+         <a href="<?=url('login')?>"> <i class="fas fa-angle-right"></i> News feed</a>
       </div>
 
       <div class="box">
