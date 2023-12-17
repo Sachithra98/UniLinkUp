@@ -623,7 +623,14 @@ Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('a
 Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
 
 
+Route::get('delete_editor/{id}', [EditorController::class, 'delete'])->name('delete_editor');
+
+Route::get('delete_student/{id}', [StudentController::class, 'delete'])->name('delete_student');
+
+
+
 
 
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
+
 
