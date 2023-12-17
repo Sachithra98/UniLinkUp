@@ -170,6 +170,7 @@
             </div>
                 
                 <div class="moderator" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
+                <a href="{{ asset('/uploads/' . $notice->Approval_Letter) }}" class="btn" download>Download Approval letter <i class="fa fa-download"></i></a>
                     <a href="{{ url('moderator_denied_notice') }}" class="btn" style="margin-left: 1rem; background-color: red;">Denied Request</a>
                     <form action="{{ route('addDataToPublishNotice', ['NoticeId' => $notice->Post_Id]) }}" method="POST">
                         @csrf

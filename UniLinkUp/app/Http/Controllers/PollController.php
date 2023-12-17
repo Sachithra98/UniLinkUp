@@ -60,41 +60,25 @@ class PollController extends Controller
             $poll->option5 = $request->option5;
 
 
-            $photo = $request->file('ppost'); // Change this line to get the file from the request
-
+            $photo = $request->file('ppost');
+            if ($photo) {
+                $originalName = $photo->getClientOriginalName();
+                $extension = $photo->getClientOriginalExtension();
+                $photoname = time() . '_post.' . $extension;  // Different name for post image
             
-
-                if($photo)
-                {
-                   
-                    $originalName = $photo->getClientOriginalName();
-                    $extension = $photo->getClientOriginalExtension();
-                    $photoname = time() . '.' . $extension;
-
-                    $request->ppost->move('uploads', $photoname);
-                    $poll->media_path = $photoname;
-                    // dd($photoname);
-                    //$notice->media_path=$photoname;
-
-                }
-
-                $photo1 = $request->file('approval'); // Change this line to get the file from the request
-
+                $request->ppost->move('uploads', $photoname);
+                $poll->media_path = $photoname;
+            }
             
-
-                if($photo1)
-                {
-                   
-                    $originalName = $photo1->getClientOriginalName();
-                    $extension = $photo1->getClientOriginalExtension();
-                    $photoname1 = time() . '.' . $extension;
-
-                    $request->approval->move('uploads', $photoname1);
-                    $poll->Approval_Letter = $photoname1;
-                    // dd($photoname);
-                    //$notice->media_path=$photoname;
-
-                }
+            $photo1 = $request->file('approval');
+            if ($photo1) {
+                $originalName = $photo1->getClientOriginalName();
+                $extension = $photo1->getClientOriginalExtension();
+                $photoname1 = time() . '_approval.' . $extension;  // Different name for approval image
+            
+                $request->approval->move('uploads', $photoname1);
+                $poll->Approval_Letter = $photoname1;
+            }
                 $poll->save();
 
 

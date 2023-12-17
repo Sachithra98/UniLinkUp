@@ -99,40 +99,24 @@ class PostController extends Controller
             $post->Society_Id = $request->soc_id;
             $post->Dep_Id = $request->dep_id;
 
-            $photo = $request->file('ppost'); // Change this line to get the file from the request
-
-            
-
-            if($photo)
-            {
-               
+            $photo = $request->file('ppost');
+            if ($photo) {
                 $originalName = $photo->getClientOriginalName();
                 $extension = $photo->getClientOriginalExtension();
-                $photoname = time() . '.' . $extension;
-
+                $photoname = time() . '_post.' . $extension;  // Different name for post image
+            
                 $request->ppost->move('uploads', $photoname);
                 $post->media_path = $photoname;
-                // dd($photoname);
-                //$notice->media_path=$photoname;
-
             }
-
-            $photo1 = $request->file('approval'); // Change this line to get the file from the request
-
-        
-
-            if($photo1)
-            {
-               
+            
+            $photo1 = $request->file('approval');
+            if ($photo1) {
                 $originalName = $photo1->getClientOriginalName();
                 $extension = $photo1->getClientOriginalExtension();
-                $photoname1 = time() . '.' . $extension;
-
+                $photoname1 = time() . '_approval.' . $extension;  // Different name for approval image
+            
                 $request->approval->move('uploads', $photoname1);
                 $post->Approval_Letter = $photoname1;
-                // dd($photoname);
-                
-
             }
             $post->save();
 
