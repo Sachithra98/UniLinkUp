@@ -143,8 +143,8 @@
                 <h3 style=" font-weight: bold;">{{ $post->Title }}</h3>
                 <p>Post Description: {{ $post->Description }}</p>
                 
-                <img src="/uploads/{{ $post->media_path }}" width='400' height='400' class="image"/>
-                @php
+                <img src="/uploads/{{ $post->media_path }}" width='200' height='250' class="image"/>
+                <!-- @php
                     $isImage = false; // Assume not an image initially
 
                     // Get the file extension
@@ -157,11 +157,11 @@
                     }
                     @endphp
 
-                    @if ($isImage)
-                    <img src="/uploads/{{ $post->Approval_Letter }}" width='400' height='400' class="image" />
-                    @else
+                    @if ($isImage) -->
+                    <img src="/uploads/{{ $post->Approval_Letter }}" width='200' height='100' class="image" />
+                    <!-- @else
                     <a href="/uploads/{{ $post->Approval_Letter }}" download>Download Approval Letter (PDF)</a>
-                    @endif
+                    @endif -->
 
                 
 

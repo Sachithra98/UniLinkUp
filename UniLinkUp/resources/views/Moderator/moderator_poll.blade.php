@@ -137,7 +137,7 @@
                 <h3 style=" font-weight: bold;">{{ $poll->poll_title }}</h3>
                 <p>{{ $poll->poll_desc }}</p>
                 <img src="/uploads/{{ $poll->media_path }}" width='400' height='400' class="image"/>
-                @php
+                <!-- @php
                     $isImage = false; // Assume not an image initially
 
                     // Get the file extension
@@ -150,11 +150,11 @@
                     }
                     @endphp
 
-                    @if ($isImage)
+                    @if ($isImage) -->
                     <img src="/uploads/{{ $poll->Approval_Letter }}" width='400' height='400' class="image" />
-                    @else
+                    <!-- @else
                     <a href="/uploads/{{ $poll->Approval_Letter }}" download>Download Approval Letter (PDF)</a>
-                    @endif
+                    @endif -->
 
                 <h3>{{ $poll->question }}</h3>
 
