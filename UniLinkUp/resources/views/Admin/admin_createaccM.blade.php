@@ -158,7 +158,7 @@
 
                 <div class="form-group">
                     <label for="Dep_Id">Department:</label>
-                    <select name="Dep_Id" id="Dep_Id" required >
+                    <select name="Dep_Id" id="Dep_Id" >
                         <option value="">Select Department :</option>
                         @foreach($departments as $row3)
                             <option value="{{ $row3->Dep_Id }}" {{ old('Dep_Id') == $row3->Dep_Id ? 'selected' : '' }}>
@@ -166,9 +166,7 @@
                             </option>
                         @endforeach
                     </select>
-                    @error('Dep_Id')
-                        <div class="alert alert-danger">{{$message}}</div>
-                    @enderror
+                   
                 </div> 
 
 
