@@ -135,5 +135,13 @@ if ($photo1) {
 
         
         }
+
+        public function delete($id)
+    {
+        $notice = Notice::findOrFail($id);
+        $notice->delete();
+
+        return response()->json(['message' => 'Notice request deleted successfully']);
+    }
 }
 

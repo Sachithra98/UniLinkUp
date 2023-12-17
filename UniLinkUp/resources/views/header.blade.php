@@ -34,8 +34,8 @@
    <a href="<?=url('index')?>"><i class="fa fa-home" style="font-size:24px"></i></a>
    <a href="search.php">
       <form class="search" action="/action_page.php" style="margin:auto;max-width:300px">
-         <input type="text" placeholder="Search.." name="search2">
-         <button type="submit"><i class="fa fa-search"></i></button>
+         <!-- <input type="text" placeholder="Search.." name="search2">
+         <button type="submit"><i class="fa fa-search"></i></button> -->
 
 
       </form>
@@ -77,7 +77,10 @@
 
 
    </a>
-   <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a>
+   <a href="<?=url('about')?>">About Us</a>
+   <a href="<?=url('faq')?>">FAQs?</a>
+   
+   <!-- <a href="<?=url('')?>"><i class="fa fa-bell" style="font-size:24px"></i></a> -->
 
 
 

@@ -177,6 +177,8 @@
 
                         <button class="btn" style="margin-left: 1rem; background-color: #404ca0;" type="submit">Accept Request and Publish Notice</button> 
                     </form>
+                    <a href="#" class="btn delete-event-btn" data-event-id="{{ $notice->id }}" style="margin-left: 1rem; background-color: red;">Delete Events</a>
+            </div>
 
 
         </div>
