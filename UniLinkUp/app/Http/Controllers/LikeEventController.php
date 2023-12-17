@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\LikeEvent;
+use App\Models\PublishEvent;
 use Illuminate\Http\Request;
 
 class LikeEventController extends Controller
 {
-    public function like(Request $request, PublishEvent $event)
+    public function like(Request $request, PublishEvent $post)
     {
+       
         $like = new LikeEvent();
-        $like->event_id = $notice->Publish_event_id;
+        $like->event_id = $post->Publish_event_id;
         $like->save();
 
         return redirect()->back();

@@ -19,7 +19,8 @@ use App\Http\Controllers\PublishNoticeController;
 use App\Http\Controllers\LikeNoticeController;
 use App\Http\Controllers\UnlikeNoticeController;
 use App\Http\Controllers\TestController;
-
+use App\Http\Controllers\LikeEventController;
+use App\Http\Controllers\UnlikeEventController;
 use App\Http\Controllers\BatchController;
 
 
@@ -580,6 +581,8 @@ Route::post('/shareEvent/{Publish_event_id}', [ShareController::class, 'shareEve
 Route::post('/like-notice/{notice}', [LikeNoticeController::class, 'like'])->name('like-notice');
 Route::post('/unlike-notice/{notice}', [UnlikeNoticeController::class, 'unlike'])->name('unlike-notice');
 
+Route::post('/like-event/{post}', [LikeEventController::class, 'like'])->name('like-event');
+Route::post('/unlike-event/{post}', [UnlikeEventController::class, 'unlike'])->name('unlike-event');
 
 //edit profile
 

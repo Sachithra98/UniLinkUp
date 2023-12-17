@@ -88,7 +88,7 @@
 <div class="main-content">
     
     <div class="back" >
-        <a href="<?=url('viewer_notice')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+        <a href="<?=url('viewer_event')?>" class="btn" style="margin-bottom: 20px;">Back</a>
     </div>
 
 <div class="container">

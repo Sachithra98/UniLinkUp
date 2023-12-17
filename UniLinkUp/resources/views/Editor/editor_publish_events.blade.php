@@ -148,27 +148,27 @@
                 <img src="/uploads/{{ $post->media_path }}" width='400' height='400' class="image"/>
 
                 <div class="buttons">
-                <form action="{{ route('like-event', $event) }}" method="post">
+                <form action="{{ route('like-event', $post) }}" method="post">
                 @csrf
                 <button type="submit" class="btn like-btn">Like <i class="fa fa-thumbs-up"></i></button>
             </form>
-            <form action="{{ route('unlike-event', $event) }}" method="post">
+            <form action="{{ route('unlike-event', $post) }}" method="post">
                 @csrf
                 <button type="submit" class="btn unlike-btn">Unlike <i class="fa fa-thumbs-down"></i></button>
             </form>
-                <form class="share"  action="{{ route('post.share', ['Publish_event_id' => $event->Publish_event_id]) }}" method="post">
+                <form class="share"  action="{{ route('event.share', ['Publish_event_id' => $post->Publish_event_id]) }}" method="post">
                 @csrf
                 <button class="btn btn-info" type="submit"> <i class="fa fa-share"></i> Share </button>
             </form>
-            <a href="{{ asset('/uploads/' . $event->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
-            <span class="like-count">Likes: {{ $event->likes->count() }}</span>
-            <span class="unlike-count">Dislikes: {{ $event->unlikes->count() }}</span>
+            <a href="{{ asset('/uploads/' . $post->media_path) }}" class="btn" download>Download <i class="fa fa-download"></i></a>
+            <span class="like-count">Likes: {{ $post->likes->count() }}</span>
+            <span class="unlike-count">Dislikes: {{ $post->unlikes->count() }}</span>
                 
                 
                 </div>
 
                 <div class="delete" style="text-align: center; display: flex; justify-content: center; align-items: center; padding-top: 5rem; padding-bottom: 5rem;">
-                <a href="#" class="btn delete-event-btn" data-event-id="{{ $event->id }}" style="margin-left: 1rem; background-color: red;">Delete Events</a>
+                <a href="#" class="btn delete-event-btn" data-event-id="{{ $post->id }}" style="margin-left: 1rem; background-color: red;">Delete Events</a>
             </div>
             </div>
       @endforeach
