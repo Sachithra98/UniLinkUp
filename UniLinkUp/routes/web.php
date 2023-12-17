@@ -71,9 +71,17 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('admin', function () {
-    return view('/Admin/admin');
+
+Route::middleware('admin')->group(function (){
+    Route::get('admin', function () {
+        return view('/Admin/admin');
+    });       
 });
+
+
+
+
+
 
 Route::get('forget', function () {
     return view('forget');
@@ -99,38 +107,68 @@ Route::get('/StaffLogin', function () {
     return view('/StaffLogin');
 });
 
+
+
+
+
 Route::get('/search', 'PostController@search')->name('search');
 
 Route::get('/posts/{post}', 'PostController@show')->name('post.show');
 
-Route::get('/admin_UMV', function () {
-    return view('/Admin/admin_UMV');
+
+
+
+
+
+
+Route::middleware('admin')->group(function (){
+    Route::get('/admin_UMV', function () {
+        return view('/Admin/admin_UMV');
+    });
+    
+    Route::get('/admin_UME', function () {
+        return view('/Admin/admin_UME');
+    });
+    
+    Route::get('/admin_UMM', function () {
+        return view('/Admin/admin_UMM');
+    });
+    
+    Route::get('/admin_UMA', function () {
+        return view('/Admin/admin_UMA');
+    });
+    
+    Route::get('/admin_Role_UMR', function () {
+        return view('/Admin/admin_Role_UMR');
+    });
+    
+    Route::get('/admin_societies', function () {
+        return view('/Admin/admin_societies');
+    });
+      
 });
 
-Route::get('/admin_UME', function () {
-    return view('/Admin/admin_UME');
-});
 
-Route::get('/admin_UMM', function () {
-    return view('/Admin/admin_UMM');
-});
+   
 
-Route::get('/admin_UMA', function () {
-    return view('/Admin/admin_UMA');
-});
 
-Route::get('/admin_Role_UMR', function () {
-    return view('/Admin/admin_Role_UMR');
-});
 
-Route::get('/admin_societies', function () {
-    return view('/Admin/admin_societies');
-});
+
+
+
+
+
 
 Route::get('/index', function () {
     return view('index'); // You can change 'index' to the actual view name you want to load.
 })->name('index');
 
+
+
+
+
+Route::middleware('admin')->group(function (){
+   
 Route::get('/admin_societies', function () {
     return view('/Admin/admin_societies');
 });
@@ -184,76 +222,117 @@ Route::get('/admin_add_faculty', function () {
     return view('/Admin/admin_add_faculty');
 });
 
-
 Route::post('/admin_add_faculty', [FacultyController::class, 'faculty'])->name('admin_add_faculty');
 Route::post('/facultyInput', [FacultyController::class, 'facultyInput'])->name('facultyInput');
 
-Route::get('/editor_create_event', function () {
-    return view('/Editor/editor_create_event');
+
+
+     
 });
 
-Route::get('/editor_create_notice', function () {
-    return view('/Editor/editor_create_notice');
+
+
+
+
+
+Route::middleware('editor')->group(function (){
+    Route::get('/editor_create_event', function () {
+        return view('/Editor/editor_create_event');
+    });
+    
+    Route::get('/editor_create_notice', function () {
+        return view('/Editor/editor_create_notice');
+    });
+    
+    Route::get('/editor_create_poll', function () {
+        return view('/Editor/editor_create_poll');
+    });
+    
+    Route::get('/editor', function () {
+        return view('/Editor/editor');
+    });
+           
 });
 
-Route::get('/editor_create_poll', function () {
-    return view('/Editor/editor_create_poll');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::middleware('moderator')->group(function (){
+    Route::get('/moderator', function () {
+        return view('/Moderator/moderator');
+    });  
 });
 
-Route::get('/editor', function () {
-    return view('/Editor/editor');
+
+
+
+Route::middleware('admin')->group(function (){
+    Route::get('/admin_batch', function () {
+        return view('/Admin/admin_batch');
+    });
+    
+    
+    Route::get('/admin_add_batch', function () {
+        return view('/Admin/admin_add_batch');
+    });
+    
+    
+    
+    
+    
+    
+    //sachithra-start
+    Route::get('/admin_add_department', function () {
+        return view('/Admin/admin_add_department');
+    });
+    //sachithra-end
+    
+    //department
+    Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
+    Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
+    Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
+    
+    
+    //department 
+    Route::post('/admin_batch', [BatchController::class, 'batch'])->name('admin_add_batch');
+    Route::post('/batchInput', [BatchController::class, 'batchInput'])->name('batchInput');
+    Route::get('/admin_add_batch', [BatchController::class, 'showBatchForm'])->name('showBatchForm'); 
+    
+    //sachithra-start
+    Route::get('admin_add_role', function () {
+        return view('/Admin/admin_add_role');
+    });
+    //sachithra-end
+    
+    Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
+    Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');      
 });
 
-Route::get('/moderator', function () {
-    return view('/Moderator/moderator');
-});
+
+
 
 Route::get('/viewer', function () {
     return view('/Student/viewer');
 });
+
+
 //sachithra-end
 
 //lishani
 
-Route::get('/admin_batch', function () {
-    return view('/Admin/admin_batch');
-});
 
-
-Route::get('/admin_add_batch', function () {
-    return view('/Admin/admin_add_batch');
-});
-
-
-
-
-
-
-//sachithra-start
-Route::get('/admin_add_department', function () {
-    return view('/Admin/admin_add_department');
-});
-//sachithra-end
-
-//department
-Route::post('/admin_add_department', [DepartmentController::class, 'department'])->name('admin_add_department');
-Route::post('/departmentInput', [DepartmentController::class, 'departmentInput'])->name('departmentInput');
-Route::get('/admin_add_department', [DepartmentController::class, 'showDepartmentForm'])->name('showDepartmentForm');
-
-
-//department 
-Route::post('/admin_batch', [BatchController::class, 'batch'])->name('admin_add_batch');
-Route::post('/batchInput', [BatchController::class, 'batchInput'])->name('batchInput');
-Route::get('/admin_add_batch', [BatchController::class, 'showBatchForm'])->name('showBatchForm'); 
-
-//sachithra-start
-Route::get('admin_add_role', function () {
-    return view('/Admin/admin_add_role');
-});
-//sachithra-end
-
-Route::post('/admin_add_role', [RoleController::class, 'role'])->name('admin_add_role');
-Route::post('/roleInput', [RoleController::class, 'roleInput'])->name('roleInput');
 
 
 //sachithra-start
@@ -322,12 +401,14 @@ Route::post('/editorInput',[EditorController::class,'editorInput'])->name('edito
 Route::post('/adminInput',[AdminController::class,'adminInput'])->name('adminInput');
 
 
+Route::middleware('admin')->group(function (){
+    Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
+    Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
+});
 
 
 
 
-Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
-Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
 //jayani-end
 
 
@@ -441,7 +522,13 @@ Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->na
 
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+Route::middleware('admin')->group(function (){
+    Route::get('/admin/department/create', [DepartmentController::class, 'showDepartmentForm'])->name('admin.department.create');
+    Route::post('/admin/department/store', [DepartmentController::class, 'storeDepartment'])->name('admin.department.store');
+});
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -488,7 +575,7 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-// Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
+
 ///////////////////////////////////////////////
 Route::middleware('admin')->group(function (){
     Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->name('admin_dashboard');
@@ -547,31 +634,52 @@ Route::middleware('student')->group(function (){
         });
 
 /////////////////////////////////////////////
-Route::middleware('test')->group(function (){
-    Route::get('test/dashboard', [TestController::class, 'dashboard'])->name('test_dashboard');
-    });
+// Route::middleware('test')->group(function (){
+//     Route::get('test/dashboard', [TestController::class, 'dashboard'])->name('test_dashboard');
+//     });
 
-    Route::prefix('test')->group(function (){
-        Route::get('/login', [TestController::class, 'login'])->name('test_login');
-        Route::get('/logout', [TestController::class, 'logout'])->name('test_logout');
-        Route::post('/login-submit', [TestController::class, 'login_submit'])->name('test_login_submit');
-        });
+//     Route::prefix('test')->group(function (){
+//         Route::get('/login', [TestController::class, 'login'])->name('test_login');
+//         Route::get('/logout', [TestController::class, 'logout'])->name('test_logout');
+//         Route::post('/login-submit', [TestController::class, 'login_submit'])->name('test_login_submit');
+//         });
 
-
+/////////////////////////////////////////////////
 //piyumi
-Route::post('update_data/{id}', [AdminController::class, 'update_data']);
+
+
+Route::middleware('admin')->group(function (){
+
+    Route::post('update_data/{id}', [AdminController::class, 'update_data']);
 Route::get('edit_record/{id}',[AdminController::class,'edit_record']);
 
 Route::post('update/{id}', [EditorController::class, 'update']);
 Route::get('edit/{id}',[EditorController::class,'edit']);
 
 Route::post('update_M/{id}', [ModeratorController::class, 'update_M']);
-Route::get('edit_M/{id}',[ModeratorController::class,'edit_M']);
+Route::get('edit_M/{id}',[ModeratorController::class,'edit_M']);    
+});
+
+
+
+
+
+
 //piyumi end
 
 //lishani start
+
+
+
+
+
+Route::middleware('admin')->group(function (){
+   
 Route::post('update_S/{id}', [StudentController::class, 'update_S']);
-Route::get('edit_S/{id}',[StudentController::class,'edit_S']);
+Route::get('edit_S/{id}',[StudentController::class,'edit_S']);     
+});
+
+
 
 //dhilmi
 Route::post('/share/{Publish_notice_id}', [ShareController::class, 'share'])->name('post.share');
@@ -584,28 +692,49 @@ Route::post('/unlike-notice/{notice}', [UnlikeNoticeController::class, 'unlike']
 Route::post('/like-event/{post}', [LikeEventController::class, 'like'])->name('like-event');
 Route::post('/unlike-event/{post}', [UnlikeEventController::class, 'unlike'])->name('unlike-event');
 
+
+
+
+
+
+
 //edit profile
 
-Route::get('/editor_edit_profile', function () {
-    return view('/Editor/editor_edit_profile');
+
+Route::middleware('editor')->group(function (){
+    Route::get('/editor_edit_profile', function () {
+        return view('/Editor/editor_edit_profile');
+    });     
+});
+
+Route::middleware('student')->group(function (){
+    Route::get('/student_edit_profile', function () {
+        return view('/Student/student_edit_profile');
+    });
+          
+});
+
+Route::middleware('admin')->group(function (){
+    Route::get('/admin_edit_profile', function () {
+        return view('/Admin/admin_edit_profile');
+    });     
 });
 
 
-Route::get('/student_edit_profile', function () {
-    return view('/Student/student_edit_profile');
+Route::middleware('moderator')->group(function (){
+    Route::get('/moderator_edit_profile', function () {
+        return view('/Moderator/moderator_edit_profile');
+    });     
 });
 
 
-Route::get('/admin_edit_profile', function () {
-    return view('/Admin/admin_edit_profile');
-});
 
 
-Route::get('/moderator_edit_profile', function () {
-    return view('/Moderator/moderator_edit_profile');
-});
 
 
+
+Route::middleware('editor')->group(function (){
+     
 // Add the route for deleting a notice
 Route::delete('/notices/{id}', [PublishNoticeController::class, 'delete'])->name('delete-notice');
 
@@ -614,16 +743,46 @@ Route::delete('/notices/{id}', [PublishNoticeController::class, 'delete'])->name
 Route::delete('/events/{id}', [PublishEventController::class, 'delete'])->name('delete-event');
 
 // Add the route for deleting a poll
-Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('delete-poll');
+Route::delete('/polls/{id}', [PollController::class, 'delete'])->name('delete-poll');   
+});
+
+
 
 //admin_UMA delete
-Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');
+
+
+
+Route::middleware('')->group(function (){
+    Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('admin.delete');      
+});
+
+
 
 //dhanu
-Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
 
 
 
 
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
 
+
+Route::middleware('admin')->group(function (){
+ Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');       
+});
+
+
+
+
+
+
+
+
+
+
+
+
+Route::middleware('admin')->group(function (){
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
+    });
+
+
+   
