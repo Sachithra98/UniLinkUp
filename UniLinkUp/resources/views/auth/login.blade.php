@@ -205,11 +205,31 @@
 				<h4>your one-stop shop for all things campus! Stay in the loop, discover events, and connect with fellow students</h4>
 				<h4>Please choose your Role to log in</h4>
 
-                <a href="<?=url('AdminLogin')?>" class="btn" >Admin</a>
-                <a href="<?=url('EditorLogin')?>" class="btn">Editor</a>
-                <a href="<?=url('ModeratorLogin')?>" class="btn">Moderator</a>
-                <a href="<?=url('StudentLogin')?>" class="btn">Student</a>
-                <a href="<?=url('StaffLogin')?>" class="btn">Staff</a>
+				<div style="text-align: center;">
+
+  <div style="margin-bottom: 10px;">
+    <a style="font-size: 16px; width: 250px; display: inline-block; margin: 0 auto;" href="<?=url('AdminLogin')?>" class="btn">Admin</a>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <a style="font-size: 16px; width: 250px; display: inline-block; margin: 0 auto;" href="<?=url('EditorLogin')?>" class="btn">Editor</a>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <a style="font-size: 16px; width: 250px; display: inline-block; margin: 0 auto;" href="<?=url('ModeratorLogin')?>" class="btn">Moderator</a>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <a style="font-size: 16px; width: 250px; display: inline-block; margin: 0 auto;" href="<?=url('StudentLogin')?>" class="btn">Student</a>
+  </div>
+
+  <div style="margin-bottom: 10px;">
+    <a style="font-size: 16px; width: 250px; display: inline-block; margin: 0 auto;" href="<?=url('StaffLogin')?>" class="btn">Staff</a>
+  </div>
+
+</div>
+
+                
                 </form>
 
 
