@@ -621,9 +621,8 @@ Route::delete('/admin/delete/{id}', [AdminController::class, 'delete'])->name('a
 
 //dhanu
 Route::get('delete_moderator/{id}', [ModeratorController::class, 'delete'])->name('delete_moderator');
-
-
-
-
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin_dashboard');
+Route::get('delete_faculty/{id}', [FacultyController::class, 'delete'])->name('delete_faculty');
+Route::get('delete_society/{id}', [SocietyController::class, 'delete'])->name('delete_society');
+
 

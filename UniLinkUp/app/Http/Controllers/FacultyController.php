@@ -41,6 +41,21 @@ class FacultyController extends Controller
         return redirect('/admin_add_faculty')->with('success','Data successfully added!');
     }
 
+    //dhanu
+
+    public function delete($id)
+{
+    
+    $faculty = Faculty::find($id);
+    $faculty->delete();
+
+    // Redirect back to the faculties management page
+    return redirect()->route('admin.faculties_management');
+    return redirect()->back()->with('success', 'User deleted successfully.');
+    
+
+}
+
     
 
 }
