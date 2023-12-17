@@ -111,7 +111,7 @@
             
             
                 <tr>
-                    <td>{{ $row['Role_Id'] }} </td>
+                    <td>{{ $row['id'] }} </td>
                     <td>{{ $row['Role_Name'] }}</td>
                     <td style="width: 300px;">{{ $row['Responsibilities'] }} </td>
                     <td>{{ $row['Who_Are_Responsible'] }} </td>

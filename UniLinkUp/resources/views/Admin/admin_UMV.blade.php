@@ -108,7 +108,10 @@
                            
                             <td> <a href="edit_S/{{ $row['id'] }}"class="btn btn-primary">Edit</a></td>
 
-                            <td><a href="" class="btn btn-danger">Remove</a></td>
+                            <td>
+                        <a href="{{ route('delete_student', $row['id']) }}" class="btn btn-danger">Remove</a>
+                            </td>
+
                         </tr>
                     @endwhile
         </tbody>

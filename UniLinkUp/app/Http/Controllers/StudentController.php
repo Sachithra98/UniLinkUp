@@ -212,6 +212,19 @@ public function edit_S($id)
 
 //end lishani
 
+//dhanu
+
+public function delete($id)
+{
+    // Delete the student with the given ID from the database
+    // Example code (make sure to adjust it based on your database and model):
+    $student = Student::find($id);
+    $student->delete();
+
+    // Redirect back to the user management page
+    return redirect()->back()->with('success', 'User deleted successfully.')
+    ;}
+
 
 
 
