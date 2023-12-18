@@ -98,7 +98,7 @@
 
             <div class="container">
 
-                 <h1 align='center'>FAQs</h1>
+                 <h1 align='center'>Reviews</h1>
        
 
 
