@@ -14,7 +14,16 @@
     <style type="text/css">
 
         
-
+.main{
+   flex:1 1 41rem;
+   background: var(--light-bg);
+   font-size: 1.75rem;
+   padding:1rem 0;
+   padding-left: 7rem;
+   padding-right: 3rem;
+   line-height: 2;
+   color:var(--black);
+ }
 
 .forgot-password-form {
     width: 600px;
@@ -79,7 +88,11 @@ button:hover {
     @include('header')
 	<!-- header section ends -->
 
+    <div class="main">
 
+    <div class="back" >
+                <a href="<?=url('index')?>" class="btn" style="margin-bottom: 20px;">Back</a>
+            </div>
 
     <div class="container">
         <div class="forgot-password-form">
@@ -97,7 +110,7 @@ button:hover {
             </form> -->
         </div>
     </div>
-
+</div>
     <!-- footer section starts -->
 	@include('footer')
 	<!-- footer section ends -->
